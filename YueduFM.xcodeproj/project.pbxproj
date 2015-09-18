@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
+		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
+		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
+		E4D522AF1BAC8BA7002164AA /* YDSDKModel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522AE1BAC8BA7002164AA /* YDSDKModel+Extension.m */; };
 		E4DD91711BA9D8A10045F222 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91701BA9D8A10045F222 /* main.m */; };
 		E4DD91741BA9D8A10045F222 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91731BA9D8A10045F222 /* AppDelegate.m */; };
 		E4DD91771BA9D8A10045F222 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91761BA9D8A10045F222 /* ViewController.m */; };
@@ -32,9 +36,7 @@
 		E4DD91D71BA9DF4B0045F222 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91CF1BA9DF4B0045F222 /* FMDatabasePool.m */; };
 		E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91D11BA9DF4B0045F222 /* FMDatabaseQueue.m */; };
 		E4DD91D91BA9DF4B0045F222 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91D41BA9DF4B0045F222 /* FMResultSet.m */; };
-		E4DD91DF1BA9E08F0045F222 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91DB1BA9E08F0045F222 /* CHANGELOG.md */; };
 		E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91DD1BA9E08F0045F222 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E4DD91E11BA9E08F0045F222 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91DE1BA9E08F0045F222 /* README.md */; };
 		E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */; };
 		E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD919C1BA9D9950045F222 /* YueduFMSDK.framework */; };
 		E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E51BA9E1D20045F222 /* libxml2.dylib */; };
@@ -51,6 +53,58 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
+		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
+		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
+		E4D5226D1BAC83C9002164AA /* ChannelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelService.h; sourceTree = "<group>"; };
+		E4D5226E1BAC83C9002164AA /* ChannelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelService.m; sourceTree = "<group>"; };
+		E4D522801BAC8802002164AA /* A2BlockInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A2BlockInvocation.h; sourceTree = "<group>"; };
+		E4D522811BAC8802002164AA /* A2DynamicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A2DynamicDelegate.h; sourceTree = "<group>"; };
+		E4D522821BAC8802002164AA /* BKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMacros.h; sourceTree = "<group>"; };
+		E4D522831BAC8802002164AA /* BlocksKit+MessageUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+MessageUI.h"; sourceTree = "<group>"; };
+		E4D522841BAC8802002164AA /* BlocksKit+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+QuickLook.h"; sourceTree = "<group>"; };
+		E4D522851BAC8802002164AA /* BlocksKit+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+UIKit.h"; sourceTree = "<group>"; };
+		E4D522861BAC8802002164AA /* BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksKit.h; sourceTree = "<group>"; };
+		E4D522871BAC8802002164AA /* MFMailComposeViewController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFMailComposeViewController+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522881BAC8802002164AA /* MFMessageComposeViewController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFMessageComposeViewController+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522891BAC8802002164AA /* NSArray+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228A1BAC8802002164AA /* NSCache+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCache+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228B1BAC8802002164AA /* NSDictionary+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228C1BAC8802002164AA /* NSIndexSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228D1BAC8802002164AA /* NSInvocation+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228E1BAC8802002164AA /* NSMapTable+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5228F1BAC8802002164AA /* NSMutableArray+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522901BAC8802002164AA /* NSMutableDictionary+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522911BAC8802002164AA /* NSMutableIndexSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableIndexSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522921BAC8802002164AA /* NSMutableOrderedSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522931BAC8802002164AA /* NSMutableSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522941BAC8802002164AA /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
+		E4D522951BAC8802002164AA /* NSObject+A2DynamicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2DynamicDelegate.h"; sourceTree = "<group>"; };
+		E4D522961BAC8802002164AA /* NSObject+BKAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BKAssociatedObjects.h"; sourceTree = "<group>"; };
+		E4D522971BAC8802002164AA /* NSObject+BKBlockExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BKBlockExecution.h"; sourceTree = "<group>"; };
+		E4D522981BAC8802002164AA /* NSObject+BKBlockObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BKBlockObservation.h"; sourceTree = "<group>"; };
+		E4D522991BAC8802002164AA /* NSOrderedSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229A1BAC8802002164AA /* NSSet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229B1BAC8802002164AA /* NSTimer+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229C1BAC8802002164AA /* NSURLConnection+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229D1BAC8802002164AA /* QLPreviewController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QLPreviewController+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229E1BAC8802002164AA /* UIActionSheet+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D5229F1BAC8802002164AA /* UIAlertView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A01BAC8802002164AA /* UIBarButtonItem+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A11BAC8802002164AA /* UIControl+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A21BAC8802002164AA /* UIGestureRecognizer+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A31BAC8802002164AA /* UIImagePickerController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A41BAC8802002164AA /* UIPopoverController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A51BAC8802002164AA /* UITextField+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A61BAC8802002164AA /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A71BAC8802002164AA /* UIWebView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BlocksKit.h"; sourceTree = "<group>"; };
+		E4D522A81BAC8802002164AA /* libBlocksKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBlocksKit.a; sourceTree = "<group>"; };
+		E4D522AA1BAC881C002164AA /* Vendor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
+		E4D522AC1BAC8BA7002164AA /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		E4D522AD1BAC8BA7002164AA /* YDSDKModel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YDSDKModel+Extension.h"; sourceTree = "<group>"; };
+		E4D522AE1BAC8BA7002164AA /* YDSDKModel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YDSDKModel+Extension.m"; sourceTree = "<group>"; };
+		E4D522B01BAC8BB4002164AA /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		E4D522B11BAC8BD7002164AA /* Foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
 		E4DD916B1BA9D8A10045F222 /* YueduFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YueduFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DD916F1BA9D8A10045F222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DD91701BA9D8A10045F222 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,10 +159,8 @@
 		E4DD91D21BA9DF4B0045F222 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		E4DD91D31BA9DF4B0045F222 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		E4DD91D41BA9DF4B0045F222 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		E4DD91DB1BA9E08F0045F222 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		E4DD91DC1BA9E08F0045F222 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E4DD91DD1BA9E08F0045F222 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		E4DD91DE1BA9E08F0045F222 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4DD91E51BA9E1D20045F222 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -120,6 +172,7 @@
 			files = (
 				E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */,
 				E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */,
+				E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */,
 				E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +187,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4D5227D1BAC8802002164AA /* BlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				E4D5227E1BAC8802002164AA /* include */,
+				E4D522A81BAC8802002164AA /* libBlocksKit.a */,
+			);
+			path = BlocksKit;
+			sourceTree = "<group>";
+		};
+		E4D5227E1BAC8802002164AA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E4D5227F1BAC8802002164AA /* BlocksKit */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E4D5227F1BAC8802002164AA /* BlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				E4D522801BAC8802002164AA /* A2BlockInvocation.h */,
+				E4D522811BAC8802002164AA /* A2DynamicDelegate.h */,
+				E4D522821BAC8802002164AA /* BKMacros.h */,
+				E4D522831BAC8802002164AA /* BlocksKit+MessageUI.h */,
+				E4D522841BAC8802002164AA /* BlocksKit+QuickLook.h */,
+				E4D522851BAC8802002164AA /* BlocksKit+UIKit.h */,
+				E4D522861BAC8802002164AA /* BlocksKit.h */,
+				E4D522871BAC8802002164AA /* MFMailComposeViewController+BlocksKit.h */,
+				E4D522881BAC8802002164AA /* MFMessageComposeViewController+BlocksKit.h */,
+				E4D522891BAC8802002164AA /* NSArray+BlocksKit.h */,
+				E4D5228A1BAC8802002164AA /* NSCache+BlocksKit.h */,
+				E4D5228B1BAC8802002164AA /* NSDictionary+BlocksKit.h */,
+				E4D5228C1BAC8802002164AA /* NSIndexSet+BlocksKit.h */,
+				E4D5228D1BAC8802002164AA /* NSInvocation+BlocksKit.h */,
+				E4D5228E1BAC8802002164AA /* NSMapTable+BlocksKit.h */,
+				E4D5228F1BAC8802002164AA /* NSMutableArray+BlocksKit.h */,
+				E4D522901BAC8802002164AA /* NSMutableDictionary+BlocksKit.h */,
+				E4D522911BAC8802002164AA /* NSMutableIndexSet+BlocksKit.h */,
+				E4D522921BAC8802002164AA /* NSMutableOrderedSet+BlocksKit.h */,
+				E4D522931BAC8802002164AA /* NSMutableSet+BlocksKit.h */,
+				E4D522941BAC8802002164AA /* NSObject+A2BlockDelegate.h */,
+				E4D522951BAC8802002164AA /* NSObject+A2DynamicDelegate.h */,
+				E4D522961BAC8802002164AA /* NSObject+BKAssociatedObjects.h */,
+				E4D522971BAC8802002164AA /* NSObject+BKBlockExecution.h */,
+				E4D522981BAC8802002164AA /* NSObject+BKBlockObservation.h */,
+				E4D522991BAC8802002164AA /* NSOrderedSet+BlocksKit.h */,
+				E4D5229A1BAC8802002164AA /* NSSet+BlocksKit.h */,
+				E4D5229B1BAC8802002164AA /* NSTimer+BlocksKit.h */,
+				E4D5229C1BAC8802002164AA /* NSURLConnection+BlocksKit.h */,
+				E4D5229D1BAC8802002164AA /* QLPreviewController+BlocksKit.h */,
+				E4D5229E1BAC8802002164AA /* UIActionSheet+BlocksKit.h */,
+				E4D5229F1BAC8802002164AA /* UIAlertView+BlocksKit.h */,
+				E4D522A01BAC8802002164AA /* UIBarButtonItem+BlocksKit.h */,
+				E4D522A11BAC8802002164AA /* UIControl+BlocksKit.h */,
+				E4D522A21BAC8802002164AA /* UIGestureRecognizer+BlocksKit.h */,
+				E4D522A31BAC8802002164AA /* UIImagePickerController+BlocksKit.h */,
+				E4D522A41BAC8802002164AA /* UIPopoverController+BlocksKit.h */,
+				E4D522A51BAC8802002164AA /* UITextField+BlocksKit.h */,
+				E4D522A61BAC8802002164AA /* UIView+BlocksKit.h */,
+				E4D522A71BAC8802002164AA /* UIWebView+BlocksKit.h */,
+			);
+			path = BlocksKit;
+			sourceTree = "<group>";
+		};
+		E4D522AB1BAC8BA7002164AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4D522AC1BAC8BA7002164AA /* Model.h */,
+				E4D522AD1BAC8BA7002164AA /* YDSDKModel+Extension.h */,
+				E4D522AE1BAC8BA7002164AA /* YDSDKModel+Extension.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E4DD91621BA9D8A10045F222 = {
 			isa = PBXGroup;
 			children = (
@@ -158,8 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				E4DD919B1BA9D93D0045F222 /* AppDelegate */,
+				E4D522AB1BAC8BA7002164AA /* Models */,
 				E4DD91961BA9D9140045F222 /* Foundation */,
-				E4DD91971BA9D9140045F222 /* Models */,
 				E4DD91981BA9D9140045F222 /* Resources */,
 				E4DD91991BA9D9140045F222 /* Services */,
 				E4DD91951BA9D8D80045F222 /* Controllers */,
@@ -180,6 +307,7 @@
 			children = (
 				E4DD916F1BA9D8A10045F222 /* Info.plist */,
 				E4DD91701BA9D8A10045F222 /* main.m */,
+				E4D522641BAC7E6D002164AA /* YueduFM.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,6 +332,8 @@
 		E4DD91941BA9D8C30045F222 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4D5227D1BAC8802002164AA /* BlocksKit */,
 				E4DD91DA1BA9E08F0045F222 /* JSONKit */,
 				E4DD91C91BA9DF4B0045F222 /* fmdb */,
 				E4DD91A51BA9DC4C0045F222 /* PPSqliteORM */,
@@ -222,15 +352,10 @@
 		E4DD91961BA9D9140045F222 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E4D522B11BAC8BD7002164AA /* Foundation.h */,
+				E4D522B01BAC8BB4002164AA /* Macro.h */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		E4DD91971BA9D9140045F222 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		E4DD91981BA9D9140045F222 /* Resources */ = {
@@ -250,6 +375,10 @@
 				E4DD91A01BA9DB6A0045F222 /* ServiceCenter.m */,
 				E4DD91C31BA9DC770045F222 /* DataService.h */,
 				E4DD91C41BA9DC770045F222 /* DataService.m */,
+				E4D522611BAC7BD6002164AA /* ConfigService.h */,
+				E4D522621BAC7BD6002164AA /* ConfigService.m */,
+				E4D5226D1BAC83C9002164AA /* ChannelService.h */,
+				E4D5226E1BAC83C9002164AA /* ChannelService.m */,
 				E4DD91C61BA9DD5A0045F222 /* ArticleService.h */,
 				E4DD91C71BA9DD5A0045F222 /* ArticleService.m */,
 			);
@@ -320,10 +449,8 @@
 		E4DD91DA1BA9E08F0045F222 /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
-				E4DD91DB1BA9E08F0045F222 /* CHANGELOG.md */,
 				E4DD91DC1BA9E08F0045F222 /* JSONKit.h */,
 				E4DD91DD1BA9E08F0045F222 /* JSONKit.m */,
-				E4DD91DE1BA9E08F0045F222 /* README.md */,
 			);
 			path = JSONKit;
 			sourceTree = "<group>";
@@ -430,19 +557,20 @@
 			files = (
 				E4DD91C81BA9DD5A0045F222 /* ArticleService.m in Sources */,
 				E4DD91C11BA9DC4C0045F222 /* PPSqliteORMManager.m in Sources */,
+				E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */,
 				E4DD91D71BA9DF4B0045F222 /* FMDatabasePool.m in Sources */,
 				E4DD91A11BA9DB6A0045F222 /* ServiceCenter.m in Sources */,
 				E4DD91BB1BA9DC4C0045F222 /* NSDate+SQL.m in Sources */,
 				E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */,
-				E4DD91E11BA9E08F0045F222 /* README.md in Sources */,
 				E4DD91D51BA9DF4B0045F222 /* FMDatabase.m in Sources */,
 				E4DD91D61BA9DF4B0045F222 /* FMDatabaseAdditions.m in Sources */,
+				E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */,
 				E4DD91C21BA9DC4C0045F222 /* PPSqliteORMSQL.m in Sources */,
 				E4DD91D91BA9DF4B0045F222 /* FMResultSet.m in Sources */,
 				E4DD91BE1BA9DC4C0045F222 /* NSObject+PPSqliteORM.m in Sources */,
+				E4D522AF1BAC8BA7002164AA /* YDSDKModel+Extension.m in Sources */,
 				E4DD91771BA9D8A10045F222 /* ViewController.m in Sources */,
 				E4DD91C51BA9DC770045F222 /* DataService.m in Sources */,
-				E4DD91DF1BA9E08F0045F222 /* CHANGELOG.md in Sources */,
 				E4DD91741BA9D8A10045F222 /* AppDelegate.m in Sources */,
 				E4DD91BA1BA9DC4C0045F222 /* NSArray+SQL.m in Sources */,
 				E4DD91BD1BA9DC4C0045F222 /* NSNumber+SQL.m in Sources */,
@@ -581,9 +709,21 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors",
 				);
+				GCC_PREFIX_HEADER = YueduFM/YueduFM.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/YueduFM/Vendors/BlocksKit/include",
+				);
 				INFOPLIST_FILE = YueduFM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YueduFM/Vendors/BlocksKit",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -595,9 +735,21 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors",
 				);
+				GCC_PREFIX_HEADER = YueduFM/YueduFM.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/YueduFM/Vendors/BlocksKit/include",
+				);
 				INFOPLIST_FILE = YueduFM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YueduFM/Vendors/BlocksKit",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -654,6 +806,7 @@
 				E4DD91901BA9D8A20045F222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4DD91911BA9D8A20045F222 /* Build configuration list for PBXNativeTarget "YueduFMTests" */ = {
 			isa = XCConfigurationList;
@@ -662,6 +815,7 @@
 				E4DD91931BA9D8A20045F222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

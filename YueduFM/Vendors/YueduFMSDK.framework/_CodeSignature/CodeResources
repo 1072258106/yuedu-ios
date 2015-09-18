@@ -4,33 +4,53 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/YDSDKArticleListRequest.h</key>
+		<data>
+		P3wSx48DvQYFwCsm0Ch9AmQ3+Mc=
+		</data>
 		<key>Headers/YDSDKArticleModel.h</key>
 		<data>
-		/ghh4QJjluXocJ6YkSs+uqfaZUE=
+		SxV/mTEEtky1508ycEIrXZLWRr8=
 		</data>
-		<key>Headers/YDSDKArticleRequest.h</key>
+		<key>Headers/YDSDKChannelListRequest.h</key>
 		<data>
-		eA5efKIyOEKefaN0Us5kGyOungw=
+		I61mtCD4AswoGjESR61SoWErdlc=
+		</data>
+		<key>Headers/YDSDKChannelModel.h</key>
+		<data>
+		ncIXw+C1Z+SVJXOuUk62bOyCBW0=
+		</data>
+		<key>Headers/YDSDKConfigModel.h</key>
+		<data>
+		FPIwex6EnEA8d/UgtBYRtSDRehs=
+		</data>
+		<key>Headers/YDSDKConfigRequest.h</key>
+		<data>
+		clT3JljLkAtGG8PbNL3yT8jMp/Q=
 		</data>
 		<key>Headers/YDSDKError.h</key>
 		<data>
 		zkLWDPXhbWo+8HK3Vs+Wk6o+j1g=
 		</data>
+		<key>Headers/YDSDKListRequest.h</key>
+		<data>
+		0BXb/w18ByxPMJeK9cQjPNM/w20=
+		</data>
 		<key>Headers/YDSDKManager.h</key>
 		<data>
-		/+9BboxpuFE994PCYaXTWfK/4Wc=
+		OKTB6M9TckspROoSN7bChLJw5K8=
 		</data>
 		<key>Headers/YDSDKModel.h</key>
 		<data>
-		Vi+v/6WBwq45H+hdNg6i6jxPtr4=
+		gbuI0CRiHHqHRUnQ9kDwPXiuJNg=
 		</data>
 		<key>Headers/YDSDKRequest.h</key>
 		<data>
-		1RvEE7MoAevR96PQ/dCx7K2YtS8=
+		+eSCLF4OVEVaSR5J9H4tQup3b+0=
 		</data>
 		<key>Headers/YueduFMSDK.h</key>
 		<data>
-		zJTbakJCpWNYb+TV0vjQLnBCLhY=
+		tEiwIDHvSu9ZeKuD6vwPQCZzH+A=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -43,33 +63,53 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/YDSDKArticleListRequest.h</key>
+		<data>
+		P3wSx48DvQYFwCsm0Ch9AmQ3+Mc=
+		</data>
 		<key>Headers/YDSDKArticleModel.h</key>
 		<data>
-		/ghh4QJjluXocJ6YkSs+uqfaZUE=
+		SxV/mTEEtky1508ycEIrXZLWRr8=
 		</data>
-		<key>Headers/YDSDKArticleRequest.h</key>
+		<key>Headers/YDSDKChannelListRequest.h</key>
 		<data>
-		eA5efKIyOEKefaN0Us5kGyOungw=
+		I61mtCD4AswoGjESR61SoWErdlc=
+		</data>
+		<key>Headers/YDSDKChannelModel.h</key>
+		<data>
+		ncIXw+C1Z+SVJXOuUk62bOyCBW0=
+		</data>
+		<key>Headers/YDSDKConfigModel.h</key>
+		<data>
+		FPIwex6EnEA8d/UgtBYRtSDRehs=
+		</data>
+		<key>Headers/YDSDKConfigRequest.h</key>
+		<data>
+		clT3JljLkAtGG8PbNL3yT8jMp/Q=
 		</data>
 		<key>Headers/YDSDKError.h</key>
 		<data>
 		zkLWDPXhbWo+8HK3Vs+Wk6o+j1g=
 		</data>
+		<key>Headers/YDSDKListRequest.h</key>
+		<data>
+		0BXb/w18ByxPMJeK9cQjPNM/w20=
+		</data>
 		<key>Headers/YDSDKManager.h</key>
 		<data>
-		/+9BboxpuFE994PCYaXTWfK/4Wc=
+		OKTB6M9TckspROoSN7bChLJw5K8=
 		</data>
 		<key>Headers/YDSDKModel.h</key>
 		<data>
-		Vi+v/6WBwq45H+hdNg6i6jxPtr4=
+		gbuI0CRiHHqHRUnQ9kDwPXiuJNg=
 		</data>
 		<key>Headers/YDSDKRequest.h</key>
 		<data>
-		1RvEE7MoAevR96PQ/dCx7K2YtS8=
+		+eSCLF4OVEVaSR5J9H4tQup3b+0=
 		</data>
 		<key>Headers/YueduFMSDK.h</key>
 		<data>
-		zJTbakJCpWNYb+TV0vjQLnBCLhY=
+		tEiwIDHvSu9ZeKuD6vwPQCZzH+A=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

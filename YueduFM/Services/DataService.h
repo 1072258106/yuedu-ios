@@ -11,7 +11,7 @@
 
 @interface ServiceCenter (DataService)
 
-+ (PPSqliteORMManager* )dataManager;
+- (PPSqliteORMManager* )dataManager;
 
 @end
 

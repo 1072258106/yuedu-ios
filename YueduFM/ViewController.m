@@ -19,9 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [__serviceCenter articleFetch:801 completion:^(YDSDKArticleModel *model, NSError *error) {
-        NSLog(@"article:%@", model);
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

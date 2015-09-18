@@ -11,7 +11,8 @@
 
 @interface ServiceCenter (ArticleService)
 
-- (void)articleFetch:(NSInteger)articleId completion:(void(^)(YDSDKArticleModel* model, NSError* error))completion;
+- (void)articleFetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion;
+- (void)articleFetchLatest:(void(^)(NSArray* array, NSError* error))completion;
 
 @end
 
