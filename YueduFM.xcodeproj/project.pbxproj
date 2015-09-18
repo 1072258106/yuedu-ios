@@ -11,10 +11,16 @@
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
 		E4D522AF1BAC8BA7002164AA /* YDSDKModel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522AE1BAC8BA7002164AA /* YDSDKModel+Extension.m */; };
+		E4D522D21BACA07B002164AA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522D11BACA07B002164AA /* BaseViewController.m */; };
+		E4D522D61BACA0B0002164AA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522D41BACA0B0002164AA /* MainViewController.m */; };
+		E4D522D71BACA0B0002164AA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4D522D51BACA0B0002164AA /* MainViewController.xib */; };
+		E4D522DB1BACA1D5002164AA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522D91BACA1D5002164AA /* MenuViewController.m */; };
+		E4D522DC1BACA1D5002164AA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4D522DA1BACA1D5002164AA /* MenuViewController.xib */; };
+		E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522DF1BACA27A002164AA /* RECommonFunctions.m */; };
+		E4D522E51BACA27A002164AA /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522E11BACA27A002164AA /* RESideMenu.m */; };
+		E4D522E61BACA27A002164AA /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522E31BACA27A002164AA /* UIViewController+RESideMenu.m */; };
 		E4DD91711BA9D8A10045F222 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91701BA9D8A10045F222 /* main.m */; };
 		E4DD91741BA9D8A10045F222 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91731BA9D8A10045F222 /* AppDelegate.m */; };
-		E4DD91771BA9D8A10045F222 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91761BA9D8A10045F222 /* ViewController.m */; };
-		E4DD917A1BA9D8A10045F222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DD91781BA9D8A10045F222 /* Main.storyboard */; };
 		E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DD917B1BA9D8A20045F222 /* Images.xcassets */; };
 		E4DD917F1BA9D8A20045F222 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4DD917D1BA9D8A20045F222 /* LaunchScreen.xib */; };
 		E4DD918B1BA9D8A20045F222 /* YueduFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD918A1BA9D8A20045F222 /* YueduFMTests.m */; };
@@ -105,14 +111,25 @@
 		E4D522AE1BAC8BA7002164AA /* YDSDKModel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YDSDKModel+Extension.m"; sourceTree = "<group>"; };
 		E4D522B01BAC8BB4002164AA /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		E4D522B11BAC8BD7002164AA /* Foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
+		E4D522D01BACA07B002164AA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E4D522D11BACA07B002164AA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E4D522D31BACA0B0002164AA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E4D522D41BACA0B0002164AA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E4D522D51BACA0B0002164AA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		E4D522D81BACA1D5002164AA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		E4D522D91BACA1D5002164AA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		E4D522DA1BACA1D5002164AA /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		E4D522DE1BACA27A002164AA /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		E4D522DF1BACA27A002164AA /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		E4D522E01BACA27A002164AA /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		E4D522E11BACA27A002164AA /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		E4D522E21BACA27A002164AA /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		E4D522E31BACA27A002164AA /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		E4DD916B1BA9D8A10045F222 /* YueduFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YueduFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DD916F1BA9D8A10045F222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DD91701BA9D8A10045F222 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4DD91721BA9D8A10045F222 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YueduFM/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		E4DD91731BA9D8A10045F222 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YueduFM/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		E4DD91751BA9D8A10045F222 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4DD91761BA9D8A10045F222 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E4DD91791BA9D8A10045F222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4DD917B1BA9D8A20045F222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4DD917E1BA9D8A20045F222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E4DD91841BA9D8A20045F222 /* YueduFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YueduFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +278,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E4D522DD1BACA27A002164AA /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E4D522DE1BACA27A002164AA /* RECommonFunctions.h */,
+				E4D522DF1BACA27A002164AA /* RECommonFunctions.m */,
+				E4D522E01BACA27A002164AA /* RESideMenu.h */,
+				E4D522E11BACA27A002164AA /* RESideMenu.m */,
+				E4D522E21BACA27A002164AA /* UIViewController+RESideMenu.h */,
+				E4D522E31BACA27A002164AA /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
 		E4DD91621BA9D8A10045F222 = {
 			isa = PBXGroup;
 			children = (
@@ -292,9 +322,6 @@
 				E4DD91951BA9D8D80045F222 /* Controllers */,
 				E4DD91941BA9D8C30045F222 /* Vendors */,
 				E4DD919A1BA9D9300045F222 /* Views */,
-				E4DD91751BA9D8A10045F222 /* ViewController.h */,
-				E4DD91761BA9D8A10045F222 /* ViewController.m */,
-				E4DD91781BA9D8A10045F222 /* Main.storyboard */,
 				E4DD917B1BA9D8A20045F222 /* Images.xcassets */,
 				E4DD917D1BA9D8A20045F222 /* LaunchScreen.xib */,
 				E4DD916E1BA9D8A10045F222 /* Supporting Files */,
@@ -333,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4D522DD1BACA27A002164AA /* RESideMenu */,
 				E4D5227D1BAC8802002164AA /* BlocksKit */,
 				E4DD91DA1BA9E08F0045F222 /* JSONKit */,
 				E4DD91C91BA9DF4B0045F222 /* fmdb */,
@@ -345,6 +373,14 @@
 		E4DD91951BA9D8D80045F222 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4D522D01BACA07B002164AA /* BaseViewController.h */,
+				E4D522D11BACA07B002164AA /* BaseViewController.m */,
+				E4D522D31BACA0B0002164AA /* MainViewController.h */,
+				E4D522D41BACA0B0002164AA /* MainViewController.m */,
+				E4D522D51BACA0B0002164AA /* MainViewController.xib */,
+				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
+				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
+				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -535,9 +571,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DD917A1BA9D8A10045F222 /* Main.storyboard in Resources */,
 				E4DD917F1BA9D8A20045F222 /* LaunchScreen.xib in Resources */,
+				E4D522D71BACA0B0002164AA /* MainViewController.xib in Resources */,
 				E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */,
+				E4D522DC1BACA1D5002164AA /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +592,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D522E51BACA27A002164AA /* RESideMenu.m in Sources */,
 				E4DD91C81BA9DD5A0045F222 /* ArticleService.m in Sources */,
+				E4D522DB1BACA1D5002164AA /* MenuViewController.m in Sources */,
 				E4DD91C11BA9DC4C0045F222 /* PPSqliteORMManager.m in Sources */,
 				E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */,
 				E4DD91D71BA9DF4B0045F222 /* FMDatabasePool.m in Sources */,
@@ -566,12 +605,14 @@
 				E4DD91D61BA9DF4B0045F222 /* FMDatabaseAdditions.m in Sources */,
 				E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */,
 				E4DD91C21BA9DC4C0045F222 /* PPSqliteORMSQL.m in Sources */,
+				E4D522D21BACA07B002164AA /* BaseViewController.m in Sources */,
 				E4DD91D91BA9DF4B0045F222 /* FMResultSet.m in Sources */,
 				E4DD91BE1BA9DC4C0045F222 /* NSObject+PPSqliteORM.m in Sources */,
 				E4D522AF1BAC8BA7002164AA /* YDSDKModel+Extension.m in Sources */,
-				E4DD91771BA9D8A10045F222 /* ViewController.m in Sources */,
+				E4D522E61BACA27A002164AA /* UIViewController+RESideMenu.m in Sources */,
 				E4DD91C51BA9DC770045F222 /* DataService.m in Sources */,
 				E4DD91741BA9D8A10045F222 /* AppDelegate.m in Sources */,
+				E4D522D61BACA0B0002164AA /* MainViewController.m in Sources */,
 				E4DD91BA1BA9DC4C0045F222 /* NSArray+SQL.m in Sources */,
 				E4DD91BD1BA9DC4C0045F222 /* NSNumber+SQL.m in Sources */,
 				E4DD91711BA9D8A10045F222 /* main.m in Sources */,
@@ -580,6 +621,7 @@
 				E4DD91BC1BA9DC4C0045F222 /* NSDictionary+SQL.m in Sources */,
 				E4DD91C01BA9DC4C0045F222 /* PPSqliteORMError.m in Sources */,
 				E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */,
+				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,14 +644,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E4DD91781BA9D8A10045F222 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4DD91791BA9D8A10045F222 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4DD917D1BA9D8A20045F222 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -716,6 +750,7 @@
 					"$(SRCROOT)/YueduFM/Vendors/BlocksKit/include",
 				);
 				INFOPLIST_FILE = YueduFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -742,6 +777,7 @@
 					"$(SRCROOT)/YueduFM/Vendors/BlocksKit/include",
 				);
 				INFOPLIST_FILE = YueduFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
