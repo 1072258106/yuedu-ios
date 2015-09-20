@@ -117,6 +117,8 @@ static char DZNWebViewControllerKVOContext = 0;
     [super viewWillDisappear:animated];
     
     self.toolbar.hidden = YES;
+    self.navigationController.hidesBarsOnSwipe = NO;
+
     [self clearProgressViewAnimated:animated];
 }
 
@@ -520,7 +522,6 @@ static char DZNWebViewControllerKVOContext = 0;
     self.navigationBarSuperView = self.navigationBar.superview;
     
     self.navigationController.hidesBarsOnSwipe = self.hideBarsWithGestures;
-    //    self.navigationController.hidesBarsWhenKeyboardAppears = self.hideBarsWithGestures;
     self.navigationController.hidesBarsWhenVerticallyCompact = self.hideBarsWithGestures;
     
     if (self.hideBarsWithGestures) {
