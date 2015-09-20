@@ -23,11 +23,11 @@
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
     nvc.navigationBar.translucent = YES;
-    nvc.navigationBar.barTintColor = RGBHex(@"#00BDEE");
+    nvc.navigationBar.barTintColor = kThemeColor;
     nvc.navigationBar.tintColor = [UIColor whiteColor];//RGBHex(@"#00BDEE");
     [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    [[UIBarButtonItem appearance] setTintColor:RGBHex(@"#00BDEE")];
+    [[UIBarButtonItem appearance] setTintColor:kThemeColor];
     
     nvc.navigationBar.barStyle = UIBarStyleBlack;
     

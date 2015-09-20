@@ -1,5 +1,5 @@
 //
-//  ArticleTableViewCell.h
+//  PlayerBar.h
 //  YueduFM
 //
 //  Created by StarNet on 9/20/15.
@@ -8,21 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticleTableViewCell : UITableViewCell
+@interface PlayerBar : UIView
 
-@property (nonatomic, weak) UITableView* tableView;
+@property (nonatomic, retain) IBOutlet UIImageView* imageView;
 
-@property (nonatomic, retain) IBOutlet UIImageView* pictureView;
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel* authorLabel;
 @property (nonatomic, retain) IBOutlet UILabel* speakerLabel;
 @property (nonatomic, retain) IBOutlet UILabel* durationLabel;
-@property (nonatomic, retain) IBOutlet TTTAttributedLabel* detailLabel;
 
 @property (nonatomic, retain) IBOutlet UIButton* playButton;
 
-@property (nonatomic, strong) YDSDKArticleModel* model;
-
+@property (nonatomic, retain) IBOutlet UIButton* actionButton;
 
 @property (nonatomic, assign) BOOL playing;
 

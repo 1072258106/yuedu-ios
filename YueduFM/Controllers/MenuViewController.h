@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface MenuViewController : BaseViewController
+@interface MenuViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UIImageView* headerView;
+
+@property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

@@ -24,9 +24,9 @@
     
     NSString* str = nil;
     if (h) {
-        str = [NSString stringWithFormat:@"%d:%2d:%2d", h, m, s];
+        str = [NSString stringWithFormat:@"%d:%02d:%02d", h, m, s];
     } else {
-        str = [NSString stringWithFormat:@"%d:%2d", m, s];
+        str = [NSString stringWithFormat:@"%d:%02d", m, s];
     }
     return str;
 }

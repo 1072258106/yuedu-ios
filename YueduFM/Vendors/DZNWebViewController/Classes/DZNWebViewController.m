@@ -116,13 +116,13 @@ static char DZNWebViewControllerKVOContext = 0;
 {
     [super viewWillDisappear:animated];
     
+    self.toolbar.hidden = YES;
     [self clearProgressViewAnimated:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.toolbar.hidden = YES;
     [self.webView stopLoading];
 }
 

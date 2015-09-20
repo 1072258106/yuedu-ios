@@ -90,6 +90,19 @@
 		E431FD5F1BAE82B400898B8F /* PlayerService.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD5E1BAE82B400898B8F /* PlayerService.m */; };
 		E431FD621BAEB40400898B8F /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD611BAEB40400898B8F /* UIImage+Extension.m */; };
 		E431FD641BAEBAA800898B8F /* nav_icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD631BAEBAA800898B8F /* nav_icon_search@2x.png */; };
+		E431FD671BAEC27900898B8F /* PlayerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD661BAEC27900898B8F /* PlayerBar.m */; };
+		E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E431FD681BAEC29900898B8F /* PlayerBar.xib */; };
+		E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD6B1BAEC3ED00898B8F /* UIView+Extension.m */; };
+		E431FD701BAED75D00898B8F /* icon_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD6E1BAED75D00898B8F /* icon_next@2x.png */; };
+		E431FD711BAED75D00898B8F /* icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD6F1BAED75D00898B8F /* icon_download@2x.png */; };
+		E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD791BAEDAF000898B8F /* WebViewController.m */; };
+		E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E431FD7E1BAEED6500898B8F /* Accelerate.framework */; };
+		E431FD811BAEEF9300898B8F /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD801BAEEF9300898B8F /* bg_menu.png */; };
+		E431FD831BAF0D2600898B8F /* icon_accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */; };
+		E431FD851BAF0E7900898B8F /* menu_icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD841BAF0E7900898B8F /* menu_icon_settings@2x.png */; };
+		E431FD871BAF151900898B8F /* menu_icon_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD861BAF151900898B8F /* menu_icon_history@2x.png */; };
+		E431FD891BAF161D00898B8F /* menu_icon_favor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD881BAF161D00898B8F /* menu_icon_favor@2x.png */; };
+		E431FD8B1BAF1BD000898B8F /* menu_icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD8A1BAF1BD000898B8F /* menu_icon_download@2x.png */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
@@ -278,6 +291,24 @@
 		E431FD601BAEB40400898B8F /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		E431FD611BAEB40400898B8F /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		E431FD631BAEBAA800898B8F /* nav_icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_icon_search@2x.png"; sourceTree = "<group>"; };
+		E431FD651BAEC27900898B8F /* PlayerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBar.h; sourceTree = "<group>"; };
+		E431FD661BAEC27900898B8F /* PlayerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBar.m; sourceTree = "<group>"; };
+		E431FD681BAEC29900898B8F /* PlayerBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerBar.xib; sourceTree = "<group>"; };
+		E431FD6A1BAEC3ED00898B8F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		E431FD6B1BAEC3ED00898B8F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		E431FD6D1BAEC4AC00898B8F /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		E431FD6E1BAED75D00898B8F /* icon_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_next@2x.png"; sourceTree = "<group>"; };
+		E431FD6F1BAED75D00898B8F /* icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@2x.png"; sourceTree = "<group>"; };
+		E431FD781BAEDAF000898B8F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		E431FD791BAEDAF000898B8F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		E431FD7B1BAEDB7800898B8F /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		E431FD7E1BAEED6500898B8F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E431FD801BAEEF9300898B8F /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
+		E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_accessory@2x.png"; sourceTree = "<group>"; };
+		E431FD841BAF0E7900898B8F /* menu_icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon_settings@2x.png"; sourceTree = "<group>"; };
+		E431FD861BAF151900898B8F /* menu_icon_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon_history@2x.png"; sourceTree = "<group>"; };
+		E431FD881BAF161D00898B8F /* menu_icon_favor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon_favor@2x.png"; sourceTree = "<group>"; };
+		E431FD8A1BAF1BD000898B8F /* menu_icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon_download@2x.png"; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
 		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
 		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
@@ -408,6 +439,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */,
 				E431FB291BADEF5400898B8F /* WebKit.framework in Frameworks */,
 				E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */,
 				E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */,
@@ -677,6 +709,7 @@
 		E4DD91621BA9D8A10045F222 = {
 			isa = PBXGroup;
 			children = (
+				E431FD7E1BAEED6500898B8F /* Accelerate.framework */,
 				E431FB281BADEF5400898B8F /* WebKit.framework */,
 				E4DD91E51BA9E1D20045F222 /* libxml2.dylib */,
 				E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */,
@@ -761,6 +794,7 @@
 		E4DD91951BA9D8D80045F222 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E431FD7B1BAEDB7800898B8F /* Controller.h */,
 				E4D522D01BACA07B002164AA /* BaseViewController.h */,
 				E4D522D11BACA07B002164AA /* BaseViewController.m */,
 				E4D522D31BACA0B0002164AA /* MainViewController.h */,
@@ -769,6 +803,8 @@
 				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
 				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
+				E431FD781BAEDAF000898B8F /* WebViewController.h */,
+				E431FD791BAEDAF000898B8F /* WebViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -797,6 +833,14 @@
 		E4DD91981BA9D9140045F222 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E431FD8A1BAF1BD000898B8F /* menu_icon_download@2x.png */,
+				E431FD881BAF161D00898B8F /* menu_icon_favor@2x.png */,
+				E431FD861BAF151900898B8F /* menu_icon_history@2x.png */,
+				E431FD841BAF0E7900898B8F /* menu_icon_settings@2x.png */,
+				E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */,
+				E431FD6E1BAED75D00898B8F /* icon_next@2x.png */,
+				E431FD801BAEEF9300898B8F /* bg_menu.png */,
+				E431FD6F1BAED75D00898B8F /* icon_download@2x.png */,
 				E431FD5B1BAE80B900898B8F /* icon_pause@2x.png */,
 				E431FD561BAE015300898B8F /* icon_play@2x.png */,
 				E431FADE1BADE73800898B8F /* icon_headset@2x.png */,
@@ -837,6 +881,12 @@
 				E431FA951BADCA2600898B8F /* ArticleTableViewCell.h */,
 				E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */,
 				E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */,
+				E431FD651BAEC27900898B8F /* PlayerBar.h */,
+				E431FD661BAEC27900898B8F /* PlayerBar.m */,
+				E431FD681BAEC29900898B8F /* PlayerBar.xib */,
+				E431FD6A1BAEC3ED00898B8F /* UIView+Extension.h */,
+				E431FD6B1BAEC3ED00898B8F /* UIView+Extension.m */,
+				E431FD6D1BAEC4AC00898B8F /* View.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -953,6 +1003,11 @@
 				TargetAttributes = {
 					E4DD916A1BA9D8A10045F222 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					E4DD91831BA9D8A20045F222 = {
 						CreatedOnToolsVersion = 6.4;
@@ -992,28 +1047,37 @@
 				E431FD5C1BAE80B900898B8F /* icon_pause@2x.png in Resources */,
 				E431FD571BAE015300898B8F /* icon_play@2x.png in Resources */,
 				E431FD121BADF4FD00898B8F /* dzn_icn_toolbar_stop@3x.png in Resources */,
+				E431FD701BAED75D00898B8F /* icon_next@2x.png in Resources */,
 				E431FD091BADF4FD00898B8F /* dzn_icn_toolbar_backward@3x.png in Resources */,
 				E431FCFA1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x.png in Resources */,
 				E431FD0B1BADF4FD00898B8F /* dzn_icn_toolbar_forward@2x.png in Resources */,
 				E4DD917F1BA9D8A20045F222 /* LaunchScreen.xib in Resources */,
+				E431FD831BAF0D2600898B8F /* icon_accessory@2x.png in Resources */,
+				E431FD711BAED75D00898B8F /* icon_download@2x.png in Resources */,
 				E431FCFE1BADF4FD00898B8F /* dzn_icn_activity_link@2x.png in Resources */,
 				E431FD0C1BADF4FD00898B8F /* dzn_icn_toolbar_forward@3x.png in Resources */,
 				E431FD081BADF4FD00898B8F /* dzn_icn_toolbar_backward@2x.png in Resources */,
+				E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */,
 				E431FD111BADF4FD00898B8F /* dzn_icn_toolbar_stop@2x.png in Resources */,
+				E431FD811BAEEF9300898B8F /* bg_menu.png in Resources */,
 				E431FCFF1BADF4FD00898B8F /* dzn_icn_activity_link@2x~ipad.png in Resources */,
 				E431FD031BADF4FD00898B8F /* dzn_icn_activity_safari@2x~ipad.png in Resources */,
 				E431FA9B1BADCF0C00898B8F /* icon_author@2x.png in Resources */,
 				E431FD011BADF4FD00898B8F /* dzn_icn_activity_opera@2x~ipad.png in Resources */,
+				E431FD8B1BAF1BD000898B8F /* menu_icon_download@2x.png in Resources */,
 				E431FD071BADF4FD00898B8F /* dzn_icn_toolbar_backward.png in Resources */,
 				E431FD101BADF4FD00898B8F /* dzn_icn_toolbar_stop.png in Resources */,
 				E4D522D71BACA0B0002164AA /* MainViewController.xib in Resources */,
 				E431FCFD1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x~ipad.png in Resources */,
 				E431FCF91BADF4FD00898B8F /* DZNWebViewController.strings in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
+				E431FD891BAF161D00898B8F /* menu_icon_favor@2x.png in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E431FADF1BADE73800898B8F /* icon_headset@2x.png in Resources */,
+				E431FD851BAF0E7900898B8F /* menu_icon_settings@2x.png in Resources */,
 				E431FCFB1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x~ipad.png in Resources */,
 				E431FCFC1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x.png in Resources */,
+				E431FD871BAF151900898B8F /* menu_icon_history@2x.png in Resources */,
 				E431FAD71BADDB2D00898B8F /* LICENSE in Resources */,
 				E431FD0D1BADF4FD00898B8F /* dzn_icn_toolbar_reload.png in Resources */,
 				E431FD0A1BADF4FD00898B8F /* dzn_icn_toolbar_forward.png in Resources */,
@@ -1043,6 +1107,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E431FD671BAEC27900898B8F /* PlayerBar.m in Sources */,
 				E431FACB1BADD1D800898B8F /* UIImageView+HighlightedWebCache.m in Sources */,
 				E4D522E51BACA27A002164AA /* RESideMenu.m in Sources */,
 				E431FD531BAE001800898B8F /* DOUMPMediaLibraryAssetLoader.m in Sources */,
@@ -1053,6 +1118,7 @@
 				E4DD91C11BA9DC4C0045F222 /* PPSqliteORMManager.m in Sources */,
 				E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */,
 				E431FACC1BADD1D800898B8F /* UIImageView+WebCache.m in Sources */,
+				E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */,
 				E4DD91D71BA9DF4B0045F222 /* FMDatabasePool.m in Sources */,
 				E4DD91A11BA9DB6A0045F222 /* ServiceCenter.m in Sources */,
 				E431FCF71BADF4FD00898B8F /* DZNWebView.m in Sources */,
@@ -1117,6 +1183,7 @@
 				E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */,
 				E431FD491BAE001800898B8F /* DOUAudioFileProvider.m in Sources */,
 				E431FD5F1BAE82B400898B8F /* PlayerService.m in Sources */,
+				E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */,
 				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,
 				E431FAC01BADD1D800898B8F /* SDImageCache.m in Sources */,
 				E431FD441BAE001800898B8F /* DOUAudioAnalyzer+Default.m in Sources */,

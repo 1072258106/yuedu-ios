@@ -19,15 +19,14 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         if (self.playing) {
-            [__serviceCenter.audioStreamer stop];
+            [__serviceCenter articleStop];
         } else {
-            [__serviceCenter playerPlay:self.model.audioURL.url statusChanged:^(DOUAudioStreamerStatus status) {
+            [__serviceCenter articlePlay:self.model statusChanged:^(DOUAudioStreamerStatus status) {
                 
             }];
         }
         self.playing = !self.playing;
     } forControlEvents:UIControlEventTouchUpInside];
-
 }
 
 - (void)dealloc {
@@ -44,7 +43,6 @@
     self.authorLabel.text = model.author;
     self.speakerLabel.text = model.speaker;
     self.durationLabel.text = [NSString stringWithSeconds:model.duration];
-    self.countLabel.text = [NSString stringWithFormat:@"%d次", model.playCount];
     self.detailLabel.text = model.abstract;
     
     if (__serviceCenter.audioStreamer.status == DOUAudioStreamerBuffering

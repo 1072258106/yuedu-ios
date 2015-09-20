@@ -8,9 +8,11 @@
 
 #import "MainViewController.h"
 #import "ArticleTableViewCell.h"
+#import "PlayerBar.h"
 
 @interface MainViewController () {
-    NSArray* _tableData;
+    NSArray*    _tableData;
+    PlayerBar*  _playerBar;
 }
 
 @end
@@ -40,6 +42,15 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [__serviceCenter articleFetchLatest:^(NSArray *array, NSError *error) {
         [self reloadData:array];
     }];
+    
+    _playerBar = [PlayerBar viewWithNibName:@"PlayerBar"];
+    _playerBar.top = self.view.height-_playerBar.height;
+    _playerBar.width = self.view.width;
+    _playerBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+    [_playerBar.actionButton bk_addEventHandler:^(id sender) {
+        [self.navigationController pushViewController:[WebViewController controllerWithURL:__serviceCenter.currentArticleModel.url.url] animated:YES];
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_playerBar];
 }
 
 - (void)reloadData:(NSArray*)data {
@@ -74,15 +85,8 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     YDSDKArticleModel* model = _tableData[indexPath.row];
-    
-    DZNWebViewController* wvc = [[DZNWebViewController alloc] initWithURL:model.url.url];
-    wvc.supportedWebNavigationTools = DZNWebNavigationToolAll;
-    wvc.supportedWebActions = DZNWebActionAll;
-    wvc.showLoadingProgress = YES;
-    wvc.allowHistory = YES;
-    wvc.hideBarsWithGestures = YES;
-
-    [self.navigationController pushViewController:wvc animated:YES];
+    WebViewController* vc = [WebViewController controllerWithURL:model.url.url];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

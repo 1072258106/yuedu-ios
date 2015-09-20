@@ -35,3 +35,5 @@
 //格式: FF00FF, 0xFF00FF, #FF00FF
 #define RGBHex(RGB) [UIColor colorWithHexString:RGB]
 
+
+#define kThemeColor RGBHex(@"#00BDEE")

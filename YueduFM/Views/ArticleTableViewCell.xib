@@ -80,8 +80,10 @@
             <connections>
                 <outlet property="authorLabel" destination="hNN-Ah-p02" id="3yl-UA-p4d"/>
                 <outlet property="detailLabel" destination="idP-6q-R6i" id="qax-3Z-G3T"/>
+                <outlet property="durationLabel" destination="ItS-ZT-Uq0" id="SCh-l0-mU3"/>
                 <outlet property="pictureView" destination="ekf-t3-00I" id="a9v-HK-UeN"/>
                 <outlet property="playButton" destination="xLr-OA-AK9" id="vX9-mQ-MeG"/>
+                <outlet property="speakerLabel" destination="JhK-d8-jCU" id="b0j-74-l0t"/>
                 <outlet property="titleLabel" destination="XZ9-pr-u10" id="hIe-YE-8pn"/>
             </connections>
             <point key="canvasLocation" x="234" y="348"/>
@@ -90,7 +92,7 @@
     <resources>
         <image name="icon_author.png" width="64" height="64"/>
         <image name="icon_duration.png" width="64" height="64"/>
-        <image name="icon_pause.png" width="64" height="64"/>
+        <image name="icon_pause.png" width="32" height="32"/>
         <image name="icon_play.png" width="32" height="32"/>
         <image name="icon_speaker.png" width="33" height="63"/>
     </resources>
