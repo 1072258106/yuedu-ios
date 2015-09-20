@@ -11,3 +11,4 @@
 #import "ConfigService.h"
 #import "ChannelService.h"
 #import "ArticleService.h"
+#import "PlayerService.h"

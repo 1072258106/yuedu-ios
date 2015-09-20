@@ -7,31 +7,82 @@
 //
 
 #import "MainViewController.h"
+#import "ArticleTableViewCell.h"
 
-@interface MainViewController ()
+@interface MainViewController () {
+    NSArray* _tableData;
+}
 
 @end
+
+static NSString* const kCellIdentifier = @"kCellIdentifier";
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"悦读FM";
+
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_icon_menu.png"] action:^{
+        [self presentLeftMenuViewController:nil];
+    }];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_icon_search.png"] action:^{
+        NSLog(@"11111");
+    }];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 100;
+    
+    [__serviceCenter articleFetchLatest:^(NSArray *array, NSError *error) {
+        [self reloadData:array];
+    }];
+}
+
+- (void)reloadData:(NSArray*)data {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _tableData = [NSArray arrayWithArray:data];
+        [self.tableView reloadData];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_tableData count];
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ArticleTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    cell.tableView = tableView;
+    
+    YDSDKArticleModel* model = _tableData[indexPath.row];
+    
+    cell.model = model;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    YDSDKArticleModel* model = _tableData[indexPath.row];
+    
+    DZNWebViewController* wvc = [[DZNWebViewController alloc] initWithURL:model.url.url];
+    wvc.supportedWebNavigationTools = DZNWebNavigationToolAll;
+    wvc.supportedWebActions = DZNWebActionAll;
+    wvc.showLoadingProgress = YES;
+    wvc.allowHistory = YES;
+    wvc.hideBarsWithGestures = YES;
+
+    [self.navigationController pushViewController:wvc animated:YES];
+}
 
 @end

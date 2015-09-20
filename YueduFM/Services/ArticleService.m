@@ -43,7 +43,7 @@
         [serviceCenter.dataManager registerClass:[YDSDKArticleModel class] complete:nil];
         
         [self bk_addObserverForKeyPath:@keypath(serviceCenter.beConfiged) task:^(id target) {
-            [serviceCenter articleFetchLatest:nil];
+//            [serviceCenter articleFetchLatest:nil];
         }];
     }
     return self;

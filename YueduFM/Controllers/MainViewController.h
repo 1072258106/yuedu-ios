@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface MainViewController : BaseViewController
+@interface MainViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

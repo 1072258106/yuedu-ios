@@ -31,3 +31,7 @@
 
 #define keypath(__path) # __path
 
+#define RGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+//格式: FF00FF, 0xFF00FF, #FF00FF
+#define RGBHex(RGB) [UIColor colorWithHexString:RGB]
+

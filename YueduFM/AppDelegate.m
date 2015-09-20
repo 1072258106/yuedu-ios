@@ -22,6 +22,14 @@
     
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
+    nvc.navigationBar.translucent = YES;
+    nvc.navigationBar.barTintColor = RGBHex(@"#00BDEE");
+    nvc.navigationBar.tintColor = [UIColor whiteColor];//RGBHex(@"#00BDEE");
+    [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    [[UIBarButtonItem appearance] setTintColor:RGBHex(@"#00BDEE")];
+    
+    nvc.navigationBar.barStyle = UIBarStyleBlack;
     
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
