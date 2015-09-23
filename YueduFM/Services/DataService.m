@@ -8,26 +8,27 @@
 
 #import "DataService.h"
 
-@implementation ServiceCenter (DataService)
+@implementation BaseService (DataService)
 
 - (PPSqliteORMManager* )dataManager {
-    static PPSqliteORMManager* manager;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [[PPSqliteORMManager alloc] initWithDBFilename:@"database.sqlite"];
-    });
-    
-    return manager;
+    return [SRV(DataService) manager];
 }
 
 @end
 
 @implementation DataService
+
++ (ServiceLevel)level {
+    return ServiceLevelHigh;
+}
+
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter
 {
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
+        _manager = [[PPSqliteORMManager alloc] initWithDBFilename:@"db.sqlite"];
     }
     return self;
 }
+
 @end

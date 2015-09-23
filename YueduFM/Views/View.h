@@ -7,3 +7,4 @@
 //
 
 #import "UIView+Extension.h"
+#import "RhythmView.h"

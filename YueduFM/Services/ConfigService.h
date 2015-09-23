@@ -7,19 +7,14 @@
 //
 
 #import "BaseService.h"
-#import <YueduFMSDK/YueduFMSDK.h>
-
-@interface ServiceCenter (ConfigService)
-
-@property (nonatomic, assign) BOOL beConfiged;
-
-- (YDSDKManager* )netManager;
-
-- (void)configFetch:(void(^)(NSError* error))completion;
-
-@end
+#import "YDSDKConfigModelEx.h"
 
 @interface ConfigService : BaseService
 
+@property (nonatomic, strong) YDSDKConfigModelEx* config;
+
+@property (nonatomic, assign) BOOL isConfiged;
+
+- (void)fetch:(void(^)(NSError* error))completion;
 
 @end

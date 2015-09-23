@@ -11,8 +11,11 @@
 
 @implementation BaseService
 
-+ (NSArray *) allSubclasses
-{
++ (ServiceLevel)level {
+    return ServiceLevelLow;
+}
+
++ (NSArray *) allSubclasses {
     static NSMutableArray *mySubclasses;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -35,8 +38,7 @@
     return mySubclasses;
 }
 
-- (id)initWithServiceCenter:(ServiceCenter*)serviceCenter
-{
+- (id)initWithServiceCenter:(ServiceCenter*)serviceCenter {
     self = [super init];
     if (self) {
         self.serviceCenter = serviceCenter;

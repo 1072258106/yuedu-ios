@@ -21,6 +21,8 @@
 
 @property (nonatomic, retain) IBOutlet UIButton* actionButton;
 
+@property (nonatomic, retain) IBOutlet UIButton* moreButton;
+
 @property (nonatomic, assign) BOOL playing;
 
 @end

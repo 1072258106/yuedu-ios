@@ -7,22 +7,15 @@
 //
 
 #import "BaseService.h"
-#import <YueduFMSDK/YueduFMSDK.h>
-
-@interface ServiceCenter (ArticleService)
-
-@property (nonatomic, strong) YDSDKArticleModel* currentArticleModel;
-
-- (void)articleFetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion;
-- (void)articleFetchLatest:(void(^)(NSArray* array, NSError* error))completion;
-
-- (void)articlePlay:(YDSDKArticleModel* )model statusChanged:(void(^)(DOUAudioStreamerStatus status))statusChanged;
-
-- (void)articlePause;
-
-- (void)articleStop;
-@end
 
 @interface ArticleService : BaseService
+
+@property (nonatomic, strong) YDSDKArticleModel* activeArticleModel;
+
+- (void)fetchLatest:(void(^)(NSError* error))completion;
+
+- (void)list:(int)count
+     channel:(int)channel
+  completion:(void (^)(NSArray* array))completion;
 
 @end

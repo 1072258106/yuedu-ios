@@ -7,70 +7,94 @@
 //
 
 #import "ArticleService.h"
-
-
-@implementation ServiceCenter (ArticleService)
-
-CATEGORY_PROPERTY_GET_SET(YDSDKArticleModel*, currentArticleModel, setCurrentArticleModel:)
-
-- (void)articleFetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion {
-    YDSDKArticleListRequest* req = [YDSDKArticleListRequest request];
-    req.articleId = articleId;
-    [self.netManager request:req completion:^(YDSDKRequest *request, YDSDKError *error) {
-        if (!error) {
-            self.currentArticleModel = [req.modelArray firstObject];
-            [self.dataManager writeObjects:req.modelArray complete:^(BOOL successed, id result) {
-                
-            }];
-        }
-        
-        if (completion) {
-            completion(req.modelArray, error);
-        }
-    }];
-}
-
-- (void)articleFetchLatest:(void(^)(NSArray* array, NSError* error))completion {
-    [self configFetch:^(NSError* error) {
-        [self articleFetch:0 completion:completion];
-    }];
-}
-
-- (void)articlePlay:(YDSDKArticleModel* )model statusChanged:(void(^)(DOUAudioStreamerStatus status))statusChanged {
-    self.audioStreamer = [[DOUAudioStreamer alloc] initWithAudioFile:model.audioURL.url];
-    
-    [self.audioStreamer bk_removeAllBlockObservers];
-    [self.audioStreamer bk_addObserverForKeyPath:@"status" task:^(id target) {
-        if (statusChanged) {
-            statusChanged(self.audioStreamer.status);
-        }
-    }];
-    
-    [self.audioStreamer play];
-    self.currentArticleModel = model;
-}
-
-- (void)articlePause {
-    [self.audioStreamer pause];
-}
-
-- (void)articleStop {
-    [self.audioStreamer stop];
-}
-
-@end
+#import "YDSDKArticleModelEx.h"
 
 @implementation ArticleService
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter
 {
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
-        [serviceCenter.dataManager registerClass:[YDSDKArticleModel class] complete:nil];
-        
-        [self bk_addObserverForKeyPath:@keypath(serviceCenter.beConfiged) task:^(id target) {
-//            [serviceCenter articleFetchLatest:nil];
-        }];
+        [self.dataManager registerClass:[YDSDKArticleModelEx class] complete:nil];
     }
     return self;
 }
+
+- (void)start {
+    [self autoFetch];
+}
+
+- (void)autoFetch {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d ORDER BY aid DESC LIMIT 0,1", YDSDKModelStateIncomplete] complete:^(BOOL successed, id result) {
+        if (successed && [result count]) {
+            YDSDKArticleModelEx* model = [result firstObject];
+            
+            [self fetch:model.aid completion:^(NSError *error) {
+                [self autoFetch];
+            }];
+        }
+    }];
+}
+
+- (void)checkout:(int)count
+         channel:(int)channel
+      completion:(void(^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d and channel=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, channel, count] complete:^(BOOL successed, id result) {
+        if (!self.activeArticleModel && successed) {
+            self.activeArticleModel = [result firstObject];
+        }
+        if (completion) completion(successed?result:nil);
+     }];
+}
+
+- (void)fetchLatest:(void(^)(NSError* error))completion {
+    [self fetch:0 completion:^(NSError *error) {
+        [self autoFetch];
+        if (completion) {
+            completion(error);
+        }
+    }];
+}
+
+- (void)list:(int)count
+     channel:(int)channel
+  completion:(void (^)(NSArray* array))completion {
+    [self checkout:count channel:channel completion:completion];
+}
+
+- (void)fetch:(int)articleId completion:(void(^)(NSError* error))completion {
+    [SRV(ConfigService) fetch:^(NSError *error) {
+        YDSDKArticleListRequest* req = [YDSDKArticleListRequest request];
+        req.articleId = articleId;
+        [self.netManager request:req completion:^(YDSDKRequest *request, YDSDKError *error) {
+            if (!error) {
+                self.activeArticleModel = [req.modelArray firstObject];
+                
+                YDSDKArticleModel* cursorModel = [[YDSDKArticleModel alloc] init];
+                cursorModel.aid = articleId;
+                
+                NSMutableArray* data = [NSMutableArray arrayWithArray:req.modelArray];
+                [self.dataManager deleteObject:cursorModel complete:^(BOOL successed, id result) {
+                    void(^writeBlock)(NSArray* array) = ^(NSArray* array){
+                        [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
+                            if (completion) completion(nil);
+                        }];
+                    };
+                    
+                    if (req.next) {
+                        YDSDKArticleModelEx* nextModel = [[YDSDKArticleModelEx alloc] init];
+                        nextModel.aid = req.next;
+                        nextModel.state = YDSDKModelStateIncomplete;
+                        [self.dataManager isExist:nextModel complete:^(BOOL successed, id result) {
+                            if (!successed) [data addObject:nextModel];
+                            writeBlock(data);
+                        }];
+                    } else {
+                        writeBlock(data);
+                    }
+                }];
+            }
+        }];        
+    }];
+}
+
 @end

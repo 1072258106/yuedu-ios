@@ -11,17 +11,23 @@
 
 #define __serviceCenter [ServiceCenter defaultCenter]
 
+#define SRV(__servicename) ((__servicename*)[[ServiceCenter defaultCenter] accessService:[__servicename class]])
+
+@class BaseService;
+
 @interface ServiceCenter : NSObject
 @property (nonatomic, strong) NSString* version;
 
 + (instancetype)defaultCenter;
+
+/** 获取服务 */
+- (BaseService* )accessService:(Class)clazz;
 
 /**
  * 启动服务，用于启动所有的Serivce服务
  *
  */
 - (void)startAllServices;
-
 
 /**
  * 关闭服务，用于关闭所有的Serivce服务
@@ -41,3 +47,5 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation;
 @end
+
+

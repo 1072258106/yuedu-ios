@@ -9,13 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "ServiceCenter.h"
 
+typedef NS_ENUM(NSUInteger, ServiceLevel) {
+    ServiceLevelLow = 0,
+    ServiceLevelMiddle,
+    ServiceLevelHigh,
+};
+
 @interface BaseService : NSObject
 
 @property(nonatomic, strong) ServiceCenter*  serviceCenter;
 
 + (NSArray *) allSubclasses;
 
++ (ServiceLevel)level;
+
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter;
+
 
 - (void)start;
 

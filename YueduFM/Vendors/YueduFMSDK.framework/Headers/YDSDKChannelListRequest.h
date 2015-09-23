@@ -8,11 +8,7 @@
 
 #import <YueduFMSDK/YueduFMSDK.h>
 
-@interface YDSDKChannelListRequest : YDSDKRequest
+@interface YDSDKChannelListRequest : YDSDKListRequest
 
-@property (nonatomic, readonly) NSArray* modelArray;
-
-// 子类继承
-- (Class)modelClass;
 
 @end

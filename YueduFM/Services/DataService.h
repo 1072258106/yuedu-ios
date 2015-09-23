@@ -9,12 +9,14 @@
 #import "BaseService.h"
 #import "PPSqliteORM.h"
 
-@interface ServiceCenter (DataService)
+@interface BaseService (DataService)
 
 - (PPSqliteORMManager* )dataManager;
 
 @end
 
 @interface DataService : BaseService
+
+@property (nonatomic, readonly) PPSqliteORMManager* manager;
 
 @end

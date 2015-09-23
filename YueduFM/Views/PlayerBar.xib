@@ -60,14 +60,14 @@
                     <state key="selected" image="icon_pause.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-OA-eRf">
-                    <rect key="frame" x="241" y="15" width="30" height="30"/>
+                    <rect key="frame" x="232" y="15" width="30" height="30"/>
                     <state key="normal" backgroundImage="icon_next.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-bY-2ln">
-                    <rect key="frame" x="282" y="15" width="30" height="30"/>
-                    <state key="normal" backgroundImage="icon_download.png">
+                    <rect key="frame" x="275" y="15" width="30" height="30"/>
+                    <state key="normal" backgroundImage="icon_more.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -91,6 +91,7 @@
                 <outlet property="actionButton" destination="mq7-QZ-REX" id="oRZ-tg-Llr"/>
                 <outlet property="authorLabel" destination="gSH-wu-Gbz" id="aSg-r7-wBB"/>
                 <outlet property="imageView" destination="Qkq-sY-riK" id="z0P-rH-YIY"/>
+                <outlet property="moreButton" destination="XBW-bY-2ln" id="gUG-eW-bsM"/>
                 <outlet property="playButton" destination="VdL-kG-5sl" id="Flf-FF-fjm"/>
                 <outlet property="speakerLabel" destination="Ge0-VO-TSL" id="njx-4c-mWD"/>
                 <outlet property="titleLabel" destination="X6v-la-WYJ" id="WRJ-ny-b8V"/>
@@ -100,7 +101,7 @@
     </objects>
     <resources>
         <image name="icon_author.png" width="64" height="64"/>
-        <image name="icon_download.png" width="64" height="64"/>
+        <image name="icon_more.png" width="64" height="64"/>
         <image name="icon_next.png" width="64" height="64"/>
         <image name="icon_pause.png" width="32" height="32"/>
         <image name="icon_play.png" width="32" height="32"/>

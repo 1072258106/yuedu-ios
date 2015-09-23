@@ -14,6 +14,23 @@
 }
 @end
 
+NSInteger serviceCompare(id obj1, id obj2, void* context) {
+    Class clazz1 = obj1;
+    Class clazz2 = obj2;
+    
+    ServiceLevel level1 = [clazz1 level];
+    ServiceLevel level2 = [clazz2 level];
+    
+    
+    if (level1 < level2) {
+        return NSOrderedDescending;
+    } else if (level1 == level2) {
+        return NSOrderedSame;
+    } else {
+        return NSOrderedAscending;
+    }
+}
+
 @implementation ServiceCenter
 
 + (instancetype)defaultCenter {
@@ -36,10 +53,15 @@
 
 - (void)setup {
     NSArray* classes = [BaseService allSubclasses];
+    
+    //优先级排序
+    classes = [classes sortedArrayUsingFunction:serviceCompare context:nil];
+    
     for (Class cls in classes) {
         BaseService* service = [[cls alloc] initWithServiceCenter:self];
         [_serviceArray addObject:service];
     }
+    
 }
 
 - (void)teardown {
@@ -62,6 +84,15 @@
     for (BaseService* service in _serviceArray) {
         [service stop];
     }
+}
+
+- (BaseService* )accessService:(Class)clazz {
+    for (BaseService* service in _serviceArray) {
+        if ([service isKindOfClass:clazz]) {
+            return service;
+        }
+    }
+    return nil;
 }
 
 - (BOOL)application:(UIApplication *)application

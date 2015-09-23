@@ -8,14 +8,10 @@
 
 #import "BaseService.h"
 
-@interface ServiceCenter (ChannelService)
-
-@property (nonatomic, strong) NSArray* channelArray;
-
-- (void)channelCheckout:(void(^)(NSError* error))completion;
-- (void)channelFetch:(void(^)(NSError* error))completion;
-@end
-
 @interface ChannelService : BaseService
+
+@property (nonatomic, strong) NSArray* channels;
+
+- (void)fetch:(void(^)(NSError* error))completion;
 
 @end

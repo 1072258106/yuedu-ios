@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [__serviceCenter setup];
+    
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
     nvc.navigationBar.translucent = YES;
@@ -30,14 +32,12 @@
     [[UIBarButtonItem appearance] setTintColor:kThemeColor];
     
     nvc.navigationBar.barStyle = UIBarStyleBlack;
-    
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
     RESideMenu* sideMenu = [[RESideMenu alloc] initWithContentViewController:nvc leftMenuViewController:vc rightMenuViewController:nil];
     self.window.rootViewController = sideMenu;
     [self.window makeKeyAndVisible];
     
-    [__serviceCenter setup];
     return YES;
 }
 
