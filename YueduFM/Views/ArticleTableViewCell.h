@@ -27,4 +27,6 @@
 
 @property (nonatomic, assign) BOOL playing;
 
+@property (nonatomic, assign) BOOL isOpened;
+
 @end

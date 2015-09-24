@@ -22,10 +22,10 @@
     
     self.detailLabel.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
     self.detailLabel.lineSpacing = 2.0f;
-}
-
-- (void)prepareForReuse {
-    [self.rhythmView startAnimating];
+    
+    [self.playButton bk_addEventHandler:^(id sender) {
+        self.playing = !self.playing;
+    } forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)dealloc {
@@ -52,7 +52,6 @@
 
 - (void)setModel:(YDSDKArticleModel *)model {
     [self bk_removeAllBlockObservers];
-    
     _model = model;
     
     [self.pictureView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:self.colors[arc4random()%kColorCount]]];
@@ -61,6 +60,7 @@
     self.speakerLabel.text = model.speaker;
     self.durationLabel.text = [NSString stringWithSeconds:model.duration];
     self.detailLabel.text = model.abstract;
+    self.playing = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -71,6 +71,11 @@
 
 - (void)setPlaying:(BOOL)playing {
     _playing = playing;
+    if (_playing) {
+        [self.rhythmView startAnimating];
+    } else {
+        [self.rhythmView stopAnimating];
+    }
 }
 
 @end

@@ -25,6 +25,7 @@
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(x, self.height-height/2, kRhythmBarWidth, height)];
     view.backgroundColor = [UIColor whiteColor];
     view.hidden = YES;
+    view.layer.cornerRadius = kRhythmBarWidth/2;
     [self addSubview:view];
     return view;
 }

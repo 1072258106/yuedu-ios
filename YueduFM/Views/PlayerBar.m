@@ -22,13 +22,37 @@
 - (void)awakeFromNib {
     UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 1)];
     line.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    line.backgroundColor = RGBHex(@"#D0D0D0");
+    line.backgroundColor = RGBHex(@"#E0E0E0");
     [self addSubview:line];
     
     _processBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 2)];
     _processBar.backgroundColor = kThemeColor;
     self.progress = 0;
     [self addSubview:_processBar];
+    
+    [self.imageView setImage:[UIImage imageWithColor:kThemeColor]];
+    [SRV(ArticleService) bk_addObserverForKeyPath:@"activeArticleModel" task:^(id target) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            YDSDKArticleModel* model = [SRV(ArticleService) activeArticleModel];
+            [self.imageView sd_setImageWithURL:model.pictureURL.url];
+            self.titleLabel.text = model.title;
+            self.authorLabel.text = model.author;
+            self.speakerLabel.text = model.speaker;
+            self.durationLabel.text = [NSString stringWithSeconds:model.duration];
+            
+            [self.playButton bk_addEventHandler:^(id sender) {
+                //            if (self.playing) {
+                //                [self.serviceCenter articlePause];
+                //            } else {
+                //                [self.serviceCenter articlePlay:model statusChanged:^(DOUAudioStreamerStatus status) {
+                //
+                //                }];
+                //            }
+                //            self.playing = !self.playing;
+            } forControlEvents:UIControlEventTouchUpInside];            
+        });
+    }];
+
 #if 0
     _timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
         if (self.serviceCenter.audioStreamer.duration) {
@@ -37,37 +61,6 @@
         }
     } repeats:YES];
     
-    [self.imageView setImage:[UIImage imageWithColor:kThemeColor]];
-    [self.serviceCenter bk_addObserverForKeyPath:@"currentArticleModel" task:^(id target) {
-        YDSDKArticleModel* model = self.serviceCenter.currentArticleModel;
-        [self.imageView sd_setImageWithURL:model.pictureURL.url];
-        self.titleLabel.text = model.title;
-        self.authorLabel.text = model.author;
-        self.speakerLabel.text = model.speaker;
-        self.durationLabel.text = [NSString stringWithSeconds:model.duration];
-        
-        if (self.serviceCenter.audioStreamer.status == DOUAudioStreamerBuffering
-            || self.serviceCenter.audioStreamer.status == DOUAudioStreamerPlaying) {
-            self.playing = [model.audioURL isEqualToString:self.serviceCenter.audioStreamer.url.absoluteString];
-        } else {
-            self.playing = NO;
-        }
-        
-        [self.serviceCenter.audioStreamer bk_addObserverForKeyPath:@"status" task:^(id target) {
-            
-        }];
-        
-        [self.playButton bk_addEventHandler:^(id sender) {
-            if (self.playing) {
-                [self.serviceCenter articlePause];
-            } else {
-                [self.serviceCenter articlePlay:model statusChanged:^(DOUAudioStreamerStatus status) {
-                    
-                }];
-            }
-            self.playing = !self.playing;
-        } forControlEvents:UIControlEventTouchUpInside];
-    }];
     
     
     UILongPressGestureRecognizer* gesture = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {

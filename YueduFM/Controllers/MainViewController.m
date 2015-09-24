@@ -10,17 +10,20 @@
 #import "ArticleTableViewCell.h"
 #import "PlayerBar.h"
 #import "REMenu.h"
+#import "ActionTableViewCell.h"
 
 @interface MainViewController () {
-    NSArray*    _tableData;
-    PlayerBar*  _playerBar;
-    REMenu*     _menu;
-    NSInteger   _selectIndex;
+    NSMutableArray* _tableData;
+    PlayerBar*      _playerBar;
+    REMenu*         _menu;
+    NSInteger       _selectIndex;
+    NSIndexPath*    _openedIndexPath;
 }
 
 @end
 
 static NSString* const kCellIdentifier = @"kCellIdentifier";
+static NSString* const kActionCellIdentifier = @"kActionCellIdentifier";
 static int const kCountPerTime = 20;
 
 @implementation MainViewController
@@ -46,9 +49,6 @@ static int const kCountPerTime = 20;
     }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = 100;
     
     [self setupPlayerBar];
     [self setupMenu];
@@ -104,9 +104,6 @@ static int const kCountPerTime = 20;
     _playerBar.top = self.view.height-_playerBar.height;
     _playerBar.width = self.view.width;
     _playerBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
-    [_playerBar.actionButton bk_addEventHandler:^(id sender) {
-        //        [self.navigationController pushViewController:[WebViewController controllerWithURL:self.serviceCenter.currentArticleModel.url.url] animated:YES];
-    } forControlEvents:UIControlEventTouchUpInside];
     
     [_playerBar.moreButton bk_addEventHandler:^(id sender) {
         UIActionSheet* sheet = [UIActionSheet bk_actionSheetWithTitle:nil];
@@ -187,57 +184,36 @@ static int const kCountPerTime = 20;
     }];
 }
 
-- (void)reloadData:(NSArray*)data {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _tableData = [NSArray arrayWithArray:data];
-        [self.tableView reloadData];
-    });
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_tableData count];
+#pragma mark - TableViewControllerProtocol
+- (UINib* )nibForExpandCell {
+    return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArticleTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    
-    YDSDKArticleModel* model = _tableData[indexPath.row];
+- (CGFloat)heightForExpandCell {
+    return 60;
+}
+
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
+- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    YDSDKArticleModel* model = self.tableData[indexPath.row];
+    ArticleTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = model;
     
+    [cell.moreButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
     [cell.moreButton bk_addEventHandler:^(id sender) {
-        UIActionSheet* sheet = [UIActionSheet bk_actionSheetWithTitle:nil];
-        [sheet bk_addButtonWithTitle:@"下载" handler:^{
-            
-        }];
-        [sheet bk_addButtonWithTitle:@"收藏" handler:^{
-            
-        }];
-        [sheet bk_addButtonWithTitle:@"分享" handler:^{
-            
-        }];
         
-        [sheet bk_setCancelButtonWithTitle:@"取消" handler:^{
-            
-        }];
-        [sheet showInView:_playerBar];
+        
     } forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 1.0f;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    YDSDKArticleModel* model = _tableData[indexPath.row];
-    WebViewController* vc = [WebViewController controllerWithURL:model.url.url];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

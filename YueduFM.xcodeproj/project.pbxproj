@@ -184,6 +184,11 @@
 		E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */; };
 		E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD919C1BA9D9950045F222 /* YueduFMSDK.framework */; };
 		E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E51BA9E1D20045F222 /* libxml2.dylib */; };
+		E4E9E3291BB42DB100B6BAFE /* ActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */; };
+		E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */; };
+		E4E9E3391BB457CB00B6BAFE /* ExpandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3361BB457CB00B6BAFE /* ExpandTableViewCell.m */; };
+		E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3381BB457CB00B6BAFE /* ExpandTableViewController.m */; };
+		E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -547,6 +552,15 @@
 		E4DD91DD1BA9E08F0045F222 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4DD91E51BA9E1D20045F222 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTableViewCell.h; sourceTree = "<group>"; };
+		E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTableViewCell.m; sourceTree = "<group>"; };
+		E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionTableViewCell.xib; sourceTree = "<group>"; };
+		E4E9E3351BB457CB00B6BAFE /* ExpandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandTableViewCell.h; sourceTree = "<group>"; };
+		E4E9E3361BB457CB00B6BAFE /* ExpandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTableViewCell.m; sourceTree = "<group>"; };
+		E4E9E3371BB457CB00B6BAFE /* ExpandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandTableViewController.h; sourceTree = "<group>"; };
+		E4E9E3381BB457CB00B6BAFE /* ExpandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTableViewController.m; sourceTree = "<group>"; };
+		E4E9E33E1BB4587600B6BAFE /* ExpandObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandObject.h; sourceTree = "<group>"; };
+		E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1032,6 +1046,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4E9E3341BB457CB00B6BAFE /* ExpandTableViewController */,
 				E486A3C11BB2D72900414EDE /* MJRefresh */,
 				E46E2EDB1BB0619E00CCF57F /* AudioStreamer */,
 				E46E2ECE1BB0454500CCF57F /* SVProgressHUD */,
@@ -1157,6 +1172,9 @@
 				E46E2EC81BB02C0C00CCF57F /* TitleView.xib */,
 				E486A4011BB2F38900414EDE /* RhythmView.h */,
 				E486A4021BB2F38900414EDE /* RhythmView.m */,
+				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
+				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
+				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1222,6 +1240,19 @@
 				E4DD91DD1BA9E08F0045F222 /* JSONKit.m */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		E4E9E3341BB457CB00B6BAFE /* ExpandTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4E9E3351BB457CB00B6BAFE /* ExpandTableViewCell.h */,
+				E4E9E3361BB457CB00B6BAFE /* ExpandTableViewCell.m */,
+				E4E9E3371BB457CB00B6BAFE /* ExpandTableViewController.h */,
+				E4E9E3381BB457CB00B6BAFE /* ExpandTableViewController.m */,
+				E4E9E33E1BB4587600B6BAFE /* ExpandObject.h */,
+				E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */,
+			);
+			path = ExpandTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1344,6 +1375,7 @@
 				E431FCFD1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x~ipad.png in Resources */,
 				E431FD8D1BAF34E300898B8F /* icon_more@2x.png in Resources */,
 				E431FCF91BADF4FD00898B8F /* DZNWebViewController.strings in Resources */,
+				E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E431FD891BAF161D00898B8F /* menu_icon_favor@2x.png in Resources */,
 				E46E2EC71BB0251A00CCF57F /* icon_down_arrow@2x.png in Resources */,
@@ -1387,6 +1419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E486A3FE1BB2D72900414EDE /* UIScrollView+MJExtension.m in Sources */,
+				E4E9E3291BB42DB100B6BAFE /* ActionTableViewCell.m in Sources */,
 				E431FD671BAEC27900898B8F /* PlayerBar.m in Sources */,
 				E486A3F31BB2D72900414EDE /* MJRefreshAutoGifFooter.m in Sources */,
 				E431FACB1BADD1D800898B8F /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1423,6 +1456,7 @@
 				E486A3EE1BB2D72900414EDE /* MJRefreshAutoFooter.m in Sources */,
 				E431FAC81BADD1D800898B8F /* UIImage+GIF.m in Sources */,
 				E431FAC61BADD1D800898B8F /* SDWebImagePrefetcher.m in Sources */,
+				E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */,
 				E4DD91D61BA9DF4B0045F222 /* FMDatabaseAdditions.m in Sources */,
 				E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */,
 				E4DD91C21BA9DC4C0045F222 /* PPSqliteORMSQL.m in Sources */,
@@ -1468,6 +1502,7 @@
 				E46E2EF21BB11AC700CCF57F /* NSDate+Extension.m in Sources */,
 				E431FD171BADFBE400898B8F /* UIBarButtonItem+Extension.m in Sources */,
 				E46E2EEF1BB119A000CCF57F /* YDSDKConfigModelEx.m in Sources */,
+				E4E9E3391BB457CB00B6BAFE /* ExpandTableViewCell.m in Sources */,
 				E431FABE1BADD1D800898B8F /* MKAnnotationView+WebCache.m in Sources */,
 				E431FD461BAE001800898B8F /* DOUAudioDecoder.m in Sources */,
 				E486A3FD1BB2D72900414EDE /* MJRefreshConst.m in Sources */,
@@ -1495,6 +1530,7 @@
 				E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */,
 				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,
 				E486A3FB1BB2D72900414EDE /* MJRefreshStateHeader.m in Sources */,
+				E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */,
 				E431FAC01BADD1D800898B8F /* SDImageCache.m in Sources */,
 				E431FD441BAE001800898B8F /* DOUAudioAnalyzer+Default.m in Sources */,
 			);

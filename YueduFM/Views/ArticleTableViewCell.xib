@@ -72,6 +72,12 @@
                         <rect key="frame" x="44" y="38" width="20" height="20"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8o-Hi-8qw">
+                        <rect key="frame" x="0.0" y="-1" width="101" height="108.5"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ekf-t3-00I" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="8jS-2C-AGl"/>
@@ -86,6 +92,7 @@
                 <outlet property="durationLabel" destination="ItS-ZT-Uq0" id="SCh-l0-mU3"/>
                 <outlet property="moreButton" destination="NqK-ft-OVW" id="MgC-BG-yJp"/>
                 <outlet property="pictureView" destination="ekf-t3-00I" id="a9v-HK-UeN"/>
+                <outlet property="playButton" destination="c8o-Hi-8qw" id="NWd-AD-WNh"/>
                 <outlet property="rhythmView" destination="rvj-HL-K6g" id="MuJ-8N-dwC"/>
                 <outlet property="speakerLabel" destination="JhK-d8-jCU" id="b0j-74-l0t"/>
                 <outlet property="titleLabel" destination="XZ9-pr-u10" id="hIe-YE-8pn"/>

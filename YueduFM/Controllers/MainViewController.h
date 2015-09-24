@@ -6,10 +6,8 @@
 //  Copyright (c) 2015 StarNet. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ExpandTableViewController.h"
 
-@interface MainViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, retain) IBOutlet UITableView* tableView;
+@interface MainViewController : ExpandTableViewController
 
 @end
