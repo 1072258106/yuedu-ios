@@ -13,7 +13,6 @@
 #import "ActionTableViewCell.h"
 
 @interface MainViewController () {
-    NSMutableArray* _tableData;
     PlayerBar*      _playerBar;
     REMenu*         _menu;
     NSInteger       _selectIndex;
@@ -66,12 +65,12 @@ static int const kCountPerTime = 20;
 
 - (void)addFooter {
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [SRV(ArticleService) list:(int)[_tableData count]+kCountPerTime channel:[self currentChannel] completion:^(NSArray *array) {
+        [SRV(ArticleService) list:(int)[self.tableData count]+kCountPerTime channel:[self currentChannel] completion:^(NSArray *array) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self reloadData:array];
                 [self.tableView.footer endRefreshing];
                 
-                if ([_tableData count] == [array count]) {
+                if ([self.tableData count] == [array count]) {
                     self.tableView.footer = nil;
                 }
             });
