@@ -20,16 +20,17 @@
 }
 
 - (void)start {
-    [self autoFetch];
+    [self autoFetch:nil];
 }
 
-- (void)autoFetch {
+- (void)autoFetch:(void(^)())completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d ORDER BY aid DESC LIMIT 0,1", YDSDKModelStateIncomplete] complete:^(BOOL successed, id result) {
         if (successed && [result count]) {
             YDSDKArticleModelEx* model = [result firstObject];
             
-            [self fetch:model.aid completion:^(NSError *error) {
-                [self autoFetch];
+            [self fetch:model.aid completion:^(NSArray* array, NSError *error) {
+                if (completion) completion();
+                [self autoFetch:nil];
             }];
         }
     }];
@@ -39,19 +40,30 @@
          channel:(int)channel
       completion:(void(^)(NSArray* array))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d and channel=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, channel, count] complete:^(BOOL successed, id result) {
-        if (!self.activeArticleModel && successed) {
-            self.activeArticleModel = [result firstObject];
-        }
         if (completion) completion(successed?result:nil);
      }];
 }
 
 - (void)fetchLatest:(void(^)(NSError* error))completion {
-    [self fetch:0 completion:^(NSError *error) {
-        [self autoFetch];
-        if (completion) {
-            completion(error);
-        }
+    [self.dataManager count:[YDSDKArticleModelEx class] condition:nil complete:^(BOOL successed, id result) {
+        BOOL none = successed && ![result intValue];
+        [self fetch:0 completion:^(NSArray* array, NSError *error) {
+            if (none) {
+                NSLog(@"========================111");
+                [self autoFetch:^{
+                    if (completion) {
+                        completion(error);
+                    }                    
+                }];
+            } else {
+                NSLog(@"========================122211");
+                [self autoFetch:nil];
+                if (completion) {
+                    completion(error);
+                }
+            }
+        }];
+        
     }];
 }
 
@@ -61,14 +73,12 @@
     [self checkout:count channel:channel completion:completion];
 }
 
-- (void)fetch:(int)articleId completion:(void(^)(NSError* error))completion {
+- (void)fetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion {
     [SRV(ConfigService) fetch:^(NSError *error) {
         YDSDKArticleListRequest* req = [YDSDKArticleListRequest request];
         req.articleId = articleId;
         [self.netManager request:req completion:^(YDSDKRequest *request, YDSDKError *error) {
             if (!error) {
-                self.activeArticleModel = [req.modelArray firstObject];
-                
                 YDSDKArticleModel* cursorModel = [[YDSDKArticleModel alloc] init];
                 cursorModel.aid = articleId;
                 
@@ -76,7 +86,7 @@
                 [self.dataManager deleteObject:cursorModel complete:^(BOOL successed, id result) {
                     void(^writeBlock)(NSArray* array) = ^(NSArray* array){
                         [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
-                            if (completion) completion(nil);
+                            if (completion) completion(array, nil);
                         }];
                     };
                     

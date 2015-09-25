@@ -75,23 +75,24 @@ static NSString* const kExpandCellIdentifier = @"kExpandCellIdentifier";
     
     [tableView beginUpdates];
     
+    ExpandObject* object = [ExpandObject objectWithModel:self.tableData[indexPath.row]];
+    
     if (_openedIndexPath) {
         [self.tableData removeObjectAtIndex:_openedIndexPath.row];
         [tableView deleteRowsAtIndexPaths:@[_openedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
         if (_openedIndexPath.row == indexPath.row+1) {
             _openedIndexPath = nil;
         } else {
+
             NSInteger row = (_openedIndexPath.row > indexPath.row)?(indexPath.row+1):(indexPath.row);
             _openedIndexPath = [NSIndexPath indexPathForRow:row inSection:indexPath.section];
             
-            ExpandObject* object = [ExpandObject objectWithModel:self.tableData[indexPath.row]];
             [self.tableData insertObject:object atIndex:_openedIndexPath.row];
             [tableView insertRowsAtIndexPaths:@[_openedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
         }
     } else {
         _openedIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
         
-        ExpandObject* object = [ExpandObject objectWithModel:self.tableData[indexPath.row]];
         [self.tableData insertObject:object atIndex:_openedIndexPath.row];
         [tableView insertRowsAtIndexPaths:@[_openedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
