@@ -48,15 +48,14 @@
     [self.dataManager count:[YDSDKArticleModelEx class] condition:nil complete:^(BOOL successed, id result) {
         BOOL none = successed && ![result intValue];
         [self fetch:0 completion:^(NSArray* array, NSError *error) {
+            //为了防止第一次数据不够，多加载一次
             if (none) {
-                NSLog(@"========================111");
                 [self autoFetch:^{
                     if (completion) {
                         completion(error);
                     }                    
                 }];
             } else {
-                NSLog(@"========================122211");
                 [self autoFetch:nil];
                 if (completion) {
                     completion(error);
