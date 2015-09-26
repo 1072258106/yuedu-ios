@@ -23,19 +23,19 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     
     _tableData = @[
                    @{
-                       @"image":@"menu_icon_download.png",
+                       @"image":@"icon_menu_download.png",
                        @"title":@"我的下载",
                        },
                    @{
-                       @"image":@"menu_icon_favor.png",
+                       @"image":@"icon_menu_favor.png",
                        @"title":@"我的收藏",
                        },
                    @{
-                       @"image":@"menu_icon_history.png",
+                       @"image":@"icon_menu_history.png",
                        @"title":@"播放历史",
                        },
                    @{
-                       @"image":@"menu_icon_settings.png",
+                       @"image":@"icon_menu_settings.png",
                        @"title":@"设置",
                        },
                    ];

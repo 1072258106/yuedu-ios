@@ -13,11 +13,43 @@
     UIView*     _processBar;
 }
 
+
+@property (nonatomic, assign) BOOL visible;
 @property (nonatomic, assign) CGFloat progress;
+@property (nonatomic, strong) UIView* container;
 
 @end
 
 @implementation PlayerBar
+
++ (instancetype)shareBar {
+    static PlayerBar* bar;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        bar = [PlayerBar viewWithNibName:@"PlayerBar"];
+    });
+    return bar;
+}
+
++ (void)setContainer:(UIView* )container {
+    PlayerBar* bar = [PlayerBar shareBar];
+    bar.container = container;
+    [bar showIfNeed];
+}
+
+- (void)showIfNeed {
+    if (!self.visible && SRV(ArticleService).activeArticleModel && self.container) {
+        self.width = self.container.width;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
+        [self removeFromSuperview];
+        [self.container addSubview:self];
+        self.top = self.container.height;
+        [UIView animateWithDuration:0.3f animations:^{
+            self.top -= self.height;
+        }];
+        self.visible = YES;
+    }
+}
 
 - (void)awakeFromNib {
     UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 1)];
@@ -33,6 +65,8 @@
     [self.imageView setImage:[UIImage imageWithColor:kThemeColor]];
     [SRV(ArticleService) bk_addObserverForKeyPath:@"activeArticleModel" task:^(id target) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self showIfNeed];
+            
             YDSDKArticleModel* model = [SRV(ArticleService) activeArticleModel];
             [self.imageView sd_setImageWithURL:model.pictureURL.url];
             self.titleLabel.text = model.title;
@@ -41,15 +75,7 @@
             self.durationLabel.text = [NSString stringWithSeconds:model.duration];
             
             [self.playButton bk_addEventHandler:^(id sender) {
-                //            if (self.playing) {
-                //                [self.serviceCenter articlePause];
-                //            } else {
-                //                [self.serviceCenter articlePlay:model statusChanged:^(DOUAudioStreamerStatus status) {
-                //
-                //                }];
-                //            }
-                //            self.playing = !self.playing;
-            } forControlEvents:UIControlEventTouchUpInside];            
+            } forControlEvents:UIControlEventTouchUpInside];
         });
     }];
 

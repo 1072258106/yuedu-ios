@@ -13,14 +13,14 @@
             <color key="backgroundColor" red="0.0" green="0.74117647060000003" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
             <state key="normal" title="悦读" image="icon_down_arrow.png">
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </state>
             <state key="highlighted" image="icon_down_arrow_h.png"/>
             <point key="canvasLocation" x="264" y="302.5"/>
         </button>
     </objects>
     <resources>
-        <image name="icon_down_arrow.png" width="16" height="16"/>
-        <image name="icon_down_arrow_h.png" width="16" height="16"/>
+        <image name="icon_down_arrow.png" width="12" height="12"/>
+        <image name="icon_down_arrow_h.png" width="12" height="12"/>
     </resources>
 </document>

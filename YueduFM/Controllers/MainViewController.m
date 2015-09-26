@@ -40,16 +40,16 @@ static int const kCountPerTime = 20;
     } forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = button;
 
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_icon_menu.png"] action:^{
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_menu.png"] action:^{
         [self presentLeftMenuViewController:nil];
     }];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_icon_search.png"] action:^{
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
     }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
     
-    [self setupPlayerBar];
+    [PlayerBar setContainer:self.view];
     [self setupMenu];
     
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
@@ -84,6 +84,7 @@ static int const kCountPerTime = 20;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self reloadData:array];
             [self.tableView.header endRefreshing];
+            [self showWithSuccessedMessage:@"更新完成"];
             [self addFooter];
         });
     }];
@@ -98,33 +99,6 @@ static int const kCountPerTime = 20;
     }
 }
 
-- (void)setupPlayerBar {
-    _playerBar = [PlayerBar viewWithNibName:@"PlayerBar"];
-    _playerBar.top = self.view.height-_playerBar.height;
-    _playerBar.width = self.view.width;
-    _playerBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
-    
-    [_playerBar.moreButton bk_addEventHandler:^(id sender) {
-        UIActionSheet* sheet = [UIActionSheet bk_actionSheetWithTitle:nil];
-        [sheet bk_addButtonWithTitle:@"下载" handler:^{
-            
-        }];
-        [sheet bk_addButtonWithTitle:@"收藏" handler:^{
-            
-        }];
-        [sheet bk_addButtonWithTitle:@"分享" handler:^{
-            
-        }];
-        
-        [sheet bk_setCancelButtonWithTitle:@"取消" handler:^{
-            
-        }];
-        [sheet showInView:_playerBar];
-    } forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:_playerBar];
-}
-
 - (void)reloadMenu {
     NSMutableArray* array = [NSMutableArray array];
     [SRV(ChannelService).channels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -134,7 +108,6 @@ static int const kCountPerTime = 20;
             [button setTitle:item.title forState:UIControlStateNormal];
             _selectIndex = [_menu.items indexOfObject:item];
             [self.tableView.header beginRefreshing];
-            [self loadCurrentChannelData];
         }];
         [array addObject:item];
     }];

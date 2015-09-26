@@ -19,3 +19,5 @@
 #import "AudioStreamer.h"
 #import "MJRefresh.h"
 #import "ExpandTableViewController.h"
+
+#import "MessageKit.h"

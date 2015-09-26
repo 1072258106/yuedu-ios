@@ -19,4 +19,8 @@
 
 @property (nonatomic, readonly) PPSqliteORMManager* manager;
 
+- (void)writeData:(id)data completion:(void(^)())completion;
+
+- (void)writeDataFromArray:(NSArray* )array completion:(void(^)())completion;
+
 @end

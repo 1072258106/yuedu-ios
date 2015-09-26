@@ -16,7 +16,7 @@
 
 @property (nonatomic, assign) YDSDKModelState state;
 
-@property (nonatomic, assign) BOOL isLike;
+@property (nonatomic, assign) BOOL isFavor;
 @property (nonatomic, assign) BOOL isRead;
 
 @end

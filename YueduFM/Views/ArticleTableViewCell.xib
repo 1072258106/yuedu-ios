@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,11 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekf-t3-00I">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekf-t3-00I">
                         <rect key="frame" x="8" y="8" width="93" height="91.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="ekf-t3-00I" secondAttribute="height" multiplier="102:91" constant="-9.560439560439562" id="1rz-Ma-nCF"/>
-                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我是标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ9-pr-u10">
                         <rect key="frame" x="109" y="8" width="203" height="21"/>
@@ -62,35 +57,23 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqK-ft-OVW">
-                        <rect key="frame" x="240" y="-1" width="80" height="108.5"/>
-                        <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvj-HL-K6g" customClass="RhythmView">
                         <rect key="frame" x="44" y="38" width="20" height="20"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8o-Hi-8qw">
-                        <rect key="frame" x="0.0" y="-1" width="101" height="108.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="101" height="107.5"/>
                         <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="ekf-t3-00I" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="8jS-2C-AGl"/>
-                    <constraint firstItem="ekf-t3-00I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="c06-gZ-cNN"/>
-                    <constraint firstItem="ekf-t3-00I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dY3-Xw-TUA"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="authorLabel" destination="hNN-Ah-p02" id="3yl-UA-p4d"/>
                 <outlet property="detailLabel" destination="idP-6q-R6i" id="qax-3Z-G3T"/>
                 <outlet property="durationLabel" destination="ItS-ZT-Uq0" id="SCh-l0-mU3"/>
-                <outlet property="moreButton" destination="NqK-ft-OVW" id="MgC-BG-yJp"/>
                 <outlet property="pictureView" destination="ekf-t3-00I" id="a9v-HK-UeN"/>
                 <outlet property="playButton" destination="c8o-Hi-8qw" id="NWd-AD-WNh"/>
                 <outlet property="rhythmView" destination="rvj-HL-K6g" id="MuJ-8N-dwC"/>

@@ -31,4 +31,21 @@
     return self;
 }
 
+- (void)writeData:(id)data completion:(void(^)())completion {
+    [_manager writeObject:data complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion();
+        }
+    }];
+}
+
+- (void)writeDataFromArray:(NSArray* )array completion:(void(^)())completion {
+    [_manager writeObjects:array complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion();
+        }
+    }];
+}
+
+
 @end

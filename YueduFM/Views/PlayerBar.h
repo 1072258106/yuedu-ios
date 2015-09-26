@@ -10,6 +10,9 @@
 
 @interface PlayerBar : UIView
 
++ (instancetype)shareBar;
++ (void)setContainer:(UIView* )container;
+
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
