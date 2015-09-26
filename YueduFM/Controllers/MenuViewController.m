@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "FavorViewController.h"
+#import "DowloadViewController.h"
 
 @interface MenuViewController () {
     NSArray*   _tableData;
@@ -27,7 +28,8 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"image":@"icon_menu_download.png",
                        @"title":@"我的下载",
                        @"action":^{
-                           
+                           DowloadViewController* vc = [[DowloadViewController alloc] initWithNibName:@"DowloadViewController" bundle:nil];
+                           [self pushViewController:vc];
                        }
                        },
                    @{

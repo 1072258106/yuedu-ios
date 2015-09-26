@@ -23,23 +23,7 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton* button = [UIButton viewWithNibName:@"TitleView"];
-    button.backgroundColor = [UIColor clearColor];
-    [button bk_addEventHandler:^(id sender) {
-        if (_menu.isOpen)
-            return [_menu close];
-        
-        [_menu showFromNavigationController:self.navigationController];        
-    } forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.titleView = button;
-
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_menu.png"] action:^{
-        [self presentLeftMenuViewController:nil];
-    }];
-    
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
-    }];
-        
+    [self setupNavigationBar];
     [self setupMenu];
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -49,6 +33,25 @@ static int const kCountPerTime = 20;
     }];
     
     [self.tableView.header beginRefreshing];
+}
+
+- (void)setupNavigationBar {
+    UIButton* button = [UIButton viewWithNibName:@"TitleView"];
+    button.backgroundColor = [UIColor clearColor];
+    [button bk_addEventHandler:^(id sender) {
+        if (_menu.isOpen)
+            return [_menu close];
+        
+        [_menu showFromNavigationController:self.navigationController];
+    } forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = button;
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_menu.png"] action:^{
+        [self presentLeftMenuViewController:nil];
+    }];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
+    }];
 }
 
 - (void)addFooter {

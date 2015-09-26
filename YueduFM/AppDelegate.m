@@ -22,13 +22,14 @@
     
     [__serviceCenter setup];
     
+    [self setupAppearance];
+    
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
     nvc.navigationBar.translucent = YES;
     nvc.navigationBar.barTintColor = kThemeColor;
-    nvc.navigationBar.tintColor = [UIColor whiteColor];//RGBHex(@"#00BDEE");
+    nvc.navigationBar.tintColor = [UIColor whiteColor];
     [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    [[UIBarButtonItem appearance] setTintColor:kThemeColor];
     
     nvc.navigationBar.barStyle = UIBarStyleBlack;
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
@@ -41,6 +42,12 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)setupAppearance {
+    [[UIBarButtonItem appearance] setTintColor:kThemeColor];
+    UIImage* image = [[UIImage imageNamed:@"icon_navigation_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

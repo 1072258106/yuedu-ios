@@ -189,6 +189,9 @@
 		E4E9E3391BB457CB00B6BAFE /* ExpandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3361BB457CB00B6BAFE /* ExpandTableViewCell.m */; };
 		E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3381BB457CB00B6BAFE /* ExpandTableViewController.m */; };
 		E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */; };
+		E4ECB5B91BB6C309009CA157 /* DowloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */; };
+		E4ECB5BA1BB6C309009CA157 /* DowloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */; };
+		E4ECB5BC1BB6C5AA009CA157 /* icon_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */; };
 		E4F4C8471BB5093600C428AE /* icon_action_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8461BB5093600C428AE /* icon_action_download@2x.png */; };
 		E4F4C84A1BB509F900C428AE /* UIVButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C8491BB509F900C428AE /* UIVButton.m */; };
 		E4F4C84F1BB50CDF00C428AE /* icon_action_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */; };
@@ -575,6 +578,10 @@
 		E4E9E3381BB457CB00B6BAFE /* ExpandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTableViewController.m; sourceTree = "<group>"; };
 		E4E9E33E1BB4587600B6BAFE /* ExpandObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandObject.h; sourceTree = "<group>"; };
 		E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandObject.m; sourceTree = "<group>"; };
+		E4ECB5B61BB6C309009CA157 /* DowloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DowloadViewController.h; sourceTree = "<group>"; };
+		E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DowloadViewController.m; sourceTree = "<group>"; };
+		E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DowloadViewController.xib; sourceTree = "<group>"; };
+		E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navigation_back@2x.png"; sourceTree = "<group>"; };
 		E4F4C8461BB5093600C428AE /* icon_action_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_action_download@2x.png"; sourceTree = "<group>"; };
 		E4F4C8481BB509F900C428AE /* UIVButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVButton.h; sourceTree = "<group>"; };
 		E4F4C8491BB509F900C428AE /* UIVButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVButton.m; sourceTree = "<group>"; };
@@ -1116,6 +1123,9 @@
 				E4F4C8A71BB6B34C00C428AE /* FavorViewController.h */,
 				E4F4C8A81BB6B34C00C428AE /* FavorViewController.m */,
 				E4F4C8A91BB6B34C00C428AE /* FavorViewController.xib */,
+				E4ECB5B61BB6C309009CA157 /* DowloadViewController.h */,
+				E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */,
+				E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */,
 				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
 				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
@@ -1151,6 +1161,7 @@
 		E4DD91981BA9D9140045F222 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */,
 				E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */,
 				E4F4C84C1BB50CDF00C428AE /* icon_action_favor@2x.png */,
 				E4F4C84D1BB50CDF00C428AE /* icon_action_favored@2x.png */,
@@ -1431,6 +1442,7 @@
 				E431FD111BADF4FD00898B8F /* dzn_icn_toolbar_stop@2x.png in Resources */,
 				E431FD811BAEEF9300898B8F /* bg_menu.png in Resources */,
 				E431FCFF1BADF4FD00898B8F /* dzn_icn_activity_link@2x~ipad.png in Resources */,
+				E4ECB5BA1BB6C309009CA157 /* DowloadViewController.xib in Resources */,
 				E46E2EC61BB0251A00CCF57F /* icon_up_arrow@2x.png in Resources */,
 				E431FD031BADF4FD00898B8F /* dzn_icn_activity_safari@2x~ipad.png in Resources */,
 				E431FA9B1BADCF0C00898B8F /* icon_author@2x.png in Resources */,
@@ -1465,6 +1477,7 @@
 				E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */,
 				E431FD001BADF4FD00898B8F /* dzn_icn_activity_opera@2x.png in Resources */,
 				E431FD061BADF4FD00898B8F /* dzn_icn_toolbar_action@3x.png in Resources */,
+				E4ECB5BC1BB6C5AA009CA157 /* icon_navigation_back@2x.png in Resources */,
 				E486A3FC1BB2D72900414EDE /* MJRefresh.bundle in Resources */,
 				E4D522DC1BACA1D5002164AA /* MenuViewController.xib in Resources */,
 				E431FADD1BADE5CA00898B8F /* icon_duration@2x.png in Resources */,
@@ -1597,6 +1610,7 @@
 				E4DD91A41BA9DB770045F222 /* BaseService.m in Sources */,
 				E431FCF81BADF4FD00898B8F /* DZNWebViewController.m in Sources */,
 				E4DD91BC1BA9DC4C0045F222 /* NSDictionary+SQL.m in Sources */,
+				E4ECB5B91BB6C309009CA157 /* DowloadViewController.m in Sources */,
 				E46E2ED71BB0454500CCF57F /* SVIndefiniteAnimatedView.m in Sources */,
 				E4DD91C01BA9DC4C0045F222 /* PPSqliteORMError.m in Sources */,
 				E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */,
