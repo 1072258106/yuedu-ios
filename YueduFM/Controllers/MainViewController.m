@@ -7,22 +7,15 @@
 //
 
 #import "MainViewController.h"
-#import "ArticleTableViewCell.h"
-#import "PlayerBar.h"
 #import "REMenu.h"
-#import "ActionTableViewCell.h"
 
 @interface MainViewController () {
-    PlayerBar*      _playerBar;
     REMenu*         _menu;
-    NSInteger       _selectIndex;
-    NSIndexPath*    _openedIndexPath;
+    NSInteger       _selectMenuIndex;
 }
 
 @end
 
-static NSString* const kCellIdentifier = @"kCellIdentifier";
-static NSString* const kActionCellIdentifier = @"kActionCellIdentifier";
 static int const kCountPerTime = 20;
 
 @implementation MainViewController
@@ -46,20 +39,15 @@ static int const kCountPerTime = 20;
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
     }];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
-    
-    [PlayerBar setContainer:self.view];
+        
     [self setupMenu];
     
-    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [SRV(ArticleService) fetchLatest:^(NSError *error) {
             [self loadCurrentChannelData];
         }];
     }];
     
-    // 马上进入刷新状态
     [self.tableView.header beginRefreshing];
 }
 
@@ -92,10 +80,10 @@ static int const kCountPerTime = 20;
 
 - (int)currentChannel {
     NSArray* array = [SRV(ChannelService) channels];
-    if ([array count] <= _selectIndex) {
+    if ([array count] <= _selectMenuIndex) {
         return 1;
     } else {
-        return ((YDSDKChannelModel* )array[_selectIndex]).aid;
+        return ((YDSDKChannelModel* )array[_selectMenuIndex]).aid;
     }
 }
 
@@ -106,7 +94,7 @@ static int const kCountPerTime = 20;
         REMenuItem* item = [[REMenuItem alloc] initWithTitle:channel.name image:nil highlightedImage:nil action:^(REMenuItem *item) {
             UIButton* button = (UIButton*)self.navigationItem.titleView;
             [button setTitle:item.title forState:UIControlStateNormal];
-            _selectIndex = [_menu.items indexOfObject:item];
+            _selectMenuIndex = [_menu.items indexOfObject:item];
             [self.tableView.header beginRefreshing];
         }];
         [array addObject:item];
@@ -158,34 +146,6 @@ static int const kCountPerTime = 20;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark - TableViewControllerProtocol
-- (UINib* )nibForExpandCell {
-    return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];
-}
-
-- (CGFloat)heightForExpandCell {
-    return 60;
-}
-
-- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
-}
-
-- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YDSDKArticleModel* model = self.tableData[indexPath.row];
-    ArticleTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.model = model;
-    
-    [cell.moreButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
-    [cell.moreButton bk_addEventHandler:^(id sender) {
-        
-        
-    } forControlEvents:UIControlEventTouchUpInside];
-    
-    return cell;
 }
 
 @end

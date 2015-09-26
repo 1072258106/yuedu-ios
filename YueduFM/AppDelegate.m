@@ -28,13 +28,15 @@
     nvc.navigationBar.barTintColor = kThemeColor;
     nvc.navigationBar.tintColor = [UIColor whiteColor];//RGBHex(@"#00BDEE");
     [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
     [[UIBarButtonItem appearance] setTintColor:kThemeColor];
     
     nvc.navigationBar.barStyle = UIBarStyleBlack;
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
     RESideMenu* sideMenu = [[RESideMenu alloc] initWithContentViewController:nvc leftMenuViewController:vc rightMenuViewController:nil];
+    
+    [PlayerBar setContainer:sideMenu.view];
+
     self.window.rootViewController = sideMenu;
     [self.window makeKeyAndVisible];
     

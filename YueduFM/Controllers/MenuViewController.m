@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "FavorViewController.h"
 
 @interface MenuViewController () {
     NSArray*   _tableData;
@@ -25,18 +26,31 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                    @{
                        @"image":@"icon_menu_download.png",
                        @"title":@"我的下载",
+                       @"action":^{
+                           
+                       }
                        },
                    @{
                        @"image":@"icon_menu_favor.png",
                        @"title":@"我的收藏",
+                       @"action":^{
+                           FavorViewController* vc = [[FavorViewController alloc] initWithNibName:@"FavorViewController" bundle:nil];
+                           [self pushViewController:vc];
+                       }
                        },
                    @{
                        @"image":@"icon_menu_history.png",
                        @"title":@"播放历史",
+                       @"action":^{
+                           
+                       }
                        },
                    @{
                        @"image":@"icon_menu_settings.png",
                        @"title":@"设置",
+                       @"action":^{
+                           
+                       }
                        },
                    ];
     
@@ -44,6 +58,11 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
+}
+
+- (void)pushViewController:(UIViewController* )viewController {
+    [(UINavigationController* )self.sideMenuViewController.contentViewController pushViewController:viewController animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +93,10 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSDictionary* item = _tableData[indexPath.row];
+    if (item[@"action"]) {
+        ((void(^)())item[@"action"])();
+    }
 }
 
 @end

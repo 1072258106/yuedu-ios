@@ -200,6 +200,9 @@
 		E4F4C8971BB57B3200C428AE /* SuccessedMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8941BB57B3200C428AE /* SuccessedMessageView.xib */; };
 		E4F4C8981BB57B3200C428AE /* FailedMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8951BB57B3200C428AE /* FailedMessageView.xib */; };
 		E4F4C89E1BB6936E00C428AE /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C89D1BB6936E00C428AE /* UIViewController+Extension.m */; };
+		E4F4C8A61BB6B14D00C428AE /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C8A51BB6B14D00C428AE /* ArticleViewController.m */; };
+		E4F4C8AA1BB6B34C00C428AE /* FavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C8A81BB6B34C00C428AE /* FavorViewController.m */; };
+		E4F4C8AB1BB6B34C00C428AE /* FavorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8A91BB6B34C00C428AE /* FavorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -587,6 +590,11 @@
 		E4F4C8951BB57B3200C428AE /* FailedMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FailedMessageView.xib; sourceTree = "<group>"; };
 		E4F4C89C1BB6936E00C428AE /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		E4F4C89D1BB6936E00C428AE /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		E4F4C8A41BB6B14D00C428AE /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		E4F4C8A51BB6B14D00C428AE /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
+		E4F4C8A71BB6B34C00C428AE /* FavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorViewController.h; sourceTree = "<group>"; };
+		E4F4C8A81BB6B34C00C428AE /* FavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorViewController.m; sourceTree = "<group>"; };
+		E4F4C8A91BB6B34C00C428AE /* FavorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1100,9 +1108,14 @@
 				E4F4C89D1BB6936E00C428AE /* UIViewController+Extension.m */,
 				E4D522D01BACA07B002164AA /* BaseViewController.h */,
 				E4D522D11BACA07B002164AA /* BaseViewController.m */,
+				E4F4C8A41BB6B14D00C428AE /* ArticleViewController.h */,
+				E4F4C8A51BB6B14D00C428AE /* ArticleViewController.m */,
 				E4D522D31BACA0B0002164AA /* MainViewController.h */,
 				E4D522D41BACA0B0002164AA /* MainViewController.m */,
 				E4D522D51BACA0B0002164AA /* MainViewController.xib */,
+				E4F4C8A71BB6B34C00C428AE /* FavorViewController.h */,
+				E4F4C8A81BB6B34C00C428AE /* FavorViewController.m */,
+				E4F4C8A91BB6B34C00C428AE /* FavorViewController.xib */,
 				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
 				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
@@ -1411,6 +1424,7 @@
 				E431FD711BAED75D00898B8F /* icon_download@2x.png in Resources */,
 				E431FCFE1BADF4FD00898B8F /* dzn_icn_activity_link@2x.png in Resources */,
 				E431FD0C1BADF4FD00898B8F /* dzn_icn_toolbar_forward@3x.png in Resources */,
+				E4F4C8AB1BB6B34C00C428AE /* FavorViewController.xib in Resources */,
 				E431FD081BADF4FD00898B8F /* dzn_icn_toolbar_backward@2x.png in Resources */,
 				E4F4C8971BB57B3200C428AE /* SuccessedMessageView.xib in Resources */,
 				E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */,
@@ -1555,6 +1569,7 @@
 				E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */,
 				E431FD1A1BADFC3600898B8F /* UINavigationItem+Extension.m in Sources */,
 				E486A3F11BB2D72900414EDE /* MJRefreshFooter.m in Sources */,
+				E4F4C8AA1BB6B34C00C428AE /* FavorViewController.m in Sources */,
 				E4DD91BA1BA9DC4C0045F222 /* NSArray+SQL.m in Sources */,
 				E4D522E91BACA9BD002164AA /* UIColor+Extension.m in Sources */,
 				E431FCF61BADF4FD00898B8F /* DZNPolyActivity.m in Sources */,
@@ -1586,6 +1601,7 @@
 				E4DD91C01BA9DC4C0045F222 /* PPSqliteORMError.m in Sources */,
 				E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */,
 				E486A3FF1BB2D72900414EDE /* UIScrollView+MJRefresh.m in Sources */,
+				E4F4C8A61BB6B14D00C428AE /* ArticleViewController.m in Sources */,
 				E431FD491BAE001800898B8F /* DOUAudioFileProvider.m in Sources */,
 				E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */,
 				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,

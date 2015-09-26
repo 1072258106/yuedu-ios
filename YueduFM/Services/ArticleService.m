@@ -76,6 +76,18 @@
     [self checkout:count channel:channel completion:completion];
 }
 
+- (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavor=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
+        if (completion) completion(successed?result:nil);
+    }];
+}
+
+- (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion {
+//    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavor=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
+//        if (completion) completion(successed?result:nil);
+//    }];
+}
+
 - (void)fetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion {
     [SRV(ConfigService) fetch:^(NSError *error) {
         YDSDKArticleListRequest* req = [YDSDKArticleListRequest request];

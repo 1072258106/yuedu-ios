@@ -18,4 +18,8 @@
      channel:(int)channel
   completion:(void (^)(NSArray* array))completion;
 
+- (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion;
+
+- (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion;
+
 @end
