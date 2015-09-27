@@ -17,6 +17,7 @@ typedef NS_ENUM(int, DownloadState) {
     DownloadStateDoing,
     DownloadStateSuccessed,
     DownloadStateFailed,
+    DownloadStateCanceled,
 };
 
 @interface YDSDKArticleModelEx : YDSDKArticleModel

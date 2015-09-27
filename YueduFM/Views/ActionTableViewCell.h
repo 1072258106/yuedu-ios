@@ -14,6 +14,5 @@
 @property (nonatomic, retain) IBOutlet UIVButton* downloadButton;
 @property (nonatomic, retain) IBOutlet UIVButton* favorButton;
 @property (nonatomic, retain) IBOutlet UIVButton* shareButton;
-@property (nonatomic, retain) IBOutlet UIVButton* deleteButton;
 
 @end

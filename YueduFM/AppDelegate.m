@@ -45,7 +45,7 @@
 
 - (void)setupAppearance {
     [[UIBarButtonItem appearance] setTintColor:kThemeColor];
-    UIImage* image = [[UIImage imageNamed:@"icon_navigation_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
+    UIImage* image = [[UIImage imageNamed:@"icon_nav_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
@@ -67,7 +67,7 @@
 }
 
 - (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
-//    self.backgroundTransferCompletionHandler = completionHandler;
+    SRV(DownloadService).backgroundTransferCompletionHandler = completionHandler;
 }
 
 @end

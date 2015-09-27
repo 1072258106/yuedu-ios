@@ -25,12 +25,16 @@ typedef NS_ENUM(NSUInteger, DownloadErrorCode) {
 
 @interface DownloadService : BaseService
 
+@property (nonatomic, copy) void(^backgroundTransferCompletionHandler)();
+
 - (void)state:(void(^)(BOOL downloading))completion;
 
 - (void)download:(YDSDKArticleModelEx* )model
       preprocess:(void(^)(NSError* error))preprocess;
 
 - (void)list:(void(^)(NSArray* tasks))completion;
+
+- (void)deleteTask:(NSURLSessionTask* )task;
 
 - (void)deleteAllTask:(void(^)())completion;
 

@@ -19,13 +19,13 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 switch (error.code) {
                     case DownloadErrorCodeAlreadyDownloading:
-                        [SVProgressHUD showErrorWithStatus:@"已在队列中"];
+                        [MessageKit showWithFailedMessage:@"已在队列中"];
                         break;
                     case DownloadErrorCodeAlreadyDownloaded:
-                        [SVProgressHUD showErrorWithStatus:@"已下载"];
+                        [MessageKit showWithSuccessedMessage:@"已下载"];
                         break;
                     default:
-                        [SVProgressHUD showErrorWithStatus:@"已加入下载队列"];
+                        [MessageKit showWithSuccessedMessage:@"已加入下载队列"];
                         break;
                 }
             });

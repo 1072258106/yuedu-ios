@@ -104,6 +104,11 @@
     }];
 }
 
+- (void)listAllDownloading:(void (^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d", DownloadStateDoing] complete:^(BOOL successed, id result) {
+        if (completion) completion(successed?result:nil);
+    }];
+}
 
 - (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d ORDER BY aid DESC LIMIT 0, %d", DownloadStateSuccessed, count] complete:^(BOOL successed, id result) {

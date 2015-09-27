@@ -32,24 +32,50 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
 - (instancetype)initWithServiceCenter:(ServiceCenter *)serviceCenter {
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
-        NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:[[NSBundle mainBundle] bundleIdentifier]];
-        configuration.HTTPMaximumConnectionsPerHost = 1;
-        
-        _session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:_queue];
-        [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
-            ArticleService* service = SRV(ArticleService);
-            [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSURLSessionTask* task = obj;
-                [service modelForAudioURLString:task.originalRequest.URL.absoluteString completion:^(YDSDKArticleModelEx *model) {
-                    task.articleModel = model;
-                }];
+        [self setupURLSession];
+        [self setupDirectory];
+        [self setupTasks];
+    }
+    return self;
+}
+
+- (void)setupURLSession {
+    NSURLSessionConfiguration* configuration;
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8")) {
+        configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:[[NSBundle mainBundle] bundleIdentifier]];
+    } else {
+        configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:[[NSBundle mainBundle] bundleIdentifier]];
+    }
+    configuration.HTTPMaximumConnectionsPerHost = 1;
+    
+    _session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:_queue];
+}
+
+- (void)setupDirectory {
+    _baseDirectory = [NSString stringWithFormat:@"%@/Documents/Dowloads", NSHomeDirectory()];
+    [[NSFileManager defaultManager] createDirectoryAtPath:_baseDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+}
+
+- (void)setupTasks {
+    [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        ArticleService* service = SRV(ArticleService);
+        [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSURLSessionTask* task = obj;
+            [service modelForAudioURLString:task.originalRequest.URL.absoluteString completion:^(YDSDKArticleModelEx *model) {
+                task.articleModel = model;
             }];
         }];
         
-        _baseDirectory = [NSString stringWithFormat:@"%@/Documents/Dowloads", NSHomeDirectory()];
-        [[NSFileManager defaultManager] createDirectoryAtPath:_baseDirectory withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    return self;
+        //空任务，则从数据库读取
+        if (![downloadTasks count]) {
+            [service listAllDownloading:^(NSArray *array) {
+                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [self download:obj preprocess:nil];
+                }];
+            }];
+        }
+    }];
 }
 
 - (void)state:(void(^)(BOOL downloading))completion {
@@ -58,6 +84,15 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
             completion([downloadTasks count] != 0);
         }
     }];
+}
+
+- (void)didDownload:(YDSDKArticleModelEx* )model {
+    NSURLSessionDownloadTask* task = [_session downloadTaskWithURL:model.audioURL.url];
+    task.articleModel = model;
+    [task resume];
+    model.downloadState = DownloadStateDoing;
+    [SRV(DataService) writeData:model completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
 }
 
 - (void)download:(YDSDKArticleModelEx* )model preprocess:(void(^)(NSError* error))preprocess{
@@ -74,16 +109,15 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
                         NSURLSessionDownloadTask* tk = obj;
                         YDSDKArticleModelEx* aModel = tk.articleModel;
                         if ((aModel == model)
-                            || [tk.originalRequest.URL.absoluteString isEqualToString:model.url]) {
+                            || [tk.originalRequest.URL.absoluteString isEqualToString:model.audioURL]) {
                             downloading = YES;
+                            *stop = YES;
                         }
                     }];
                     
                     NSError* error;
                     if (!downloading) {
-                        NSURLSessionDownloadTask* task = [_session downloadTaskWithURL:model.audioURL.url];
-                        task.articleModel = newModel;
-                        [task resume];
+                        [self didDownload:model];
                     } else {
                         error = [NSError errorWithDomain:DownloadErrorDomain code:DownloadErrorCodeAlreadyDownloading userInfo:nil];
                     }
@@ -104,8 +138,7 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error {
     [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
-    NSLog(@"====ERROR=====%@", error);
-    if (error) {
+    if (error && task.articleModel.downloadState != DownloadStateCanceled) {
         [self download:task.articleModel preprocess:nil];
     }
 }
@@ -117,34 +150,17 @@ didFinishDownloadingToURL:(NSURL *)location {
     NSString* URLString = [self URLStringWithTask:downloadTask];
     [[NSFileManager defaultManager] removeItemAtPath:URLString error:nil];
     [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:URLString] error:&error];
-    NSLog(@"write[%@][%d]:%@", error, [[NSFileManager defaultManager] fileExistsAtPath:location.absoluteString], URLString);
+
     if (!error) {
         YDSDKArticleModelEx* model = downloadTask.articleModel;
         model.downloadState = DownloadStateSuccessed;
         model.downloadURLString = URLString;
-        NSLog(@"======WRITE:%@", model);
         [SRV(DataService) writeData:model completion:^{
             [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
         }];
-    } else {
+    } else if (downloadTask.articleModel.downloadState != DownloadStateCanceled) {
         [self download:downloadTask.articleModel preprocess:nil];
     }
-}
-
-- (void)URLSession:(NSURLSession *)session
-      downloadTask:(NSURLSessionDownloadTask *)downloadTask
-      didWriteData:(int64_t)bytesWritten
- totalBytesWritten:(int64_t)totalBytesWritten
-totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-    NSLog(@"=====================down:[%lld-%lld]", totalBytesWritten, totalBytesExpectedToWrite);
-
-}
-
-- (void)URLSession:(NSURLSession *)session
-      downloadTask:(NSURLSessionDownloadTask *)downloadTask
- didResumeAtOffset:(int64_t)fileOffset
-expectedTotalBytes:(int64_t)expectedTotalBytes {
-    NSLog(@"=====================resume:[%lld-%lld]", fileOffset, expectedTotalBytes);
 }
 
 static NSInteger compareTask(id obj1, id obj2, void* context) {
@@ -176,11 +192,20 @@ static NSInteger compareTask(id obj1, id obj2, void* context) {
     }];
 }
 
+- (void)deleteTask:(NSURLSessionTask* )task {
+    [task cancel];
+    task.articleModel.downloadState = DownloadStateCanceled;
+    [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
+    [SRV(DataService) writeData:task.articleModel completion:nil];
+}
+
 - (void)deleteAllTask:(void(^)())completion {
     [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
         [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSURLSessionTask* task = obj;
+            task.articleModel.downloadState = DownloadStateCanceled;
             [task cancel];
+            [SRV(DataService) writeData:task.articleModel completion:nil];
         }];
         
         if (completion) {
@@ -189,4 +214,23 @@ static NSInteger compareTask(id obj1, id obj2, void* context) {
     }];
 }
 
+-(void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session {
+    if (_session != session) return;
+    
+    [session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        if ([downloadTasks count] == 0) {
+            if (self.backgroundTransferCompletionHandler != nil) {
+                void(^completionHandler)() = self.backgroundTransferCompletionHandler;
+                
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completionHandler();
+                    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+                    localNotification.alertBody = @"文章已下载完成.";
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
+                }];
+                self.backgroundTransferCompletionHandler = nil;
+            }
+        }
+    }];
+}
 @end

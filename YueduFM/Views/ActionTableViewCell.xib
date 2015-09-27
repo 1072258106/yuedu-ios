@@ -30,14 +30,6 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcF-zE-AQ8" customClass="UIVButton">
-                        <rect key="frame" x="247" y="0.0" width="60" height="68.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="删除" image="icon_action_delete.png">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-gh-ozi" customClass="UIVButton">
                         <rect key="frame" x="84" y="0.0" width="60" height="68.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -50,7 +42,6 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="deleteButton" destination="GcF-zE-AQ8" id="E7B-Fk-O90"/>
                 <outlet property="downloadButton" destination="CEp-No-6Qa" id="hvz-4A-Fvx"/>
                 <outlet property="favorButton" destination="y5M-gh-ozi" id="6t0-Ec-ZJS"/>
                 <outlet property="shareButton" destination="ftk-bT-Cgl" id="bKn-Hf-aTX"/>
@@ -59,7 +50,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_action_delete.png" width="35" height="30"/>
         <image name="icon_action_download.png" width="35" height="30"/>
         <image name="icon_action_favor.png" width="35" height="30"/>
         <image name="icon_action_share.png" width="35" height="30"/>

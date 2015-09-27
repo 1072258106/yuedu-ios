@@ -21,6 +21,8 @@
 
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion;
 
+- (void)listAllDownloading:(void (^)(NSArray* array))completion;
+
 - (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion;
 
 - (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion;

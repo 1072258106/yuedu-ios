@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="88c-5P-xGF" customClass="ActionTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="88c-5P-xGF" customClass="DownloadActionTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88c-5P-xGF" id="h2w-uH-8RT">
@@ -50,10 +50,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="deleteButton" destination="UuX-P5-rex" id="oTI-pT-7PQ"/>
-                <outlet property="downloadButton" destination="A59-vW-yjY" id="xFE-DF-5FA"/>
-                <outlet property="favorButton" destination="Gc1-Zo-dwl" id="d9o-Yz-Lrv"/>
-                <outlet property="shareButton" destination="r2N-An-S0V" id="0P3-b1-NoF"/>
+                <outlet property="deleteButton" destination="UuX-P5-rex" id="O8j-3J-3pB"/>
+                <outlet property="favorButton" destination="Gc1-Zo-dwl" id="juE-K7-0HI"/>
+                <outlet property="shareButton" destination="r2N-An-S0V" id="qrY-k1-pbb"/>
             </connections>
             <point key="canvasLocation" x="202" y="342.5"/>
         </tableViewCell>

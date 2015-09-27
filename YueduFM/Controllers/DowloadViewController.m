@@ -118,11 +118,7 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 }
 
 - (UINib* )nibForExpandCell {
-    if ([self isDownloadTypeDone]) {
-        return [super nibForExpandCell];
-    } else {
-        return [UINib nibWithNibName:@"DownloadActionTableViewCell" bundle:nil];
-    }
+    return [UINib nibWithNibName:@"DownloadActionTableViewCell" bundle:nil];
 }
 
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {

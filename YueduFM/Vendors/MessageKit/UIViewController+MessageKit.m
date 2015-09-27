@@ -36,6 +36,7 @@ CATEGORY_PROPERTY_GET_SET(MessageView*, messageView, setMessageView:)
 - (void)showWithFailedMessage:(NSString* )message {
     MessageView* view = [MessageView viewWithNibName:@"FailedMessageView"];
     view.messageLabel.text = message;
+    view.width = self.view.width;
     [self.messageView removeFromSuperview];
     self.messageView = view;
     [self.view addSubview:view];

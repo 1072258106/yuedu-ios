@@ -148,6 +148,7 @@
 		E495EA1B1BB7CBC20085258E /* DownloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */; };
 		E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */; };
 		E495EA1F1BB7DF0D0085258E /* icon_nav_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */; };
+		E495EA271BB7FA630085258E /* DownloadActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
@@ -195,7 +196,7 @@
 		E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */; };
 		E4ECB5B91BB6C309009CA157 /* DowloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */; };
 		E4ECB5BA1BB6C309009CA157 /* DowloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */; };
-		E4ECB5BC1BB6C5AA009CA157 /* icon_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */; };
+		E4ECB5BC1BB6C5AA009CA157 /* icon_nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5BB1BB6C5AA009CA157 /* icon_nav_back@2x.png */; };
 		E4ECB5BF1BB6C9AF009CA157 /* DownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */; };
 		E4ECB5E61BB72BC5009CA157 /* EVCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5E51BB72BC5009CA157 /* EVCircularProgressView.m */; };
 		E4F4C8471BB5093600C428AE /* icon_action_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8461BB5093600C428AE /* icon_action_download@2x.png */; };
@@ -457,6 +458,8 @@
 		E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTableViewCell.xib; sourceTree = "<group>"; };
 		E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadActionTableViewCell.xib; sourceTree = "<group>"; };
 		E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_delete@2x.png"; sourceTree = "<group>"; };
+		E495EA251BB7FA630085258E /* DownloadActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadActionTableViewCell.h; sourceTree = "<group>"; };
+		E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadActionTableViewCell.m; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
 		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
 		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
@@ -592,7 +595,7 @@
 		E4ECB5B61BB6C309009CA157 /* DowloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DowloadViewController.h; sourceTree = "<group>"; };
 		E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DowloadViewController.m; sourceTree = "<group>"; };
 		E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DowloadViewController.xib; sourceTree = "<group>"; };
-		E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navigation_back@2x.png"; sourceTree = "<group>"; };
+		E4ECB5BB1BB6C5AA009CA157 /* icon_nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_back@2x.png"; sourceTree = "<group>"; };
 		E4ECB5BD1BB6C9AF009CA157 /* DownloadService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadService.h; sourceTree = "<group>"; };
 		E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadService.m; sourceTree = "<group>"; };
 		E4ECB5E41BB72BC5009CA157 /* EVCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCircularProgressView.h; sourceTree = "<group>"; };
@@ -1178,7 +1181,7 @@
 			isa = PBXGroup;
 			children = (
 				E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */,
-				E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */,
+				E4ECB5BB1BB6C5AA009CA157 /* icon_nav_back@2x.png */,
 				E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */,
 				E4F4C84C1BB50CDF00C428AE /* icon_action_favor@2x.png */,
 				E4F4C84D1BB50CDF00C428AE /* icon_action_favored@2x.png */,
@@ -1257,6 +1260,8 @@
 				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
 				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
 				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
+				E495EA251BB7FA630085258E /* DownloadActionTableViewCell.h */,
+				E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */,
 				E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */,
 			);
 			path = Views;
@@ -1512,7 +1517,7 @@
 				E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */,
 				E431FD001BADF4FD00898B8F /* dzn_icn_activity_opera@2x.png in Resources */,
 				E431FD061BADF4FD00898B8F /* dzn_icn_toolbar_action@3x.png in Resources */,
-				E4ECB5BC1BB6C5AA009CA157 /* icon_navigation_back@2x.png in Resources */,
+				E4ECB5BC1BB6C5AA009CA157 /* icon_nav_back@2x.png in Resources */,
 				E486A3FC1BB2D72900414EDE /* MJRefresh.bundle in Resources */,
 				E4D522DC1BACA1D5002164AA /* MenuViewController.xib in Resources */,
 				E431FADD1BADE5CA00898B8F /* icon_duration@2x.png in Resources */,
@@ -1636,6 +1641,7 @@
 				E4DD91BD1BA9DC4C0045F222 /* NSNumber+SQL.m in Sources */,
 				E431FA981BADCA2600898B8F /* ArticleTableViewCell.m in Sources */,
 				E431FD451BAE001800898B8F /* DOUAudioAnalyzer.m in Sources */,
+				E495EA271BB7FA630085258E /* DownloadActionTableViewCell.m in Sources */,
 				E431FABF1BADD1D800898B8F /* NSData+ImageContentType.m in Sources */,
 				E4DD91711BA9D8A10045F222 /* main.m in Sources */,
 				E486A4031BB2F38900414EDE /* RhythmView.m in Sources */,
