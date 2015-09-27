@@ -19,7 +19,7 @@
 @implementation NetService
 
 + (ServiceLevel)level {
-    return ServiceLevelHigh;
+    return ServiceLevelHighest;
 }
 
 @end

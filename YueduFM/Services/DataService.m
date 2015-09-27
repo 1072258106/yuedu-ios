@@ -19,7 +19,7 @@
 @implementation DataService
 
 + (ServiceLevel)level {
-    return ServiceLevelHigh;
+    return ServiceLevelHighest;
 }
 
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter

@@ -42,7 +42,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 }
 
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YDSDKArticleModel* model = self.tableData[indexPath.row];
+    YDSDKArticleModelEx* model = self.tableData[indexPath.row];
     ArticleTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = model;

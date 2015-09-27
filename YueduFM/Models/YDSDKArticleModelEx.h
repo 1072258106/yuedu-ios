@@ -12,11 +12,20 @@
 
 @end
 
+typedef NS_ENUM(int, DownloadState) {
+    DownloadStateNormal = 0,
+    DownloadStateDoing,
+    DownloadStateSuccessed,
+    DownloadStateFailed,
+};
+
 @interface YDSDKArticleModelEx : YDSDKArticleModel
 
 @property (nonatomic, assign) YDSDKModelState state;
 
-@property (nonatomic, assign) BOOL isFavor;
-@property (nonatomic, assign) BOOL isRead;
+@property (nonatomic, assign) BOOL isFavored;
+@property (nonatomic, assign) BOOL isPlayed;
+@property (nonatomic, assign) DownloadState downloadState;
+@property (nonatomic, strong) NSString* downloadURLString;
 
 @end

@@ -25,36 +25,19 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         self.playing = !self.playing;
-    } forControlEvents:UIControlEventTouchUpInside];
+    } forControlEvents:UIControlEventTouchUpInside];    
 }
 
 - (void)dealloc {
     [self bk_removeAllBlockObservers];
 }
 
-#define kColorCount 12
-- (NSArray* )colors {
-    return @[
-             RGBHex(@"#A0F4B2"),
-             RGBHex(@"#9FF2F4"),
-             RGBHex(@"#A5CAF7"),
-             RGBHex(@"#A3B2F6"),
-             RGBHex(@"#EEE2AA"),
-             RGBHex(@"#DECC85"),
-             RGBHex(@"#BEC3C7"),
-             RGBHex(@"#F4C600"),
-             RGBHex(@"#EA7E00"),
-             RGBHex(@"#B8BC00"),
-             RGBHex(@"#75C5D6"),
-             RGBHex(@"#306056"),
-             ];
-}
 
-- (void)setModel:(YDSDKArticleModel *)model {
+- (void)setModel:(YDSDKArticleModelEx* )model {
     [self bk_removeAllBlockObservers];
     _model = model;
     
-    [self.pictureView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:self.colors[arc4random()%kColorCount]]];
+    [self.pictureView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:[UIColor colors][model.aid%[[UIColor colors] count]]]];
     self.titleLabel.text = model.title;
     self.authorLabel.text = model.author;
     self.speakerLabel.text = model.speaker;
@@ -65,8 +48,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setPlaying:(BOOL)playing {

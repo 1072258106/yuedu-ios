@@ -17,7 +17,7 @@
 @implementation ConfigService
 
 + (ServiceLevel)level {
-    return ServiceLevelMiddle;
+    return ServiceLevelHigh;
 }
 
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter {

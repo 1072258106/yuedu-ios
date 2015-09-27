@@ -12,3 +12,4 @@
 #import "ChannelService.h"
 #import "ArticleService.h"
 #import "NetService.h"
+#import "DownloadService.h"

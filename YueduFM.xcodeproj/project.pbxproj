@@ -144,6 +144,10 @@
 		E486A4001BB2D72900414EDE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3ED1BB2D72900414EDE /* UIView+MJExtension.m */; };
 		E486A4031BB2F38900414EDE /* RhythmView.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A4021BB2F38900414EDE /* RhythmView.m */; };
 		E486A4071BB2F81700414EDE /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */; };
+		E495EA1A1BB7CBC20085258E /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA181BB7CBC20085258E /* DownloadTableViewCell.m */; };
+		E495EA1B1BB7CBC20085258E /* DownloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */; };
+		E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */; };
+		E495EA1F1BB7DF0D0085258E /* icon_nav_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
@@ -192,6 +196,8 @@
 		E4ECB5B91BB6C309009CA157 /* DowloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */; };
 		E4ECB5BA1BB6C309009CA157 /* DowloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */; };
 		E4ECB5BC1BB6C5AA009CA157 /* icon_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */; };
+		E4ECB5BF1BB6C9AF009CA157 /* DownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */; };
+		E4ECB5E61BB72BC5009CA157 /* EVCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB5E51BB72BC5009CA157 /* EVCircularProgressView.m */; };
 		E4F4C8471BB5093600C428AE /* icon_action_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C8461BB5093600C428AE /* icon_action_download@2x.png */; };
 		E4F4C84A1BB509F900C428AE /* UIVButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C8491BB509F900C428AE /* UIVButton.m */; };
 		E4F4C84F1BB50CDF00C428AE /* icon_action_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */; };
@@ -446,6 +452,11 @@
 		E486A4011BB2F38900414EDE /* RhythmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RhythmView.h; sourceTree = "<group>"; };
 		E486A4021BB2F38900414EDE /* RhythmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RhythmView.m; sourceTree = "<group>"; };
 		E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		E495EA171BB7CBC20085258E /* DownloadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewCell.h; sourceTree = "<group>"; };
+		E495EA181BB7CBC20085258E /* DownloadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewCell.m; sourceTree = "<group>"; };
+		E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTableViewCell.xib; sourceTree = "<group>"; };
+		E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadActionTableViewCell.xib; sourceTree = "<group>"; };
+		E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_delete@2x.png"; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
 		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
 		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
@@ -582,6 +593,10 @@
 		E4ECB5B71BB6C309009CA157 /* DowloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DowloadViewController.m; sourceTree = "<group>"; };
 		E4ECB5B81BB6C309009CA157 /* DowloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DowloadViewController.xib; sourceTree = "<group>"; };
 		E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navigation_back@2x.png"; sourceTree = "<group>"; };
+		E4ECB5BD1BB6C9AF009CA157 /* DownloadService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadService.h; sourceTree = "<group>"; };
+		E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadService.m; sourceTree = "<group>"; };
+		E4ECB5E41BB72BC5009CA157 /* EVCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCircularProgressView.h; sourceTree = "<group>"; };
+		E4ECB5E51BB72BC5009CA157 /* EVCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCircularProgressView.m; sourceTree = "<group>"; };
 		E4F4C8461BB5093600C428AE /* icon_action_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_action_download@2x.png"; sourceTree = "<group>"; };
 		E4F4C8481BB509F900C428AE /* UIVButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVButton.h; sourceTree = "<group>"; };
 		E4F4C8491BB509F900C428AE /* UIVButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVButton.m; sourceTree = "<group>"; };
@@ -1087,6 +1102,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4ECB5E31BB72BC5009CA157 /* EVCircularProgressView */,
 				E4F4C88B1BB5762B00C428AE /* MessageKit */,
 				E4E9E3341BB457CB00B6BAFE /* ExpandTableViewController */,
 				E486A3C11BB2D72900414EDE /* MJRefresh */,
@@ -1161,6 +1177,7 @@
 		E4DD91981BA9D9140045F222 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */,
 				E4ECB5BB1BB6C5AA009CA157 /* icon_navigation_back@2x.png */,
 				E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */,
 				E4F4C84C1BB50CDF00C428AE /* icon_action_favor@2x.png */,
@@ -1211,6 +1228,8 @@
 				E4D5226E1BAC83C9002164AA /* ChannelService.m */,
 				E4DD91C61BA9DD5A0045F222 /* ArticleService.h */,
 				E4DD91C71BA9DD5A0045F222 /* ArticleService.m */,
+				E4ECB5BD1BB6C9AF009CA157 /* DownloadService.h */,
+				E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1224,6 +1243,9 @@
 				E431FA951BADCA2600898B8F /* ArticleTableViewCell.h */,
 				E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */,
 				E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */,
+				E495EA171BB7CBC20085258E /* DownloadTableViewCell.h */,
+				E495EA181BB7CBC20085258E /* DownloadTableViewCell.m */,
+				E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */,
 				E431FD651BAEC27900898B8F /* PlayerBar.h */,
 				E431FD661BAEC27900898B8F /* PlayerBar.m */,
 				E431FD681BAEC29900898B8F /* PlayerBar.xib */,
@@ -1235,6 +1257,7 @@
 				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
 				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
 				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
+				E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1313,6 +1336,15 @@
 				E4E9E33F1BB4587600B6BAFE /* ExpandObject.m */,
 			);
 			path = ExpandTableViewController;
+			sourceTree = "<group>";
+		};
+		E4ECB5E31BB72BC5009CA157 /* EVCircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				E4ECB5E41BB72BC5009CA157 /* EVCircularProgressView.h */,
+				E4ECB5E51BB72BC5009CA157 /* EVCircularProgressView.m */,
+			);
+			path = EVCircularProgressView;
 			sourceTree = "<group>";
 		};
 		E4F4C88B1BB5762B00C428AE /* MessageKit */ = {
@@ -1423,6 +1455,7 @@
 				E431FD571BAE015300898B8F /* icon_play@2x.png in Resources */,
 				E4F4C8511BB50CDF00C428AE /* icon_action_favored@2x.png in Resources */,
 				E431FD121BADF4FD00898B8F /* dzn_icn_toolbar_stop@3x.png in Resources */,
+				E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */,
 				E431FD701BAED75D00898B8F /* icon_next@2x.png in Resources */,
 				E431FD091BADF4FD00898B8F /* dzn_icn_toolbar_backward@3x.png in Resources */,
 				E4F4C84F1BB50CDF00C428AE /* icon_action_delete@2x.png in Resources */,
@@ -1448,6 +1481,7 @@
 				E431FA9B1BADCF0C00898B8F /* icon_author@2x.png in Resources */,
 				E431FD011BADF4FD00898B8F /* dzn_icn_activity_opera@2x~ipad.png in Resources */,
 				E431FD8B1BAF1BD000898B8F /* icon_menu_download@2x.png in Resources */,
+				E495EA1F1BB7DF0D0085258E /* icon_nav_delete@2x.png in Resources */,
 				E431FD071BADF4FD00898B8F /* dzn_icn_toolbar_backward.png in Resources */,
 				E431FD101BADF4FD00898B8F /* dzn_icn_toolbar_stop.png in Resources */,
 				E4D522D71BACA0B0002164AA /* MainViewController.xib in Resources */,
@@ -1474,6 +1508,7 @@
 				E4F4C8501BB50CDF00C428AE /* icon_action_favor@2x.png in Resources */,
 				E431FD051BADF4FD00898B8F /* dzn_icn_toolbar_action@2x.png in Resources */,
 				E431FD8F1BAF3B3A00898B8F /* icon_vmore@2x.png in Resources */,
+				E495EA1B1BB7CBC20085258E /* DownloadTableViewCell.xib in Resources */,
 				E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */,
 				E431FD001BADF4FD00898B8F /* dzn_icn_activity_opera@2x.png in Resources */,
 				E431FD061BADF4FD00898B8F /* dzn_icn_toolbar_action@3x.png in Resources */,
@@ -1520,11 +1555,13 @@
 				E431FACC1BADD1D800898B8F /* UIImageView+WebCache.m in Sources */,
 				E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */,
 				E4DD91D71BA9DF4B0045F222 /* FMDatabasePool.m in Sources */,
+				E4ECB5E61BB72BC5009CA157 /* EVCircularProgressView.m in Sources */,
 				E4DD91A11BA9DB6A0045F222 /* ServiceCenter.m in Sources */,
 				E431FCF71BADF4FD00898B8F /* DZNWebView.m in Sources */,
 				E431FD541BAE001800898B8F /* DOUSimpleHTTPRequest.m in Sources */,
 				E431FAC71BADD1D800898B8F /* UIButton+WebCache.m in Sources */,
 				E4DD91BB1BA9DC4C0045F222 /* NSDate+SQL.m in Sources */,
+				E4ECB5BF1BB6C9AF009CA157 /* DownloadService.m in Sources */,
 				E486A3F21BB2D72900414EDE /* MJRefreshHeader.m in Sources */,
 				E431FD4E1BAE001800898B8F /* DOUAudioSpatialAnalyzer.m in Sources */,
 				E4F4C84A1BB509F900C428AE /* UIVButton.m in Sources */,
@@ -1621,6 +1658,7 @@
 				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,
 				E486A3FB1BB2D72900414EDE /* MJRefreshStateHeader.m in Sources */,
 				E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */,
+				E495EA1A1BB7CBC20085258E /* DownloadTableViewCell.m in Sources */,
 				E431FAC01BADD1D800898B8F /* SDImageCache.m in Sources */,
 				E431FD441BAE001800898B8F /* DOUAudioAnalyzer+Default.m in Sources */,
 			);

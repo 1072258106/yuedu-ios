@@ -10,7 +10,7 @@
 
 @interface ArticleTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) YDSDKArticleModel* model;
+@property (nonatomic, strong) YDSDKArticleModelEx* model;
 
 @property (nonatomic, retain) IBOutlet UIImageView* pictureView;
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
@@ -19,14 +19,11 @@
 @property (nonatomic, retain) IBOutlet UILabel* durationLabel;
 @property (nonatomic, retain) IBOutlet TTTAttributedLabel* detailLabel;
 
-
 @property (nonatomic, retain) IBOutlet RhythmView* rhythmView;
 
 @property (nonatomic, retain) IBOutlet UIButton* playButton;
 @property (nonatomic, retain) IBOutlet UIButton* moreButton;
 
 @property (nonatomic, assign) BOOL playing;
-
-@property (nonatomic, assign) BOOL isOpened;
 
 @end

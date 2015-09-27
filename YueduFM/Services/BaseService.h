@@ -13,6 +13,7 @@ typedef NS_ENUM(NSUInteger, ServiceLevel) {
     ServiceLevelLow = 0,
     ServiceLevelMiddle,
     ServiceLevelHigh,
+    ServiceLevelHighest,
 };
 
 @interface BaseService : NSObject

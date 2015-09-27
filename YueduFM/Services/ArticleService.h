@@ -8,9 +8,10 @@
 
 #import "BaseService.h"
 
-@interface ArticleService : BaseService
+@class YDSDKArticleModelEx;
 
-@property (nonatomic, strong) YDSDKArticleModel* activeArticleModel;
+@interface ArticleService : BaseService
+@property (nonatomic, strong) YDSDKArticleModelEx* activeArticleModel;
 
 - (void)fetchLatest:(void(^)(NSError* error))completion;
 
@@ -21,5 +22,13 @@
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion;
 
 - (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion;
+
+- (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion;
+
+- (void)deleteDownloaded:(YDSDKArticleModelEx* )model completion:(void (^)(BOOL successed))completion;
+
+- (void)deleteAllDownloaded:(void (^)())completion;
+
+- (void)update:(YDSDKArticleModelEx* )model completion:(void(^)(YDSDKArticleModelEx* newModel))completion;
 
 @end

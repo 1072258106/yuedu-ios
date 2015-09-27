@@ -10,6 +10,11 @@
 #import "YDSDKArticleModelEx.h"
 
 @implementation ArticleService
+
++ (ServiceLevel)level {
+    return ServiceLevelMiddle;
+}
+
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter
 {
     self = [super initWithServiceCenter:serviceCenter];
@@ -48,6 +53,15 @@
      }];
 }
 
+- (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"audioURL='%@' LIMIT 0, 1", URLString] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?[result firstObject]:nil);
+        }
+    }];
+    
+}
+
 - (void)fetchLatest:(void(^)(NSError* error))completion {
     [self.dataManager count:[YDSDKArticleModelEx class] condition:nil complete:^(BOOL successed, id result) {
         BOOL none = successed && ![result intValue];
@@ -77,16 +91,56 @@
 }
 
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion {
-    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavor=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavored=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
         if (completion) completion(successed?result:nil);
     }];
 }
 
-- (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion {
-//    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavor=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
-//        if (completion) completion(successed?result:nil);
-//    }];
+- (void)update:(YDSDKArticleModelEx* )model completion:(void(^)(YDSDKArticleModelEx* newModel))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"aid=%d", model.aid] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?[result firstObject]:model);
+        }
+    }];
 }
+
+
+- (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d ORDER BY aid DESC LIMIT 0, %d", DownloadStateSuccessed, count] complete:^(BOOL successed, id result) {
+        if (completion) completion(successed?result:nil);
+    }];
+}
+
+- (void)deleteDownloaded:(YDSDKArticleModelEx* )model completion:(void (^)(BOOL successed))completion {
+    model.downloadState = DownloadStateNormal;
+    NSError* error;
+    [[NSFileManager defaultManager] removeItemAtPath:model.downloadURLString error:&error];
+    
+    [self.dataManager writeObject:model complete:^(BOOL successed, id result) {
+        if (completion) completion(successed);
+    }];
+}
+
+- (void)deleteAllDownloaded:(void (^)())completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d", DownloadStateSuccessed] complete:^(BOOL successed, id result) {
+        if (successed) {
+            NSMutableArray* array = [NSMutableArray array];
+            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                YDSDKArticleModelEx* model = obj;
+                model.downloadState = DownloadStateNormal;
+                [[NSFileManager defaultManager] removeItemAtPath:model.downloadURLString error:nil];
+                [array addObject:model];
+            }];
+            
+            [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
+                if (completion) completion();
+            }];
+        } else {
+            if (completion) completion();
+        }
+    }];
+}
+
 
 - (void)fetch:(int)articleId completion:(void(^)(NSArray* array, NSError* error))completion {
     [SRV(ConfigService) fetch:^(NSError *error) {

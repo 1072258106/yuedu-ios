@@ -8,3 +8,4 @@
 
 #import "YDSDKModel+Extension.h"
 #import "YDSDKConfigModelEx.h"
+#import "YDSDKArticleModelEx.h"

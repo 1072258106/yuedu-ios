@@ -23,15 +23,19 @@ static int const kCountPerTime = 20;
     self.title = @"我的收藏";
 
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [SRV(ArticleService) listFavored:kCountPerTime completion:^(NSArray *array) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self reloadData:array];
-                [self.tableView.header endRefreshing];
-            });
-        }];
+        [self load];
     }];
     
-    [self.tableView.header beginRefreshing];
+    [self load];
+}
+
+- (void)load {
+    [SRV(ArticleService) listFavored:kCountPerTime completion:^(NSArray *array) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self reloadData:array];
+            [self.tableView.header endRefreshing];
+        });
+    }];
 }
 
 - (void)addFooter {

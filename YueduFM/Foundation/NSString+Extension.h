@@ -14,4 +14,6 @@
 
 + (NSString* )stringWithSeconds:(int)seconds;
 
+- (NSString *)sha1;
+
 @end
