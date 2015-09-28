@@ -14,5 +14,12 @@
     return ServiceLevelHighest;
 }
 
+- (instancetype)initWithServiceCenter:(ServiceCenter *)serviceCenter {
+    self = [super initWithServiceCenter:serviceCenter];
+    if (self) {
+        _flowProtection = YES;
+    }
+    return self;
+}
 
 @end

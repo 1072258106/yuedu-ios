@@ -42,9 +42,8 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        },
                    @{
                        @"image":@"icon_menu_history.png",
-                       @"title":@"播放历史",
+                       @"title":@"最近播放",
                        @"action":^{
-                           
                        }
                        },
                    @{
@@ -63,9 +62,14 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 }
 
 - (void)pushViewController:(UIViewController* )viewController {
-    [(UINavigationController* )self.sideMenuViewController.contentViewController pushViewController:viewController animated:YES];
+    [(UINavigationController* )self.sideMenuViewController.contentViewController pushViewController:viewController animated:NO];
     [self.sideMenuViewController hideMenuViewController];
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,7 +84,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
-    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_accessory.png"]];
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_menu_accessory.png"]];
     
     UIView* selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     selectedBackgroundView.backgroundColor = RGBA(0, 0, 0, 0.2);

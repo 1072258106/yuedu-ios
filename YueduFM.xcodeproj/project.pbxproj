@@ -97,7 +97,6 @@
 		E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD791BAEDAF000898B8F /* WebViewController.m */; };
 		E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E431FD7E1BAEED6500898B8F /* Accelerate.framework */; };
 		E431FD811BAEEF9300898B8F /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD801BAEEF9300898B8F /* bg_menu.png */; };
-		E431FD831BAF0D2600898B8F /* icon_accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */; };
 		E431FD851BAF0E7900898B8F /* icon_menu_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD841BAF0E7900898B8F /* icon_menu_settings@2x.png */; };
 		E431FD871BAF151900898B8F /* icon_menu_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD861BAF151900898B8F /* icon_menu_history@2x.png */; };
 		E431FD891BAF161D00898B8F /* icon_menu_favor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E431FD881BAF161D00898B8F /* icon_menu_favor@2x.png */; };
@@ -151,6 +150,9 @@
 		E495EA271BB7FA630085258E /* DownloadActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */; };
 		E495EA2A1BB87AE60085258E /* FavorActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */; };
 		E495EA2C1BB87B130085258E /* FavorActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */; };
+		E4B4E3E91BB9408C00E3F492 /* bg_menu1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4B4E3E81BB9408C00E3F492 /* bg_menu1.jpg */; };
+		E4B4E3ED1BB9548B00E3F492 /* bg_menu1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B4E3EC1BB9548B00E3F492 /* bg_menu1@2x.png */; };
+		E4B4E3EF1BB9634D00E3F492 /* icon_menu_accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B4E3EE1BB9634D00E3F492 /* icon_menu_accessory@2x.png */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
@@ -377,7 +379,6 @@
 		E431FD7B1BAEDB7800898B8F /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		E431FD7E1BAEED6500898B8F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E431FD801BAEEF9300898B8F /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
-		E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_accessory@2x.png"; sourceTree = "<group>"; };
 		E431FD841BAF0E7900898B8F /* icon_menu_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_settings@2x.png"; sourceTree = "<group>"; };
 		E431FD861BAF151900898B8F /* icon_menu_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_history@2x.png"; sourceTree = "<group>"; };
 		E431FD881BAF161D00898B8F /* icon_menu_favor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_favor@2x.png"; sourceTree = "<group>"; };
@@ -468,6 +469,9 @@
 		E495EA281BB87AE60085258E /* FavorActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorActionTableViewCell.h; sourceTree = "<group>"; };
 		E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorActionTableViewCell.m; sourceTree = "<group>"; };
 		E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavorActionTableViewCell.xib; sourceTree = "<group>"; };
+		E4B4E3E81BB9408C00E3F492 /* bg_menu1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_menu1.jpg; sourceTree = "<group>"; };
+		E4B4E3EC1BB9548B00E3F492 /* bg_menu1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_menu1@2x.png"; sourceTree = "<group>"; };
+		E4B4E3EE1BB9634D00E3F492 /* icon_menu_accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_accessory@2x.png"; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
 		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
 		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
@@ -1195,6 +1199,9 @@
 		E4DD91981BA9D9140045F222 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4B4E3EE1BB9634D00E3F492 /* icon_menu_accessory@2x.png */,
+				E4B4E3EC1BB9548B00E3F492 /* bg_menu1@2x.png */,
+				E4B4E3E81BB9408C00E3F492 /* bg_menu1.jpg */,
 				E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */,
 				E4ECB5BB1BB6C5AA009CA157 /* icon_nav_back@2x.png */,
 				E4F4C84B1BB50CDF00C428AE /* icon_action_delete@2x.png */,
@@ -1212,7 +1219,6 @@
 				E431FD881BAF161D00898B8F /* icon_menu_favor@2x.png */,
 				E431FD861BAF151900898B8F /* icon_menu_history@2x.png */,
 				E431FD841BAF0E7900898B8F /* icon_menu_settings@2x.png */,
-				E431FD821BAF0D2600898B8F /* icon_accessory@2x.png */,
 				E431FD6E1BAED75D00898B8F /* icon_next@2x.png */,
 				E431FD801BAEEF9300898B8F /* bg_menu.png */,
 				E431FD6F1BAED75D00898B8F /* icon_download@2x.png */,
@@ -1501,7 +1507,6 @@
 				E46E2ED81BB0454500CCF57F /* SVProgressHUD.bundle in Resources */,
 				E431FD0B1BADF4FD00898B8F /* dzn_icn_toolbar_forward@2x.png in Resources */,
 				E4DD917F1BA9D8A20045F222 /* LaunchScreen.xib in Resources */,
-				E431FD831BAF0D2600898B8F /* icon_accessory@2x.png in Resources */,
 				E431FD711BAED75D00898B8F /* icon_download@2x.png in Resources */,
 				E431FCFE1BADF4FD00898B8F /* dzn_icn_activity_link@2x.png in Resources */,
 				E431FD0C1BADF4FD00898B8F /* dzn_icn_toolbar_forward@3x.png in Resources */,
@@ -1509,6 +1514,7 @@
 				E431FD081BADF4FD00898B8F /* dzn_icn_toolbar_backward@2x.png in Resources */,
 				E4F4C8971BB57B3200C428AE /* SuccessedMessageView.xib in Resources */,
 				E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */,
+				E4B4E3E91BB9408C00E3F492 /* bg_menu1.jpg in Resources */,
 				E431FD111BADF4FD00898B8F /* dzn_icn_toolbar_stop@2x.png in Resources */,
 				E431FD811BAEEF9300898B8F /* bg_menu.png in Resources */,
 				E431FCFF1BADF4FD00898B8F /* dzn_icn_activity_link@2x~ipad.png in Resources */,
@@ -1525,6 +1531,7 @@
 				E431FCFD1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x~ipad.png in Resources */,
 				E431FD8D1BAF34E300898B8F /* icon_more@2x.png in Resources */,
 				E431FCF91BADF4FD00898B8F /* DZNWebViewController.strings in Resources */,
+				E4B4E3ED1BB9548B00E3F492 /* bg_menu1@2x.png in Resources */,
 				E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E431FD891BAF161D00898B8F /* icon_menu_favor@2x.png in Resources */,
@@ -1533,6 +1540,7 @@
 				E431FADF1BADE73800898B8F /* icon_headset@2x.png in Resources */,
 				E431FD851BAF0E7900898B8F /* icon_menu_settings@2x.png in Resources */,
 				E431FCFB1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x~ipad.png in Resources */,
+				E4B4E3EF1BB9634D00E3F492 /* icon_menu_accessory@2x.png in Resources */,
 				E4F4C8981BB57B3200C428AE /* FailedMessageView.xib in Resources */,
 				E431FCFC1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x.png in Resources */,
 				E4F4C8521BB50CDF00C428AE /* icon_action_share@2x.png in Resources */,

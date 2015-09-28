@@ -107,8 +107,6 @@
 - (void)updateFavorButton {
     dispatch_async(dispatch_get_main_queue(), ^{
         YDSDKArticleModelEx* aModel = [self article];
-        NSLog(@"=111=[%p]======[%p]==========favored:%d",self.favorButton, [self article], [self article].isFavored);
-        
         [self.favorButton setTitle:aModel.isFavored?@"取消收藏":@"收藏"
                           forState:UIControlStateNormal];
         
