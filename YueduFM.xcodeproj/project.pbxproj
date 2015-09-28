@@ -142,6 +142,13 @@
 		E486A4001BB2D72900414EDE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3ED1BB2D72900414EDE /* UIView+MJExtension.m */; };
 		E486A4031BB2F38900414EDE /* RhythmView.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A4021BB2F38900414EDE /* RhythmView.m */; };
 		E486A4071BB2F81700414EDE /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */; };
+		E48884901BB997CA0053F346 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488848E1BB997CA0053F346 /* SettingsViewController.m */; };
+		E48884951BB9983F0053F346 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48884931BB9983F0053F346 /* HistoryViewController.m */; };
+		E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48884941BB9983F0053F346 /* HistoryViewController.xib */; };
+		E488849F1BB9AAD60053F346 /* RootSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488849D1BB9AAD60053F346 /* RootSettingsViewController.m */; };
+		E48884A01BB9AAD60053F346 /* RootSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E488849E1BB9AAD60053F346 /* RootSettingsViewController.xib */; };
+		E48884A41BB9AB630053F346 /* AutoCloseSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48884A21BB9AB630053F346 /* AutoCloseSettingsViewController.m */; };
+		E48884A51BB9AB630053F346 /* AutoCloseSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48884A31BB9AB630053F346 /* AutoCloseSettingsViewController.xib */; };
 		E495EA1A1BB7CBC20085258E /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA181BB7CBC20085258E /* DownloadTableViewCell.m */; };
 		E495EA1B1BB7CBC20085258E /* DownloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */; };
 		E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */; };
@@ -458,6 +465,17 @@
 		E486A4011BB2F38900414EDE /* RhythmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RhythmView.h; sourceTree = "<group>"; };
 		E486A4021BB2F38900414EDE /* RhythmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RhythmView.m; sourceTree = "<group>"; };
 		E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		E488848D1BB997CA0053F346 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E488848E1BB997CA0053F346 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E48884921BB9983F0053F346 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		E48884931BB9983F0053F346 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		E48884941BB9983F0053F346 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		E488849C1BB9AAD60053F346 /* RootSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootSettingsViewController.h; sourceTree = "<group>"; };
+		E488849D1BB9AAD60053F346 /* RootSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootSettingsViewController.m; sourceTree = "<group>"; };
+		E488849E1BB9AAD60053F346 /* RootSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootSettingsViewController.xib; sourceTree = "<group>"; };
+		E48884A11BB9AB630053F346 /* AutoCloseSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCloseSettingsViewController.h; sourceTree = "<group>"; };
+		E48884A21BB9AB630053F346 /* AutoCloseSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCloseSettingsViewController.m; sourceTree = "<group>"; };
+		E48884A31BB9AB630053F346 /* AutoCloseSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoCloseSettingsViewController.xib; sourceTree = "<group>"; };
 		E495EA171BB7CBC20085258E /* DownloadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewCell.h; sourceTree = "<group>"; };
 		E495EA181BB7CBC20085258E /* DownloadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewCell.m; sourceTree = "<group>"; };
 		E495EA191BB7CBC20085258E /* DownloadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadTableViewCell.xib; sourceTree = "<group>"; };
@@ -1177,6 +1195,17 @@
 				E4B4E3F51BB9835700E3F492 /* SearchViewController.h */,
 				E4B4E3F61BB9835700E3F492 /* SearchViewController.m */,
 				E4B4E3F71BB9835700E3F492 /* SearchViewController.xib */,
+				E488848D1BB997CA0053F346 /* SettingsViewController.h */,
+				E488848E1BB997CA0053F346 /* SettingsViewController.m */,
+				E488849C1BB9AAD60053F346 /* RootSettingsViewController.h */,
+				E488849D1BB9AAD60053F346 /* RootSettingsViewController.m */,
+				E488849E1BB9AAD60053F346 /* RootSettingsViewController.xib */,
+				E48884A11BB9AB630053F346 /* AutoCloseSettingsViewController.h */,
+				E48884A21BB9AB630053F346 /* AutoCloseSettingsViewController.m */,
+				E48884A31BB9AB630053F346 /* AutoCloseSettingsViewController.xib */,
+				E48884921BB9983F0053F346 /* HistoryViewController.h */,
+				E48884931BB9983F0053F346 /* HistoryViewController.m */,
+				E48884941BB9983F0053F346 /* HistoryViewController.xib */,
 				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
 				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
@@ -1495,6 +1524,7 @@
 				E431FA921BADBE3400898B8F /* icon_nav_menu@2x.png in Resources */,
 				E46E2ECD1BB031E900CCF57F /* icon_up_arrow_h@2x.png in Resources */,
 				E431FD0E1BADF4FD00898B8F /* dzn_icn_toolbar_reload@2x.png in Resources */,
+				E48884A51BB9AB630053F346 /* AutoCloseSettingsViewController.xib in Resources */,
 				E431FD041BADF4FD00898B8F /* dzn_icn_toolbar_action.png in Resources */,
 				E431FD5C1BAE80B900898B8F /* icon_pause@2x.png in Resources */,
 				E431FD571BAE015300898B8F /* icon_play@2x.png in Resources */,
@@ -1529,6 +1559,7 @@
 				E431FD071BADF4FD00898B8F /* dzn_icn_toolbar_backward.png in Resources */,
 				E431FD101BADF4FD00898B8F /* dzn_icn_toolbar_stop.png in Resources */,
 				E4D522D71BACA0B0002164AA /* MainViewController.xib in Resources */,
+				E48884A01BB9AAD60053F346 /* RootSettingsViewController.xib in Resources */,
 				E431FCFD1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x~ipad.png in Resources */,
 				E431FD8D1BAF34E300898B8F /* icon_more@2x.png in Resources */,
 				E431FCF91BADF4FD00898B8F /* DZNWebViewController.strings in Resources */,
@@ -1538,6 +1569,7 @@
 				E46E2EC71BB0251A00CCF57F /* icon_down_arrow@2x.png in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E431FADF1BADE73800898B8F /* icon_headset@2x.png in Resources */,
+				E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */,
 				E431FD851BAF0E7900898B8F /* icon_menu_settings@2x.png in Resources */,
 				E431FCFB1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x~ipad.png in Resources */,
 				E4B4E3EF1BB9634D00E3F492 /* icon_menu_accessory@2x.png in Resources */,
@@ -1596,6 +1628,7 @@
 				E4D522DB1BACA1D5002164AA /* MenuViewController.m in Sources */,
 				E431FD551BAE001800898B8F /* NSData+DOUMappedFile.m in Sources */,
 				E4DD91C11BA9DC4C0045F222 /* PPSqliteORMManager.m in Sources */,
+				E48884A41BB9AB630053F346 /* AutoCloseSettingsViewController.m in Sources */,
 				E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */,
 				E486A3F91BB2D72900414EDE /* MJRefreshGifHeader.m in Sources */,
 				E486A3F51BB2D72900414EDE /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1637,8 +1670,10 @@
 				E431FAC41BADD1D800898B8F /* SDWebImageDownloaderOperation.m in Sources */,
 				E431FAC21BADD1D800898B8F /* SDWebImageDecoder.m in Sources */,
 				E46E2ED91BB0454500CCF57F /* SVProgressHUD.m in Sources */,
+				E48884951BB9983F0053F346 /* HistoryViewController.m in Sources */,
 				E431FD4D1BAE001800898B8F /* DOUAudioRenderer.m in Sources */,
 				E431FAC51BADD1D800898B8F /* SDWebImageManager.m in Sources */,
+				E488849F1BB9AAD60053F346 /* RootSettingsViewController.m in Sources */,
 				E431FD511BAE001800898B8F /* DOUAudioVisualizer.m in Sources */,
 				E431FD4A1BAE001800898B8F /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				E46E2EDA1BB0454500CCF57F /* SVRadialGradientLayer.m in Sources */,
@@ -1646,6 +1681,7 @@
 				E4DD91D91BA9DF4B0045F222 /* FMResultSet.m in Sources */,
 				E4DD91BE1BA9DC4C0045F222 /* NSObject+PPSqliteORM.m in Sources */,
 				E4D522AF1BAC8BA7002164AA /* YDSDKModel+Extension.m in Sources */,
+				E48884901BB997CA0053F346 /* SettingsViewController.m in Sources */,
 				E4D522E61BACA27A002164AA /* UIViewController+RESideMenu.m in Sources */,
 				E431FD471BAE001800898B8F /* DOUAudioEventLoop.m in Sources */,
 				E431FACD1BADD1D800898B8F /* UIView+WebCacheOperation.m in Sources */,

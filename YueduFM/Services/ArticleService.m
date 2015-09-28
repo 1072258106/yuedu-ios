@@ -86,6 +86,14 @@
     }];
 }
 
+- (void)listPlayed:(int)count completion:(void (^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"playedDate > 0 ORDER BY playedDate DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?result:nil);
+        }
+    }];
+}
+
 - (void)list:(int)count
      channel:(int)channel
   completion:(void (^)(NSArray* array))completion {

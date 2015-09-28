@@ -47,6 +47,7 @@ static int const kCountPerTime = 20;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self reloadData:array];
             [self.tableView.header endRefreshing];
+            [self addFooter];
         });
     }];
 }

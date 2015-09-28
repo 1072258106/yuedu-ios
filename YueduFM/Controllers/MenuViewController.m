@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 #import "FavorViewController.h"
 #import "DowloadViewController.h"
+#import "RootSettingsViewController.h"
+#import "HistoryViewController.h"
 
 @interface MenuViewController () {
     NSArray*   _tableData;
@@ -44,13 +46,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"image":@"icon_menu_history.png",
                        @"title":@"最近播放",
                        @"action":^{
+                           HistoryViewController* vc = [[HistoryViewController alloc] initWithNibName:@"HistoryViewController" bundle:nil];
+                           [self pushViewController:vc];
                        }
                        },
                    @{
                        @"image":@"icon_menu_settings.png",
                        @"title":@"设置",
                        @"action":^{
-                           
+                           RootSettingsViewController* vc = [[RootSettingsViewController alloc] initWithNibName:@"RootSettingsViewController" bundle:nil];
+                           [self pushViewController:vc];
                        }
                        },
                    ];

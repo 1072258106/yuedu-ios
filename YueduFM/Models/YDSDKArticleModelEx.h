@@ -25,9 +25,9 @@ typedef NS_ENUM(int, DownloadState) {
 @property (nonatomic, assign) YDSDKModelState state;
 
 @property (nonatomic, assign) BOOL isFavored;
-@property (nonatomic, assign) BOOL isPlayed;
 @property (nonatomic, assign) DownloadState downloadState;
 @property (nonatomic, strong) NSString* downloadURLString;
 @property (nonatomic, strong) NSDate* downloadDate;
+@property (nonatomic, strong) NSDate* playedDate;
 
 @end
