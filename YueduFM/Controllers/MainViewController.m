@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "REMenu.h"
+#import "SearchViewController.h"
 
 @interface MainViewController () {
     REMenu*         _menu;
@@ -56,6 +57,8 @@ static int const kCountPerTime = 20;
     }];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
+        SearchViewController* vc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

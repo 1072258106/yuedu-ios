@@ -19,6 +19,10 @@
      channel:(int)channel
   completion:(void (^)(NSArray* array))completion;
 
+- (void)list:(int)count
+      filter:(NSString* )filter
+  completion:(void (^)(NSArray* array))completion;
+
 //收藏
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion;
 - (void)deleteAllFavored:(void (^)())completion;

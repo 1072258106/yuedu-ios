@@ -92,6 +92,18 @@
     [self checkout:count channel:channel completion:completion];
 }
 
+- (void)list:(int)count
+      filter:(NSString* )filter
+  completion:(void (^)(NSArray* array))completion {
+    if (filter.length == 0) {
+        if (completion) completion(nil);
+    } else {
+        [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"title LIKE '%%%@%%' OR author LIKE '%%%@%%' OR speaker LIKE '%%%@%%'  LIMIT 0, %d", filter, filter, filter, count] complete:^(BOOL successed, id result) {
+            if (completion) completion(successed?result:nil);
+        }];
+    }
+}
+
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"isFavored=1 ORDER BY aid DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
         if (completion) completion(successed?result:nil);

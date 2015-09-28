@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_menu1.png" translatesAutoresizingMaskIntoConstraints="NO" id="IPK-tj-4XK">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_menu.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IPK-tj-4XK">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-90-Nvz">
@@ -42,6 +42,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_menu1.png" width="960" height="600"/>
+        <image name="bg_menu.jpg" width="1920" height="1200"/>
     </resources>
 </document>
