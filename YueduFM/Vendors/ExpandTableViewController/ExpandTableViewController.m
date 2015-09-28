@@ -46,11 +46,33 @@ static NSString* const kExpandCellIdentifier = @"kExpandCellIdentifier";
 
 - (void)closeExpand {
     if (_openedIndexPath) {
-        [self.tableView beginUpdates];
-        [self.tableData removeObjectAtIndex:_openedIndexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[_openedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
-        [self.tableView endUpdates];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+            [self.tableData removeObjectAtIndex:_openedIndexPath.row];
+            [self.tableView deleteRowsAtIndexPaths:@[_openedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+            _openedIndexPath = nil;
+        });
     }
+}
+
+- (void)deleteCellWithModel:(id)model {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self closeExpand];
+        usleep(200*1000);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+            NSUInteger row = [_tableData indexOfObject:model];
+            if (row != NSNotFound) {
+                NSIndexPath* indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+                [self.tableData removeObject:model];
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }
+            
+            [self.tableView endUpdates];
+            _openedIndexPath = nil;
+        });
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

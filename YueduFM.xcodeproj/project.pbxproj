@@ -149,6 +149,8 @@
 		E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */; };
 		E495EA1F1BB7DF0D0085258E /* icon_nav_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */; };
 		E495EA271BB7FA630085258E /* DownloadActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */; };
+		E495EA2A1BB87AE60085258E /* FavorActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */; };
+		E495EA2C1BB87B130085258E /* FavorActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
 		E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D522A81BAC8802002164AA /* libBlocksKit.a */; };
@@ -189,6 +191,9 @@
 		E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */; };
 		E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD919C1BA9D9950045F222 /* YueduFMSDK.framework */; };
 		E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E51BA9E1D20045F222 /* libxml2.dylib */; };
+		E4E134231BB8E3FA0063D6B2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134221BB8E3FA0063D6B2 /* Reachability.m */; };
+		E4E134261BB8E4230063D6B2 /* ReachabilityService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134251BB8E4230063D6B2 /* ReachabilityService.m */; };
+		E4E134291BB8E6200063D6B2 /* SettingsService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134281BB8E6200063D6B2 /* SettingsService.m */; };
 		E4E9E3291BB42DB100B6BAFE /* ActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */; };
 		E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */; };
 		E4E9E3391BB457CB00B6BAFE /* ExpandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E3361BB457CB00B6BAFE /* ExpandTableViewCell.m */; };
@@ -460,6 +465,9 @@
 		E495EA1E1BB7DF0D0085258E /* icon_nav_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nav_delete@2x.png"; sourceTree = "<group>"; };
 		E495EA251BB7FA630085258E /* DownloadActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadActionTableViewCell.h; sourceTree = "<group>"; };
 		E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadActionTableViewCell.m; sourceTree = "<group>"; };
+		E495EA281BB87AE60085258E /* FavorActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorActionTableViewCell.h; sourceTree = "<group>"; };
+		E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorActionTableViewCell.m; sourceTree = "<group>"; };
+		E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavorActionTableViewCell.xib; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
 		E4D522621BAC7BD6002164AA /* ConfigService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigService.m; sourceTree = "<group>"; };
 		E4D522641BAC7E6D002164AA /* YueduFM.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YueduFM.pch; sourceTree = "<group>"; };
@@ -583,6 +591,12 @@
 		E4DD91DD1BA9E08F0045F222 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4DD91E51BA9E1D20045F222 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E4E134211BB8E3FA0063D6B2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E4E134221BB8E3FA0063D6B2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E4E134241BB8E4230063D6B2 /* ReachabilityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityService.h; sourceTree = "<group>"; };
+		E4E134251BB8E4230063D6B2 /* ReachabilityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityService.m; sourceTree = "<group>"; };
+		E4E134271BB8E6200063D6B2 /* SettingsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsService.h; sourceTree = "<group>"; };
+		E4E134281BB8E6200063D6B2 /* SettingsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsService.m; sourceTree = "<group>"; };
 		E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTableViewCell.h; sourceTree = "<group>"; };
 		E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTableViewCell.m; sourceTree = "<group>"; };
 		E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionTableViewCell.xib; sourceTree = "<group>"; };
@@ -1105,6 +1119,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4E134201BB8E3FA0063D6B2 /* Reachability */,
 				E4ECB5E31BB72BC5009CA157 /* EVCircularProgressView */,
 				E4F4C88B1BB5762B00C428AE /* MessageKit */,
 				E4E9E3341BB457CB00B6BAFE /* ExpandTableViewController */,
@@ -1233,6 +1248,10 @@
 				E4DD91C71BA9DD5A0045F222 /* ArticleService.m */,
 				E4ECB5BD1BB6C9AF009CA157 /* DownloadService.h */,
 				E4ECB5BE1BB6C9AF009CA157 /* DownloadService.m */,
+				E4E134241BB8E4230063D6B2 /* ReachabilityService.h */,
+				E4E134251BB8E4230063D6B2 /* ReachabilityService.m */,
+				E4E134271BB8E6200063D6B2 /* SettingsService.h */,
+				E4E134281BB8E6200063D6B2 /* SettingsService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1260,6 +1279,9 @@
 				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
 				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
 				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
+				E495EA281BB87AE60085258E /* FavorActionTableViewCell.h */,
+				E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */,
+				E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */,
 				E495EA251BB7FA630085258E /* DownloadActionTableViewCell.h */,
 				E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */,
 				E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */,
@@ -1328,6 +1350,16 @@
 				E4DD91DD1BA9E08F0045F222 /* JSONKit.m */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		E4E134201BB8E3FA0063D6B2 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E4E134211BB8E3FA0063D6B2 /* Reachability.h */,
+				E4E134221BB8E3FA0063D6B2 /* Reachability.m */,
+			);
+			name = Reachability;
+			path = "../../../Reachability.h ReachabilityTesst/Reachability.h ReachabilityTesst/Reachability";
 			sourceTree = "<group>";
 		};
 		E4E9E3341BB457CB00B6BAFE /* ExpandTableViewController */ = {
@@ -1516,6 +1548,7 @@
 				E495EA1B1BB7CBC20085258E /* DownloadTableViewCell.xib in Resources */,
 				E4DD917C1BA9D8A20045F222 /* Images.xcassets in Resources */,
 				E431FD001BADF4FD00898B8F /* dzn_icn_activity_opera@2x.png in Resources */,
+				E495EA2C1BB87B130085258E /* FavorActionTableViewCell.xib in Resources */,
 				E431FD061BADF4FD00898B8F /* dzn_icn_toolbar_action@3x.png in Resources */,
 				E4ECB5BC1BB6C5AA009CA157 /* icon_nav_back@2x.png in Resources */,
 				E486A3FC1BB2D72900414EDE /* MJRefresh.bundle in Resources */,
@@ -1585,6 +1618,7 @@
 				E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */,
 				E4DD91D61BA9DF4B0045F222 /* FMDatabaseAdditions.m in Sources */,
 				E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */,
+				E4E134261BB8E4230063D6B2 /* ReachabilityService.m in Sources */,
 				E4DD91C21BA9DC4C0045F222 /* PPSqliteORMSQL.m in Sources */,
 				E431FAC11BADD1D800898B8F /* SDWebImageCompat.m in Sources */,
 				E431FD521BAE001800898B8F /* DOUEAGLView.m in Sources */,
@@ -1622,6 +1656,7 @@
 				E486A3F01BB2D72900414EDE /* MJRefreshComponent.m in Sources */,
 				E4F4C8961BB57B3200C428AE /* UIViewController+MessageKit.m in Sources */,
 				E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */,
+				E4E134291BB8E6200063D6B2 /* SettingsService.m in Sources */,
 				E431FD1A1BADFC3600898B8F /* UINavigationItem+Extension.m in Sources */,
 				E486A3F11BB2D72900414EDE /* MJRefreshFooter.m in Sources */,
 				E4F4C8AA1BB6B34C00C428AE /* FavorViewController.m in Sources */,
@@ -1643,6 +1678,7 @@
 				E431FD451BAE001800898B8F /* DOUAudioAnalyzer.m in Sources */,
 				E495EA271BB7FA630085258E /* DownloadActionTableViewCell.m in Sources */,
 				E431FABF1BADD1D800898B8F /* NSData+ImageContentType.m in Sources */,
+				E495EA2A1BB87AE60085258E /* FavorActionTableViewCell.m in Sources */,
 				E4DD91711BA9D8A10045F222 /* main.m in Sources */,
 				E486A4031BB2F38900414EDE /* RhythmView.m in Sources */,
 				E4F4C89E1BB6936E00C428AE /* UIViewController+Extension.m in Sources */,
@@ -1662,6 +1698,7 @@
 				E431FD491BAE001800898B8F /* DOUAudioFileProvider.m in Sources */,
 				E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */,
 				E4D522E41BACA27A002164AA /* RECommonFunctions.m in Sources */,
+				E4E134231BB8E3FA0063D6B2 /* Reachability.m in Sources */,
 				E486A3FB1BB2D72900414EDE /* MJRefreshStateHeader.m in Sources */,
 				E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */,
 				E495EA1A1BB7CBC20085258E /* DownloadTableViewCell.m in Sources */,

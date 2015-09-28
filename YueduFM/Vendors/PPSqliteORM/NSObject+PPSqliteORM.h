@@ -82,4 +82,5 @@ __rawType:@[__objcType, __sqliteType]
 
 + (id)objectFromSuperObject:(id)object;
 
+- (void)updateForObject:(id)object;
 @end

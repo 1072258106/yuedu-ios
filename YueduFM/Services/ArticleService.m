@@ -37,6 +37,8 @@
                 if (completion) completion();
                 [self autoFetch:nil];
             }];
+        } else {
+            if (completion) completion();
         }
     }];
 }
@@ -65,19 +67,21 @@
 - (void)fetchLatest:(void(^)(NSError* error))completion {
     [self.dataManager count:[YDSDKArticleModelEx class] condition:nil complete:^(BOOL successed, id result) {
         BOOL none = successed && ![result intValue];
+        NSLog(@"1212121=====");
         [self fetch:0 completion:^(NSArray* array, NSError *error) {
-            //为了防止第一次数据不够，多加载一次
-            if (none) {
-                [self autoFetch:^{
-                    if (completion) {
-                        completion(error);
-                    }                    
-                }];
-            } else {
-                [self autoFetch:nil];
-                if (completion) {
-                    completion(error);
+            NSLog(@"333333=====");
+            if (!error) {
+                //为了防止第一次数据不够，多加载一次
+                if (none) {
+                    [self autoFetch:^{
+                        if (completion) completion(error);
+                    }];
+                } else {
+                    [self autoFetch:nil];
+                    if (completion) completion(error);
                 }
+            } else {
+                if (completion) completion(error);
             }
         }];
         
@@ -98,20 +102,23 @@
 
 - (void)update:(YDSDKArticleModelEx* )model completion:(void(^)(YDSDKArticleModelEx* newModel))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"aid=%d", model.aid] complete:^(BOOL successed, id result) {
+        YDSDKArticleModelEx* newModel = successed?[result firstObject]:nil;
+        [model updateForObject:newModel];
+
         if (completion) {
-            completion(successed?[result firstObject]:model);
+            completion(model);
         }
     }];
 }
 
 - (void)listAllDownloading:(void (^)(NSArray* array))completion {
-    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d", DownloadStateDoing] complete:^(BOOL successed, id result) {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d ORDER BY downloadDate DESC", DownloadStateDoing] complete:^(BOOL successed, id result) {
         if (completion) completion(successed?result:nil);
     }];
 }
 
 - (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion {
-    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d ORDER BY aid DESC LIMIT 0, %d", DownloadStateSuccessed, count] complete:^(BOOL successed, id result) {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"downloadState=%d ORDER BY downloadDate DESC LIMIT 0, %d", DownloadStateSuccessed, count] complete:^(BOOL successed, id result) {
         if (completion) completion(successed?result:nil);
     }];
 }
@@ -133,7 +140,27 @@
             [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 YDSDKArticleModelEx* model = obj;
                 model.downloadState = DownloadStateNormal;
-                [[NSFileManager defaultManager] removeItemAtPath:model.downloadURLString error:nil];
+                [array addObject:model];
+            }];
+            
+            [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
+                if (completion) completion();
+            }];
+        } else {
+            if (completion) completion();
+        }
+        
+        [SRV(DownloadService) deleteAllDownloadedFiles];
+    }];
+}
+
+- (void)deleteAllFavored:(void (^)())completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:@"isFavored=1" complete:^(BOOL successed, id result) {
+        if (successed) {
+            NSMutableArray* array = [NSMutableArray array];
+            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                YDSDKArticleModelEx* model = obj;
+                model.isFavored = NO;
                 [array addObject:model];
             }];
             
@@ -176,6 +203,8 @@
                         writeBlock(data);
                     }
                 }];
+            } else {
+                if (completion) completion(nil, error);
             }
         }];        
     }];

@@ -9,6 +9,7 @@
 #import "DownloadService.h"
 
 NSString* const DownloadSeriviceDidChangedNotification = @"DownloadSeriviceDidChangedNotification";
+NSString* const DownloadSeriviceDidSuccessedNotification = @"DownloadSeriviceDidSuccessedNotification";
 
 @implementation NSURLSessionTask (DownloadService)
 
@@ -60,22 +61,32 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
 - (void)setupTasks {
     [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
         ArticleService* service = SRV(ArticleService);
+        NetworkStatus status = SRV(ReachabilityService).status;
+        
         [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSURLSessionTask* task = obj;
             [service modelForAudioURLString:task.originalRequest.URL.absoluteString completion:^(YDSDKArticleModelEx *model) {
                 task.articleModel = model;
             }];
+            if (status == ReachableViaWWAN) {
+                [task suspend];
+            }
         }];
         
         //空任务，则从数据库读取
         if (![downloadTasks count]) {
             [service listAllDownloading:^(NSArray *array) {
                 [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    [self download:obj preprocess:nil];
+                    [self download:obj protect:(status == ReachableViaWWAN) preprocess:nil];
                 }];
             }];
         }
     }];
+}
+
+- (void)deleteAllDownloadedFiles {
+    [[NSFileManager defaultManager] removeItemAtPath:_baseDirectory error:nil];
+    [self setupDirectory];
 }
 
 - (void)state:(void(^)(BOOL downloading))completion {
@@ -86,16 +97,28 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     }];
 }
 
-- (void)didDownload:(YDSDKArticleModelEx* )model {
+- (void)didDownload:(YDSDKArticleModelEx* )model protect:(BOOL)protect {
     NSURLSessionDownloadTask* task = [_session downloadTaskWithURL:model.audioURL.url];
     task.articleModel = model;
-    [task resume];
+    if (protect) {
+        [task suspend];
+    } else {
+        [task resume];
+    }
     model.downloadState = DownloadStateDoing;
+    model.downloadDate = [NSDate date];
     [SRV(DataService) writeData:model completion:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
 }
 
-- (void)download:(YDSDKArticleModelEx* )model preprocess:(void(^)(NSError* error))preprocess{
+- (void)download:(YDSDKArticleModelEx* )model
+      preprocess:(void(^)(NSError* error))preprocess {
+    [self download:model protect:NO preprocess:preprocess];
+}
+
+- (void)download:(YDSDKArticleModelEx* )model
+         protect:(BOOL)protect
+      preprocess:(void(^)(NSError* error))preprocess{
     [SRV(ArticleService) update:model completion:^(YDSDKArticleModelEx *newModel) {
         @synchronized(self) {
             if (newModel.downloadState == DownloadStateSuccessed) {
@@ -117,7 +140,7 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
                     
                     NSError* error;
                     if (!downloading) {
-                        [self didDownload:model];
+                        [self didDownload:model protect:protect];
                     } else {
                         error = [NSError errorWithDomain:DownloadErrorDomain code:DownloadErrorCodeAlreadyDownloading userInfo:nil];
                     }
@@ -137,10 +160,7 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error {
-    [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
-    if (error && task.articleModel.downloadState != DownloadStateCanceled) {
-        [self download:task.articleModel preprocess:nil];
-    }
+    NSLog(@"didCompleteWithError=======%@", task.articleModel.title);
 }
 
 - (void)URLSession:(NSURLSession *)session
@@ -158,8 +178,10 @@ didFinishDownloadingToURL:(NSURL *)location {
         [SRV(DataService) writeData:model completion:^{
             [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
         }];
-    } else if (downloadTask.articleModel.downloadState != DownloadStateCanceled) {
-        [self download:downloadTask.articleModel preprocess:nil];
+        
+        if (self.taskDidFinished) {
+            self.taskDidFinished(model);
+        }
     }
 }
 
@@ -195,7 +217,6 @@ static NSInteger compareTask(id obj1, id obj2, void* context) {
 - (void)deleteTask:(NSURLSessionTask* )task {
     [task cancel];
     task.articleModel.downloadState = DownloadStateCanceled;
-    [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
     [SRV(DataService) writeData:task.articleModel completion:nil];
 }
 

@@ -27,4 +27,6 @@
 
 - (void)closeExpand;
 
+- (void)deleteCellWithModel:(id)model;
+
 @end

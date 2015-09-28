@@ -13,3 +13,5 @@
 #import "ArticleService.h"
 #import "NetService.h"
 #import "DownloadService.h"
+#import "ReachabilityService.h"
+#import "SettingsService.h"

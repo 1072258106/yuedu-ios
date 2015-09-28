@@ -18,10 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    [__serviceCenter setup];
-    
+        
     [self setupAppearance];
+    [self setupService];
     
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
@@ -29,8 +28,8 @@
     nvc.navigationBar.barTintColor = kThemeColor;
     nvc.navigationBar.tintColor = [UIColor whiteColor];
     [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
     nvc.navigationBar.barStyle = UIBarStyleBlack;
+    
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
     RESideMenu* sideMenu = [[RESideMenu alloc] initWithContentViewController:nvc leftMenuViewController:vc rightMenuViewController:nil];
@@ -41,6 +40,16 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)setupService {
+    [__serviceCenter setup];
+    
+    SRV(DownloadService).taskDidFinished = ^(YDSDKArticleModelEx* model) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MessageKit showWithSuccessedMessage:[NSString stringWithFormat:@"%@ 下载完成", model.title]];
+        });
+    };
 }
 
 - (void)setupAppearance {

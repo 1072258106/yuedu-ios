@@ -10,12 +10,17 @@
 
 @implementation DownloadActionTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self.deleteButton bk_addEventHandler:^(id sender) {
+- (IBAction)onDeleteButtonPressed:(id)sender {
+    if ([self.model isKindOfClass:[NSURLSessionTask class]]) {
         [SRV(DownloadService) deleteTask:self.model];
-    } forControlEvents:UIControlEventTouchUpInside];
+        [self.expandTableViewController deleteCellWithModel:self.model];
+    } else {
+        [SRV(ArticleService) deleteDownloaded:self.model completion:^(BOOL successed) {
+            if (successed) {
+                [self.expandTableViewController deleteCellWithModel:self.model];
+            }
+        }];
+    }
 }
 
 @end

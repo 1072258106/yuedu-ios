@@ -28,6 +28,11 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self closeExpand];
+}
+
 #pragma mark - TableViewControllerProtocol
 - (UINib* )nibForExpandCell {
     return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];

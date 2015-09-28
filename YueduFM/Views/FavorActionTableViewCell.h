@@ -1,5 +1,5 @@
 //
-//  DownloadActionTableViewCell.h
+//  FavorActionTableViewCell.h
 //  YueduFM
 //
 //  Created by StarNet on 9/27/15.
@@ -8,6 +8,6 @@
 
 #import "ActionTableViewCell.h"
 
-@interface DownloadActionTableViewCell : ActionTableViewCell
+@interface FavorActionTableViewCell : ActionTableViewCell
 
 @end

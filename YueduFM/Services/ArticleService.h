@@ -19,18 +19,17 @@
      channel:(int)channel
   completion:(void (^)(NSArray* array))completion;
 
+//收藏
 - (void)listFavored:(int)count completion:(void (^)(NSArray* array))completion;
+- (void)deleteAllFavored:(void (^)())completion;
 
+//下载
 - (void)listAllDownloading:(void (^)(NSArray* array))completion;
-
 - (void)listDownloaded:(int)count completion:(void (^)(NSArray* array))completion;
-
-- (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion;
-
 - (void)deleteDownloaded:(YDSDKArticleModelEx* )model completion:(void (^)(BOOL successed))completion;
-
 - (void)deleteAllDownloaded:(void (^)())completion;
 
+- (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion;
 - (void)update:(YDSDKArticleModelEx* )model completion:(void(^)(YDSDKArticleModelEx* newModel))completion;
 
 @end
