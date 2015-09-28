@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="80V-dF-yzS">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="80V-dF-yzS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jw8-oy-5li"/>
-                <constraint firstAttribute="bottom" secondItem="80V-dF-yzS" secondAttribute="bottom" id="XXf-jX-BH8"/>
+                <constraint firstAttribute="bottom" secondItem="80V-dF-yzS" secondAttribute="bottom" constant="60" id="XXf-jX-BH8"/>
                 <constraint firstAttribute="trailing" secondItem="80V-dF-yzS" secondAttribute="trailing" id="aZk-cA-Qfh"/>
                 <constraint firstItem="80V-dF-yzS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aiA-om-HMC"/>
             </constraints>

@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Et-F4-Mar">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7Et-F4-Mar" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5PH-DK-A1P"/>
-                <constraint firstAttribute="bottom" secondItem="7Et-F4-Mar" secondAttribute="bottom" id="DIh-CZ-0ck"/>
+                <constraint firstAttribute="bottom" secondItem="7Et-F4-Mar" secondAttribute="bottom" constant="60" id="DIh-CZ-0ck"/>
                 <constraint firstAttribute="trailing" secondItem="7Et-F4-Mar" secondAttribute="trailing" id="DiS-UJ-cK3"/>
                 <constraint firstItem="7Et-F4-Mar" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EOL-OK-Tf0"/>
             </constraints>

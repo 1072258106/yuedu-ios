@@ -35,6 +35,11 @@ static int const kCountPerTime = 20;
     [self.tableView.header beginRefreshing];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_menu close];
+}
+
 - (void)setupNavigationBar {
     UIButton* button = [UIButton viewWithNibName:@"TitleView"];
     button.backgroundColor = [UIColor clearColor];
