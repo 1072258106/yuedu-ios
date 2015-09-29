@@ -26,7 +26,7 @@ static int const kCountPerTime = 10;
 }
 
 - (void)setupNavigationBar {
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 245, 25)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width-80, 25)];
     _searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _searchBar.delegate = self;
     _searchBar.tintColor = RGBHex(@"#A0A0A0");
@@ -50,7 +50,10 @@ static int const kCountPerTime = 10;
 - (void)searchDidFinished {
     if (_searchBar.isFirstResponder) {
         [_searchBar resignFirstResponder];
-        [self addFooter];
+        
+        if ([self.tableData count] >= kCountPerTime) {
+            [self addFooter];            
+        }
     }
 }
 

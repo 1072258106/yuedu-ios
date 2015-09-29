@@ -47,3 +47,6 @@
 #define USER_CONFIG(__key) [[NSUserDefaults standardUserDefaults] objectForKey:__key]
 #define USER_SET_CONFIG(__key, __value) [[NSUserDefaults standardUserDefaults] setObject:__value forKey:__key]
 
+#define SCREEN_SIZE ([[UIScreen mainScreen] bounds].size)
+
+

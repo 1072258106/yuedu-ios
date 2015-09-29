@@ -78,7 +78,13 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 - (void)load {
     if ([self isDownloadTypeDone]) {
         [SRV(ArticleService) listDownloaded:kCountPerTime completion:^(NSArray *array) {
-            [self reloadData:array];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self reloadData:array];
+                [self.tableView.header endRefreshing];
+                if ([array count] >= kCountPerTime) {
+                    [self addFooter];
+                }
+            });
         }];
     } else {
         [SRV(DownloadService) list:^(NSArray *tasks) {

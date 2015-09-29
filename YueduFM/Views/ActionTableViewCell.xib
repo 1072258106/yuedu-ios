@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,31 +15,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEp-No-6Qa" customClass="UIVButton">
-                        <rect key="frame" x="8" y="0.0" width="60" height="68.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="下载" image="icon_action_download.png">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftk-bT-Cgl" customClass="UIVButton">
-                        <rect key="frame" x="179" y="0.0" width="60" height="68.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftk-bT-Cgl" customClass="UIVButton">
+                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="68.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="分享" image="icon_action_share.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-gh-ozi" customClass="UIVButton">
-                        <rect key="frame" x="84" y="0.0" width="60" height="68.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-gh-ozi" customClass="UIVButton">
+                        <rect key="frame" x="106.5" y="0.0" width="107" height="68.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="收藏" image="icon_action_favor.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEp-No-6Qa" customClass="UIVButton">
+                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="68.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="下载" image="icon_action_download.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="y5M-gh-ozi" firstAttribute="width" secondItem="CEp-No-6Qa" secondAttribute="width" id="0Un-bY-VI0"/>
+                    <constraint firstItem="y5M-gh-ozi" firstAttribute="leading" secondItem="CEp-No-6Qa" secondAttribute="trailing" id="AoD-xQ-WNg"/>
+                    <constraint firstItem="y5M-gh-ozi" firstAttribute="width" secondItem="ftk-bT-Cgl" secondAttribute="width" id="G7P-ly-xRf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="y5M-gh-ozi" secondAttribute="bottom" constant="-8" id="JaZ-jH-996"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ftk-bT-Cgl" secondAttribute="trailing" constant="-8" id="MA5-AO-hBr"/>
+                    <constraint firstItem="y5M-gh-ozi" firstAttribute="leading" secondItem="CEp-No-6Qa" secondAttribute="trailing" id="RVQ-4Z-O9g"/>
+                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="leading" secondItem="y5M-gh-ozi" secondAttribute="trailing" id="RkW-p7-mtr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ftk-bT-Cgl" secondAttribute="bottom" constant="-8" id="RtQ-60-Iy7"/>
+                    <constraint firstItem="y5M-gh-ozi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Uff-Do-oY0"/>
+                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="leading" secondItem="y5M-gh-ozi" secondAttribute="trailing" id="jmw-OX-VMR"/>
+                    <constraint firstItem="CEp-No-6Qa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="lmn-Rm-H6T"/>
+                    <constraint firstItem="CEp-No-6Qa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="ntq-20-sEW"/>
+                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="qb1-KF-1bb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CEp-No-6Qa" secondAttribute="bottom" constant="-8" id="r8E-Kr-nRn"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>

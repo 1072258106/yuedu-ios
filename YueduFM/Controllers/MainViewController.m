@@ -88,7 +88,9 @@ static int const kCountPerTime = 20;
             [self reloadData:array];
             [self.tableView.header endRefreshing];
             [self showWithSuccessedMessage:@"更新完成"];
-            [self addFooter];
+            if ([array count] >= kCountPerTime) {
+                [self addFooter];
+            }
         });
     }];
 }
