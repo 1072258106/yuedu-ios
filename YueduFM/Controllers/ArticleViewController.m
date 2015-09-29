@@ -19,7 +19,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"ArticleTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
 }
 

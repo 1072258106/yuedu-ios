@@ -11,6 +11,7 @@
 #import "DowloadViewController.h"
 #import "RootSettingsViewController.h"
 #import "HistoryViewController.h"
+#import "PlayListViewController.h"
 
 @interface MenuViewController () {
     NSArray*   _tableData;
@@ -26,6 +27,14 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [super viewDidLoad];
     
     _tableData = @[
+                   @{
+                       @"image":@"icon_menu_playlist.png",
+                       @"title":@"我的列表",
+                       @"action":^{
+                           PlayListViewController* vc = [[PlayListViewController alloc] initWithNibName:@"PlayListViewController" bundle:nil];
+                           [self pushViewController:vc];
+                       }
+                       },
                    @{
                        @"image":@"icon_menu_download.png",
                        @"title":@"我的下载",

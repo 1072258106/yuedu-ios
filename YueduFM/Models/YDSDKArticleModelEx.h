@@ -29,5 +29,6 @@ typedef NS_ENUM(int, DownloadState) {
 @property (nonatomic, strong) NSString* downloadURLString;
 @property (nonatomic, strong) NSDate* downloadDate;
 @property (nonatomic, strong) NSDate* playedDate;
+@property (nonatomic, strong) NSDate* preplayDate;
 
 @end

@@ -91,6 +91,34 @@
     }];
 }
 
+- (void)listPreplay:(int)count
+         completion:(void (^)(NSArray* array))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"preplayDate > 0 ORDER BY preplayDate LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?result:nil);
+        }
+    }];
+}
+
+- (void)deleteAllPreplay:(void (^)())completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:@"preplayDate>0" complete:^(BOOL successed, id result) {
+        if (successed) {
+            NSMutableArray* array = [NSMutableArray array];
+            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                YDSDKArticleModelEx* model = obj;
+                model.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+                [array addObject:model];
+            }];
+            
+            [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
+                if (completion) completion();
+            }];
+        } else {
+            if (completion) completion();
+        }
+    }];
+}
+
 - (void)listPlayed:(int)count completion:(void (^)(NSArray* array))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"playedDate > 0 ORDER BY playedDate DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
         if (completion) {

@@ -1,39 +1,39 @@
 //
-//  FavorViewController.m
+//  PlayListViewController.m
 //  YueduFM
 //
-//  Created by StarNet on 9/26/15.
+//  Created by StarNet on 9/29/15.
 //  Copyright (c) 2015 StarNet. All rights reserved.
 //
 
-#import "FavorViewController.h"
-
-@interface FavorViewController ()
-
-@end
+#import "PlayListViewController.h"
 
 static int const kCountPerTime = 20;
 
-@implementation FavorViewController
+@interface PlayListViewController ()
+
+@end
+
+@implementation PlayListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的收藏";
+    self.title = @"我的列表";
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
-            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有收藏文章?"];
-            [alert bk_addButtonWithTitle:@"清空" handler:^{
-                [SRV(ArticleService) deleteAllFavored:^{
-                    [self load];
-                    [self showWithSuccessedMessage:@"清空成功"];
-                }];
+        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有项目?"];
+        [alert bk_addButtonWithTitle:@"清空" handler:^{
+            [SRV(ArticleService) deleteAllPreplay:^{
+                [self load];
+                [self showWithSuccessedMessage:@"清空成功"];
             }];
-            
-            [alert bk_addButtonWithTitle:@"取消" handler:nil];
-            [alert show];
         }];
-
+        
+        [alert bk_addButtonWithTitle:@"取消" handler:nil];
+        [alert show];
+    }];
+    
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self load];
     }];
@@ -42,7 +42,7 @@ static int const kCountPerTime = 20;
 }
 
 - (void)load {
-    [SRV(ArticleService) listFavored:kCountPerTime completion:^(NSArray *array) {
+    [SRV(ArticleService) listPreplay:kCountPerTime completion:^(NSArray *array) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self reloadData:array];
             [self.tableView.header endRefreshing];
@@ -55,7 +55,7 @@ static int const kCountPerTime = 20;
 
 - (void)addFooter {
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [SRV(ArticleService) listFavored:(int)[self.tableData count]+kCountPerTime completion:^(NSArray *array) {
+        [SRV(ArticleService) listPreplay:(int)[self.tableData count]+kCountPerTime completion:^(NSArray *array) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self reloadData:array];
                 [self.tableView.footer endRefreshing];
@@ -73,7 +73,7 @@ static int const kCountPerTime = 20;
 }
 
 - (UINib* )nibForExpandCell {
-    return [UINib nibWithNibName:@"FavorActionTableViewCell" bundle:nil];
+    return [UINib nibWithNibName:@"PlayListActionTableViewCell" bundle:nil];
 }
 
 @end

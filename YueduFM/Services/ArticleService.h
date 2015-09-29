@@ -25,6 +25,13 @@
       filter:(NSString* )filter
   completion:(void (^)(NSArray* array))completion;
 
+//我的列表
+- (void)listPreplay:(int)count
+        completion:(void (^)(NSArray* array))completion;
+
+- (void)deleteAllPreplay:(void (^)())completion;
+
+
 //最近播放
 - (void)listPlayed:(int)count
         completion:(void (^)(NSArray* array))completion;

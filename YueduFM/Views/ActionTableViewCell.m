@@ -122,7 +122,10 @@
 }
 
 - (IBAction)onAddButtonPressed:(id)sender {
-    
+    YDSDKArticleModelEx* aModel = [self article];
+    aModel.preplayDate = [NSDate date];
+    [SRV(DataService) writeData:aModel completion:nil];
+    [MessageKit showWithSuccessedMessage:@"该文章已添加到我的列表中"];
 }
 
 - (void)updateFavorButton {

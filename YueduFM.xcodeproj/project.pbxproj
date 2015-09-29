@@ -87,6 +87,11 @@
 		E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD791BAEDAF000898B8F /* WebViewController.m */; };
 		E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E431FD7E1BAEED6500898B8F /* Accelerate.framework */; };
 		E4358DDA1BBAFC1500E3799B /* icon_action_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */; };
+		E4358DDC1BBB039C00E3799B /* icon_menu_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */; };
+		E4358DE51BBB078C00E3799B /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4358DE31BBB078C00E3799B /* PlayListViewController.m */; };
+		E4358DE61BBB078C00E3799B /* PlayListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4358DE41BBB078C00E3799B /* PlayListViewController.xib */; };
+		E4358DE91BBB08E700E3799B /* PlayListActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */; };
+		E4358DEB1BBB08F700E3799B /* PlayListActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -380,6 +385,13 @@
 		E431FD7B1BAEDB7800898B8F /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		E431FD7E1BAEED6500898B8F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_action_add@2x.png"; sourceTree = "<group>"; };
+		E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_playlist@2x.png"; sourceTree = "<group>"; };
+		E4358DE21BBB078C00E3799B /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListViewController.h; sourceTree = "<group>"; };
+		E4358DE31BBB078C00E3799B /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
+		E4358DE41BBB078C00E3799B /* PlayListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListViewController.xib; sourceTree = "<group>"; };
+		E4358DE71BBB08E700E3799B /* PlayListActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListActionTableViewCell.h; sourceTree = "<group>"; };
+		E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListActionTableViewCell.m; sourceTree = "<group>"; };
+		E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListActionTableViewCell.xib; sourceTree = "<group>"; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -992,6 +1004,7 @@
 		E48884A71BB9B1320053F346 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */,
 				E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */,
 				E4E26BD41BBAD84F00B18BC0 /* icon_action_info@2x.png */,
 				E48884E21BBA1E760053F346 /* icon_cell_check@2x.png */,
@@ -1254,6 +1267,9 @@
 				E48884921BB9983F0053F346 /* HistoryViewController.h */,
 				E48884931BB9983F0053F346 /* HistoryViewController.m */,
 				E48884941BB9983F0053F346 /* HistoryViewController.xib */,
+				E4358DE21BBB078C00E3799B /* PlayListViewController.h */,
+				E4358DE31BBB078C00E3799B /* PlayListViewController.m */,
+				E4358DE41BBB078C00E3799B /* PlayListViewController.xib */,
 				E4D522D81BACA1D5002164AA /* MenuViewController.h */,
 				E4D522D91BACA1D5002164AA /* MenuViewController.m */,
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
@@ -1341,6 +1357,9 @@
 				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
 				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
 				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
+				E4358DE71BBB08E700E3799B /* PlayListActionTableViewCell.h */,
+				E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */,
+				E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */,
 				E495EA281BB87AE60085258E /* FavorActionTableViewCell.h */,
 				E495EA291BB87AE60085258E /* FavorActionTableViewCell.m */,
 				E495EA2B1BB87B130085258E /* FavorActionTableViewCell.xib */,
@@ -1538,9 +1557,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48884CC1BB9B1320053F346 /* icon_down_arrow@2x.png in Resources */,
+				E4358DEB1BBB08F700E3799B /* PlayListActionTableViewCell.xib in Resources */,
 				E431FD0E1BADF4FD00898B8F /* dzn_icn_toolbar_reload@2x.png in Resources */,
 				E48884C81BB9B1320053F346 /* icon_action_favor@2x.png in Resources */,
 				E48884D51BB9B1320053F346 /* icon_menu_settings@2x.png in Resources */,
+				E4358DDC1BBB039C00E3799B /* icon_menu_playlist@2x.png in Resources */,
 				E48884A51BB9AB630053F346 /* AutoCloseSettingsViewController.xib in Resources */,
 				E431FD041BADF4FD00898B8F /* dzn_icn_toolbar_action.png in Resources */,
 				E431FD121BADF4FD00898B8F /* dzn_icn_toolbar_stop@3x.png in Resources */,
@@ -1588,6 +1609,7 @@
 				E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */,
 				E48884DF1BB9B1320053F346 /* icon_up_arrow@2x.png in Resources */,
 				E48884CE1BB9B1320053F346 /* icon_download@2x.png in Resources */,
+				E4358DE61BBB078C00E3799B /* PlayListViewController.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
@@ -1735,6 +1757,7 @@
 				E431FABE1BADD1D800898B8F /* MKAnnotationView+WebCache.m in Sources */,
 				E431FD461BAE001800898B8F /* DOUAudioDecoder.m in Sources */,
 				E486A3FD1BB2D72900414EDE /* MJRefreshConst.m in Sources */,
+				E4358DE51BBB078C00E3799B /* PlayListViewController.m in Sources */,
 				E431FAC91BADD1D800898B8F /* UIImage+MultiFormat.m in Sources */,
 				E486A3F41BB2D72900414EDE /* MJRefreshAutoNormalFooter.m in Sources */,
 				E431FD4B1BAE001800898B8F /* DOUAudioLPCM.m in Sources */,
@@ -1750,6 +1773,7 @@
 				E431FACA1BADD1D800898B8F /* UIImage+WebP.m in Sources */,
 				E431FD621BAEB40400898B8F /* UIImage+Extension.m in Sources */,
 				E4B4E3F81BB9835700E3F492 /* SearchViewController.m in Sources */,
+				E4358DE91BBB08E700E3799B /* PlayListActionTableViewCell.m in Sources */,
 				E431FD4C1BAE001800898B8F /* DOUAudioPlaybackItem.m in Sources */,
 				E4DD91BF1BA9DC4C0045F222 /* NSString+SQL.m in Sources */,
 				E4DD91A41BA9DB770045F222 /* BaseService.m in Sources */,
