@@ -133,6 +133,10 @@
             self.authorLabel.text = model.author;
             self.speakerLabel.text = model.speaker;
             self.durationLabel.text = [NSString stringWithSeconds:model.duration];
+            
+            [UIView animateWithDuration:0.3f animations:^{
+                _actionCell.top = self.height;
+            }];
         });
     }];
     
