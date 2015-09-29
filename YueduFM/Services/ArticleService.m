@@ -10,7 +10,6 @@
 #import "YDSDKArticleModelEx.h"
 
 @interface ArticleService () {
-    NSTimeInterval _1970Timeinterval;
 }
 
 @end
