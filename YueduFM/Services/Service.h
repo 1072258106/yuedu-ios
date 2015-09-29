@@ -15,3 +15,4 @@
 #import "DownloadService.h"
 #import "ReachabilityService.h"
 #import "SettingsService.h"
+#import "StreamerService.h"

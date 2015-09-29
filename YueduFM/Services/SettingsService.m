@@ -8,6 +8,11 @@
 
 #import "SettingsService.h"
 
+@interface SettingsService () {
+}
+
+@end
+
 @implementation SettingsService
 
 + (ServiceLevel)level {
@@ -18,8 +23,37 @@
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
         _flowProtection = YES;
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    //流量
+    id value = USER_CONFIG(@"flowProtection");
+    _flowProtection = value?[value boolValue]:YES;
+    
+    //自动关闭
+    _autoCloseTimes = @[
+                        @(0),
+                        @(10),
+                        @(20),
+                        @(30),
+                        @(60),
+                        @(120)
+                        ];
+    
+    _autoCloseLevel = [USER_CONFIG(@"autoCloseLevel") integerValue];
+}
+
+- (void)setFlowProtection:(BOOL)flowProtection {
+    _flowProtection = flowProtection;
+    USER_SET_CONFIG(@"flowProtection", @(flowProtection));
+}
+
+- (void)setAutoCloseLevel:(NSInteger)autoCloseLevel {
+    _autoCloseLevel = autoCloseLevel;
+    USER_SET_CONFIG(@"autoCloseLevel", @(_autoCloseLevel));
 }
 
 @end

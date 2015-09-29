@@ -24,13 +24,17 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"首页";
+    
     [self setupNavigationBar];
     [self setupMenu];
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [SRV(ArticleService) fetchLatest:^(NSError *error) {
-            [self loadCurrentChannelData];
-        }];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [SRV(ArticleService) fetchLatest:^(NSError *error) {
+                [self loadCurrentChannelData];
+            }];            
+        });
     }];
     
     [self.tableView.header beginRefreshing];

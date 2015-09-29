@@ -13,3 +13,4 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIImage+Extension.h"
 #import "NSDate+Extension.h"
+#import "UISwitch+Extension.h"

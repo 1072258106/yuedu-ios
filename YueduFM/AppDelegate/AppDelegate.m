@@ -55,9 +55,8 @@
 
 - (void)setupAppearance {
     [[UIBarButtonItem appearance] setTintColor:kThemeColor];
-    UIImage* image = [[UIImage imageNamed:@"icon_nav_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
+    UIImage* image = [[UIImage imageNamed:@"icon_nav_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-500, 0) forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

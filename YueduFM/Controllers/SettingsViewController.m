@@ -64,9 +64,9 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary* info = self.tableData[indexPath.section][@"rows"][indexPath.row];
-    void(^action)() = info[@"action"];
+    void(^action)(UITableViewCell* cell) = info[@"action"];
     if (action) {
-        action();
+        action([tableView cellForRowAtIndexPath:indexPath]);
     }
 }
 
