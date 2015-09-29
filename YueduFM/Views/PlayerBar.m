@@ -9,8 +9,9 @@
 #import "PlayerBar.h"
 
 @interface PlayerBar () {
-    NSTimer*    _timer;
-    UIView*     _processBar;
+    NSTimer*            _timer;
+    UIView*             _processBar;
+    StreamerService*    _streamerService;
 }
 
 
@@ -72,6 +73,7 @@
     line.backgroundColor = RGBHex(@"#E0E0E0");
     [self addSubview:line];
     
+    _streamerService = SRV(StreamerService);
     _processBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 2)];
     _processBar.backgroundColor = kThemeColor;
     self.progress = 0;
@@ -82,28 +84,35 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self showIfNeed];
             
-            YDSDKArticleModel* model = [SRV(ArticleService) activeArticleModel];
+            YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
             [self.imageView sd_setImageWithURL:model.pictureURL.url];
             self.titleLabel.text = model.title;
             self.authorLabel.text = model.author;
             self.speakerLabel.text = model.speaker;
             self.durationLabel.text = [NSString stringWithSeconds:model.duration];
             
+            [self.playButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
             [self.playButton bk_addEventHandler:^(id sender) {
+                if (_streamerService.isPlaying) {
+                    [_streamerService pause];
+                } else {
+                    [_streamerService play:model];
+                }
             } forControlEvents:UIControlEventTouchUpInside];
         });
     }];
+    
+    [_streamerService bk_addObserverForKeyPath:@"isPlaying" task:^(id target) {
+        [self setPlaying:_streamerService.isPlaying];
+    }];
 
-#if 0
     _timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
-        if (self.serviceCenter.audioStreamer.duration) {
-            _processBar.width = (self.width*self.serviceCenter.audioStreamer.currentTime)/self.serviceCenter.audioStreamer.duration;
-            
+        if (_streamerService.duration) {
+            _processBar.width = (self.width*_streamerService.currentTime)/_streamerService.duration;
         }
     } repeats:YES];
     
-    
-    
+#if 0
     UILongPressGestureRecognizer* gesture = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
         static CGPoint point;
         

@@ -10,4 +10,14 @@
 
 @interface StreamerService : BaseService
 
+@property (nonatomic, strong) YDSDKArticleModelEx* playingModel;
+
+@property (nonatomic, assign) BOOL isPlaying;
+
+@property (nonatomic, assign, readonly) NSTimeInterval duration;
+@property (nonatomic, assign) NSTimeInterval currentTime;
+
+- (void)play:(YDSDKArticleModelEx* )model;
+- (void)pause;
+
 @end

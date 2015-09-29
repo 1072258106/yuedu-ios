@@ -8,6 +8,13 @@
 
 #import "StreamerService.h"
 #import <AVFoundation/AVFoundation.h>
+#import "DOUAudioStreamer.h"
+
+@interface StreamerService () {
+    DOUAudioStreamer* _streamer;
+}
+
+@end
 
 @implementation StreamerService
 
@@ -18,6 +25,34 @@
         [[AVAudioSession sharedInstance] setActive: YES error:nil];
     }
     return self;
+}
+
+- (void)play:(YDSDKArticleModelEx* )model {
+    if (![model.audioURL isEqualToString:self.playingModel.audioURL]) {
+        self.playingModel = model;
+        SRV(ArticleService).activeArticleModel = model;
+        _streamer = [[DOUAudioStreamer alloc] initWithAudioFile:model.audioURL.url];
+    }
+    
+    [_streamer play];
+    self.isPlaying = YES;
+}
+
+- (void)pause {
+    [_streamer pause];
+    self.isPlaying = NO;
+}
+
+- (NSTimeInterval)duration {
+    return _streamer.duration;
+}
+
+- (NSTimeInterval)currentTime {
+    return _streamer.currentTime;
+}
+
+- (void)setCurrentTime:(NSTimeInterval)currentTime {
+    _streamer.currentTime = currentTime;
 }
 
 @end

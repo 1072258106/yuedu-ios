@@ -10,7 +10,7 @@
 #import "DOUAudioStreamer.h"
 
 @interface ArticleTableViewCell () {
-    RhythmView* _view;
+    StreamerService*    _streamerService;
 }
 
 @end
@@ -21,24 +21,38 @@
     self.pictureView.layer.cornerRadius = 3.0f;
     self.pictureView.clipsToBounds = YES;
     
+    _streamerService = SRV(StreamerService);
     self.detailLabel.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
     self.detailLabel.lineSpacing = 2.0f;
     
     [self.playButton bk_addEventHandler:^(id sender) {
-        self.playing = !self.playing;
+        self.playing = YES;
         self.model.playedDate = [NSDate date];
         [SRV(DataService) writeData:self.model completion:nil];
+        [_streamerService play:self.model];
+    } forControlEvents:UIControlEventTouchUpInside];
+
+    [self addObserver];
+}
+
+- (BOOL)isMyPlaying {
+    return (_streamerService.isPlaying && (_streamerService.playingModel.aid == self.model.aid));
+}
+
+- (void)addObserver {
+    [_streamerService bk_addObserverForKeyPath:@"isPlaying" task:^(id target) {
+        if ([self isMyPlaying]) {
+            self.playing = YES;
+        } else {
+            self.playing = NO;
+        }
         
-        DOUAudioStreamer* streamer = [[DOUAudioStreamer alloc] initWithAudioFile:self.model.audioURL.url];
-        [streamer play];
-        
-    } forControlEvents:UIControlEventTouchUpInside];    
+    }];
 }
 
 - (void)dealloc {
     [self bk_removeAllBlockObservers];
 }
-
 
 - (void)setModel:(YDSDKArticleModelEx* )model {
     [self bk_removeAllBlockObservers];
@@ -50,7 +64,7 @@
     self.speakerLabel.text = model.speaker;
     self.durationLabel.text = [NSString stringWithSeconds:model.duration];
     self.detailLabel.text = model.abstract;
-    self.playing = NO;
+    self.playing = [self isMyPlaying];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
