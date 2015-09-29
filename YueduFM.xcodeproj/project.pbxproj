@@ -93,6 +93,9 @@
 		E4358DE91BBB08E700E3799B /* PlayListActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */; };
 		E4358DEB1BBB08F700E3799B /* PlayListActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */; };
 		E4358DED1BBB0DB500E3799B /* icon_bar_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DEC1BBB0DB500E3799B /* icon_bar_more@2x.png */; };
+		E4358DF51BBB204E00E3799B /* PlayBarActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4358DF41BBB204E00E3799B /* PlayBarActionTableViewCell.m */; };
+		E4358DF71BBB205900E3799B /* PlayBarActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4358DF61BBB205900E3799B /* PlayBarActionTableViewCell.xib */; };
+		E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -145,7 +148,6 @@
 		E48884CB1BB9B1320053F346 /* icon_author@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884AE1BB9B1320053F346 /* icon_author@2x.png */; };
 		E48884CC1BB9B1320053F346 /* icon_down_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884AF1BB9B1320053F346 /* icon_down_arrow@2x.png */; };
 		E48884CD1BB9B1320053F346 /* icon_down_arrow_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884B01BB9B1320053F346 /* icon_down_arrow_h@2x.png */; };
-		E48884CE1BB9B1320053F346 /* icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884B11BB9B1320053F346 /* icon_download@2x.png */; };
 		E48884CF1BB9B1320053F346 /* icon_duration@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884B21BB9B1320053F346 /* icon_duration@2x.png */; };
 		E48884D01BB9B1320053F346 /* icon_headset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884B31BB9B1320053F346 /* icon_headset@2x.png */; };
 		E48884D11BB9B1320053F346 /* icon_menu_accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E48884B41BB9B1320053F346 /* icon_menu_accessory@2x.png */; };
@@ -392,6 +394,10 @@
 		E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListActionTableViewCell.m; sourceTree = "<group>"; };
 		E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListActionTableViewCell.xib; sourceTree = "<group>"; };
 		E4358DEC1BBB0DB500E3799B /* icon_bar_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bar_more@2x.png"; sourceTree = "<group>"; };
+		E4358DF31BBB204E00E3799B /* PlayBarActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayBarActionTableViewCell.h; sourceTree = "<group>"; };
+		E4358DF41BBB204E00E3799B /* PlayBarActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayBarActionTableViewCell.m; sourceTree = "<group>"; };
+		E4358DF61BBB205900E3799B /* PlayBarActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayBarActionTableViewCell.xib; sourceTree = "<group>"; };
+		E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bar_down@2x.png"; sourceTree = "<group>"; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -482,7 +488,6 @@
 		E48884AE1BB9B1320053F346 /* icon_author@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_author@2x.png"; sourceTree = "<group>"; };
 		E48884AF1BB9B1320053F346 /* icon_down_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_down_arrow@2x.png"; sourceTree = "<group>"; };
 		E48884B01BB9B1320053F346 /* icon_down_arrow_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_down_arrow_h@2x.png"; sourceTree = "<group>"; };
-		E48884B11BB9B1320053F346 /* icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@2x.png"; sourceTree = "<group>"; };
 		E48884B21BB9B1320053F346 /* icon_duration@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_duration@2x.png"; sourceTree = "<group>"; };
 		E48884B31BB9B1320053F346 /* icon_headset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_headset@2x.png"; sourceTree = "<group>"; };
 		E48884B41BB9B1320053F346 /* icon_menu_accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu_accessory@2x.png"; sourceTree = "<group>"; };
@@ -1002,6 +1007,7 @@
 		E48884A71BB9B1320053F346 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */,
 				E4358DEC1BBB0DB500E3799B /* icon_bar_more@2x.png */,
 				E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */,
 				E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */,
@@ -1016,7 +1022,6 @@
 				E48884AE1BB9B1320053F346 /* icon_author@2x.png */,
 				E48884AF1BB9B1320053F346 /* icon_down_arrow@2x.png */,
 				E48884B01BB9B1320053F346 /* icon_down_arrow_h@2x.png */,
-				E48884B11BB9B1320053F346 /* icon_download@2x.png */,
 				E48884B21BB9B1320053F346 /* icon_duration@2x.png */,
 				E48884B31BB9B1320053F346 /* icon_headset@2x.png */,
 				E48884B41BB9B1320053F346 /* icon_menu_accessory@2x.png */,
@@ -1354,6 +1359,9 @@
 				E4E9E3261BB42DB100B6BAFE /* ActionTableViewCell.h */,
 				E4E9E3271BB42DB100B6BAFE /* ActionTableViewCell.m */,
 				E4E9E3281BB42DB100B6BAFE /* ActionTableViewCell.xib */,
+				E4358DF31BBB204E00E3799B /* PlayBarActionTableViewCell.h */,
+				E4358DF41BBB204E00E3799B /* PlayBarActionTableViewCell.m */,
+				E4358DF61BBB205900E3799B /* PlayBarActionTableViewCell.xib */,
 				E4358DE71BBB08E700E3799B /* PlayListActionTableViewCell.h */,
 				E4358DE81BBB08E700E3799B /* PlayListActionTableViewCell.m */,
 				E4358DEA1BBB08F700E3799B /* PlayListActionTableViewCell.xib */,
@@ -1558,6 +1566,7 @@
 				E431FD0E1BADF4FD00898B8F /* dzn_icn_toolbar_reload@2x.png in Resources */,
 				E48884C81BB9B1320053F346 /* icon_action_favor@2x.png in Resources */,
 				E48884D51BB9B1320053F346 /* icon_menu_settings@2x.png in Resources */,
+				E4358DF71BBB205900E3799B /* PlayBarActionTableViewCell.xib in Resources */,
 				E4358DDC1BBB039C00E3799B /* icon_menu_playlist@2x.png in Resources */,
 				E48884A51BB9AB630053F346 /* AutoCloseSettingsViewController.xib in Resources */,
 				E431FD041BADF4FD00898B8F /* dzn_icn_toolbar_action.png in Resources */,
@@ -1567,6 +1576,7 @@
 				E4358DDA1BBAFC1500E3799B /* icon_action_add@2x.png in Resources */,
 				E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */,
 				E431FD091BADF4FD00898B8F /* dzn_icn_toolbar_backward@3x.png in Resources */,
+				E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */,
 				E431FCFA1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x.png in Resources */,
 				E46E2ED81BB0454500CCF57F /* SVProgressHUD.bundle in Resources */,
 				E431FD0B1BADF4FD00898B8F /* dzn_icn_toolbar_forward@2x.png in Resources */,
@@ -1603,7 +1613,6 @@
 				E48884D11BB9B1320053F346 /* icon_menu_accessory@2x.png in Resources */,
 				E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */,
 				E48884DF1BB9B1320053F346 /* icon_up_arrow@2x.png in Resources */,
-				E48884CE1BB9B1320053F346 /* icon_download@2x.png in Resources */,
 				E4358DE61BBB078C00E3799B /* PlayListViewController.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
@@ -1654,6 +1663,7 @@
 				E486A3FE1BB2D72900414EDE /* UIScrollView+MJExtension.m in Sources */,
 				E4E9E3291BB42DB100B6BAFE /* ActionTableViewCell.m in Sources */,
 				E431FD671BAEC27900898B8F /* PlayerBar.m in Sources */,
+				E4358DF51BBB204E00E3799B /* PlayBarActionTableViewCell.m in Sources */,
 				E486A3F31BB2D72900414EDE /* MJRefreshAutoGifFooter.m in Sources */,
 				E431FACB1BADD1D800898B8F /* UIImageView+HighlightedWebCache.m in Sources */,
 				E46E2E991BAFC69700CCF57F /* REMenuItemView.m in Sources */,

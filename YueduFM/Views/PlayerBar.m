@@ -7,11 +7,13 @@
 //
 
 #import "PlayerBar.h"
+#import "PlayBarActionTableViewCell.h"
 
 @interface PlayerBar () {
-    NSTimer*            _timer;
-    UIView*             _processBar;
-    StreamerService*    _streamerService;
+    NSTimer*                    _timer;
+    UIView*                     _processBar;
+    StreamerService*            _streamerService;
+    PlayBarActionTableViewCell* _actionCell;
 }
 
 
@@ -73,6 +75,47 @@
     line.backgroundColor = RGBHex(@"#E0E0E0");
     [self addSubview:line];
     
+    _actionCell = [PlayBarActionTableViewCell viewWithNibName:@"PlayBarActionTableViewCell"];
+    _actionCell.width = self.width;
+    _actionCell.height = self.height;
+    _actionCell.top = self.height;
+    _actionCell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [_actionCell.hideButton bk_addEventHandler:^(id sender) {
+        [UIView animateWithDuration:0.3f animations:^{
+            _actionCell.top = self.height;
+        }];
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_actionCell];
+    
+    [self.actionButton bk_addEventHandler:^(id sender) {
+        YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
+
+        [[PlayerBar shareBar] setForceHidden:YES];
+        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[PlayerBar shareBar] setForceHidden:NO];
+            });
+        }] animated:YES];
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.playButton bk_addEventHandler:^(id sender) {
+        YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
+
+        if (_streamerService.isPlaying) {
+            [_streamerService pause];
+        } else {
+            [_streamerService play:model];
+        }
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.moreButton bk_addEventHandler:^(id sender) {
+        YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
+        _actionCell.model = model;
+        [UIView animateWithDuration:0.3f animations:^{
+            _actionCell.top = 0;
+        }];
+    } forControlEvents:UIControlEventTouchUpInside];
+
     _streamerService = SRV(StreamerService);
     _processBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 2)];
     _processBar.backgroundColor = kThemeColor;
@@ -90,15 +133,6 @@
             self.authorLabel.text = model.author;
             self.speakerLabel.text = model.speaker;
             self.durationLabel.text = [NSString stringWithSeconds:model.duration];
-            
-            [self.playButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
-            [self.playButton bk_addEventHandler:^(id sender) {
-                if (_streamerService.isPlaying) {
-                    [_streamerService pause];
-                } else {
-                    [_streamerService play:model];
-                }
-            } forControlEvents:UIControlEventTouchUpInside];
         });
     }];
     
