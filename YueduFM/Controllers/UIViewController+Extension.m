@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Extension.h"
+#import "DZNPolyActivity.h"
 
 @implementation UIViewController (Extension)
 
@@ -32,10 +33,18 @@
 
 - (void)showActivityWithURL:(NSURL* )url completion:(void (^)(void))completion {
     if (url) {
-        NSArray *activityItems = @[url];
-                
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
-        activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo];
+        NSArray* activityItems = @[url];
+        
+        UIActivityViewController *activityVC = \
+        [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                          applicationActivities:nil];
+        
+        activityVC.excludedActivityTypes = @[UIActivityTypePrint,
+                                             UIActivityTypeAssignToContact,
+                                             UIActivityTypeSaveToCameraRoll,
+                                             UIActivityTypeAddToReadingList,
+                                             UIActivityTypePostToFlickr,
+                                             UIActivityTypePostToVimeo];
         
         [self presentViewController:activityVC animated:TRUE completion:nil];
     }

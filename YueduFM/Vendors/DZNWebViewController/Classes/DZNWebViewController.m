@@ -340,7 +340,6 @@ static char DZNWebViewControllerKVOContext = 0;
     if ((_supportedWebActions & DZNWebActionReadLater) == 0 && [item isKindOfClass:[UIImage class]]) {
         [types addObject:UIActivityTypeAddToReadingList];
     }
-    
     return types;
 }
 
@@ -694,7 +693,6 @@ static char DZNWebViewControllerKVOContext = 0;
 {
     [self updateToolbarItems];
     [self setLoadingError:error];
-    NSLog(@"ERROR:%@", error);
     self.title = nil;
 }
 
