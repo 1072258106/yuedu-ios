@@ -59,23 +59,23 @@
                     </state>
                     <state key="selected" image="icon_bar_pause.png"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-OA-eRf">
-                    <rect key="frame" x="224" y="15" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-OA-eRf">
+                    <rect key="frame" x="214" y="-0.5" width="50" height="60.5"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="I74-GN-Crb"/>
-                        <constraint firstAttribute="width" constant="30" id="iiG-bT-2Uj"/>
+                        <constraint firstAttribute="width" constant="50" id="0gq-b8-56o"/>
+                        <constraint firstAttribute="height" constant="60.5" id="NBu-1i-2QX"/>
                     </constraints>
-                    <state key="normal" backgroundImage="icon_bar_next.png">
+                    <state key="normal" image="icon_bar_next.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-bY-2ln">
-                    <rect key="frame" x="270" y="15" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-bY-2ln">
+                    <rect key="frame" x="264" y="-0.5" width="52" height="59.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="QUb-Sc-qnm"/>
-                        <constraint firstAttribute="height" constant="30" id="ygA-zk-HYM"/>
+                        <constraint firstAttribute="height" constant="59.5" id="2b0-0b-2Bj"/>
+                        <constraint firstAttribute="width" constant="52" id="hcQ-2I-raD"/>
                     </constraints>
-                    <state key="normal" backgroundImage="icon_bar_more.png">
+                    <state key="normal" image="icon_bar_more.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -86,16 +86,19 @@
                 <constraint firstAttribute="bottom" secondItem="Qkq-sY-riK" secondAttribute="bottom" id="6vu-m5-7Ff"/>
                 <constraint firstItem="Qkq-sY-riK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GUs-Kh-cIi"/>
                 <constraint firstItem="Qkq-sY-riK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JFW-Uh-qi6"/>
+                <constraint firstAttribute="trailing" secondItem="XBW-bY-2ln" secondAttribute="trailing" id="MwB-aV-U3X"/>
                 <constraint firstItem="VdL-kG-5sl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nko-a1-Yx4"/>
                 <constraint firstItem="VdL-kG-5sl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="0.5" id="RRZ-pB-Nzi"/>
-                <constraint firstAttribute="trailing" secondItem="XBW-bY-2ln" secondAttribute="trailing" constant="16" id="Thi-Nc-rWq"/>
                 <constraint firstAttribute="trailing" secondItem="mq7-QZ-REX" secondAttribute="trailing" id="W2e-KL-pz5"/>
+                <constraint firstItem="XBW-bY-2ln" firstAttribute="leading" secondItem="GIK-OA-eRf" secondAttribute="trailing" id="WrX-tY-6oE"/>
+                <constraint firstAttribute="bottom" secondItem="XBW-bY-2ln" secondAttribute="bottom" constant="1" id="YlV-jT-8em"/>
+                <constraint firstItem="GIK-OA-eRf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-0.5" id="Yqb-3r-U0m"/>
                 <constraint firstItem="mq7-QZ-REX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZCh-YF-A8s"/>
-                <constraint firstItem="XBW-bY-2ln" firstAttribute="leading" secondItem="GIK-OA-eRf" secondAttribute="trailing" constant="16" id="b7F-yE-zA8"/>
-                <constraint firstAttribute="centerY" secondItem="XBW-bY-2ln" secondAttribute="centerY" id="bMj-F4-0Az"/>
-                <constraint firstAttribute="centerY" secondItem="GIK-OA-eRf" secondAttribute="centerY" id="gjC-so-D68"/>
+                <constraint firstItem="XBW-bY-2ln" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-0.5" id="ZTc-el-lsZ"/>
                 <constraint firstItem="mq7-QZ-REX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ppX-h4-piF"/>
+                <constraint firstItem="XBW-bY-2ln" firstAttribute="leading" secondItem="GIK-OA-eRf" secondAttribute="trailing" id="q0i-6r-GNa"/>
                 <constraint firstAttribute="bottom" secondItem="VdL-kG-5sl" secondAttribute="bottom" constant="-0.5" id="uJa-Vk-7Rp"/>
+                <constraint firstAttribute="bottom" secondItem="GIK-OA-eRf" secondAttribute="bottom" id="vYc-aG-gC9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -108,13 +111,13 @@
                 <outlet property="speakerLabel" destination="Ge0-VO-TSL" id="njx-4c-mWD"/>
                 <outlet property="titleLabel" destination="X6v-la-WYJ" id="WRJ-ny-b8V"/>
             </connections>
-            <point key="canvasLocation" x="195" y="271.5"/>
+            <point key="canvasLocation" x="195" y="271"/>
         </view>
     </objects>
     <resources>
         <image name="icon_author.png" width="64" height="64"/>
-        <image name="icon_bar_more.png" width="64" height="64"/>
-        <image name="icon_bar_next.png" width="64" height="64"/>
+        <image name="icon_bar_more.png" width="32" height="32"/>
+        <image name="icon_bar_next.png" width="32" height="32"/>
         <image name="icon_bar_pause.png" width="32" height="32"/>
         <image name="icon_bar_play.png" width="32" height="32"/>
         <image name="icon_speaker.png" width="33" height="63"/>
