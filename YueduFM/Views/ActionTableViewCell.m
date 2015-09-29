@@ -27,6 +27,10 @@
     [self.deleteButton bk_addEventHandler:^(id sender) {
         [self onDeleteButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailButton bk_addEventHandler:^(id sender) {
+        [self onDetailButtonPressed:nil];
+    } forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -102,6 +106,15 @@
 
 - (IBAction)onDeleteButtonPressed:(id)sender {
     
+}
+
+- (IBAction)onDetailButtonPressed:(id)sender {
+    [[PlayerBar shareBar] setForceHidden:YES];
+    [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:[self article].url.url didDisappear:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[PlayerBar shareBar] setForceHidden:NO];
+        });
+    }] animated:YES];
 }
 
 - (void)updateFavorButton {

@@ -10,6 +10,8 @@
 
 @interface WebViewController ()
 
+@property (nonatomic, copy) void(^viewDidDisappearBlock)();
+
 @end
 
 @implementation WebViewController
@@ -24,14 +26,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-+ (instancetype)controllerWithURL:(NSURL* )url {
++ (instancetype)controllerWithURL:(NSURL* )url didDisappear:(void(^)())disappear {
     WebViewController* wvc = [[WebViewController alloc] initWithURL:url];
     wvc.supportedWebNavigationTools = DZNWebNavigationToolAll;
     wvc.supportedWebActions = DZNWebActionAll;
     wvc.showLoadingProgress = YES;
     wvc.allowHistory = YES;
     wvc.hideBarsWithGestures = YES;
+    wvc.viewDidDisappearBlock = disappear;
     return wvc;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.viewDidDisappearBlock) {
+        self.viewDidDisappearBlock();
+    }
 }
 
 @end

@@ -10,6 +10,4 @@
 
 @interface NSURL (Extension) <DOUAudioFile>
 
-- (NSURL *)audioFileURL;
-
 @end

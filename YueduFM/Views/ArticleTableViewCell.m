@@ -7,6 +7,7 @@
 //
 
 #import "ArticleTableViewCell.h"
+#import "DOUAudioStreamer.h"
 
 @interface ArticleTableViewCell () {
     RhythmView* _view;
@@ -27,6 +28,10 @@
         self.playing = !self.playing;
         self.model.playedDate = [NSDate date];
         [SRV(DataService) writeData:self.model completion:nil];
+        
+        DOUAudioStreamer* streamer = [[DOUAudioStreamer alloc] initWithAudioFile:self.model.audioURL.url];
+        [streamer play];
+        
     } forControlEvents:UIControlEventTouchUpInside];    
 }
 

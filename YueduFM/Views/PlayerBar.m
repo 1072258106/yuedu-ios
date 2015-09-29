@@ -37,8 +37,23 @@
     [bar showIfNeed];
 }
 
+- (void)setForceHidden:(BOOL)forceHidden {
+    _forceHidden = forceHidden;
+    
+    if (forceHidden) {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.top = self.container.height;
+        }];
+    } else {
+        self.top = self.container.height;
+        [UIView animateWithDuration:0.3f animations:^{
+            self.top -= self.height;
+        }];
+    }
+}
+
 - (void)showIfNeed {
-    if (!self.visible && SRV(ArticleService).activeArticleModel && self.container) {
+    if (!_forceHidden && !self.visible && SRV(ArticleService).activeArticleModel && self.container) {
         self.width = self.container.width;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         [self removeFromSuperview];

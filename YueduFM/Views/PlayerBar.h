@@ -15,6 +15,8 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 
+@property (nonatomic, assign) BOOL forceHidden;
+
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel* authorLabel;
 @property (nonatomic, retain) IBOutlet UILabel* speakerLabel;

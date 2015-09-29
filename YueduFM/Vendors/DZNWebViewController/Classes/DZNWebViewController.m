@@ -31,6 +31,8 @@ static char DZNWebViewControllerKVOContext = 0;
 @property (nonatomic, weak) UINavigationBar *navigationBar;
 @property (nonatomic, weak) UIView *navigationBarSuperView;
 
+@property (nonatomic, assign) NSInteger retryTime;//重试不超过三次
+
 @end
 
 @implementation DZNWebViewController
@@ -566,9 +568,18 @@ static char DZNWebViewControllerKVOContext = 0;
     [self updateStateBarItem];
 }
 
+- (void)stopLoading {
+    [self.webView stopLoading];
+}
+
+- (void)reload {
+    self.retryTime = 0;
+    [self.webView reload];
+}
+
 - (void)updateStateBarItem
 {
-    self.stateBarItem.target = self.webView;
+    self.stateBarItem.target = self;
     self.stateBarItem.action = self.webView.isLoading ? @selector(stopLoading) : @selector(reload);
     self.stateBarItem.image = self.webView.isLoading ? self.stopButtonImage : self.reloadButtonImage;
     self.stateBarItem.landscapeImagePhone = nil;
@@ -670,15 +681,20 @@ static char DZNWebViewControllerKVOContext = 0;
 - (void)webView:(DZNWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     [self updateToolbarItems];
-    
     self.title = self.webView.title;
+    
+    //部分情况加载失败，则重试
+    if ((webView.title.length == 0) && (self.retryTime < 2)) {
+        [webView reload];
+        self.retryTime++;
+    }
 }
 
 - (void)webView:(DZNWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
     [self updateToolbarItems];
     [self setLoadingError:error];
-    
+    NSLog(@"ERROR:%@", error);
     self.title = nil;
 }
 

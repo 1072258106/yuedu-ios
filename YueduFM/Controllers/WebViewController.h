@@ -10,6 +10,6 @@
 
 @interface WebViewController : DZNWebViewController
 
-+ (instancetype)controllerWithURL:(NSURL* )url;
++ (instancetype)controllerWithURL:(NSURL* )url didDisappear:(void(^)())disappear;
 
 @end
