@@ -8,77 +8,91 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="KGk-i7-Jjw" customClass="ActionTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="6EZ-hw-o3E" customClass="ActionTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6EZ-hw-o3E" id="lZw-Ru-O4y">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftk-bT-Cgl" customClass="UIVButton">
-                        <rect key="frame" x="160" y="0.0" width="80" height="68.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="分享" image="icon_action_share.png">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-gh-ozi" customClass="UIVButton">
-                        <rect key="frame" x="80" y="0.0" width="80" height="68.5"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Za-Va-tZa" customClass="UIVButton">
+                        <rect key="frame" x="128" y="0.0" width="64" height="68.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="收藏" image="icon_action_favor.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-h5-VxJ" customClass="UIVButton">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="68.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhC-gd-wZH" customClass="UIVButton">
+                        <rect key="frame" x="63.5" y="0.0" width="64.5" height="68.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="下载" image="icon_action_download.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEp-No-6Qa" customClass="UIVButton">
-                        <rect key="frame" x="240" y="0.0" width="80" height="68.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-rG-C2p" customClass="UIVButton">
+                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="68.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="详情" image="icon_action_info.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NR-EC-NG0" customClass="UIVButton">
+                        <rect key="frame" x="256.5" y="0.0" width="63.5" height="68.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="分享" image="icon_action_share.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-6a-VBw" customClass="UIVButton">
+                        <rect key="frame" x="192" y="0.0" width="64.5" height="68.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="添加到" image="icon_action_add.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="width" secondItem="Kpe-h5-VxJ" secondAttribute="width" id="3s8-BF-VoB"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="CEp-No-6Qa" secondAttribute="bottom" constant="-8" id="6ZD-h4-rEm"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="y5M-gh-ozi" secondAttribute="bottom" constant="-8" id="7ou-VP-xnc"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ftk-bT-Cgl" secondAttribute="bottom" constant="-8" id="FgY-cc-hlp"/>
-                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="FhS-mi-8b6"/>
-                    <constraint firstItem="Kpe-h5-VxJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="HNJ-YJ-QcR"/>
-                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="width" secondItem="y5M-gh-ozi" secondAttribute="width" id="JzR-qJ-nQK"/>
-                    <constraint firstItem="y5M-gh-ozi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Kff-AQ-YjF"/>
-                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="width" secondItem="CEp-No-6Qa" secondAttribute="width" id="NiW-yR-kqN"/>
-                    <constraint firstItem="CEp-No-6Qa" firstAttribute="leading" secondItem="ftk-bT-Cgl" secondAttribute="trailing" id="OVW-Jx-Fdo"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="CEp-No-6Qa" secondAttribute="trailing" constant="-8" id="YVQ-15-ndk"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Kpe-h5-VxJ" secondAttribute="bottom" constant="-8" id="elg-qr-Csg"/>
-                    <constraint firstItem="y5M-gh-ozi" firstAttribute="leading" secondItem="Kpe-h5-VxJ" secondAttribute="trailing" id="gfg-jR-HiB"/>
-                    <constraint firstItem="ftk-bT-Cgl" firstAttribute="leading" secondItem="y5M-gh-ozi" secondAttribute="trailing" id="n6y-4f-Rdx"/>
-                    <constraint firstItem="CEp-No-6Qa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="t98-Ym-D18"/>
-                    <constraint firstItem="Kpe-h5-VxJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="x7P-9l-pxQ"/>
+                    <constraint firstItem="Dgf-rG-C2p" firstAttribute="leading" secondItem="lZw-Ru-O4y" secondAttribute="leadingMargin" constant="-8" id="8rf-Jq-7Tu"/>
+                    <constraint firstItem="1NR-EC-NG0" firstAttribute="leading" secondItem="snq-6a-VBw" secondAttribute="trailing" id="Fk1-TM-4Mt"/>
+                    <constraint firstItem="snq-6a-VBw" firstAttribute="leading" secondItem="8Za-Va-tZa" secondAttribute="trailing" id="FrE-8p-ux9"/>
+                    <constraint firstItem="PhC-gd-wZH" firstAttribute="leading" secondItem="Dgf-rG-C2p" secondAttribute="trailing" id="GsS-BH-GYG"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="top" secondItem="lZw-Ru-O4y" secondAttribute="topMargin" constant="-8" id="HDv-1C-IOh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="PhC-gd-wZH" secondAttribute="bottom" constant="-8" id="HeG-sX-dhX"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1NR-EC-NG0" secondAttribute="bottom" constant="-8" id="P4J-BX-DMi"/>
+                    <constraint firstItem="1NR-EC-NG0" firstAttribute="top" secondItem="lZw-Ru-O4y" secondAttribute="topMargin" constant="-8" id="V23-fd-bsT"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="leading" secondItem="PhC-gd-wZH" secondAttribute="trailing" id="WYm-U1-2pd"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="width" secondItem="1NR-EC-NG0" secondAttribute="width" id="aSa-xg-fMh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8Za-Va-tZa" secondAttribute="bottom" constant="-8" id="fHh-z9-Nq3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="snq-6a-VBw" secondAttribute="bottom" constant="-8" id="jlT-us-6Io"/>
+                    <constraint firstItem="Dgf-rG-C2p" firstAttribute="top" secondItem="lZw-Ru-O4y" secondAttribute="topMargin" constant="-8" id="mfp-Og-Mu5"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="width" secondItem="snq-6a-VBw" secondAttribute="width" id="n2s-Zu-h3S"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Dgf-rG-C2p" secondAttribute="bottom" constant="-8" id="pFN-cm-k2f"/>
+                    <constraint firstItem="snq-6a-VBw" firstAttribute="top" secondItem="lZw-Ru-O4y" secondAttribute="topMargin" constant="-8" id="rUr-VM-IeK"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="width" secondItem="Dgf-rG-C2p" secondAttribute="width" id="uJE-aV-Waf"/>
+                    <constraint firstItem="8Za-Va-tZa" firstAttribute="width" secondItem="PhC-gd-wZH" secondAttribute="width" id="yFT-fg-Okr"/>
+                    <constraint firstItem="PhC-gd-wZH" firstAttribute="top" secondItem="lZw-Ru-O4y" secondAttribute="topMargin" constant="-8" id="zUf-QR-snP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1NR-EC-NG0" secondAttribute="trailing" constant="-8" id="zaO-p4-weR"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="detailButton" destination="CEp-No-6Qa" id="C0g-hU-iKQ"/>
-                <outlet property="downloadButton" destination="Kpe-h5-VxJ" id="hbY-zc-fru"/>
-                <outlet property="favorButton" destination="y5M-gh-ozi" id="6t0-Ec-ZJS"/>
-                <outlet property="shareButton" destination="ftk-bT-Cgl" id="bKn-Hf-aTX"/>
+                <outlet property="addButton" destination="snq-6a-VBw" id="tyd-7B-UrD"/>
+                <outlet property="detailButton" destination="Dgf-rG-C2p" id="kFP-wM-UcX"/>
+                <outlet property="downloadButton" destination="PhC-gd-wZH" id="GpF-HY-G8r"/>
+                <outlet property="favorButton" destination="8Za-Va-tZa" id="cgv-Zz-DBG"/>
+                <outlet property="shareButton" destination="1NR-EC-NG0" id="exE-g0-a8u"/>
             </connections>
             <point key="canvasLocation" x="202" y="342.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="icon_action_add.png" width="35" height="30"/>
         <image name="icon_action_download.png" width="35" height="30"/>
         <image name="icon_action_favor.png" width="35" height="30"/>
         <image name="icon_action_info.png" width="35" height="30"/>

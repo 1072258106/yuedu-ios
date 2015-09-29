@@ -86,6 +86,7 @@
 		E431FD6C1BAEC3ED00898B8F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD6B1BAEC3ED00898B8F /* UIView+Extension.m */; };
 		E431FD7A1BAEDAF000898B8F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FD791BAEDAF000898B8F /* WebViewController.m */; };
 		E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E431FD7E1BAEED6500898B8F /* Accelerate.framework */; };
+		E4358DDA1BBAFC1500E3799B /* icon_action_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -378,6 +379,7 @@
 		E431FD791BAEDAF000898B8F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		E431FD7B1BAEDB7800898B8F /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		E431FD7E1BAEED6500898B8F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_action_add@2x.png"; sourceTree = "<group>"; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -990,6 +992,7 @@
 		E48884A71BB9B1320053F346 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4358DD91BBAFC1500E3799B /* icon_action_add@2x.png */,
 				E4E26BD41BBAD84F00B18BC0 /* icon_action_info@2x.png */,
 				E48884E21BBA1E760053F346 /* icon_cell_check@2x.png */,
 				E48884A81BB9B1320053F346 /* bg_menu.jpg */,
@@ -1543,6 +1546,7 @@
 				E431FD121BADF4FD00898B8F /* dzn_icn_toolbar_stop@3x.png in Resources */,
 				E48884E31BBA1E760053F346 /* icon_cell_check@2x.png in Resources */,
 				E48884CA1BB9B1320053F346 /* icon_action_share@2x.png in Resources */,
+				E4358DDA1BBAFC1500E3799B /* icon_action_add@2x.png in Resources */,
 				E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */,
 				E431FD091BADF4FD00898B8F /* dzn_icn_toolbar_backward@3x.png in Resources */,
 				E431FCFA1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x.png in Resources */,

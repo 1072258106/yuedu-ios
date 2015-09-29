@@ -31,6 +31,10 @@
     [self.detailButton bk_addEventHandler:^(id sender) {
         [self onDetailButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
+
+    [self.addButton bk_addEventHandler:^(id sender) {
+        [self onAddButtonPressed:nil];
+    } forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -115,6 +119,10 @@
             [[PlayerBar shareBar] setForceHidden:NO];
         });
     }] animated:YES];
+}
+
+- (IBAction)onAddButtonPressed:(id)sender {
+    
 }
 
 - (void)updateFavorButton {

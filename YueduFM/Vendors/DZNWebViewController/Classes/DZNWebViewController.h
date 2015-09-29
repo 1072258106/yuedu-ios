@@ -79,6 +79,10 @@ typedef NS_OPTIONS(NSUInteger, DZNsupportedWebActions) {
  */
 - (instancetype)initWithFileURL:(NSURL *)URL;
 
+
+- (instancetype)initWithData:(NSData *)data;
+
+
 /**
  Starts loading a new request. Useful to programatically update the web content.
  
