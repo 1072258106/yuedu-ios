@@ -9,6 +9,12 @@
 #import "ArticleService.h"
 #import "YDSDKArticleModelEx.h"
 
+@interface ArticleService () {
+    NSTimeInterval _1970Timeinterval;
+}
+
+@end
+
 @implementation ArticleService
 
 + (ServiceLevel)level {
@@ -90,6 +96,25 @@
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"playedDate > 0 ORDER BY playedDate DESC LIMIT 0, %d", count] complete:^(BOOL successed, id result) {
         if (completion) {
             completion(successed?result:nil);
+        }
+    }];
+}
+
+- (void)deleteAllPlayed:(void (^)())completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:@"playedDate>0" complete:^(BOOL successed, id result) {
+        if (successed) {
+            NSMutableArray* array = [NSMutableArray array];
+            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                YDSDKArticleModelEx* model = obj;
+                model.playedDate = [NSDate dateWithTimeIntervalSince1970:0];
+                [array addObject:model];
+            }];
+            
+            [self.dataManager writeObjects:array complete:^(BOOL successed, id result) {
+                if (completion) completion();
+            }];
+        } else {
+            if (completion) completion();
         }
     }];
 }

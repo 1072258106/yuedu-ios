@@ -25,6 +25,8 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         self.playing = !self.playing;
+        self.model.playedDate = [NSDate date];
+        [SRV(DataService) writeData:self.model completion:nil];
     } forControlEvents:UIControlEventTouchUpInside];    
 }
 

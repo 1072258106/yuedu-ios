@@ -22,6 +22,19 @@ static int const kCountPerTime = 20;
     
     self.title = @"最近播放";
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
+        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已播放记录?"];
+        [alert bk_addButtonWithTitle:@"清空" handler:^{
+            [SRV(ArticleService) deleteAllPlayed:^{
+                [self load];
+                [self showWithSuccessedMessage:@"清空成功"];
+            }];
+        }];
+        
+        [alert bk_addButtonWithTitle:@"取消" handler:nil];
+        [alert show];
+    }];
+        
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self load];
     }];

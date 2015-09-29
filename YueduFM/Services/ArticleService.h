@@ -29,6 +29,8 @@
 - (void)listPlayed:(int)count
         completion:(void (^)(NSArray* array))completion;
 
+- (void)deleteAllPlayed:(void (^)())completion;
+
 //收藏
 - (void)listFavored:(int)count
          completion:(void (^)(NSArray* array))completion;
