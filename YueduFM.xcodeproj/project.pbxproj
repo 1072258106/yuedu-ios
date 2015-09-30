@@ -97,6 +97,7 @@
 		E4358DF71BBB205900E3799B /* PlayBarActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4358DF61BBB205900E3799B /* PlayBarActionTableViewCell.xib */; };
 		E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */; };
 		E4358DFB1BBB286400E3799B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4358DFA1BBB286400E3799B /* Images.xcassets */; };
+		E4358DFD1BBB9F7000E3799B /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DFC1BBB9F7000E3799B /* logo@2x.png */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -400,6 +401,7 @@
 		E4358DF61BBB205900E3799B /* PlayBarActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayBarActionTableViewCell.xib; sourceTree = "<group>"; };
 		E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bar_down@2x.png"; sourceTree = "<group>"; };
 		E4358DFA1BBB286400E3799B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4358DFC1BBB9F7000E3799B /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -1009,6 +1011,7 @@
 		E48884A71BB9B1320053F346 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4358DFC1BBB9F7000E3799B /* logo@2x.png */,
 				E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */,
 				E4358DEC1BBB0DB500E3799B /* icon_bar_more@2x.png */,
 				E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */,
@@ -1596,6 +1599,7 @@
 				E431FD081BADF4FD00898B8F /* dzn_icn_toolbar_backward@2x.png in Resources */,
 				E4F4C8971BB57B3200C428AE /* SuccessedMessageView.xib in Resources */,
 				E4E26BD51BBAD84F00B18BC0 /* icon_action_info@2x.png in Resources */,
+				E4358DFD1BBB9F7000E3799B /* logo@2x.png in Resources */,
 				E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */,
 				E48884CB1BB9B1320053F346 /* icon_author@2x.png in Resources */,
 				E48884D81BB9B1320053F346 /* icon_nav_delete@2x.png in Resources */,

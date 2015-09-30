@@ -30,9 +30,21 @@ static int const kCountPerTime = 20;
     [self setupMenu];
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        YDSDKArticleModelEx* lastModel = [self.tableData firstObject];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [SRV(ArticleService) fetchLatest:^(NSError *error) {
-                [self loadCurrentChannelData];
+                [self loadCurrentChannelData:^{
+                    YDSDKArticleModelEx* nowModel = [self.tableData firstObject];
+                    if (error) {
+                        [self showWithFailedMessage:@"更新失败, 请检测网络"];
+                    } else {
+                        if (lastModel.aid != nowModel.aid) {
+                            [self showWithSuccessedMessage:@"您有新的文章"];
+                        } else {
+                            [self showWithSuccessedMessage:@"暂无新的文章"];
+                        }
+                    }
+                }];
             }];            
         });
     }];
@@ -49,8 +61,7 @@ static int const kCountPerTime = 20;
     UIButton* button = [UIButton viewWithNibName:@"TitleView"];
     button.backgroundColor = [UIColor clearColor];
     [button bk_addEventHandler:^(id sender) {
-        if (_menu.isOpen)
-            return [_menu close];
+        if (_menu.isOpen) return [_menu close];
         
         [_menu showFromNavigationController:self.navigationController];
     } forControlEvents:UIControlEventTouchUpInside];
@@ -81,16 +92,15 @@ static int const kCountPerTime = 20;
     }];
 }
 
-- (void)loadCurrentChannelData {
+- (void)loadCurrentChannelData:(void(^)())completion {
     [SRV(ArticleService) list:kCountPerTime channel:[self currentChannel] completion:^(NSArray *array) {
-        sleep(1);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self reloadData:array];
             [self.tableView.header endRefreshing];
-            [self showWithSuccessedMessage:@"更新完成"];
             if ([array count] >= kCountPerTime) {
                 [self addFooter];
             }
+            if (completion) completion();
         });
     }];
 }
@@ -112,7 +122,7 @@ static int const kCountPerTime = 20;
             UIButton* button = (UIButton*)self.navigationItem.titleView;
             [button setTitle:item.title forState:UIControlStateNormal];
             _selectMenuIndex = [_menu.items indexOfObject:item];
-            [self.tableView.header beginRefreshing];
+            [self loadCurrentChannelData:nil];
         }];
         [array addObject:item];
     }];
