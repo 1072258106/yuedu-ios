@@ -58,6 +58,22 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     [[NSFileManager defaultManager] createDirectoryAtPath:_baseDirectory withIntermediateDirectories:YES attributes:nil error:nil];
 }
 
+- (void)start {
+    [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        NetworkStatus status = SRV(ReachabilityService).status;
+
+        //空任务，则从数据库读取
+        if (![downloadTasks count]) {
+            [SRV(ArticleService) listAllDownloading:^(NSArray *array) {
+                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [self download:obj protect:(status == ReachableViaWWAN) preprocess:nil];
+                }];
+            }];
+        }
+    }];
+
+}
+
 - (void)setupTasks {
     [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
         ArticleService* service = SRV(ArticleService);
@@ -72,15 +88,6 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
                 [task suspend];
             }
         }];
-        
-        //空任务，则从数据库读取
-        if (![downloadTasks count]) {
-            [service listAllDownloading:^(NSArray *array) {
-                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    [self download:obj protect:(status == ReachableViaWWAN) preprocess:nil];
-                }];
-            }];
-        }
     }];
 }
 
@@ -101,7 +108,11 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     NSURLSessionDownloadTask* task = [_session downloadTaskWithURL:model.audioURL.url];
     task.articleModel = model;
     if (protect) {
-        [task suspend];
+        [task resume];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            sleep(1);
+            [task suspend];            
+        });
     } else {
         [task resume];
     }
