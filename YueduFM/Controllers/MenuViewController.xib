@@ -21,7 +21,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-90-Nvz">
-                    <rect key="frame" x="0.0" y="115" width="239" height="249"/>
+                    <rect key="frame" x="0.0" y="93" width="239" height="249"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="249" id="3br-7O-pVR"/>
@@ -34,7 +34,7 @@
                 <constraint firstItem="IPK-tj-4XK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8vf-yL-qhz"/>
                 <constraint firstAttribute="trailing" secondItem="IPK-tj-4XK" secondAttribute="trailing" id="KIc-ur-aJj"/>
                 <constraint firstAttribute="bottom" secondItem="IPK-tj-4XK" secondAttribute="bottom" id="M0V-wP-TOk"/>
-                <constraint firstAttribute="centerY" secondItem="3hO-90-Nvz" secondAttribute="centerY" id="T2S-Kj-Guy"/>
+                <constraint firstAttribute="centerY" secondItem="3hO-90-Nvz" secondAttribute="centerY" constant="22.5" id="T2S-Kj-Guy"/>
                 <constraint firstAttribute="trailing" secondItem="3hO-90-Nvz" secondAttribute="trailing" constant="81" id="cLy-hq-0RY"/>
                 <constraint firstItem="IPK-tj-4XK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dIo-3V-M7w"/>
             </constraints>
