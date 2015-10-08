@@ -21,8 +21,9 @@
 - (instancetype)initWithServiceCenter:(ServiceCenter *)serviceCenter {
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
-        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:nil];
-        [[AVAudioSession sharedInstance] setActive: YES error:nil];
+        AVAudioSession* session = [AVAudioSession sharedInstance];
+        [session setCategory: AVAudioSessionCategoryPlayback error:nil];
+        [session setActive: YES error:nil];
     }
     return self;
 }
@@ -31,7 +32,7 @@
     if (![model.audioURL isEqualToString:self.playingModel.audioURL]) {
         self.playingModel = model;
         SRV(ArticleService).activeArticleModel = model;
-        _streamer = [[DOUAudioStreamer alloc] initWithAudioFile:model.audioURL.url];
+        _streamer = [[DOUAudioStreamer alloc] initWithAudioFile:[[model playableURL] audioFileURL]];
     }
     
     [_streamer play];

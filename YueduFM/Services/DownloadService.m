@@ -169,11 +169,6 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     return [NSString stringWithFormat:@"%@/%@", _baseDirectory, task.articleModel.audioURL.lastPathComponent];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-didCompleteWithError:(NSError *)error {
-    NSLog(@"didCompleteWithError=======%@", task.articleModel.title);
-}
-
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location {
@@ -181,7 +176,6 @@ didFinishDownloadingToURL:(NSURL *)location {
     NSString* URLString = [self URLStringWithTask:downloadTask];
     [[NSFileManager defaultManager] removeItemAtPath:URLString error:nil];
     [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:URLString] error:&error];
-
     if (!error) {
         YDSDKArticleModelEx* model = downloadTask.articleModel;
         model.downloadState = DownloadStateSuccessed;

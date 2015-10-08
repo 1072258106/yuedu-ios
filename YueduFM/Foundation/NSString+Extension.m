@@ -15,6 +15,10 @@
     return [NSURL URLWithString:self];
 }
 
+- (NSURL* )fileURL {
+    return [NSURL fileURLWithPath:self];
+}
+
 + (NSString* )stringWithSeconds:(int)seconds {
     if (seconds < 0) seconds = 0;
     

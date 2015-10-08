@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DOUAudioFile.h"
 
 @interface NSURL (Extension) <DOUAudioFile>
+
+- (NSURL *)audioFileURL;
 
 @end

@@ -11,6 +11,7 @@
 @interface NSString (Extension)
 
 - (NSURL* )url;
+- (NSURL* )fileURL;
 
 + (NSString* )stringWithSeconds:(int)seconds;
 

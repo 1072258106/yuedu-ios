@@ -47,7 +47,7 @@ typedef NS_OPTIONS(NSUInteger, DZNsupportedWebActions) {
 /** The web view that the controller manages. */
 @property (nonatomic, strong) DZNWebView *webView;
 /** The URL identifying the location of the content to load. */
-@property (nonatomic, readwrite) NSURL *URL;
+@property (nonatomic, strong, readwrite) NSURL *URL;
 /** The supported navigation tool bar items. Default is All. */
 @property (nonatomic, readwrite) DZNWebNavigationTools supportedWebNavigationTools;
 /** The supported actions like sharing and copy link, add to reading list, open in Safari, etc. Default is All. */
