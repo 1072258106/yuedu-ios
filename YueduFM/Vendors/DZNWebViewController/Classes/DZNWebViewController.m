@@ -863,6 +863,7 @@ static char DZNWebViewControllerKVOContext = 0;
     _forwardBarItem = nil;
     _stateBarItem = nil;
     _actionBarItem = nil;
+    [self destroyProgressViewIfNeeded];
     _progressView = nil;
     
     _backwardLongPress = nil;
