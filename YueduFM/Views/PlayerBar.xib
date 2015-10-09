@@ -60,17 +60,15 @@
                     <state key="selected" image="icon_bar_pause.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-OA-eRf">
-                    <rect key="frame" x="214" y="-0.5" width="50" height="60.5"/>
+                    <rect key="frame" x="214" y="-1" width="50" height="60.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="0gq-b8-56o"/>
                         <constraint firstAttribute="height" constant="60.5" id="NBu-1i-2QX"/>
                     </constraints>
-                    <state key="normal" image="icon_bar_next.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" image="icon_bar_next.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-bY-2ln">
-                    <rect key="frame" x="264" y="-0.5" width="52" height="59.5"/>
+                    <rect key="frame" x="264" y="-1" width="52" height="59.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="59.5" id="2b0-0b-2Bj"/>
                         <constraint firstAttribute="width" constant="52" id="hcQ-2I-raD"/>

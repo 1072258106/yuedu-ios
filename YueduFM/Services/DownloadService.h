@@ -32,6 +32,8 @@ typedef NS_ENUM(NSUInteger, DownloadErrorCode) {
 
 - (void)state:(void(^)(BOOL downloading))completion;
 
+- (NSURL* )playableURLForModel:(YDSDKArticleModelEx* )model;
+
 - (void)download:(YDSDKArticleModelEx* )model
       preprocess:(void(^)(NSError* error))preprocess;
 

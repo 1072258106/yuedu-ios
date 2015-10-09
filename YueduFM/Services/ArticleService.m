@@ -82,7 +82,7 @@
         [self fetch:0 completion:^(NSArray* array, NSError *error) {
             if (!error) {
                 if (!self.activeArticleModel) {
-                    self.activeArticleModel = [array firstObject];
+                    self.activeArticleModel = [YDSDKArticleModelEx objectFromSuperObject:[array firstObject]];
                 }
                 //为了防止第一次数据不够，多加载一次
                 if (none) {

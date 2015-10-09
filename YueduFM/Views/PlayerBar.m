@@ -14,6 +14,7 @@
     UIView*                     _processBar;
     StreamerService*            _streamerService;
     PlayBarActionTableViewCell* _actionCell;
+    BOOL                        _seeking;
 }
 
 
@@ -87,6 +88,7 @@
     } forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_actionCell];
     
+    [self becomeFirstResponder];
     [self.actionButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
 
@@ -100,7 +102,6 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-
         if (_streamerService.isPlaying) {
             [_streamerService pause];
         } else {
@@ -109,7 +110,7 @@
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.nextButton bk_addEventHandler:^(id sender) {
-        [SRV(StreamerService) next];
+        [_streamerService next];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.moreButton bk_addEventHandler:^(id sender) {
@@ -145,22 +146,25 @@
     }];
     
     [_streamerService bk_addObserverForKeyPath:@"isPlaying" task:^(id target) {
-        [self setPlaying:_streamerService.isPlaying];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setPlaying:_streamerService.isPlaying];
+            self.progress = _streamerService.duration?_streamerService.currentTime/_streamerService.duration:0;
+        });
     }];
 
     _timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
-        if (_streamerService.duration) {
-            _processBar.width = (self.width*_streamerService.currentTime)/_streamerService.duration;
+        if (_streamerService.isPlaying && !_seeking && _streamerService.duration) {
+            self.progress = _streamerService.currentTime/_streamerService.duration;
         }
     } repeats:YES];
     
-#if 0
     UILongPressGestureRecognizer* gesture = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
         static CGPoint point;
         
         switch (state) {
             case UIGestureRecognizerStateBegan:
                 point = location;
+                _seeking = YES;
                 break;
             case UIGestureRecognizerStateChanged:
             case UIGestureRecognizerStateEnded: {
@@ -172,11 +176,12 @@
                 break;
         }
         if (state == UIGestureRecognizerStateEnded) {
-            AudioStreamer* streamer = self.serviceCenter.steamer;
-//            streamer.progress = self.progress;
-            [streamer seekToTime:streamer.duration*self.progress];
-//            DOUAudioStreamer* streamer = self.serviceCenter.audioStreamer;
-//            streamer.currentTime = streamer.duration*self.progress;
+            StreamerService* streamer = SRV(StreamerService);
+            streamer.currentTime = streamer.duration*self.progress;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                _seeking = NO;
+            });
         }
         point = location;
     }];
@@ -185,7 +190,6 @@
     gesture.minimumPressDuration = 0.1;
     gesture.allowableMovement = 200;
     [self addGestureRecognizer:gesture];
-#endif
 }
 
 - (CGFloat)progress {

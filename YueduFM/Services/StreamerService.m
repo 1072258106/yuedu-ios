@@ -56,21 +56,21 @@
         [SRV(DataService) writeData:model completion:nil];
         
         [_streamer bk_removeAllBlockObservers];
-        _streamer = [DOUAudioStreamer streamerWithAudioFile:[[model playableURL] audioFileURL]];
+        NSLog(@"play:%@", [SRV(DownloadService) playableURLForModel:self.playingModel]);
+        _streamer = [DOUAudioStreamer streamerWithAudioFile:[[SRV(DownloadService) playableURLForModel:self.playingModel] audioFileURL]];
         [_streamer bk_addObserverForKeyPath:@"duration" task:^(id target) {
-//            if (_streamer.status == DOUAudioStreamerPlaying) {
-                NSMutableDictionary* info = self.nowPlayingInfo;
-                if (!info[MPMediaItemPropertyPlaybackDuration]) {
-                    info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
-                    self.nowPlayingInfo = info;
-                }
-//            }
+            NSMutableDictionary* info = self.nowPlayingInfo;
+            if (!info[MPMediaItemPropertyPlaybackDuration]) {
+                info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
+                self.nowPlayingInfo = info;
+            }
         }];
         
         [_streamer bk_addObserverForKeyPath:@"status" task:^(id target) {
             if (_streamer.status == DOUAudioStreamerFinished) {
                 self.isPlaying = NO;
-                self.currentTime = 0;
+                self.playingModel = nil;
+                [self next];
             }
         }];
         
@@ -116,16 +116,22 @@
 
 - (void)next {
     [SRV(ArticleService) nextPreplay:self.playingModel completion:^(YDSDKArticleModelEx *nextModel) {
-        [self play:nextModel];
+        if (nextModel) {
+            [self play:nextModel];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD showInfoWithStatus:@"已是最后一篇文章"];
+            });
+        }
     }];
 }
 
 - (NSTimeInterval)duration {
-    return _streamer.duration;
+    return self.playingModel?_streamer.duration:0;
 }
 
 - (NSTimeInterval)currentTime {
-    return _streamer.currentTime;
+    return self.playingModel?_streamer.currentTime:0;
 }
 
 - (void)setCurrentTime:(NSTimeInterval)currentTime {

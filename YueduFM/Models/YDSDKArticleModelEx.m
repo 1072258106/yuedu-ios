@@ -15,9 +15,4 @@ PPSqliteORMAsignRegisterName(@"article")
 
 @implementation YDSDKArticleModelEx
 
-- (NSURL* )playableURL {
-    BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:self.downloadURLString];
-    return exist?self.downloadURLString.fileURL:self.audioURL.url;
-}
-
 @end

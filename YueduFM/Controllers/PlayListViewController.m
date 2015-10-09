@@ -19,7 +19,7 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的列表";
+    self.title = @"播放队列";
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
         UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有项目?"];

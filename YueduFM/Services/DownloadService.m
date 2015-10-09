@@ -169,6 +169,17 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     return [NSString stringWithFormat:@"%@/%@", _baseDirectory, task.articleModel.audioURL.lastPathComponent];
 }
 
+- (NSURL* )playableURLForModel:(YDSDKArticleModelEx* )model {
+    if (!model) return nil;
+    if (model.downloadURLString.length != 0) {
+        NSString* absoluteString = [NSString stringWithFormat:@"%@/%@", _baseDirectory, model.downloadURLString];
+        BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:absoluteString];
+        return exist?absoluteString.fileURL:model.audioURL.url;
+    } else {
+        return model.audioURL.url;
+    }
+}
+
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location {
@@ -179,7 +190,7 @@ didFinishDownloadingToURL:(NSURL *)location {
     if (!error) {
         YDSDKArticleModelEx* model = downloadTask.articleModel;
         model.downloadState = DownloadStateSuccessed;
-        model.downloadURLString = URLString;
+        model.downloadURLString = [URLString lastPathComponent];
         [SRV(DataService) writeData:model completion:^{
             [[NSNotificationCenter defaultCenter] postNotificationName:DownloadSeriviceDidChangedNotification object:nil];
         }];

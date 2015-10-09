@@ -59,6 +59,8 @@
     [[UIBarButtonItem appearance] setTintColor:kThemeColor];
     UIImage* image = [[UIImage imageNamed:@"icon_nav_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

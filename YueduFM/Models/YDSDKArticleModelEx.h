@@ -31,6 +31,4 @@ typedef NS_ENUM(int, DownloadState) {
 @property (nonatomic, strong) NSDate* playedDate;
 @property (nonatomic, strong) NSDate* preplayDate;
 
-- (NSURL* )playableURL;
-
 @end

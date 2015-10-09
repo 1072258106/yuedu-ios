@@ -125,7 +125,7 @@
     YDSDKArticleModelEx* aModel = [self article];
     aModel.preplayDate = [NSDate date];
     [SRV(DataService) writeData:aModel completion:nil];
-    [MessageKit showWithSuccessedMessage:@"该文章已添加到我的列表中"];
+    [MessageKit showWithSuccessedMessage:@"该文章已添加到播放队列中"];
 }
 
 - (void)updateFavorButton {

@@ -29,7 +29,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     _tableData = @[
                    @{
                        @"image":@"icon_menu_playlist.png",
-                       @"title":@"我的列表",
+                       @"title":@"播放队列",
                        @"action":^{
                            PlayListViewController* vc = [[PlayListViewController alloc] initWithNibName:@"PlayListViewController" bundle:nil];
                            [self pushViewController:vc];
