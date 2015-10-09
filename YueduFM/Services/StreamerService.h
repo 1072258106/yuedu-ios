@@ -22,4 +22,6 @@
 - (void)resume;
 - (void)next;
 
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event;
+
 @end

@@ -41,6 +41,7 @@
     self.window.rootViewController = sideMenu;
     [self.window makeKeyAndVisible];
     
+    [self becomeFirstResponder];
     return YES;
 }
 
@@ -79,6 +80,14 @@
 
 - (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
     SRV(DownloadService).backgroundTransferCompletionHandler = completionHandler;
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void) remoteControlReceivedWithEvent:(UIEvent *)event {
+    [SRV(StreamerService) remoteControlReceivedWithEvent:event];
 }
 
 @end

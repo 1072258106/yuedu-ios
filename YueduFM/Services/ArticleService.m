@@ -50,9 +50,13 @@
 }
 
 - (void)updateActiveArticleModel {
-    [self listPreplay:1 completion:^(NSArray *array) {
-        self.activeArticleModel = [array firstObject];
-    }];
+    if (!self.activeArticleModel) {
+        [self listPreplay:1 completion:^(NSArray *array) {
+            if ([array firstObject]) {
+                self.activeArticleModel = [array firstObject];
+            }
+        }];
+    }
 }
 
 - (void)checkout:(int)count

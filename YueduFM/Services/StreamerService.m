@@ -12,7 +12,8 @@
 #import "DOUAudioStreamer.h"
 
 @interface StreamerService () {
-    DOUAudioStreamer* _streamer;
+    DOUAudioStreamer*   _streamer;
+    UIImageView*        _imageView;
 }
 
 @property (nonatomic, strong) NSMutableDictionary* nowPlayingInfo;
@@ -29,9 +30,16 @@
         [session setActive: YES error:nil];
         
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        _imageView = [[UIImageView alloc] init];
     }
     return self;
 }
+
+
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+}
+
 
 - (void)dealloc {
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
@@ -44,11 +52,12 @@
         self.playingModel = model;
         SRV(ArticleService).activeArticleModel = model;
         
+        model.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+        [SRV(DataService) writeData:model completion:nil];
+        
         [_streamer bk_removeAllBlockObservers];
         _streamer = [DOUAudioStreamer streamerWithAudioFile:[[model playableURL] audioFileURL]];
         [_streamer bk_addObserverForKeyPath:@"duration" task:^(id target) {
-            NSLog(@"=========stream==========:%f", _streamer.duration);
-
 //            if (_streamer.status == DOUAudioStreamerPlaying) {
                 NSMutableDictionary* info = self.nowPlayingInfo;
                 if (!info[MPMediaItemPropertyPlaybackDuration]) {
@@ -57,26 +66,33 @@
                 }
 //            }
         }];
+        
+        [_streamer bk_addObserverForKeyPath:@"status" task:^(id target) {
+            if (_streamer.status == DOUAudioStreamerFinished) {
+                self.isPlaying = NO;
+                self.currentTime = 0;
+            }
+        }];
+        
+        NSDictionary* info = @{
+                               MPMediaItemPropertyTitle:model.title,
+                               MPMediaItemPropertyAlbumTitle:model.author,
+                               MPMediaItemPropertyArtist:model.speaker,
+                               MPNowPlayingInfoPropertyPlaybackRate:@(1),
+                               };
+        
+        self.nowPlayingInfo = (NSMutableDictionary* )info;
+        
+        [_imageView sd_setImageWithURL:model.pictureURL.url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (image) {
+                NSMutableDictionary* info = self.nowPlayingInfo;
+                info[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:image];
+                self.nowPlayingInfo = info;
+            }
+        }];
     }
     
     [_streamer play];
-    
-    NSDictionary* info = @{
-                           MPMediaItemPropertyTitle:model.title,
-                           MPMediaItemPropertyArtist:[NSString stringWithFormat:@"作者:%@ 播音员:%@", model.author, model.speaker],
-                           MPNowPlayingInfoPropertyPlaybackRate:@(1),
-                           };
-    
-    self.nowPlayingInfo = (NSMutableDictionary* )info;
-    
-    UIImageView* imageView = [[UIImageView alloc] init];
-    [imageView sd_setImageWithURL:model.pictureURL.url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (image) {
-            NSMutableDictionary* info = self.nowPlayingInfo;
-            info[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:image];
-            self.nowPlayingInfo = info;
-        }
-    }];
     
     self.isPlaying = YES;
 }

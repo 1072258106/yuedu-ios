@@ -132,7 +132,7 @@
             [self showIfNeed];
             
             YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-            [self.imageView sd_setImageWithURL:model.pictureURL.url];
+            [self.imageView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:kThemeColor]];
             self.titleLabel.text = model.title;
             self.authorLabel.text = model.author;
             self.speakerLabel.text = model.speaker;
