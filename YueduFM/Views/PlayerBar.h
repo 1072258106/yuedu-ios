@@ -23,6 +23,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* durationLabel;
 
 @property (nonatomic, retain) IBOutlet UIButton* playButton;
+@property (nonatomic, retain) IBOutlet UIButton* nextButton;
 
 @property (nonatomic, retain) IBOutlet UIButton* actionButton;
 

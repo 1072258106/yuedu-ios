@@ -19,5 +19,7 @@
 
 - (void)play:(YDSDKArticleModelEx* )model;
 - (void)pause;
+- (void)resume;
+- (void)next;
 
 @end

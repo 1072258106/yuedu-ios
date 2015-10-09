@@ -31,6 +31,7 @@
 
 - (void)start {
     [self autoFetch:nil];
+    [self updateActiveArticleModel];
 }
 
 - (void)autoFetch:(void(^)())completion {
@@ -48,14 +49,16 @@
     }];
 }
 
+- (void)updateActiveArticleModel {
+    [self listPreplay:1 completion:^(NSArray *array) {
+        self.activeArticleModel = [array firstObject];
+    }];
+}
+
 - (void)checkout:(int)count
          channel:(int)channel
       completion:(void(^)(NSArray* array))completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d and channel=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, channel, count] complete:^(BOOL successed, id result) {
-        if (!self.activeArticleModel) {
-            self.activeArticleModel = successed?[result firstObject]:nil;
-        }
-        
         if (completion) completion(successed?result:nil);
      }];
 }
@@ -74,6 +77,9 @@
         BOOL none = successed && ![result intValue];
         [self fetch:0 completion:^(NSArray* array, NSError *error) {
             if (!error) {
+                if (!self.activeArticleModel) {
+                    self.activeArticleModel = [array firstObject];
+                }
                 //为了防止第一次数据不够，多加载一次
                 if (none) {
                     [self autoFetch:^{
@@ -99,6 +105,16 @@
         }
     }];
 }
+
+- (void)nextPreplay:(YDSDKArticleModelEx* )model
+         completion:(void (^)(YDSDKArticleModelEx* nextModel))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"preplayDate > %f ORDER BY preplayDate LIMIT 0, 1", model.preplayDate.timeIntervalSince1970] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?[result firstObject]:nil);
+        }
+    }];
+}
+
 
 - (void)deleteAllPreplay:(void (^)())completion {
     [self.dataManager read:[YDSDKArticleModelEx class] condition:@"preplayDate>0" complete:^(BOOL successed, id result) {

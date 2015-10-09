@@ -107,6 +107,7 @@
                 <outlet property="authorLabel" destination="gSH-wu-Gbz" id="aSg-r7-wBB"/>
                 <outlet property="imageView" destination="Qkq-sY-riK" id="z0P-rH-YIY"/>
                 <outlet property="moreButton" destination="XBW-bY-2ln" id="gUG-eW-bsM"/>
+                <outlet property="nextButton" destination="GIK-OA-eRf" id="SkS-RG-yUX"/>
                 <outlet property="playButton" destination="VdL-kG-5sl" id="Flf-FF-fjm"/>
                 <outlet property="speakerLabel" destination="Ge0-VO-TSL" id="njx-4c-mWD"/>
                 <outlet property="titleLabel" destination="X6v-la-WYJ" id="WRJ-ny-b8V"/>

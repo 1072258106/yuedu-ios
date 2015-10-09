@@ -108,6 +108,10 @@
         }
     } forControlEvents:UIControlEventTouchUpInside];
     
+    [self.nextButton bk_addEventHandler:^(id sender) {
+        [SRV(StreamerService) next];
+    } forControlEvents:UIControlEventTouchUpInside];
+    
     [self.moreButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
         _actionCell.model = model;

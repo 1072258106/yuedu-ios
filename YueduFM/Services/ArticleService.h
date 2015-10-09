@@ -29,6 +29,9 @@
 - (void)listPreplay:(int)count
         completion:(void (^)(NSArray* array))completion;
 
+- (void)nextPreplay:(YDSDKArticleModelEx* )model
+         completion:(void (^)(YDSDKArticleModelEx* nextModel))completion;
+
 - (void)deleteAllPreplay:(void (^)())completion;
 
 
