@@ -36,6 +36,30 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
         [self setupURLSession];
         [self setupDirectory];
         [self setupTasks];
+        
+        [SRV(ReachabilityService) bk_addObserverForKeyPath:@"status" task:^(id target) {
+            switch (SRV(ReachabilityService).status) {
+                case NotReachable:
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showInfoWithStatus:@"无网络"];
+                    });
+                    break;
+                case ReachableViaWiFi:
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showInfoWithStatus:@"网络已处于WiFi下"];
+                    });
+                    [self setupTasks];
+                    break;
+                case ReachableViaWWAN:
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showInfoWithStatus:@"网络已处于2G/3G/4G下"];
+                    });
+                    [self setupTasks];
+                    break;
+                default:
+                    break;
+            }
+        }];
     }
     return self;
 }
@@ -71,7 +95,6 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
             }];
         }
     }];
-
 }
 
 - (void)setupTasks {
@@ -86,6 +109,8 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
             }];
             if (status == ReachableViaWWAN) {
                 [task suspend];
+            } else {
+                [task resume];
             }
         }];
     }];
