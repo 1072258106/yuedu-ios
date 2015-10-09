@@ -287,7 +287,7 @@ static NSInteger compareTask(id obj1, id obj2, void* context) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     completionHandler();
                     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-                    localNotification.alertBody = @"文章已下载完成.";
+                    localNotification.alertBody = @"所有文章已下载完成.";
                     [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
                 }];
                 self.backgroundTransferCompletionHandler = nil;

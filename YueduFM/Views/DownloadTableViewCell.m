@@ -44,6 +44,7 @@
 }
 
 - (void)setTask:(NSURLSessionTask *)task {
+    [_task bk_removeAllBlockObservers];
     _task = task;
     
     [self setModel:[task articleModel]];

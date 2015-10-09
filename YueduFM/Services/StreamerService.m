@@ -40,6 +40,9 @@
     return YES;
 }
 
+- (void)start {
+    self.isPlaying = self.isPlaying;
+}
 
 - (void)dealloc {
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
