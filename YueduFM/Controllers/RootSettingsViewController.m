@@ -21,6 +21,7 @@
     self.title = @"设置";
     
     SettingsService* service = SRV(SettingsService);
+    __weak typeof(self) weakSelf = self;
     NSDictionary* section1 = @{@"header":@"流量",
                                @"footer":@"关闭提醒后，在非WiFi模式下收听和下载在线文章时，将不再显示流量提醒.",
                                @"rows":@[
@@ -39,7 +40,7 @@
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                AutoCloseSettingsViewController* vc = [[AutoCloseSettingsViewController alloc] initWithNibName:@"AutoCloseSettingsViewController" bundle:nil];
-                                               [self.navigationController pushViewController:vc animated:YES];
+                                               [weakSelf.navigationController pushViewController:vc animated:YES];
                                            }
                                            },
                                        @{

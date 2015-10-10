@@ -12,8 +12,6 @@
 @interface PlayerBar () {
     NSTimer*                    _timer;
     UIView*                     _processBar;
-    StreamerService*            _streamerService;
-    PlayBarActionTableViewCell* _actionCell;
     BOOL                        _seeking;
 }
 
@@ -21,6 +19,8 @@
 @property (nonatomic, assign) BOOL visible;
 @property (nonatomic, assign) CGFloat progress;
 @property (nonatomic, strong) UIView* container;
+@property (nonatomic, strong) PlayBarActionTableViewCell* actionCell;
+@property (nonatomic, strong) StreamerService* streamerService;
 
 @end
 
@@ -76,6 +76,7 @@
     line.backgroundColor = RGBHex(@"#E0E0E0");
     [self addSubview:line];
     
+    __weak typeof(self) weakSelf = self;
     _actionCell = [PlayBarActionTableViewCell viewWithNibName:@"PlayBarActionTableViewCell"];
     _actionCell.width = self.width;
     _actionCell.height = self.height;
@@ -83,7 +84,7 @@
     _actionCell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [_actionCell.hideButton bk_addEventHandler:^(id sender) {
         [UIView animateWithDuration:0.3f animations:^{
-            _actionCell.top = self.height;
+            weakSelf.actionCell.top = weakSelf.height;
         }];
     } forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_actionCell];
@@ -102,22 +103,22 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-        if (_streamerService.isPlaying) {
-            [_streamerService pause];
+        if (weakSelf.streamerService.isPlaying) {
+            [weakSelf.streamerService pause];
         } else {
-            [_streamerService play:model];
+            [weakSelf.streamerService play:model];
         }
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.nextButton bk_addEventHandler:^(id sender) {
-        [_streamerService next];
+        [weakSelf.streamerService next];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.moreButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-        _actionCell.model = model;
+        weakSelf.actionCell.model = model;
         [UIView animateWithDuration:0.3f animations:^{
-            _actionCell.top = 0;
+            weakSelf.actionCell.top = 0;
         }];
     } forControlEvents:UIControlEventTouchUpInside];
 
@@ -130,31 +131,31 @@
     [self.imageView setImage:[UIImage imageWithColor:kThemeColor]];
     [SRV(ArticleService) bk_addObserverForKeyPath:@"activeArticleModel" task:^(id target) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self showIfNeed];
+            [weakSelf showIfNeed];
             
             YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-            [self.imageView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:kThemeColor]];
-            self.titleLabel.text = model.title;
-            self.authorLabel.text = model.author;
-            self.speakerLabel.text = model.speaker;
-            self.durationLabel.text = [NSString stringWithSeconds:model.duration];
+            [weakSelf.imageView sd_setImageWithURL:model.pictureURL.url placeholderImage:[UIImage imageWithColor:kThemeColor]];
+            weakSelf.titleLabel.text = model.title;
+            weakSelf.authorLabel.text = model.author;
+            weakSelf.speakerLabel.text = model.speaker;
+            weakSelf.durationLabel.text = [NSString stringWithSeconds:model.duration];
             
             [UIView animateWithDuration:0.3f animations:^{
-                _actionCell.top = self.height;
+                weakSelf.actionCell.top = self.height;
             }];
         });
     }];
     
     [_streamerService bk_addObserverForKeyPath:@"isPlaying" task:^(id target) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self setPlaying:_streamerService.isPlaying];
-            self.progress = _streamerService.duration?_streamerService.currentTime/_streamerService.duration:0;
+            [weakSelf setPlaying:_streamerService.isPlaying];
+            weakSelf.progress = _streamerService.duration?_streamerService.currentTime/_streamerService.duration:0;
         });
     }];
 
     _timer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
         if (_streamerService.isPlaying && !_seeking && _streamerService.duration) {
-            self.progress = _streamerService.currentTime/_streamerService.duration;
+            weakSelf.progress = _streamerService.currentTime/_streamerService.duration;
         }
     } repeats:YES];
     

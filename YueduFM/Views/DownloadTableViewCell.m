@@ -13,9 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    __weak typeof(self) weakSelf = self;
     [self.playButton bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
     [self.playButton bk_addEventHandler:^(id sender) {
-        [self toggleTask];
+        [weakSelf toggleTask];
     } forControlEvents:UIControlEventTouchUpInside];
     
     self.progressView.progressTintColor =[UIColor whiteColor];
@@ -49,16 +50,17 @@
     
     [self setModel:[task articleModel]];
     [self updateProgress];
+    __weak typeof(self) weakSelf = self;
     [task bk_removeAllBlockObservers];
     [task bk_addObserverForKeyPath:@"countOfBytesReceived" task:^(id target) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.progressView.progress = (CGFloat)task.countOfBytesReceived/task.countOfBytesExpectedToReceive;
+            weakSelf.progressView.progress = (CGFloat)task.countOfBytesReceived/task.countOfBytesExpectedToReceive;
         });
     }];
     
     [self.progressView bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
     [self.progressView bk_addEventHandler:^(id sender) {
-        [self toggleTask];
+        [weakSelf toggleTask];
     } forControlEvents:UIControlEventTouchUpInside];
 }
 

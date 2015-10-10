@@ -8,10 +8,9 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController () <UISearchBarDelegate> {
-    UISearchBar* _searchBar;
+@interface SearchViewController () <UISearchBarDelegate>
 
-}
+@property (nonatomic, strong) UISearchBar* searchBar;
 
 @end
 
@@ -35,8 +34,10 @@ static int const kCountPerTime = 10;
     UIButton* button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(0, 0, 40, 25);
     [button setTitle:@"取消" forState:UIControlStateNormal];
+    
+    __weak typeof(self) weakSelf = self;
     [button bk_addEventHandler:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:_searchBar], [[UIBarButtonItem alloc] initWithCustomView:button]];
@@ -58,13 +59,14 @@ static int const kCountPerTime = 10;
 }
 
 - (void)addFooter {
+    __weak typeof(self) weakSelf = self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [SRV(ArticleService) list:(int)[self.tableData count]+kCountPerTime filter:_searchBar.text completion:^(NSArray *array) {
+        [SRV(ArticleService) list:(int)[weakSelf.tableData count]+kCountPerTime filter:weakSelf.searchBar.text completion:^(NSArray *array) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self reloadData:array];
-                [self.tableView.footer endRefreshing];
-                if ([self.tableData count] == [array count]) {
-                    self.tableView.footer = nil;
+                [weakSelf reloadData:array];
+                [weakSelf.tableView.footer endRefreshing];
+                if ([weakSelf.tableData count] == [array count]) {
+                    weakSelf.tableView.footer = nil;
                 }
             });
         }];

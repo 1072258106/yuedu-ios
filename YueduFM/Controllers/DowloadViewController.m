@@ -30,14 +30,15 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
     [super viewDidLoad];
     [self setupNavigationBar];
     
+    __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
         
-        if ([self isDownloadTypeDone]) {
+        if ([weakSelf isDownloadTypeDone]) {
             UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已下载的文章?"];
             [alert bk_addButtonWithTitle:@"清空" handler:^{
                 [SRV(ArticleService) deleteAllDownloaded:^{
-                    [self load];
-                    [self showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf load];
+                    [weakSelf showWithSuccessedMessage:@"清空成功"];
                 }];
             }];
             
@@ -47,8 +48,8 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
             UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空所有任务?"];
             [alert bk_addButtonWithTitle:@"清空" handler:^{
                 [SRV(DownloadService) deleteAllTask:^{
-                    [self load];
-                    [self showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf load];
+                    [weakSelf showWithSuccessedMessage:@"清空成功"];
                 }];
             }];
             
@@ -94,15 +95,16 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 }
 
 - (void)addFooter {
+    __weak typeof(self) weakSelf = self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        if ([self isDownloadTypeDone]) {
-            [SRV(ArticleService) listDownloaded:(int)[self.tableData count]+kCountPerTime completion:^(NSArray *array) {
+        if ([weakSelf isDownloadTypeDone]) {
+            [SRV(ArticleService) listDownloaded:(int)[weakSelf.tableData count]+kCountPerTime completion:^(NSArray *array) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self reloadData:array];
-                    [self.tableView.footer endRefreshing];
+                    [weakSelf reloadData:array];
+                    [weakSelf.tableView.footer endRefreshing];
                     
-                    if ([self.tableData count] == [array count]) {
-                        self.tableView.footer = nil;
+                    if ([weakSelf.tableData count] == [array count]) {
+                        weakSelf.tableView.footer = nil;
                     }
                 });
             }];
@@ -111,9 +113,10 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 }
 
 - (void)setupNavigationBar {
+    __weak typeof(self) weakSelf = self;
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"已下载", @"正在下载"]];
     [_segmentedControl bk_addEventHandler:^(id sender) {
-        [self load];
+        [weakSelf load];
     } forControlEvents:UIControlEventValueChanged];
     _segmentedControl.selectedSegmentIndex = 0;
     self.navigationItem.titleView = _segmentedControl;

@@ -19,12 +19,13 @@
 
     self.title = @"自动关闭";
     
+    __weak typeof(self) weakSelf = self;
     void(^action)(UITableViewCell* cell) = ^(UITableViewCell* cell) {
-        [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [[weakSelf.tableView visibleCells] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [(UITableViewCell* )obj setAccessoryView:nil];
         }];
         cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_cell_check.png"]];
-        SRV(SettingsService).autoCloseLevel = [self.tableView indexPathForCell:cell].row;
+        SRV(SettingsService).autoCloseLevel = [weakSelf.tableView indexPathForCell:cell].row;
     };
     
     NSMutableArray* rows = [NSMutableArray array];

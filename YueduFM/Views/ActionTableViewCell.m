@@ -12,28 +12,29 @@
 @implementation ActionTableViewCell
 
 - (void)awakeFromNib {
+    __weak typeof(self) weakSelf = self;
     [self.downloadButton bk_addEventHandler:^(id sender) {
-        [self onDownloadButtonPressed:nil];
+        [weakSelf onDownloadButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.shareButton bk_addEventHandler:^(id sender) {
-        [self onShareButtonPressed:nil];
+        [weakSelf onShareButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.favorButton bk_addEventHandler:^(id sender) {
-        [self onFavorButtonPressed:nil];
+        [weakSelf onFavorButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.deleteButton bk_addEventHandler:^(id sender) {
-        [self onDeleteButtonPressed:nil];
+        [weakSelf onDeleteButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
 
     [self.detailButton bk_addEventHandler:^(id sender) {
-        [self onDetailButtonPressed:nil];
+        [weakSelf onDetailButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
 
     [self.addButton bk_addEventHandler:^(id sender) {
-        [self onAddButtonPressed:nil];
+        [weakSelf onAddButtonPressed:nil];
     } forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -44,9 +45,10 @@
 - (void)setModel:(id)model {
     [super setModel:model];
 
+    __weak typeof(self) weakSelf = self;
     [[self article] bk_removeAllBlockObservers];
     [[self article] bk_addObserverForKeyPath:@"isFavored" task:^(id target) {
-        [self updateFavorButton];
+        [weakSelf updateFavorButton];
     }];
     
     [SRV(ArticleService) update:[self article] completion:nil];

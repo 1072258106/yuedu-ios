@@ -11,9 +11,10 @@
 #import "SearchViewController.h"
 
 @interface MainViewController () {
-    REMenu*         _menu;
     NSInteger       _selectMenuIndex;
 }
+
+@property (nonatomic, strong) REMenu* menu;
 
 @end
 
@@ -29,19 +30,20 @@ static int const kCountPerTime = 20;
     [self setupNavigationBar];
     [self setupMenu];
     
+    __weak typeof(self) weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         YDSDKArticleModelEx* lastModel = [self.tableData firstObject];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [SRV(ArticleService) fetchLatest:^(NSError *error) {
                 [self loadCurrentChannelData:^{
-                    YDSDKArticleModelEx* nowModel = [self.tableData firstObject];
+                    YDSDKArticleModelEx* nowModel = [weakSelf.tableData firstObject];
                     if (error) {
-                        [self showWithFailedMessage:@"更新失败, 请检测网络"];
+                        [weakSelf showWithFailedMessage:@"更新失败, 请检测网络"];
                     } else {
                         if (lastModel.aid != nowModel.aid) {
-                            [self showWithSuccessedMessage:@"您有新的文章"];
+                            [weakSelf showWithSuccessedMessage:@"您有新的文章"];
                         } else {
-                            [self showWithSuccessedMessage:@"暂无新的文章"];
+                            [weakSelf showWithSuccessedMessage:@"暂无新的文章"];
                         }
                     }
                 }];
@@ -64,32 +66,35 @@ static int const kCountPerTime = 20;
 - (void)setupNavigationBar {
     UIButton* button = [UIButton viewWithNibName:@"TitleView"];
     button.backgroundColor = [UIColor clearColor];
+    
+    __weak typeof(self) weakSelf = self;
     [button bk_addEventHandler:^(id sender) {
-        if (_menu.isOpen) return [_menu close];
+        if (weakSelf.menu.isOpen) return [weakSelf.menu close];
         
-        [_menu showFromNavigationController:self.navigationController];
+        [weakSelf.menu showFromNavigationController:weakSelf.navigationController];
     } forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = button;
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_menu.png"] action:^{
-        [self presentLeftMenuViewController:nil];
+        [weakSelf presentLeftMenuViewController:nil];
     }];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_search.png"] action:^{
         SearchViewController* vc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 
 - (void)addFooter {
+    __weak typeof(self) weakSelf = self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [SRV(ArticleService) list:(int)[self.tableData count]+kCountPerTime channel:[self currentChannel] completion:^(NSArray *array) {
+        [SRV(ArticleService) list:(int)[weakSelf.tableData count]+kCountPerTime channel:[self currentChannel] completion:^(NSArray *array) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self reloadData:array];
-                [self.tableView.footer endRefreshing];
+                [weakSelf reloadData:array];
+                [weakSelf.tableView.footer endRefreshing];
                 
-                if ([self.tableData count] == [array count]) {
-                    self.tableView.footer = nil;
+                if ([weakSelf.tableData count] == [array count]) {
+                    weakSelf.tableView.footer = nil;
                 }
             });
         }];
@@ -155,10 +160,13 @@ static int const kCountPerTime = 20;
     _menu.separatorOffset = CGSizeMake(15, 0);
     _menu.borderWidth = 0;
     _menu.itemHeight = 40.f;
+    
+    __weak typeof(self) weakSelf = self;
+
     [_menu bk_addObserverForKeyPath:@"isOpen" task:^(id target) {
-        UIButton* button = (UIButton*)self.navigationItem.titleView;
+        UIButton* button = (UIButton*)weakSelf.navigationItem.titleView;
         
-        if (_menu.isOpen) {
+        if (weakSelf.menu.isOpen) {
             [button setImage:[UIImage imageNamed:@"icon_up_arrow"] forState:UIControlStateNormal];
             [button setImage:[UIImage imageNamed:@"icon_up_arrow_h"] forState:UIControlStateHighlighted];
         } else {
@@ -170,7 +178,7 @@ static int const kCountPerTime = 20;
     [self reloadMenu];
     [SRV(ChannelService) bk_addObserverForKeyPath:@"channels" task:^(id target) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self reloadMenu];
+            [weakSelf reloadMenu];
         });
     }];
 }

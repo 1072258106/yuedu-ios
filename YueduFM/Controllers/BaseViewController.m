@@ -40,5 +40,8 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)dealloc {
+    NSLog(@"DEALLOC====>%@", self);
+}
 
 @end

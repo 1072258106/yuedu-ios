@@ -21,12 +21,13 @@ static int const kCountPerTime = 20;
     
     self.title = @"我的收藏";
     
+    __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
             UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有收藏文章?"];
             [alert bk_addButtonWithTitle:@"清空" handler:^{
                 [SRV(ArticleService) deleteAllFavored:^{
-                    [self load];
-                    [self showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf load];
+                    [weakSelf showWithSuccessedMessage:@"清空成功"];
                 }];
             }];
             
@@ -35,7 +36,7 @@ static int const kCountPerTime = 20;
         }];
 
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self load];
+        [weakSelf load];
     }];
     
     [self load];
@@ -54,14 +55,15 @@ static int const kCountPerTime = 20;
 }
 
 - (void)addFooter {
+    __weak typeof(self) weakSelf = self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [SRV(ArticleService) listFavored:(int)[self.tableData count]+kCountPerTime completion:^(NSArray *array) {
+        [SRV(ArticleService) listFavored:(int)[weakSelf.tableData count]+kCountPerTime completion:^(NSArray *array) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self reloadData:array];
-                [self.tableView.footer endRefreshing];
+                [weakSelf reloadData:array];
+                [weakSelf.tableView.footer endRefreshing];
                 
-                if ([self.tableData count] == [array count]) {
-                    self.tableView.footer = nil;
+                if ([weakSelf.tableData count] == [array count]) {
+                    weakSelf.tableView.footer = nil;
                 }
             });
         }];

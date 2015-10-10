@@ -26,13 +26,14 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    __weak typeof(self) weakSelf = self;
     _tableData = @[
                    @{
                        @"image":@"icon_menu_playlist.png",
                        @"title":@"播放队列",
                        @"action":^{
                            PlayListViewController* vc = [[PlayListViewController alloc] initWithNibName:@"PlayListViewController" bundle:nil];
-                           [self pushViewController:vc];
+                           [weakSelf pushViewController:vc];
                        }
                        },
                    @{
@@ -40,7 +41,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"title":@"我的下载",
                        @"action":^{
                            DowloadViewController* vc = [[DowloadViewController alloc] initWithNibName:@"DowloadViewController" bundle:nil];
-                           [self pushViewController:vc];
+                           [weakSelf pushViewController:vc];
                        }
                        },
                    @{
@@ -48,7 +49,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"title":@"我的收藏",
                        @"action":^{
                            FavorViewController* vc = [[FavorViewController alloc] initWithNibName:@"FavorViewController" bundle:nil];
-                           [self pushViewController:vc];
+                           [weakSelf pushViewController:vc];
                        }
                        },
                    @{
@@ -56,7 +57,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"title":@"最近播放",
                        @"action":^{
                            HistoryViewController* vc = [[HistoryViewController alloc] initWithNibName:@"HistoryViewController" bundle:nil];
-                           [self pushViewController:vc];
+                           [weakSelf pushViewController:vc];
                        }
                        },
                    @{
@@ -64,7 +65,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        @"title":@"设置",
                        @"action":^{
                            RootSettingsViewController* vc = [[RootSettingsViewController alloc] initWithNibName:@"RootSettingsViewController" bundle:nil];
-                           [self pushViewController:vc];
+                           [weakSelf pushViewController:vc];
                        }
                        },
                    ];

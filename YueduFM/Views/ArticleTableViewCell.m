@@ -9,9 +9,9 @@
 #import "ArticleTableViewCell.h"
 #import "DOUAudioStreamer.h"
 
-@interface ArticleTableViewCell () {
-    StreamerService*    _streamerService;
-}
+@interface ArticleTableViewCell ()
+
+@property (nonatomic, strong) StreamerService* streamerService;
 
 @end
 
@@ -21,15 +21,16 @@
     self.pictureView.layer.cornerRadius = 3.0f;
     self.pictureView.clipsToBounds = YES;
     
+    __weak typeof(self) weakSelf = self;
     _streamerService = SRV(StreamerService);
     self.detailLabel.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
     self.detailLabel.lineSpacing = 2.0f;
     
     [self.playButton bk_addEventHandler:^(id sender) {
-        self.playing = YES;
-        self.model.playedDate = [NSDate date];
-        [SRV(DataService) writeData:self.model completion:nil];
-        [_streamerService play:self.model];
+        weakSelf.playing = YES;
+        weakSelf.model.playedDate = [NSDate date];
+        [SRV(DataService) writeData:weakSelf.model completion:nil];
+        [weakSelf.streamerService play:weakSelf.model];
     } forControlEvents:UIControlEventTouchUpInside];
 
     [self addObserver];
@@ -40,11 +41,12 @@
 }
 
 - (void)addObserver {
+    __weak typeof(self) weakSelf = self;
     [_streamerService bk_addObserverForKeyPath:@"isPlaying" task:^(id target) {
-        if ([self isMyPlaying]) {
-            self.playing = YES;
+        if ([weakSelf isMyPlaying]) {
+            weakSelf.playing = YES;
         } else {
-            self.playing = NO;
+            weakSelf.playing = NO;
         }
     }];
 }
