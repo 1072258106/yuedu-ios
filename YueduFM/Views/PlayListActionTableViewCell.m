@@ -10,12 +10,11 @@
 
 @implementation PlayListActionTableViewCell
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (IBAction)onDeleteButtonPressed:(id)sender {
+    YDSDKArticleModelEx* aModel = self.model;
+    aModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+    [SRV(DataService) writeData:aModel completion:nil];
+    [self.expandTableViewController deleteCellWithModel:self.model];
 }
-*/
 
 @end
