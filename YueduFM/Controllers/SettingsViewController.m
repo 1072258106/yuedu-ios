@@ -22,7 +22,6 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    self.tableView.height -= 40;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
     

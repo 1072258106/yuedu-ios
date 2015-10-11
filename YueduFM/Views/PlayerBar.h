@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString* const PlayerBarDidShowNotification;
+extern NSString* const PlayerBarDidHideNotification;
+
 @interface PlayerBar : UIView
 
 + (instancetype)shareBar;

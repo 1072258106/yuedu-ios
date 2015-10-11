@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayListViewController">
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uUv-IA-N6i">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
@@ -25,7 +25,7 @@
             <constraints>
                 <constraint firstItem="uUv-IA-N6i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6kt-2E-025"/>
                 <constraint firstItem="uUv-IA-N6i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JLP-EN-TMS"/>
-                <constraint firstAttribute="bottom" secondItem="uUv-IA-N6i" secondAttribute="bottom" constant="40" id="KVO-U2-4Hs"/>
+                <constraint firstAttribute="bottom" secondItem="uUv-IA-N6i" secondAttribute="bottom" id="KVO-U2-4Hs"/>
                 <constraint firstAttribute="trailing" secondItem="uUv-IA-N6i" secondAttribute="trailing" id="aLp-qr-ysY"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

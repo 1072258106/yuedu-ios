@@ -9,6 +9,9 @@
 #import "PlayerBar.h"
 #import "PlayBarActionTableViewCell.h"
 
+NSString* const PlayerBarDidShowNotification = @"PlayerBarDidShowNotification";
+NSString* const PlayerBarDidHideNotification = @"PlayerBarDidHideNotification";
+
 @interface PlayerBar () {
     NSTimer*                    _timer;
     UIView*                     _processBar;
@@ -35,6 +38,14 @@
     return bar;
 }
 
+- (void)hide {
+    [self setForceHidden:YES];
+}
+
+- (void)show {
+    [self setForceHidden:NO];
+}
+
 + (void)setContainer:(UIView* )container {
     PlayerBar* bar = [PlayerBar shareBar];
     bar.container = container;
@@ -42,6 +53,8 @@
 }
 
 - (void)setForceHidden:(BOOL)forceHidden {
+    if (_forceHidden == forceHidden) return;
+    
     _forceHidden = forceHidden;
     
     if (forceHidden) {
@@ -71,6 +84,9 @@
 }
 
 - (void)awakeFromNib {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(show) name:PlayerBarDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hide) name:PlayerBarDidHideNotification object:nil];
+
     UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 1)];
     line.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     line.backgroundColor = RGBHex(@"#E0E0E0");
