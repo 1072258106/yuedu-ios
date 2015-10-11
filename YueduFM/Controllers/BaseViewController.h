@@ -10,4 +10,8 @@
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isEmpty;
+@property (nonatomic, strong) NSString* emptyString;
+- (UIView* )emptyContainer;
+
 @end

@@ -56,6 +56,7 @@
         SRV(ArticleService).activeArticleModel = model;
         
         model.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+        model.playedDate = [NSDate date];
         [SRV(DataService) writeData:model completion:nil];
         
         [_streamer bk_removeAllBlockObservers];

@@ -26,7 +26,7 @@
     
     MainViewController* mvc = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
-    nvc.navigationBar.translucent = YES;
+    nvc.navigationBar.translucent = NO;
     nvc.navigationBar.barTintColor = kThemeColor;
     nvc.navigationBar.tintColor = [UIColor whiteColor];
     [nvc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];

@@ -24,7 +24,6 @@ CATEGORY_PROPERTY_GET_SET(MessageView*, messageView, setMessageView:)
 - (void)showWithSuccessedMessage:(NSString* )message {
     MessageView* view = [MessageView viewWithNibName:@"SuccessedMessageView"];
     view.messageLabel.text = message;
-    view.top = 64;
     view.left = 0;
     view.width = self.view.width;
     [self.messageView removeFromSuperview];
@@ -47,7 +46,7 @@ CATEGORY_PROPERTY_GET_SET(MessageView*, messageView, setMessageView:)
     @synchronized(self) {
         view.top -= view.height;
         [UIView animateWithDuration:0.3f animations:^{
-            view.top = 64;
+            view.top = 0;
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.3f delay:2.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
                 view.top -= view.height;

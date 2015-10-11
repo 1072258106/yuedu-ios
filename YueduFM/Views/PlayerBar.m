@@ -57,6 +57,7 @@ NSString* const PlayerBarDidHideNotification = @"PlayerBarDidHideNotification";
     
     _forceHidden = forceHidden;
     
+    self.actionCell.top = self.height;
     if (forceHidden) {
         [UIView animateWithDuration:0.3f animations:^{
             self.top = self.container.height;

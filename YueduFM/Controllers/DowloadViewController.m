@@ -30,6 +30,8 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
     [super viewDidLoad];
     [self setupNavigationBar];
     
+    self.emptyString = @"下载的文章, 可离线收听.";
+    
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
         

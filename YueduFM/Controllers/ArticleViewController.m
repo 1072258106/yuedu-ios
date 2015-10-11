@@ -33,6 +33,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [self closeExpand];
 }
 
+- (void)reloadData:(NSArray *)data {
+    [super reloadData:data];
+    
+    self.isEmpty = ([data count] == 0);
+}
+
+- (UIView* )emptyContainer {
+    return self.tableView;
+}
+
 #pragma mark - TableViewControllerProtocol
 - (UINib* )nibForExpandCell {
     return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];

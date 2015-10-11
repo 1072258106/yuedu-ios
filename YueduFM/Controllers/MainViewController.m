@@ -26,6 +26,7 @@ static int const kCountPerTime = 20;
     [super viewDidLoad];
     
     self.title = @"首页";
+    self.emptyString = @"暂无文章,请下来刷新试试.";
     
     [self setupNavigationBar];
     [self setupMenu];

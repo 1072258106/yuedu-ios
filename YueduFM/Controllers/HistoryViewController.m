@@ -21,6 +21,7 @@ static int const kCountPerTime = 20;
     [super viewDidLoad];
     
     self.title = @"最近播放";
+    self.emptyString = @"已播放的文章都会出现在此.";
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{

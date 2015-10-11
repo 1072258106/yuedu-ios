@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) BOOL dragging;
 @property (nonatomic, assign) CGFloat scrollY;
+@property (nonatomic, strong) UILabel* emptyView;
+
 
 @end
 
@@ -21,6 +23,21 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self setupEmptyView];
+}
+
+- (void)setupEmptyView {
+    UIView* container = [self emptyContainer];
+    self.emptyView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, container.width, 20)];
+    self.emptyView.center = CGPointMake(container.width/2, (container.height-120)/2);
+    self.emptyView.textColor = [UIColor lightGrayColor];
+    self.emptyView.textAlignment = NSTextAlignmentCenter;
+    self.emptyView.text = self.emptyString;
+    self.emptyView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
+    self.emptyView.font = [UIFont systemFontOfSize:15];
+    self.isEmpty = NO;
+    [container addSubview:self.emptyView];
 }
 
 - (void)setTitle:(NSString *)title {
@@ -32,6 +49,21 @@
     label.textColor = [UIColor whiteColor];
     [label sizeToFit];
     self.navigationItem.titleView = label;
+}
+
+- (void)setEmptyString:(NSString *)emptyString {
+    _emptyString = emptyString;
+    self.emptyView.text = emptyString;
+}
+
+- (void)setIsEmpty:(BOOL)isEmpty {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.emptyView.hidden = !isEmpty;        
+    });
+}
+
+- (UIView* )emptyContainer {
+    return self.view;
 }
 
 - (void)didReceiveMemoryWarning {

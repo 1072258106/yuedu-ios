@@ -28,7 +28,6 @@
     
     [self.playButton bk_addEventHandler:^(id sender) {
         weakSelf.playing = YES;
-        weakSelf.model.playedDate = [NSDate date];
         [SRV(DataService) writeData:weakSelf.model completion:nil];
         [weakSelf.streamerService play:weakSelf.model];
     } forControlEvents:UIControlEventTouchUpInside];

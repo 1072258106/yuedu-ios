@@ -20,6 +20,7 @@ static int const kCountPerTime = 20;
     [super viewDidLoad];
     
     self.title = @"播放队列";
+    self.emptyString = @"所有将要播放的文章都在此.";
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
