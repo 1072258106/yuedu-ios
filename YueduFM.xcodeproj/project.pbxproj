@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E407681C1BCABE5900EBA567 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E407681B1BCABE5900EBA567 /* libstdc++.tbd */; };
+		E407681E1BCABE7200EBA567 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E407681D1BCABE7200EBA567 /* libsqlite3.tbd */; };
 		E431FA981BADCA2600898B8F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */; };
 		E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */; };
 		E431FABE1BADD1D800898B8F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA9E1BADD1D700898B8F /* MKAnnotationView+WebCache.m */; };
@@ -133,7 +135,6 @@
 		E486A3FF1BB2D72900414EDE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3EB1BB2D72900414EDE /* UIScrollView+MJRefresh.m */; };
 		E486A4001BB2D72900414EDE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3ED1BB2D72900414EDE /* UIView+MJExtension.m */; };
 		E486A4031BB2F38900414EDE /* RhythmView.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A4021BB2F38900414EDE /* RhythmView.m */; };
-		E486A4071BB2F81700414EDE /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */; };
 		E48884901BB997CA0053F346 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488848E1BB997CA0053F346 /* SettingsViewController.m */; };
 		E48884951BB9983F0053F346 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48884931BB9983F0053F346 /* HistoryViewController.m */; };
 		E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48884941BB9983F0053F346 /* HistoryViewController.xib */; };
@@ -214,9 +215,7 @@
 		E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91D11BA9DF4B0045F222 /* FMDatabaseQueue.m */; };
 		E4DD91D91BA9DF4B0045F222 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91D41BA9DF4B0045F222 /* FMResultSet.m */; };
 		E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD91DD1BA9E08F0045F222 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */; };
 		E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD919C1BA9D9950045F222 /* YueduFMSDK.framework */; };
-		E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DD91E51BA9E1D20045F222 /* libxml2.dylib */; };
 		E4E134231BB8E3FA0063D6B2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134221BB8E3FA0063D6B2 /* Reachability.m */; };
 		E4E134261BB8E4230063D6B2 /* ReachabilityService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134251BB8E4230063D6B2 /* ReachabilityService.m */; };
 		E4E134291BB8E6200063D6B2 /* SettingsService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E134281BB8E6200063D6B2 /* SettingsService.m */; };
@@ -252,6 +251,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E407681B1BCABE5900EBA567 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		E407681D1BCABE7200EBA567 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E431FA951BADCA2600898B8F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -471,7 +472,6 @@
 		E486A3ED1BB2D72900414EDE /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		E486A4011BB2F38900414EDE /* RhythmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RhythmView.h; sourceTree = "<group>"; };
 		E486A4021BB2F38900414EDE /* RhythmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RhythmView.m; sourceTree = "<group>"; };
-		E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		E488848D1BB997CA0053F346 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		E488848E1BB997CA0053F346 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E48884921BB9983F0053F346 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -646,8 +646,6 @@
 		E4DD91D41BA9DF4B0045F222 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		E4DD91DC1BA9E08F0045F222 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E4DD91DD1BA9E08F0045F222 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		E4DD91E51BA9E1D20045F222 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		E4E134211BB8E3FA0063D6B2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E4E134221BB8E3FA0063D6B2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E4E134241BB8E4230063D6B2 /* ReachabilityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityService.h; sourceTree = "<group>"; };
@@ -693,11 +691,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E486A4071BB2F81700414EDE /* libstdc++.6.0.9.dylib in Frameworks */,
+				E407681E1BCABE7200EBA567 /* libsqlite3.tbd in Frameworks */,
+				E407681C1BCABE5900EBA567 /* libstdc++.tbd in Frameworks */,
 				E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */,
 				E431FB291BADEF5400898B8F /* WebKit.framework in Frameworks */,
-				E4DD91E61BA9E1D20045F222 /* libxml2.dylib in Frameworks */,
-				E4DD91E31BA9E12E0045F222 /* libsqlite3.dylib in Frameworks */,
 				E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */,
 				E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */,
 			);
@@ -713,6 +710,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E407681A1BCAB84C00EBA567 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E407681D1BCABE7200EBA567 /* libsqlite3.tbd */,
+				E407681B1BCABE5900EBA567 /* libstdc++.tbd */,
+				E431FD7E1BAEED6500898B8F /* Accelerate.framework */,
+				E431FB281BADEF5400898B8F /* WebKit.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		E431FA9C1BADD1D700898B8F /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,13 +1159,9 @@
 		E4DD91621BA9D8A10045F222 = {
 			isa = PBXGroup;
 			children = (
-				E486A4061BB2F81700414EDE /* libstdc++.6.0.9.dylib */,
-				E431FD7E1BAEED6500898B8F /* Accelerate.framework */,
-				E431FB281BADEF5400898B8F /* WebKit.framework */,
-				E4DD91E51BA9E1D20045F222 /* libxml2.dylib */,
-				E4DD91E21BA9E12E0045F222 /* libsqlite3.dylib */,
 				E4DD916D1BA9D8A10045F222 /* YueduFM */,
 				E4DD91871BA9D8A20045F222 /* YueduFMTests */,
+				E407681A1BCAB84C00EBA567 /* Framework */,
 				E4DD916C1BA9D8A10045F222 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1936,6 +1940,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors",
@@ -1956,7 +1962,9 @@
 					"$(PROJECT_DIR)/YueduFM/Vendors/pop",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evideo.weiju;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e40ffe98-09e2-4ba8-bca9-a8a9f739c354";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -1966,6 +1974,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors",
@@ -1986,7 +1995,9 @@
 					"$(PROJECT_DIR)/YueduFM/Vendors/pop",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evideo.weiju;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e40ffe98-09e2-4ba8-bca9-a8a9f739c354";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
