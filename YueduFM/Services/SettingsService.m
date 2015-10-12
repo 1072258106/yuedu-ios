@@ -57,8 +57,8 @@
     _autoCloseLevel = autoCloseLevel;
     self.autoCloseRestTime = [_autoCloseTimes[autoCloseLevel] intValue]*60;
     
+    [self.autoCloseTimer invalidate];
     if (self.autoCloseRestTime) {
-        [self.autoCloseTimer invalidate];
         __weak typeof(self) weakSelf = self;
         self.autoCloseTimer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0 block:^(NSTimer *timer) {
             weakSelf.autoCloseRestTime--;

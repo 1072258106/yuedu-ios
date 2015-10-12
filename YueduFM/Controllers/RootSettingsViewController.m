@@ -43,7 +43,7 @@
                                                [SRV(SettingsService) bk_addObserverForKeyPath:@"autoCloseRestTime" task:^(id target) {
                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                                        int seconds = SRV(SettingsService).autoCloseRestTime;
-                                                       cell.detailTextLabel.text = seconds?[NSString fullStringWithSeconds:seconds]:nil;
+                                                       cell.detailTextLabel.text = seconds <= 0?[NSString fullStringWithSeconds:seconds]:nil;
                                                    });
                                                }];
                                            },
