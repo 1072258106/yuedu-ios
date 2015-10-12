@@ -171,6 +171,9 @@
     } repeats:YES];
     
     UILongPressGestureRecognizer* gesture = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        
+        if (!_streamerService.isPlaying)return;
+        
         static CGPoint point;
         
         switch (state) {
