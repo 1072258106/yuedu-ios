@@ -27,7 +27,6 @@
     self.detailLabel.lineSpacing = 2.0f;
     
     [self.playButton bk_addEventHandler:^(id sender) {
-        weakSelf.playing = YES;
         [SRV(DataService) writeData:weakSelf.model completion:nil];
         [weakSelf.streamerService play:weakSelf.model];
     } forControlEvents:UIControlEventTouchUpInside];

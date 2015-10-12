@@ -60,6 +60,7 @@
         [SRV(DataService) writeData:model completion:nil];
         
         [_streamer bk_removeAllBlockObservers];
+        [_streamer stop];
         NSLog(@"play:%@", [SRV(DownloadService) playableURLForModel:self.playingModel]);
         _streamer = [DOUAudioStreamer streamerWithAudioFile:[[SRV(DownloadService) playableURLForModel:self.playingModel] audioFileURL]];
         [_streamer bk_addObserverForKeyPath:@"duration" task:^(id target) {
@@ -96,9 +97,27 @@
         }];
     }
     
-    [_streamer play];
-    
-    self.isPlaying = YES;
+    //在线资源需要验证网络连接情况
+    if (![_streamer.url isFileURL]) {
+        if (SRV(ReachabilityService).status == NotReachable) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD showInfoWithStatus:SRV(ReachabilityService).statusString];
+            });
+            self.isPlaying = NO;
+        } else if ((SRV(ReachabilityService).status == ReachableViaWWAN) && SRV(SettingsService).flowProtection) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD showInfoWithStatus:SRV(ReachabilityService).statusString];
+            });
+            [_streamer play];
+            self.isPlaying = YES;
+        } else {
+            [_streamer play];
+            self.isPlaying = YES;
+        }
+    } else {
+        [_streamer play];
+        self.isPlaying = YES;
+    }
 }
 
 - (void)setNowPlayingInfo:(NSMutableDictionary *)nowPlayingInfo {
