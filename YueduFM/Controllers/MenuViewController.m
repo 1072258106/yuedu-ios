@@ -73,7 +73,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 50;
+    self.tableView.rowHeight = 50;    
 }
 
 - (void)pushViewController:(UIViewController* )viewController {

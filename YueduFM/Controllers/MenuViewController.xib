@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
@@ -21,22 +22,32 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-90-Nvz">
-                    <rect key="frame" x="0.0" y="93" width="239" height="249"/>
+                    <rect key="frame" x="0.0" y="93" width="240" height="249"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="249" id="3br-7O-pVR"/>
+                        <constraint firstAttribute="height" constant="249" id="vBx-3C-JgQ"/>
                     </constraints>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-41-iaP">
+                    <rect key="frame" x="240" y="0.0" width="80" height="480"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8jY-41-iaP" secondAttribute="height" multiplier="1:6" id="hoi-SR-pMW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="3hO-90-Nvz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2w0-ou-Qgx"/>
                 <constraint firstItem="IPK-tj-4XK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8vf-yL-qhz"/>
+                <constraint firstItem="3hO-90-Nvz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-22.5" id="BIX-LF-7eQ"/>
                 <constraint firstAttribute="trailing" secondItem="IPK-tj-4XK" secondAttribute="trailing" id="KIc-ur-aJj"/>
                 <constraint firstAttribute="bottom" secondItem="IPK-tj-4XK" secondAttribute="bottom" id="M0V-wP-TOk"/>
-                <constraint firstAttribute="centerY" secondItem="3hO-90-Nvz" secondAttribute="centerY" constant="22.5" id="T2S-Kj-Guy"/>
-                <constraint firstAttribute="trailing" secondItem="3hO-90-Nvz" secondAttribute="trailing" constant="81" id="cLy-hq-0RY"/>
+                <constraint firstItem="8jY-41-iaP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N0R-6F-Ap6"/>
                 <constraint firstItem="IPK-tj-4XK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dIo-3V-M7w"/>
+                <constraint firstAttribute="trailing" secondItem="8jY-41-iaP" secondAttribute="trailing" id="fFx-NL-fxE"/>
+                <constraint firstItem="3hO-90-Nvz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="guV-mg-xCM"/>
+                <constraint firstAttribute="bottom" secondItem="8jY-41-iaP" secondAttribute="bottom" id="odh-LV-PUY"/>
+                <constraint firstItem="8jY-41-iaP" firstAttribute="leading" secondItem="3hO-90-Nvz" secondAttribute="trailing" id="onX-nM-m3P"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -65,9 +65,7 @@
                                            @"title":@"鼓励一下",
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
-                                               NSString* URLString = [NSString stringWithFormat:
-                                                                @"https://itunes.apple.com/cn/app/wei-ju/id1000339694?l=en&mt=8"];
-                                               [[UIApplication sharedApplication] openURL:URLString.url];
+                                                [[UIApplication sharedApplication] openURL:[weakSelf rateURL]];
                                            }
                                            },
                                        @{
@@ -82,6 +80,20 @@
                                };
     
     self.tableData = @[section1, section2];
+}
+
+- (NSURL* )rateURL {
+    NSString* URLString;
+    float ver = [[[UIDevice currentDevice] systemVersion] floatValue];
+    NSString* appId = @"1048612734";
+    if (ver >= 7.0 && ver < 7.1) {
+        URLString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", appId];
+    } else if (ver >= 8.0) {
+        URLString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appId];
+    } else {
+        URLString = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appId];
+    }
+    return URLString.url;
 }
 
 - (void)didReceiveMemoryWarning {
