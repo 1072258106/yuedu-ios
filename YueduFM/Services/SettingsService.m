@@ -63,7 +63,7 @@
         self.autoCloseTimer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0 block:^(NSTimer *timer) {
             weakSelf.autoCloseRestTime--;
             if (weakSelf.autoCloseRestTime <= 0) {
-                [self.autoCloseTimer invalidate];
+                self.autoCloseLevel = 0;
                 [SRV(StreamerService) pause];
             }
         } repeats:YES];

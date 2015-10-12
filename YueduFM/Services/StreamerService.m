@@ -62,7 +62,6 @@
         
         [_streamer bk_removeAllBlockObservers];
         [_streamer stop];
-        NSLog(@"play:%@", [SRV(DownloadService) playableURLForModel:self.playingModel]);
         _streamer = [DOUAudioStreamer streamerWithAudioFile:[[SRV(DownloadService) playableURLForModel:self.playingModel] audioFileURL]];
         [_streamer bk_addObserverForKeyPath:@"duration" task:^(id target) {
             NSMutableDictionary* info = self.nowPlayingInfo;
@@ -77,6 +76,8 @@
                 self.isPlaying = NO;
                 self.playingModel = nil;
                 [self next];
+            } else if (_streamer.status == DOUAudioStreamerPaused) {
+                self.isPlaying = NO;
             }
         }];
         
