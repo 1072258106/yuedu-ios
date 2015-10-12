@@ -15,6 +15,8 @@ extern NSString* const PlayerBarDidHideNotification;
 
 + (instancetype)shareBar;
 + (void)setContainer:(UIView* )container;
++ (void)show;
++ (void)hide;
 
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 

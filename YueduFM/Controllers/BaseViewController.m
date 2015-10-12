@@ -94,11 +94,10 @@
     if (!self.dragging || (scrollView.contentOffset.y < -70)) return;
     
     if (diffY > 0) { //上滑
-        [[NSNotificationCenter defaultCenter] postNotificationName:PlayerBarDidShowNotification object:nil];
+        [PlayerBar show];
     } else if (diffY < 0) { //下滑
-        [[NSNotificationCenter defaultCenter] postNotificationName:PlayerBarDidHideNotification object:nil];
+        [PlayerBar hide];
     }
-    
 }
 
 - (void)dealloc {
