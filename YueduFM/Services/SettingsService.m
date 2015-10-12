@@ -57,13 +57,14 @@
     _autoCloseLevel = autoCloseLevel;
     self.autoCloseRestTime = [_autoCloseTimes[autoCloseLevel] intValue]*60;
     
-    if (_autoCloseRestTime) {
+    if (self.autoCloseRestTime) {
         [self.autoCloseTimer invalidate];
         __weak typeof(self) weakSelf = self;
-        self.autoCloseTimer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
+        self.autoCloseTimer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0 block:^(NSTimer *timer) {
             weakSelf.autoCloseRestTime--;
             if (weakSelf.autoCloseRestTime <= 0) {
                 [self.autoCloseTimer invalidate];
+                [SRV(StreamerService) pause];
             }
         } repeats:YES];
     }

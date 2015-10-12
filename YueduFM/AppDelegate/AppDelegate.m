@@ -42,7 +42,7 @@
     [self.window makeKeyAndVisible];
     
     [self becomeFirstResponder];
-        
+    
     return YES;
 }
 
