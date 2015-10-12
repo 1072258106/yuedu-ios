@@ -13,4 +13,6 @@
 
 @property (nonatomic, assign) NetworkStatus status;
 
+- (NSString* )statusString;
+
 @end

@@ -31,9 +31,27 @@
     return self;
 }
 
+- (NSString* )statusString {
+    switch (self.status) {
+        case NotReachable:
+            return @"当前无网络连接";
+        case ReachableViaWiFi:
+            return @"当前网络已处于WiFi下, 您可以尽情的收听下载~";
+        case ReachableViaWWAN:
+            return @"当前网络已处于2G/3G/4G下, 请注意流量使用情况哦~";
+        default:
+            break;
+    }
+    return nil;
+}
+
 - (void)reachabilityChangedNotification:(NSNotification* )notification {
     Reachability* reach = notification.object;
     self.status = reach.currentReachabilityStatus;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SVProgressHUD showInfoWithStatus:self.statusString];
+    });
 }
 
 @end
