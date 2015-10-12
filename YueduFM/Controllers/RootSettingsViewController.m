@@ -8,6 +8,7 @@
 
 #import "RootSettingsViewController.h"
 #import "AutoCloseSettingsViewController.h"
+#import "AboutViewController.h"
 
 @interface RootSettingsViewController ()
 
@@ -48,12 +49,21 @@
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator)
                                            },
                                        @{
-                                           @"row":@"给我们评分",
-                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator)
+                                           @"row":@"鼓励一下",
+                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
+                                           @"action":^(UITableViewCell* cell){
+                                               NSString* URLString = [NSString stringWithFormat:
+                                                                @"https://itunes.apple.com/cn/app/wei-ju/id1000339694?l=en&mt=8"];
+                                               [[UIApplication sharedApplication] openURL:URLString.url];
+                                           }
                                            },
                                        @{
                                            @"row":@"关于我们",
-                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator)
+                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
+                                           @"action":^(UITableViewCell* cell){
+                                               AboutViewController* vc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+                                               [weakSelf.navigationController pushViewController:vc animated:YES];
+                                           }
                                            },
                                        ]
                                };

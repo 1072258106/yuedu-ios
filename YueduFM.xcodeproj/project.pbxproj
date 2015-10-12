@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E407681C1BCABE5900EBA567 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E407681B1BCABE5900EBA567 /* libstdc++.tbd */; };
 		E407681E1BCABE7200EBA567 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E407681D1BCABE7200EBA567 /* libsqlite3.tbd */; };
+		E40768201BCB703200EBA567 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = E407681F1BCB703200EBA567 /* about.html */; settings = {ASSET_TAGS = (); }; };
+		E40768241BCB724700EBA567 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40768221BCB724700EBA567 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E40768251BCB724700EBA567 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40768231BCB724700EBA567 /* AboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		E431FA981BADCA2600898B8F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */; };
 		E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */; };
 		E431FABE1BADD1D800898B8F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA9E1BADD1D700898B8F /* MKAnnotationView+WebCache.m */; };
@@ -253,6 +256,10 @@
 /* Begin PBXFileReference section */
 		E407681B1BCABE5900EBA567 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		E407681D1BCABE7200EBA567 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E407681F1BCB703200EBA567 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		E40768211BCB724700EBA567 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E40768221BCB724700EBA567 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		E40768231BCB724700EBA567 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		E431FA951BADCA2600898B8F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -1195,6 +1202,7 @@
 		E4DD916E1BA9D8A10045F222 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E407681F1BCB703200EBA567 /* about.html */,
 				E4358DFA1BBB286400E3799B /* Images.xcassets */,
 				E4DD916F1BA9D8A10045F222 /* Info.plist */,
 				E4DD91701BA9D8A10045F222 /* main.m */,
@@ -1276,6 +1284,9 @@
 				E48884A11BB9AB630053F346 /* AutoCloseSettingsViewController.h */,
 				E48884A21BB9AB630053F346 /* AutoCloseSettingsViewController.m */,
 				E48884A31BB9AB630053F346 /* AutoCloseSettingsViewController.xib */,
+				E40768211BCB724700EBA567 /* AboutViewController.h */,
+				E40768221BCB724700EBA567 /* AboutViewController.m */,
+				E40768231BCB724700EBA567 /* AboutViewController.xib */,
 				E48884921BB9983F0053F346 /* HistoryViewController.h */,
 				E48884931BB9983F0053F346 /* HistoryViewController.m */,
 				E48884941BB9983F0053F346 /* HistoryViewController.xib */,
@@ -1628,6 +1639,7 @@
 				E48884DF1BB9B1320053F346 /* icon_up_arrow@2x.png in Resources */,
 				E4358DE61BBB078C00E3799B /* PlayListViewController.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
+				E40768251BCB724700EBA567 /* AboutViewController.xib in Resources */,
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */,
@@ -1655,6 +1667,7 @@
 				E431FD061BADF4FD00898B8F /* dzn_icn_toolbar_action@3x.png in Resources */,
 				E486A3FC1BB2D72900414EDE /* MJRefresh.bundle in Resources */,
 				E4D522DC1BACA1D5002164AA /* MenuViewController.xib in Resources */,
+				E40768201BCB703200EBA567 /* about.html in Resources */,
 				E46E2EC91BB02C0C00CCF57F /* TitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1790,6 +1803,7 @@
 				E486A4031BB2F38900414EDE /* RhythmView.m in Sources */,
 				E4F4C89E1BB6936E00C428AE /* UIViewController+Extension.m in Sources */,
 				E431FACA1BADD1D800898B8F /* UIImage+WebP.m in Sources */,
+				E40768241BCB724700EBA567 /* AboutViewController.m in Sources */,
 				E431FD621BAEB40400898B8F /* UIImage+Extension.m in Sources */,
 				E4B4E3F81BB9835700E3F492 /* SearchViewController.m in Sources */,
 				E4358DE91BBB08E700E3799B /* PlayListActionTableViewCell.m in Sources */,

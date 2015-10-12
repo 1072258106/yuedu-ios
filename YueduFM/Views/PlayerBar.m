@@ -105,11 +105,7 @@
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
 
         [[PlayerBar shareBar] setForceHidden:YES];
-        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[PlayerBar shareBar] setForceHidden:NO];
-            });
-        }] animated:YES];
+        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:nil] animated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.playButton bk_addEventHandler:^(id sender) {

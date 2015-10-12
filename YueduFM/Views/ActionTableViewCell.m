@@ -116,11 +116,7 @@
 
 - (IBAction)onDetailButtonPressed:(id)sender {
     [[PlayerBar shareBar] setForceHidden:YES];
-    [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:[self article].url.url didDisappear:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[PlayerBar shareBar] setForceHidden:NO];
-        });
-    }] animated:YES];
+    [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:[self article].url.url didDisappear:nil] animated:YES];
 }
 
 - (IBAction)onAddButtonPressed:(id)sender {
