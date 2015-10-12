@@ -25,7 +25,7 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RightAlignedTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -42,7 +42,8 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     NSDictionary* info = self.tableData[indexPath.section][@"rows"][indexPath.row];
-    cell.textLabel.text = info[@"row"];
+    cell.textLabel.text = info[@"title"];
+    cell.detailTextLabel.text = info[@"detail"];
     cell.accessoryView = info[@"accessoryView"];
     
     NSNumber* typeNumber = info[@"accessoryType"];

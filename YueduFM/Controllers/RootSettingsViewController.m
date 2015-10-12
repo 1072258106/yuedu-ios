@@ -9,6 +9,7 @@
 #import "RootSettingsViewController.h"
 #import "AutoCloseSettingsViewController.h"
 #import "AboutViewController.h"
+#import "ClearSettingsViewController.h"
 
 @interface RootSettingsViewController ()
 
@@ -27,7 +28,7 @@
                                @"footer":@"关闭提醒后，在非WiFi模式下收听和下载在线文章时，将不再显示流量提醒.",
                                @"rows":@[
                                        @{
-                                           @"row":@"流量保护提醒",
+                                           @"title":@"流量保护提醒",
                                            @"accessoryView":[UISwitch switchWithOn:service.flowProtection action:^(BOOL isOn) {
                                                service.flowProtection = isOn;
                                            }],
@@ -37,7 +38,7 @@
     NSDictionary* section2 = @{@"header":@"应用",
                                @"rows":@[
                                        @{
-                                           @"row":@"定时关闭",
+                                           @"title":@"定时关闭",
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                AutoCloseSettingsViewController* vc = [[AutoCloseSettingsViewController alloc] initWithNibName:@"AutoCloseSettingsViewController" bundle:nil];
@@ -45,11 +46,15 @@
                                            }
                                            },
                                        @{
-                                           @"row":@"清空占用空间",
-                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator)
+                                           @"title":@"清空占用空间",
+                                           @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
+                                           @"action":^(UITableViewCell* cell){
+                                               ClearSettingsViewController* vc = [[ClearSettingsViewController alloc] initWithNibName:@"ClearSettingsViewController" bundle:nil];
+                                               [weakSelf.navigationController pushViewController:vc animated:YES];
+                                           }
                                            },
                                        @{
-                                           @"row":@"鼓励一下",
+                                           @"title":@"鼓励一下",
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                NSString* URLString = [NSString stringWithFormat:
@@ -58,7 +63,7 @@
                                            }
                                            },
                                        @{
-                                           @"row":@"关于我们",
+                                           @"title":@"关于我们",
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                AboutViewController* vc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];

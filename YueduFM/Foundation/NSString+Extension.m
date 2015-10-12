@@ -19,6 +19,21 @@
     return [NSURL fileURLWithPath:self];
 }
 
++ (NSString*)stringWithFileSize:(long long)size
+{
+    int i = 0;
+    double tempLength;
+    static NSString *formatString[5] = {@"%.0lfB", @"%.1lfKB", @"%.1lfMB", @"%.2lfGB", @"%.2lfTB"};
+    
+    tempLength = size;
+    while (tempLength>=1024 && i<4) {
+        tempLength /= 1024.0;
+        i++;
+    }
+    
+    return [NSString stringWithFormat:formatString[i], tempLength];
+}
+
 + (NSString* )stringWithSeconds:(int)seconds {
     if (seconds < 0) seconds = 0;
     

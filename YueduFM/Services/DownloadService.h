@@ -30,6 +30,8 @@ typedef NS_ENUM(NSUInteger, DownloadErrorCode) {
 
 - (void)deleteAllDownloadedFiles;
 
+- (long long)cacheSize;
+
 - (void)state:(void(^)(BOOL downloading))completion;
 
 - (NSURL* )playableURLForModel:(YDSDKArticleModelEx* )model;

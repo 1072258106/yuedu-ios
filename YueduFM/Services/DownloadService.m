@@ -108,6 +108,10 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
     [self setupDirectory];
 }
 
+- (long long)cacheSize {
+    return [[NSFileManager defaultManager] fileSizeAtPath:_baseDirectory];
+}
+
 - (void)state:(void(^)(BOOL downloading))completion {
     [_session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
         if (completion) {

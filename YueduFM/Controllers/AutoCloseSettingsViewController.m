@@ -32,7 +32,7 @@
     NSInteger level = SRV(SettingsService).autoCloseLevel;
     [SRV(SettingsService).autoCloseTimes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSMutableDictionary* row = [NSMutableDictionary dictionary];
-        row[@"row"] = [self formatTime:[obj intValue]];
+        row[@"title"] = [self formatTime:[obj intValue]];
         row[@"action"] = action;
         if (idx == level) {
             row[@"accessoryView"] = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_cell_check.png"]];

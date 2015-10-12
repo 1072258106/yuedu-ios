@@ -12,6 +12,10 @@
 		E40768201BCB703200EBA567 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = E407681F1BCB703200EBA567 /* about.html */; settings = {ASSET_TAGS = (); }; };
 		E40768241BCB724700EBA567 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40768221BCB724700EBA567 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E40768251BCB724700EBA567 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40768231BCB724700EBA567 /* AboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E40768291BCB7F4200EBA567 /* ClearSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40768271BCB7F4200EBA567 /* ClearSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E407682A1BCB7F4200EBA567 /* ClearSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40768281BCB7F4200EBA567 /* ClearSettingsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E407682D1BCB829700EBA567 /* NSFileManager+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E407682C1BCB829700EBA567 /* NSFileManager+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		E40768311BCB874100EBA567 /* RightAlignedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40768301BCB874100EBA567 /* RightAlignedTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		E431FA981BADCA2600898B8F /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */; };
 		E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */; };
 		E431FABE1BADD1D800898B8F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E431FA9E1BADD1D700898B8F /* MKAnnotationView+WebCache.m */; };
@@ -260,6 +264,12 @@
 		E40768211BCB724700EBA567 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		E40768221BCB724700EBA567 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		E40768231BCB724700EBA567 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		E40768261BCB7F4200EBA567 /* ClearSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearSettingsViewController.h; sourceTree = "<group>"; };
+		E40768271BCB7F4200EBA567 /* ClearSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearSettingsViewController.m; sourceTree = "<group>"; };
+		E40768281BCB7F4200EBA567 /* ClearSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClearSettingsViewController.xib; sourceTree = "<group>"; };
+		E407682B1BCB829700EBA567 /* NSFileManager+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extension.h"; sourceTree = "<group>"; };
+		E407682C1BCB829700EBA567 /* NSFileManager+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extension.m"; sourceTree = "<group>"; };
+		E40768301BCB874100EBA567 /* RightAlignedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightAlignedTableViewCell.xib; sourceTree = "<group>"; };
 		E431FA951BADCA2600898B8F /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		E431FA961BADCA2600898B8F /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		E431FA971BADCA2600898B8F /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -1284,6 +1294,9 @@
 				E48884A11BB9AB630053F346 /* AutoCloseSettingsViewController.h */,
 				E48884A21BB9AB630053F346 /* AutoCloseSettingsViewController.m */,
 				E48884A31BB9AB630053F346 /* AutoCloseSettingsViewController.xib */,
+				E40768261BCB7F4200EBA567 /* ClearSettingsViewController.h */,
+				E40768271BCB7F4200EBA567 /* ClearSettingsViewController.m */,
+				E40768281BCB7F4200EBA567 /* ClearSettingsViewController.xib */,
 				E40768211BCB724700EBA567 /* AboutViewController.h */,
 				E40768221BCB724700EBA567 /* AboutViewController.m */,
 				E40768231BCB724700EBA567 /* AboutViewController.xib */,
@@ -1323,6 +1336,8 @@
 				E46E2EF11BB11AC700CCF57F /* NSDate+Extension.m */,
 				E48884E41BBA324E0053F346 /* UISwitch+Extension.h */,
 				E48884E51BBA324E0053F346 /* UISwitch+Extension.m */,
+				E407682B1BCB829700EBA567 /* NSFileManager+Extension.h */,
+				E407682C1BCB829700EBA567 /* NSFileManager+Extension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1392,6 +1407,7 @@
 				E495EA251BB7FA630085258E /* DownloadActionTableViewCell.h */,
 				E495EA261BB7FA630085258E /* DownloadActionTableViewCell.m */,
 				E495EA1C1BB7CFEC0085258E /* DownloadActionTableViewCell.xib */,
+				E40768301BCB874100EBA567 /* RightAlignedTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1586,6 +1602,7 @@
 				E48884CC1BB9B1320053F346 /* icon_down_arrow@2x.png in Resources */,
 				E4358DEB1BBB08F700E3799B /* PlayListActionTableViewCell.xib in Resources */,
 				E431FD0E1BADF4FD00898B8F /* dzn_icn_toolbar_reload@2x.png in Resources */,
+				E40768311BCB874100EBA567 /* RightAlignedTableViewCell.xib in Resources */,
 				E48884C81BB9B1320053F346 /* icon_action_favor@2x.png in Resources */,
 				E48884D51BB9B1320053F346 /* icon_menu_settings@2x.png in Resources */,
 				E4358DF71BBB205900E3799B /* PlayBarActionTableViewCell.xib in Resources */,
@@ -1643,6 +1660,7 @@
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */,
+				E407682A1BCB7F4200EBA567 /* ClearSettingsViewController.xib in Resources */,
 				E431FCFB1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x~ipad.png in Resources */,
 				E4F4C8981BB57B3200C428AE /* FailedMessageView.xib in Resources */,
 				E48884DA1BB9B1320053F346 /* icon_nav_search@2x.png in Resources */,
@@ -1719,6 +1737,7 @@
 				E4F4C84A1BB509F900C428AE /* UIVButton.m in Sources */,
 				E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */,
 				E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */,
+				E40768291BCB7F4200EBA567 /* ClearSettingsViewController.m in Sources */,
 				E431FD5A1BAE03CE00898B8F /* NSURL+Extension.m in Sources */,
 				E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */,
 				E431FAD81BADDB2D00898B8F /* README.md in Sources */,
@@ -1803,6 +1822,7 @@
 				E486A4031BB2F38900414EDE /* RhythmView.m in Sources */,
 				E4F4C89E1BB6936E00C428AE /* UIViewController+Extension.m in Sources */,
 				E431FACA1BADD1D800898B8F /* UIImage+WebP.m in Sources */,
+				E407682D1BCB829700EBA567 /* NSFileManager+Extension.m in Sources */,
 				E40768241BCB724700EBA567 /* AboutViewController.m in Sources */,
 				E431FD621BAEB40400898B8F /* UIImage+Extension.m in Sources */,
 				E4B4E3F81BB9835700E3F492 /* SearchViewController.m in Sources */,

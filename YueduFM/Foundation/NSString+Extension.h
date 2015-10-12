@@ -13,6 +13,7 @@
 - (NSURL* )url;
 - (NSURL* )fileURL;
 
++ (NSString*)stringWithFileSize:(long long)size;
 + (NSString* )stringWithSeconds:(int)seconds;
 
 - (NSString *)sha1;
