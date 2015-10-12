@@ -14,6 +14,7 @@
 @interface StreamerService () {
     DOUAudioStreamer*   _streamer;
     UIImageView*        _imageView;
+    NSMutableDictionary* _nowPlayingInfo;
 }
 
 @property (nonatomic, strong) NSMutableDictionary* nowPlayingInfo;
@@ -86,13 +87,12 @@
                                MPNowPlayingInfoPropertyPlaybackRate:@(1),
                                };
         
-        self.nowPlayingInfo = (NSMutableDictionary* )info;
+        self.nowPlayingInfo = [NSMutableDictionary dictionaryWithDictionary:info];
         
         [_imageView sd_setImageWithURL:model.pictureURL.url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if (image) {
-                NSMutableDictionary* info = self.nowPlayingInfo;
-                info[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:image];
-                self.nowPlayingInfo = info;
+                self.nowPlayingInfo[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:image];
+                self.nowPlayingInfo = self.nowPlayingInfo;
             }
         }];
     }
@@ -121,11 +121,12 @@
 }
 
 - (void)setNowPlayingInfo:(NSMutableDictionary *)nowPlayingInfo {
+    _nowPlayingInfo = nowPlayingInfo;
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 }
 
 - (NSMutableDictionary* )nowPlayingInfo {
-    return [NSMutableDictionary dictionaryWithDictionary:[MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo];
+    return _nowPlayingInfo;
 }
 
 - (void)pause {
