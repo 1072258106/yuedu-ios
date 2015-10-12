@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"自动关闭";
+    self.title = @"定时关闭";
     
     __weak typeof(self) weakSelf = self;
     void(^action)(UITableViewCell* cell) = ^(UITableViewCell* cell) {

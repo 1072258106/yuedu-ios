@@ -42,6 +42,7 @@
     [self.window makeKeyAndVisible];
     
     [self becomeFirstResponder];
+        
     return YES;
 }
 
@@ -68,6 +69,21 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    __block UIBackgroundTaskIdentifier bgTask;
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid){
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (bgTask != UIBackgroundTaskInvalid) {
+                bgTask = UIBackgroundTaskInvalid;
+            }
+        });
+    });
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

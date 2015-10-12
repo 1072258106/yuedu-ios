@@ -48,6 +48,10 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
     
     NSNumber* typeNumber = info[@"accessoryType"];
     if (typeNumber) cell.accessoryType = [typeNumber intValue];
+    
+    void(^config)(UITableViewCell* cell) = info[@"config"];
+    if (config) config(cell);
+    
     return cell;
 }
 

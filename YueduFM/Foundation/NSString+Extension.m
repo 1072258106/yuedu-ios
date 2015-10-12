@@ -34,6 +34,17 @@
     return [NSString stringWithFormat:formatString[i], tempLength];
 }
 
++ (NSString* )fullStringWithSeconds:(int)seconds {
+    if (seconds < 0) seconds = 0;
+    
+    int s = (int)seconds%60;
+    int min = seconds/60;
+    int m = min%60;
+    int h = min/60;
+    
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", h, m, s];
+}
+
 + (NSString* )stringWithSeconds:(int)seconds {
     if (seconds < 0) seconds = 0;
     

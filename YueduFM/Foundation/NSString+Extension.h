@@ -14,6 +14,11 @@
 - (NSURL* )fileURL;
 
 + (NSString*)stringWithFileSize:(long long)size;
+
+//00:00:00
++ (NSString* )fullStringWithSeconds:(int)seconds;
+
+//12:12
 + (NSString* )stringWithSeconds:(int)seconds;
 
 - (NSString *)sha1;

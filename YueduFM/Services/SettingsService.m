@@ -8,8 +8,9 @@
 
 #import "SettingsService.h"
 
-@interface SettingsService () {
-}
+@interface SettingsService ()
+
+@property (nonatomic, strong) NSTimer* autoCloseTimer;
 
 @end
 
@@ -43,7 +44,8 @@
                         @(120)
                         ];
     
-    _autoCloseLevel = [USER_CONFIG(@"autoCloseLevel") integerValue];
+    //应用启动
+    [self setAutoCloseLevel:0];
 }
 
 - (void)setFlowProtection:(BOOL)flowProtection {
@@ -53,7 +55,18 @@
 
 - (void)setAutoCloseLevel:(NSInteger)autoCloseLevel {
     _autoCloseLevel = autoCloseLevel;
-    USER_SET_CONFIG(@"autoCloseLevel", @(_autoCloseLevel));
+    self.autoCloseRestTime = [_autoCloseTimes[autoCloseLevel] intValue]*60;
+    
+    if (_autoCloseRestTime) {
+        [self.autoCloseTimer invalidate];
+        __weak typeof(self) weakSelf = self;
+        self.autoCloseTimer = [NSTimer bk_scheduledTimerWithTimeInterval:1.0f block:^(NSTimer *timer) {
+            weakSelf.autoCloseRestTime--;
+            if (weakSelf.autoCloseRestTime <= 0) {
+                [self.autoCloseTimer invalidate];
+            }
+        } repeats:YES];
+    }
 }
 
 @end

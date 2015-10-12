@@ -39,6 +39,14 @@
                                @"rows":@[
                                        @{
                                            @"title":@"定时关闭",
+                                           @"config":^(UITableViewCell* cell){
+                                               [SRV(SettingsService) bk_addObserverForKeyPath:@"autoCloseRestTime" task:^(id target) {
+                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                       int seconds = SRV(SettingsService).autoCloseRestTime;
+                                                       cell.detailTextLabel.text = seconds?[NSString fullStringWithSeconds:seconds]:nil;
+                                                   });
+                                               }];
+                                           },
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                AutoCloseSettingsViewController* vc = [[AutoCloseSettingsViewController alloc] initWithNibName:@"AutoCloseSettingsViewController" bundle:nil];
@@ -65,7 +73,7 @@
                                        @{
                                            @"title":@"关于我们",
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
-                                           @"action":^(UITableViewCell* cell){
+                                           @"action":^(__weak UITableViewCell* cell){
                                                AboutViewController* vc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
                                                [weakSelf.navigationController pushViewController:vc animated:YES];
                                            }

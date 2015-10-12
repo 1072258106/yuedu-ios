@@ -12,8 +12,8 @@
 
 @property (nonatomic, assign) BOOL flowProtection; //流量保护
 
-@property (nonatomic, readonly) NSArray* autoCloseTimes;
+@property (nonatomic, readonly) NSArray* autoCloseTimes; //分钟
 @property (nonatomic, assign) NSInteger autoCloseLevel;
-@property (nonatomic, assign) NSInteger autoCloseRestTime;
+@property (nonatomic, assign) int autoCloseRestTime; //秒
 
 @end
