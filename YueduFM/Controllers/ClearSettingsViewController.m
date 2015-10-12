@@ -20,10 +20,10 @@
     self.title = @"清空占用空间";
     
     NSDictionary* section1 = @{
-                               @"footer":@"清空所有已经缓存的图片.",
+                               @"footer":@"清空所有已经缓存的图片资源.",
                                @"rows":@[
                                        @{
-                                           @"title":@"清空图片",
+                                           @"title":@"清空图片资源",
                                            @"detail":[NSString stringWithFileSize:[[SDImageCache sharedImageCache] getSize]],
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
