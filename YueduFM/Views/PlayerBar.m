@@ -54,7 +54,9 @@
     
     _forceHidden = forceHidden;
     
-    self.actionCell.top = self.height;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.actionCell.top = self.height;
+    }];
     if (forceHidden) {
         [UIView animateWithDuration:0.3f animations:^{
             self.top = self.container.height;
@@ -100,12 +102,17 @@
     } forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_actionCell];
     
-    [self becomeFirstResponder];
     [self.actionButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-
+        BOOL hidden = [PlayerBar shareBar].forceHidden;
         [[PlayerBar shareBar] setForceHidden:YES];
-        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:nil] animated:YES];
+        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:^{
+            if (!hidden) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[PlayerBar shareBar] setForceHidden:NO];
+                });
+            }
+        }] animated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.playButton bk_addEventHandler:^(id sender) {

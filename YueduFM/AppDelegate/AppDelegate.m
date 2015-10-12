@@ -41,8 +41,6 @@
     self.window.rootViewController = sideMenu;
     [self.window makeKeyAndVisible];
     
-    [self becomeFirstResponder];
-    
     return YES;
 }
 
@@ -65,6 +63,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    [self becomeFirstResponder];
     [__serviceCenter stopAllServices];
 }
 
@@ -91,6 +90,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [__serviceCenter startAllServices];
+    [self resignFirstResponder];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

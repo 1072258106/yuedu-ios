@@ -115,8 +115,15 @@
 }
 
 - (IBAction)onDetailButtonPressed:(id)sender {
+    BOOL hidden = [PlayerBar shareBar].forceHidden;
     [[PlayerBar shareBar] setForceHidden:YES];
-    [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:[self article].url.url didDisappear:nil] animated:YES];
+    [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:[self article].url.url didDisappear:^{
+        if (!hidden) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[PlayerBar shareBar] setForceHidden:NO];
+            });
+        }
+    }] animated:YES];
 }
 
 - (IBAction)onAddButtonPressed:(id)sender {
