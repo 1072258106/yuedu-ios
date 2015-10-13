@@ -39,6 +39,7 @@
                                @"rows":@[
                                        @{
                                            @"title":LOC(@"settings_auto_close"),
+                                           @"detail":SRV(SettingsService).autoCloseRestTime > 0?[NSString fullStringWithSeconds:SRV(SettingsService).autoCloseRestTime]:@"",
                                            @"config":^(UITableViewCell* cell){
                                                [SRV(SettingsService) bk_addObserverForKeyPath:@"autoCloseRestTime" task:^(id target) {
                                                    dispatch_async(dispatch_get_main_queue(), ^{

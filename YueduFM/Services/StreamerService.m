@@ -58,16 +58,15 @@
         [_streamer stop];
         _streamer = [DOUAudioStreamer streamerWithAudioFile:[[SRV(DownloadService) playableURLForModel:self.playingModel] audioFileURL]];
         [_streamer bk_addObserverForKeyPath:@"duration" task:^(id target) {
-            NSMutableDictionary* info = self.nowPlayingInfo;
-            if (!info[MPMediaItemPropertyPlaybackDuration]) {
-                info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
-                self.nowPlayingInfo = info;
-            }
+            [self updateNowPlayingPlayback];
         }];
         
         [_streamer bk_addObserverForKeyPath:@"status" task:^(id target) {
+            [self updateNowPlayingPlayback];
             if (_streamer.status == DOUAudioStreamerFinished) {
                 self.isPlaying = NO;
+                self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+                [SRV(DataService) writeData:self.playingModel completion:nil];
                 [self next];
                 self.playingModel = nil;
             } else if (_streamer.status == DOUAudioStreamerPaused) {
@@ -135,12 +134,9 @@
 
 - (void)next {
     [SRV(ArticleService) nextPreplay:self.playingModel completion:^(YDSDKArticleModelEx *nextModel) {
-        if (nextModel||!self.isPlaying) {
+        if (nextModel) {
             self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
             [SRV(DataService) writeData:self.playingModel completion:nil];
-        }
-        
-        if (nextModel) {
             [self play:nextModel];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -158,8 +154,20 @@
     return self.playingModel?_streamer.currentTime:0;
 }
 
+- (void)updateNowPlayingPlayback {
+    NSMutableDictionary* info = self.nowPlayingInfo;
+    info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
+    info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = @(_streamer.currentTime);
+    self.nowPlayingInfo = info;
+}
+
 - (void)setCurrentTime:(NSTimeInterval)currentTime {
     _streamer.currentTime = currentTime;
+    
+    NSMutableDictionary* info = self.nowPlayingInfo;
+    info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
+    info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = @(currentTime);
+    self.nowPlayingInfo = info;
 }
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event {
