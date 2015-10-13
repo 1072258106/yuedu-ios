@@ -135,7 +135,7 @@
 
 - (void)next {
     [SRV(ArticleService) nextPreplay:self.playingModel completion:^(YDSDKArticleModelEx *nextModel) {
-        if (!self.isPlaying) {
+        if (nextModel||!self.isPlaying) {
             self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
             [SRV(DataService) writeData:self.playingModel completion:nil];
         }
