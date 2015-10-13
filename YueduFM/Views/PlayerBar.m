@@ -205,7 +205,7 @@
     }];
 
     gesture.numberOfTouchesRequired = 1;
-    gesture.minimumPressDuration = 0.1;
+    gesture.minimumPressDuration = 0.5;
     gesture.allowableMovement = 200;
     [self addGestureRecognizer:gesture];
 }

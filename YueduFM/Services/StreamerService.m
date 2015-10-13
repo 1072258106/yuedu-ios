@@ -36,11 +36,6 @@
     return self;
 }
 
-
-- (BOOL)canBecomeFirstResponder{
-    return YES;
-}
-
 - (void)start {
     self.isPlaying = self.isPlaying;
 }
@@ -145,7 +140,7 @@
             [self play:nextModel];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD showInfoWithStatus:@"已是最后一篇文章"];
+                [SVProgressHUD showInfoWithStatus:@"播放队列没有文章了，请添加."];
             });
         }
     }];

@@ -36,9 +36,9 @@
         case NotReachable:
             return @"当前无网络连接";
         case ReachableViaWiFi:
-            return @"当前网络已处于WiFi下, 您可以尽情的收听下载~";
+            return @"当前网络处于WiFi下, 您可以尽情的收听下载~";
         case ReachableViaWWAN:
-            return @"当前网络已处于2G/3G/4G下, 请注意流量使用情况哦~";
+            return @"当前网络处于2G/3G/4G下, 请注意流量使用情况哦~";
         default:
             break;
     }
