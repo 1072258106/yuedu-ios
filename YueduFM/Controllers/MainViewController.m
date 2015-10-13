@@ -55,10 +55,6 @@ static int const kCountPerTime = 20;
     [self.tableView.header beginRefreshing];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    SRV(StreamerService).isPlaying = SRV(StreamerService).isPlaying;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [_menu close];

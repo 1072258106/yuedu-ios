@@ -27,6 +27,11 @@
     [self setupEmptyView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    SRV(StreamerService).isPlaying = SRV(StreamerService).isPlaying;
+}
+
 - (void)setupEmptyView {
     UIView* container = [self emptyContainer];
     self.emptyView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, container.width, 20)];

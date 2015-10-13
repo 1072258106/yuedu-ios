@@ -12,4 +12,6 @@
 
 + (instancetype)controllerWithURL:(NSURL* )url didDisappear:(void(^)())disappear;
 
++ (void)presentWithURL:(NSURL* )url;
+
 @end

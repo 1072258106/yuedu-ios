@@ -51,7 +51,6 @@
         self.playingModel = model;
         SRV(ArticleService).activeArticleModel = model;
         
-        model.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
         model.playedDate = [NSDate date];
         [SRV(DataService) writeData:model completion:nil];
         
@@ -137,6 +136,8 @@
 - (void)next {
     [SRV(ArticleService) nextPreplay:self.playingModel completion:^(YDSDKArticleModelEx *nextModel) {
         if (nextModel) {
+            self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
+            [SRV(DataService) writeData:self.playingModel completion:nil];
             [self play:nextModel];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{

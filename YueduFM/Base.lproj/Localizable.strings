@@ -6,6 +6,8 @@
   Copyright © 2015 StarNet. All rights reserved.
 */
 
+"Skip" = "跳过";
+
 "network_connect_prompt" = "网络连接提醒";
 "network_none_prompt" = "当前无网络连接";
 "network_wifi_prompt" = "当前网络处于WiFi下, 您可以尽情的收听下载~";
@@ -18,7 +20,7 @@
 "unfavor" = "取消收藏";
 
 "time" = "时间";
-"none" = "无";
+"none" = "关闭";
 "hour" = "小时";
 "minute" = "分钟";
 
@@ -66,9 +68,10 @@
 
 "settings_flow" = "流量";
 "settings_flow_protection" = "流量保护提醒";
-"settings_flow_protection_prompt" = "关闭提醒后，在非WiFi模式下收听和下载在线文章时，将不再显示流量提醒.";
+"settings_flow_protection_prompt" = "关闭提醒后，在2G/3G/4G模式下收听和下载在线文章时，将不再显示流量提醒.";
 "settings_auto_close" = "定时关闭";
 "settings_star" = "鼓励一下";
+"settings_guide" = "引导页";
 "settings_about" = "关于我们";
 "settings_version" = "版本";
 "settings_clean_space" = "清空占用空间";
@@ -77,5 +80,3 @@
 "settings_clean_downloaded_space_prompt" = "清空所有已经下载的声音文件.";
 "settings_clean_downloaded_space" = "清空占用空间";
 "settings_clean_successed" = "清空完毕";
-
-

@@ -122,6 +122,26 @@
 		E46E2EF21BB11AC700CCF57F /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2EF11BB11AC700CCF57F /* NSDate+Extension.m */; };
 		E4825C371BCD1DA90039FCE2 /* NSLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C361BCD1DA90039FCE2 /* NSLocalization.m */; settings = {ASSET_TAGS = (); }; };
 		E4825C3A1BCD1E890039FCE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4825C3C1BCD1E890039FCE2 /* Localizable.strings */; };
+		E4825C421BCD2E970039FCE2 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C3F1BCD2E970039FCE2 /* EAIntroPage.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C431BCD2E970039FCE2 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C411BCD2E970039FCE2 /* EAIntroView.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C4A1BCD31600039FCE2 /* EARestrictedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C491BCD315F0039FCE2 /* EARestrictedScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C501BCD316D0039FCE2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4825C4C1BCD316D0039FCE2 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
+		E4825C511BCD316D0039FCE2 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = E4825C4D1BCD316D0039FCE2 /* readme.md */; settings = {ASSET_TAGS = (); }; };
+		E4825C521BCD316D0039FCE2 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C4F1BCD316D0039FCE2 /* SMPageControl.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C561BCD320C0039FCE2 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C541BCD320C0039FCE2 /* GuideViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C571BCD320C0039FCE2 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4825C551BCD320C0039FCE2 /* GuideViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E4825C641BCD325E0039FCE2 /* guide1~3.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C581BCD325E0039FCE2 /* guide1~3.5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C651BCD325E0039FCE2 /* guide1~4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C591BCD325E0039FCE2 /* guide1~4@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C661BCD325E0039FCE2 /* guide1~4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5A1BCD325E0039FCE2 /* guide1~4.7@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C671BCD325E0039FCE2 /* guide1~5.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5B1BCD325E0039FCE2 /* guide1~5.5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C681BCD325E0039FCE2 /* guide2~3.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5C1BCD325E0039FCE2 /* guide2~3.5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C691BCD325E0039FCE2 /* guide2~4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5D1BCD325E0039FCE2 /* guide2~4@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6A1BCD325E0039FCE2 /* guide2~4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5E1BCD325E0039FCE2 /* guide2~4.7@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6B1BCD325E0039FCE2 /* guide2~5.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C5F1BCD325E0039FCE2 /* guide2~5.5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6C1BCD325E0039FCE2 /* guide3~3.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C601BCD325E0039FCE2 /* guide3~3.5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6D1BCD325E0039FCE2 /* guide3~4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C611BCD325E0039FCE2 /* guide3~4@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6E1BCD325E0039FCE2 /* guide3~4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C621BCD325E0039FCE2 /* guide3~4.7@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E4825C6F1BCD325E0039FCE2 /* guide3~5.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4825C631BCD325E0039FCE2 /* guide3~5.5@2x.png */; settings = {ASSET_TAGS = (); }; };
 		E486A37F1BB1870800414EDE /* NetService.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A37E1BB1870800414EDE /* NetService.m */; };
 		E486A3821BB1A48D00414EDE /* YDSDKArticleModelEx.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3811BB1A48D00414EDE /* YDSDKArticleModelEx.m */; };
 		E486A3EE1BB2D72900414EDE /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3C41BB2D72900414EDE /* MJRefreshAutoFooter.m */; };
@@ -450,6 +470,31 @@
 		E4825C351BCD1DA90039FCE2 /* NSLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLocalization.h; sourceTree = "<group>"; };
 		E4825C361BCD1DA90039FCE2 /* NSLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLocalization.m; sourceTree = "<group>"; };
 		E4825C3B1BCD1E890039FCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4825C3E1BCD2E970039FCE2 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		E4825C3F1BCD2E970039FCE2 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		E4825C401BCD2E970039FCE2 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		E4825C411BCD2E970039FCE2 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
+		E4825C481BCD315F0039FCE2 /* EARestrictedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EARestrictedScrollView.h; sourceTree = "<group>"; };
+		E4825C491BCD315F0039FCE2 /* EARestrictedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EARestrictedScrollView.m; sourceTree = "<group>"; };
+		E4825C4C1BCD316D0039FCE2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E4825C4D1BCD316D0039FCE2 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		E4825C4E1BCD316D0039FCE2 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		E4825C4F1BCD316D0039FCE2 /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		E4825C531BCD320C0039FCE2 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		E4825C541BCD320C0039FCE2 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		E4825C551BCD320C0039FCE2 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideViewController.xib; sourceTree = "<group>"; };
+		E4825C581BCD325E0039FCE2 /* guide1~3.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1~3.5@2x.png"; sourceTree = "<group>"; };
+		E4825C591BCD325E0039FCE2 /* guide1~4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1~4@2x.png"; sourceTree = "<group>"; };
+		E4825C5A1BCD325E0039FCE2 /* guide1~4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1~4.7@2x.png"; sourceTree = "<group>"; };
+		E4825C5B1BCD325E0039FCE2 /* guide1~5.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide1~5.5@2x.png"; sourceTree = "<group>"; };
+		E4825C5C1BCD325E0039FCE2 /* guide2~3.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2~3.5@2x.png"; sourceTree = "<group>"; };
+		E4825C5D1BCD325E0039FCE2 /* guide2~4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2~4@2x.png"; sourceTree = "<group>"; };
+		E4825C5E1BCD325E0039FCE2 /* guide2~4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2~4.7@2x.png"; sourceTree = "<group>"; };
+		E4825C5F1BCD325E0039FCE2 /* guide2~5.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide2~5.5@2x.png"; sourceTree = "<group>"; };
+		E4825C601BCD325E0039FCE2 /* guide3~3.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide3~3.5@2x.png"; sourceTree = "<group>"; };
+		E4825C611BCD325E0039FCE2 /* guide3~4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide3~4@2x.png"; sourceTree = "<group>"; };
+		E4825C621BCD325E0039FCE2 /* guide3~4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide3~4.7@2x.png"; sourceTree = "<group>"; };
+		E4825C631BCD325E0039FCE2 /* guide3~5.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide3~5.5@2x.png"; sourceTree = "<group>"; };
 		E486A37D1BB1870800414EDE /* NetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetService.h; sourceTree = "<group>"; };
 		E486A37E1BB1870800414EDE /* NetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetService.m; sourceTree = "<group>"; };
 		E486A3801BB1A48D00414EDE /* YDSDKArticleModelEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDSDKArticleModelEx.h; sourceTree = "<group>"; };
@@ -945,6 +990,37 @@
 			path = AudioStreamer;
 			sourceTree = "<group>";
 		};
+		E4825C3D1BCD2E970039FCE2 /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				E4825C3E1BCD2E970039FCE2 /* EAIntroPage.h */,
+				E4825C3F1BCD2E970039FCE2 /* EAIntroPage.m */,
+				E4825C401BCD2E970039FCE2 /* EAIntroView.h */,
+				E4825C411BCD2E970039FCE2 /* EAIntroView.m */,
+			);
+			path = EAIntroView;
+			sourceTree = "<group>";
+		};
+		E4825C471BCD315F0039FCE2 /* EARestrictedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E4825C481BCD315F0039FCE2 /* EARestrictedScrollView.h */,
+				E4825C491BCD315F0039FCE2 /* EARestrictedScrollView.m */,
+			);
+			path = EARestrictedScrollView;
+			sourceTree = "<group>";
+		};
+		E4825C4B1BCD316D0039FCE2 /* SMPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				E4825C4C1BCD316D0039FCE2 /* LICENSE */,
+				E4825C4D1BCD316D0039FCE2 /* readme.md */,
+				E4825C4E1BCD316D0039FCE2 /* SMPageControl.h */,
+				E4825C4F1BCD316D0039FCE2 /* SMPageControl.m */,
+			);
+			path = SMPageControl;
+			sourceTree = "<group>";
+		};
 		E486A3C11BB2D72900414EDE /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,6 +1118,18 @@
 			isa = PBXGroup;
 			children = (
 				E4358DFC1BBB9F7000E3799B /* logo@2x.png */,
+				E4825C581BCD325E0039FCE2 /* guide1~3.5@2x.png */,
+				E4825C591BCD325E0039FCE2 /* guide1~4@2x.png */,
+				E4825C5A1BCD325E0039FCE2 /* guide1~4.7@2x.png */,
+				E4825C5B1BCD325E0039FCE2 /* guide1~5.5@2x.png */,
+				E4825C5C1BCD325E0039FCE2 /* guide2~3.5@2x.png */,
+				E4825C5D1BCD325E0039FCE2 /* guide2~4@2x.png */,
+				E4825C5E1BCD325E0039FCE2 /* guide2~4.7@2x.png */,
+				E4825C5F1BCD325E0039FCE2 /* guide2~5.5@2x.png */,
+				E4825C601BCD325E0039FCE2 /* guide3~3.5@2x.png */,
+				E4825C611BCD325E0039FCE2 /* guide3~4@2x.png */,
+				E4825C621BCD325E0039FCE2 /* guide3~4.7@2x.png */,
+				E4825C631BCD325E0039FCE2 /* guide3~5.5@2x.png */,
 				E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */,
 				E4358DEC1BBB0DB500E3799B /* icon_bar_more@2x.png */,
 				E4358DDB1BBB039C00E3799B /* icon_menu_playlist@2x.png */,
@@ -1248,6 +1336,9 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E4825C4B1BCD316D0039FCE2 /* SMPageControl */,
+				E4825C471BCD315F0039FCE2 /* EARestrictedScrollView */,
+				E4825C3D1BCD2E970039FCE2 /* EAIntroView */,
 				E4E134201BB8E3FA0063D6B2 /* Reachability */,
 				E4ECB5E31BB72BC5009CA157 /* EVCircularProgressView */,
 				E4F4C88B1BB5762B00C428AE /* MessageKit */,
@@ -1317,6 +1408,9 @@
 				E4D522DA1BACA1D5002164AA /* MenuViewController.xib */,
 				E431FD781BAEDAF000898B8F /* WebViewController.h */,
 				E431FD791BAEDAF000898B8F /* WebViewController.m */,
+				E4825C531BCD320C0039FCE2 /* GuideViewController.h */,
+				E4825C541BCD320C0039FCE2 /* GuideViewController.m */,
+				E4825C551BCD320C0039FCE2 /* GuideViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1610,17 +1704,22 @@
 				E48884CC1BB9B1320053F346 /* icon_down_arrow@2x.png in Resources */,
 				E4358DEB1BBB08F700E3799B /* PlayListActionTableViewCell.xib in Resources */,
 				E431FD0E1BADF4FD00898B8F /* dzn_icn_toolbar_reload@2x.png in Resources */,
+				E4825C6A1BCD325E0039FCE2 /* guide2~4.7@2x.png in Resources */,
+				E4825C691BCD325E0039FCE2 /* guide2~4@2x.png in Resources */,
 				E40768311BCB874100EBA567 /* RightAlignedTableViewCell.xib in Resources */,
 				E48884C81BB9B1320053F346 /* icon_action_favor@2x.png in Resources */,
 				E48884D51BB9B1320053F346 /* icon_menu_settings@2x.png in Resources */,
 				E4358DF71BBB205900E3799B /* PlayBarActionTableViewCell.xib in Resources */,
 				E4358DDC1BBB039C00E3799B /* icon_menu_playlist@2x.png in Resources */,
+				E4825C571BCD320C0039FCE2 /* GuideViewController.xib in Resources */,
 				E48884A51BB9AB630053F346 /* AutoCloseSettingsViewController.xib in Resources */,
 				E431FD041BADF4FD00898B8F /* dzn_icn_toolbar_action.png in Resources */,
 				E431FD121BADF4FD00898B8F /* dzn_icn_toolbar_stop@3x.png in Resources */,
 				E48884E31BBA1E760053F346 /* icon_cell_check@2x.png in Resources */,
 				E48884CA1BB9B1320053F346 /* icon_action_share@2x.png in Resources */,
+				E4825C641BCD325E0039FCE2 /* guide1~3.5@2x.png in Resources */,
 				E4358DDA1BBAFC1500E3799B /* icon_action_add@2x.png in Resources */,
+				E4825C6E1BCD325E0039FCE2 /* guide3~4.7@2x.png in Resources */,
 				E495EA1D1BB7CFEC0085258E /* DownloadActionTableViewCell.xib in Resources */,
 				E431FD091BADF4FD00898B8F /* dzn_icn_toolbar_backward@3x.png in Resources */,
 				E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */,
@@ -1631,6 +1730,7 @@
 				E48884D41BB9B1320053F346 /* icon_menu_history@2x.png in Resources */,
 				E48884D91BB9B1320053F346 /* icon_nav_menu@2x.png in Resources */,
 				E4DD917F1BA9D8A20045F222 /* LaunchScreen.xib in Resources */,
+				E4825C501BCD316D0039FCE2 /* LICENSE in Resources */,
 				E431FCFE1BADF4FD00898B8F /* dzn_icn_activity_link@2x.png in Resources */,
 				E48884CD1BB9B1320053F346 /* icon_down_arrow_h@2x.png in Resources */,
 				E431FD0C1BADF4FD00898B8F /* dzn_icn_toolbar_forward@3x.png in Resources */,
@@ -1640,15 +1740,19 @@
 				E431FD081BADF4FD00898B8F /* dzn_icn_toolbar_backward@2x.png in Resources */,
 				E4F4C8971BB57B3200C428AE /* SuccessedMessageView.xib in Resources */,
 				E4E26BD51BBAD84F00B18BC0 /* icon_action_info@2x.png in Resources */,
+				E4825C6B1BCD325E0039FCE2 /* guide2~5.5@2x.png in Resources */,
 				E4358DFD1BBB9F7000E3799B /* logo@2x.png in Resources */,
 				E431FD691BAEC29900898B8F /* PlayerBar.xib in Resources */,
 				E48884CB1BB9B1320053F346 /* icon_author@2x.png in Resources */,
+				E4825C681BCD325E0039FCE2 /* guide2~3.5@2x.png in Resources */,
 				E48884D81BB9B1320053F346 /* icon_nav_delete@2x.png in Resources */,
 				E431FD111BADF4FD00898B8F /* dzn_icn_toolbar_stop@2x.png in Resources */,
 				E431FCFF1BADF4FD00898B8F /* dzn_icn_activity_link@2x~ipad.png in Resources */,
 				E4ECB5BA1BB6C309009CA157 /* DowloadViewController.xib in Resources */,
 				E48884D31BB9B1320053F346 /* icon_menu_favor@2x.png in Resources */,
+				E4825C6D1BCD325E0039FCE2 /* guide3~4@2x.png in Resources */,
 				E48884C71BB9B1320053F346 /* icon_action_download@2x.png in Resources */,
+				E4825C651BCD325E0039FCE2 /* guide1~4@2x.png in Resources */,
 				E431FD031BADF4FD00898B8F /* dzn_icn_activity_safari@2x~ipad.png in Resources */,
 				E48884C61BB9B1320053F346 /* icon_action_delete@2x.png in Resources */,
 				E431FD011BADF4FD00898B8F /* dzn_icn_activity_opera@2x~ipad.png in Resources */,
@@ -1660,12 +1764,15 @@
 				E431FCFD1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x~ipad.png in Resources */,
 				E431FCF91BADF4FD00898B8F /* DZNWebViewController.strings in Resources */,
 				E48884D11BB9B1320053F346 /* icon_menu_accessory@2x.png in Resources */,
+				E4825C671BCD325E0039FCE2 /* guide1~5.5@2x.png in Resources */,
 				E4E9E32A1BB42DB100B6BAFE /* ActionTableViewCell.xib in Resources */,
+				E4825C661BCD325E0039FCE2 /* guide1~4.7@2x.png in Resources */,
 				E48884DF1BB9B1320053F346 /* icon_up_arrow@2x.png in Resources */,
 				E4358DE61BBB078C00E3799B /* PlayListViewController.xib in Resources */,
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E40768251BCB724700EBA567 /* AboutViewController.xib in Resources */,
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
+				E4825C6F1BCD325E0039FCE2 /* guide3~5.5@2x.png in Resources */,
 				E4825C3A1BCD1E890039FCE2 /* Localizable.strings in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */,
@@ -1677,6 +1784,7 @@
 				E431FAD71BADDB2D00898B8F /* LICENSE in Resources */,
 				E431FD0D1BADF4FD00898B8F /* dzn_icn_toolbar_reload.png in Resources */,
 				E48884C91BB9B1320053F346 /* icon_action_favored@2x.png in Resources */,
+				E4825C6C1BCD325E0039FCE2 /* guide3~3.5@2x.png in Resources */,
 				E431FD0A1BADF4FD00898B8F /* dzn_icn_toolbar_forward.png in Resources */,
 				E4B4E3F91BB9835700E3F492 /* SearchViewController.xib in Resources */,
 				E48884D01BB9B1320053F346 /* icon_headset@2x.png in Resources */,
@@ -1749,6 +1857,7 @@
 				E40768291BCB7F4200EBA567 /* ClearSettingsViewController.m in Sources */,
 				E431FD5A1BAE03CE00898B8F /* NSURL+Extension.m in Sources */,
 				E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */,
+				E4825C4A1BCD31600039FCE2 /* EARestrictedScrollView.m in Sources */,
 				E431FAD81BADDB2D00898B8F /* README.md in Sources */,
 				E4825C371BCD1DA90039FCE2 /* NSLocalization.m in Sources */,
 				E4DD91D51BA9DF4B0045F222 /* FMDatabase.m in Sources */,
@@ -1776,6 +1885,7 @@
 				E431FAC51BADD1D800898B8F /* SDWebImageManager.m in Sources */,
 				E488849F1BB9AAD60053F346 /* RootSettingsViewController.m in Sources */,
 				E431FD511BAE001800898B8F /* DOUAudioVisualizer.m in Sources */,
+				E4825C431BCD2E970039FCE2 /* EAIntroView.m in Sources */,
 				E431FD4A1BAE001800898B8F /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				E46E2EDA1BB0454500CCF57F /* SVRadialGradientLayer.m in Sources */,
 				E4D522D21BACA07B002164AA /* BaseViewController.m in Sources */,
@@ -1810,6 +1920,7 @@
 				E4B4E3FD1BB98DD900E3F492 /* AppDelegate.m in Sources */,
 				E4DD91BA1BA9DC4C0045F222 /* NSArray+SQL.m in Sources */,
 				E4D522E91BACA9BD002164AA /* UIColor+Extension.m in Sources */,
+				E4825C421BCD2E970039FCE2 /* EAIntroPage.m in Sources */,
 				E431FCF61BADF4FD00898B8F /* DZNPolyActivity.m in Sources */,
 				E46E2EF21BB11AC700CCF57F /* NSDate+Extension.m in Sources */,
 				E431FD171BADFBE400898B8F /* UIBarButtonItem+Extension.m in Sources */,
@@ -1830,6 +1941,7 @@
 				E495EA2A1BB87AE60085258E /* FavorActionTableViewCell.m in Sources */,
 				E4DD91711BA9D8A10045F222 /* main.m in Sources */,
 				E486A4031BB2F38900414EDE /* RhythmView.m in Sources */,
+				E4825C511BCD316D0039FCE2 /* readme.md in Sources */,
 				E4F4C89E1BB6936E00C428AE /* UIViewController+Extension.m in Sources */,
 				E431FACA1BADD1D800898B8F /* UIImage+WebP.m in Sources */,
 				E407682D1BCB829700EBA567 /* NSFileManager+Extension.m in Sources */,
@@ -1839,10 +1951,12 @@
 				E4358DE91BBB08E700E3799B /* PlayListActionTableViewCell.m in Sources */,
 				E431FD4C1BAE001800898B8F /* DOUAudioPlaybackItem.m in Sources */,
 				E4DD91BF1BA9DC4C0045F222 /* NSString+SQL.m in Sources */,
+				E4825C561BCD320C0039FCE2 /* GuideViewController.m in Sources */,
 				E4DD91A41BA9DB770045F222 /* BaseService.m in Sources */,
 				E431FCF81BADF4FD00898B8F /* DZNWebViewController.m in Sources */,
 				E4DD91BC1BA9DC4C0045F222 /* NSDictionary+SQL.m in Sources */,
 				E4ECB5B91BB6C309009CA157 /* DowloadViewController.m in Sources */,
+				E4825C521BCD316D0039FCE2 /* SMPageControl.m in Sources */,
 				E46E2ED71BB0454500CCF57F /* SVIndefiniteAnimatedView.m in Sources */,
 				E4DD91C01BA9DC4C0045F222 /* PPSqliteORMError.m in Sources */,
 				E4DD91E01BA9E08F0045F222 /* JSONKit.m in Sources */,

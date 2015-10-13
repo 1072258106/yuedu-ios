@@ -104,15 +104,7 @@
     
     [self.actionButton bk_addEventHandler:^(id sender) {
         YDSDKArticleModelEx* model = [SRV(ArticleService) activeArticleModel];
-        BOOL hidden = [PlayerBar shareBar].forceHidden;
-        [[PlayerBar shareBar] setForceHidden:YES];
-        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:model.url.url didDisappear:^{
-            if (!hidden) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [[PlayerBar shareBar] setForceHidden:NO];
-                });
-            }
-        }] animated:YES];
+        [WebViewController presentWithURL:model.url.url];
     } forControlEvents:UIControlEventTouchUpInside];
     
     [self.playButton bk_addEventHandler:^(id sender) {
@@ -205,7 +197,7 @@
     }];
 
     gesture.numberOfTouchesRequired = 1;
-    gesture.minimumPressDuration = 0.5;
+    gesture.minimumPressDuration = 0.2;
     gesture.allowableMovement = 200;
     [self addGestureRecognizer:gesture];
 }

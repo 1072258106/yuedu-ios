@@ -10,8 +10,11 @@
 #import "MainViewController.h"
 #import "MenuViewController.h"
 #import "FavorViewController.h"
+#import "GuideViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) RESideMenu* sideMenu;
 
 @end
 
@@ -34,14 +37,37 @@
     
     MenuViewController* vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
-    RESideMenu* sideMenu = [[RESideMenu alloc] initWithContentViewController:nvc leftMenuViewController:vc rightMenuViewController:nil];
+    self.sideMenu = [[RESideMenu alloc] initWithContentViewController:nvc leftMenuViewController:vc rightMenuViewController:nil];
     
-    [PlayerBar setContainer:sideMenu.view];
+    [PlayerBar setContainer:self.sideMenu.view];
 
-    self.window.rootViewController = sideMenu;
+    [self showGuideViewIfNeed];
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)showGuideView {
+    GuideViewController* gvc = [[GuideViewController alloc] initWithNibName:@"GuideViewController" bundle:nil];
+    __weak typeof(self) weakSelf = self;
+    gvc.guideDidFinished = ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.window.rootViewController = weakSelf.sideMenu;
+            [weakSelf.window makeKeyAndVisible];
+        });
+    };
+    
+    self.window.rootViewController = gvc;
+    
+}
+
+- (void)showGuideViewIfNeed {
+    if (!USER_CONFIG(@"FirstLaunch")) {
+        [self showGuideView];
+    } else {
+        self.window.rootViewController = self.sideMenu;
+    }
+    USER_SET_CONFIG(@"FirstLaunch", @"");
 }
 
 - (void)setupService {

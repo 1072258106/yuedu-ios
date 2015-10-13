@@ -37,6 +37,23 @@
     return wvc;
 }
 
++ (void)presentWithURL:(NSURL* )url {
+    ReachabilityService* service = SRV(ReachabilityService);
+    if (service.status == NotReachable) {
+        [SVProgressHUD showInfoWithStatus:service.statusString];
+    } else {
+        BOOL hidden = [PlayerBar shareBar].forceHidden;
+        [[PlayerBar shareBar] setForceHidden:YES];
+        [[UIViewController topViewController].navigationController pushViewController:[WebViewController controllerWithURL:url didDisappear:^{
+            if (!hidden) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[PlayerBar shareBar] setForceHidden:NO];
+                });
+            }
+        }] animated:YES];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
