@@ -38,7 +38,6 @@
     [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d ORDER BY aid DESC LIMIT 0,1", YDSDKModelStateIncomplete] complete:^(BOOL successed, id result) {
         if (successed && [result count]) {
             YDSDKArticleModelEx* model = [result firstObject];
-            
             [self fetch:model.aid completion:^(NSArray* array, NSError *error) {
                 if (completion) completion();
                 [self autoFetch:nil];

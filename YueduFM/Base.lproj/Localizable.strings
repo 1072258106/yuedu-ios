@@ -10,7 +10,7 @@
 
 "network_connect_prompt" = "网络连接提醒";
 "network_none_prompt" = "当前无网络连接";
-"network_wifi_prompt" = "当前网络处于WiFi下, 您可以尽情的收听下载~";
+"network_wifi_prompt" = "当前网络处于WiFi下, 您可以尽情的收听与下载~";
 "network_wwlan_prompt" = "当前网络处于2G/3G/4G下, 请注意流量使用情况哦~";
 
 "continue" = "继续";
@@ -48,7 +48,7 @@
 "menu_history" = "最近播放";
 "menu_settings" = "设置";
 
-"favor_empty_prompt" = "您收藏的文章将会出现在此.";
+"favor_empty_prompt" = "您收藏的文章都会出现在此.";
 "favor_clear_prompt" = "您确定清空已所有收藏文章?";
 
 "playlist_add_prompt" = "该文章已添加到播放队列中";
@@ -61,7 +61,7 @@
 "history_clear_prompt" = "您确定清空播放记录?";
 
 "main" = "首页";
-"main_empty_prompt" = "暂无文章,请下来刷新试试.";
+"main_empty_prompt" = "暂无文章,请下拉刷新试试.";
 "main_update_failed_prompt" = "更新失败, 请检测网络";
 "main_update_newer_prompt" = "您有新的文章";
 "main_update_none_prompt" = "没有更新的文章";
@@ -70,7 +70,7 @@
 "settings_flow_protection" = "流量保护提醒";
 "settings_flow_protection_prompt" = "关闭提醒后，在2G/3G/4G模式下收听和下载在线文章时，将不再显示流量提醒.";
 "settings_auto_close" = "定时关闭";
-"settings_star" = "鼓励一下";
+"settings_star" = "客官，踩一脚!";
 "settings_guide" = "引导页";
 "settings_about" = "关于我们";
 "settings_version" = "版本";
