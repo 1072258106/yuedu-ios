@@ -120,6 +120,8 @@
 		E46E2EDE1BB0619E00CCF57F /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2EDD1BB0619E00CCF57F /* AudioStreamer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E46E2EEF1BB119A000CCF57F /* YDSDKConfigModelEx.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2EEE1BB119A000CCF57F /* YDSDKConfigModelEx.m */; };
 		E46E2EF21BB11AC700CCF57F /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2EF11BB11AC700CCF57F /* NSDate+Extension.m */; };
+		E4825C371BCD1DA90039FCE2 /* NSLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = E4825C361BCD1DA90039FCE2 /* NSLocalization.m */; settings = {ASSET_TAGS = (); }; };
+		E4825C3A1BCD1E890039FCE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4825C3C1BCD1E890039FCE2 /* Localizable.strings */; };
 		E486A37F1BB1870800414EDE /* NetService.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A37E1BB1870800414EDE /* NetService.m */; };
 		E486A3821BB1A48D00414EDE /* YDSDKArticleModelEx.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3811BB1A48D00414EDE /* YDSDKArticleModelEx.m */; };
 		E486A3EE1BB2D72900414EDE /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E486A3C41BB2D72900414EDE /* MJRefreshAutoFooter.m */; };
@@ -445,6 +447,9 @@
 		E46E2EEE1BB119A000CCF57F /* YDSDKConfigModelEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDSDKConfigModelEx.m; sourceTree = "<group>"; };
 		E46E2EF01BB11AC700CCF57F /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		E46E2EF11BB11AC700CCF57F /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		E4825C351BCD1DA90039FCE2 /* NSLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLocalization.h; sourceTree = "<group>"; };
+		E4825C361BCD1DA90039FCE2 /* NSLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLocalization.m; sourceTree = "<group>"; };
+		E4825C3B1BCD1E890039FCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E486A37D1BB1870800414EDE /* NetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetService.h; sourceTree = "<group>"; };
 		E486A37E1BB1870800414EDE /* NetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetService.m; sourceTree = "<group>"; };
 		E486A3801BB1A48D00414EDE /* YDSDKArticleModelEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDSDKArticleModelEx.h; sourceTree = "<group>"; };
@@ -1217,6 +1222,7 @@
 				E4DD916F1BA9D8A10045F222 /* Info.plist */,
 				E4DD91701BA9D8A10045F222 /* main.m */,
 				E4D522641BAC7E6D002164AA /* YueduFM.pch */,
+				E4825C3C1BCD1E890039FCE2 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1318,6 +1324,8 @@
 		E4DD91961BA9D9140045F222 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E4825C351BCD1DA90039FCE2 /* NSLocalization.h */,
+				E4825C361BCD1DA90039FCE2 /* NSLocalization.m */,
 				E4D522E71BACA9BD002164AA /* UIColor+Extension.h */,
 				E4D522E81BACA9BD002164AA /* UIColor+Extension.m */,
 				E431FACE1BADD2E600898B8F /* NSString+Extension.h */,
@@ -1658,6 +1666,7 @@
 				E431FD0F1BADF4FD00898B8F /* dzn_icn_toolbar_reload@3x.png in Resources */,
 				E40768251BCB724700EBA567 /* AboutViewController.xib in Resources */,
 				E48884D21BB9B1320053F346 /* icon_menu_download@2x.png in Resources */,
+				E4825C3A1BCD1E890039FCE2 /* Localizable.strings in Resources */,
 				E431FA991BADCA2600898B8F /* ArticleTableViewCell.xib in Resources */,
 				E48884961BB9983F0053F346 /* HistoryViewController.xib in Resources */,
 				E407682A1BCB7F4200EBA567 /* ClearSettingsViewController.xib in Resources */,
@@ -1741,6 +1750,7 @@
 				E431FD5A1BAE03CE00898B8F /* NSURL+Extension.m in Sources */,
 				E4DD91D81BA9DF4B0045F222 /* FMDatabaseQueue.m in Sources */,
 				E431FAD81BADDB2D00898B8F /* README.md in Sources */,
+				E4825C371BCD1DA90039FCE2 /* NSLocalization.m in Sources */,
 				E4DD91D51BA9DF4B0045F222 /* FMDatabase.m in Sources */,
 				E486A4001BB2D72900414EDE /* UIView+MJExtension.m in Sources */,
 				E431FAD01BADD2E600898B8F /* NSString+Extension.m in Sources */,
@@ -1877,6 +1887,14 @@
 				E431FCF51BADF4FD00898B8F /* es */,
 			);
 			name = DZNWebViewController.strings;
+			sourceTree = "<group>";
+		};
+		E4825C3C1BCD1E890039FCE2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4825C3B1BCD1E890039FCE2 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		E4DD917D1BA9D8A20045F222 /* LaunchScreen.xib */ = {

@@ -19,20 +19,20 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"我的收藏";
-    self.emptyString = @"您收藏的文章将会出现在此.";
+    self.title = LOC(@"menu_favor");
+    self.emptyString = LOC(@"favor_empty_prompt");
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
-            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有收藏文章?"];
-            [alert bk_addButtonWithTitle:@"清空" handler:^{
+            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:LOC(@"favor_clear_prompt")];
+            [alert bk_addButtonWithTitle:LOC(@"clear") handler:^{
                 [SRV(ArticleService) deleteAllFavored:^{
                     [weakSelf load];
-                    [weakSelf showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf showWithSuccessedMessage:LOC(@"clear_successed")];
                 }];
             }];
             
-            [alert bk_addButtonWithTitle:@"取消" handler:nil];
+            [alert bk_addButtonWithTitle:LOC(@"cancel") handler:nil];
             [alert show];
         }];
 

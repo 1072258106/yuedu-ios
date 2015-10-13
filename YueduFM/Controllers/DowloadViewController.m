@@ -30,32 +30,32 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
     [super viewDidLoad];
     [self setupNavigationBar];
     
-    self.emptyString = @"下载的文章, 可离线收听.";
+    self.emptyString = LOC(@"download_empty_prompt");
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
         
         if ([weakSelf isDownloadTypeDone]) {
-            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已下载的文章?"];
-            [alert bk_addButtonWithTitle:@"清空" handler:^{
+            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:LOC(@"download_clear_prompt")];
+            [alert bk_addButtonWithTitle:LOC(@"clear") handler:^{
                 [SRV(ArticleService) deleteAllDownloaded:^{
                     [weakSelf load];
-                    [weakSelf showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf showWithSuccessedMessage:LOC(@"clear_successed")];
                 }];
             }];
             
-            [alert bk_addButtonWithTitle:@"取消" handler:nil];
+            [alert bk_addButtonWithTitle:LOC(@"cancel") handler:nil];
             [alert show];
         } else {
-            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空所有任务?"];
-            [alert bk_addButtonWithTitle:@"清空" handler:^{
+            UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:LOC(@"download_clear_prompt")];
+            [alert bk_addButtonWithTitle:LOC(@"clear") handler:^{
                 [SRV(DownloadService) deleteAllTask:^{
                     [weakSelf load];
-                    [weakSelf showWithSuccessedMessage:@"清空成功"];
+                    [weakSelf showWithSuccessedMessage:LOC(@"clear_successed")];
                 }];
             }];
             
-            [alert bk_addButtonWithTitle:@"取消" handler:nil];
+            [alert bk_addButtonWithTitle:LOC(@"cancel") handler:nil];
             [alert show];
         }
     }];
@@ -116,7 +116,7 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 
 - (void)setupNavigationBar {
     __weak typeof(self) weakSelf = self;
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"已下载", @"正在下载"]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[LOC(@"download_done"), LOC(@"download_doing")]];
     [_segmentedControl bk_addEventHandler:^(id sender) {
         [weakSelf load];
     } forControlEvents:UIControlEventValueChanged];

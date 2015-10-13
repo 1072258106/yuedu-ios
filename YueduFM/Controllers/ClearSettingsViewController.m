@@ -17,13 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"清空占用空间";
+    self.title = LOC(@"settings_clean_space");
     
     NSDictionary* section1 = @{
-                               @"footer":@"清空所有已经缓存的图片资源.",
+                               @"footer":LOC(@"settings_clean_picture_space"),
                                @"rows":@[
                                        @{
-                                           @"title":@"清空图片资源",
+                                           @"title":LOC(@"settings_clean_picture_space"),
                                            @"detail":[NSString stringWithFileSize:[[SDImageCache sharedImageCache] getSize]],
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
@@ -31,7 +31,7 @@
                                                    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                                            cell.detailTextLabel.text = [NSString stringWithFileSize:[[SDImageCache sharedImageCache] getSize]];
-                                                           [SVProgressHUD showSuccessWithStatus:@"清空成功"];
+                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"clean_successed")];
                                                        });
                                                    }];
                                                });
@@ -40,10 +40,10 @@
                                        ]
                                };
     NSDictionary* section2 = @{
-                               @"footer":@"清空所有已经下载的声音文件.",
+                               @"footer":LOC(@"settings_clean_downloaded_space_prompt"),
                                @"rows":@[
                                        @{
-                                           @"title":@"清空已下载文章",
+                                           @"title":LOC(@"settings_clean_downloaded_space"),
                                            @"detail":[NSString stringWithFileSize:[SRV(DownloadService) cacheSize]],
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
@@ -51,7 +51,7 @@
                                                    [SRV(ArticleService) deleteAllDownloaded:^{
                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                                            cell.detailTextLabel.text = [NSString stringWithFileSize:[SRV(DownloadService) cacheSize]];
-                                                           [SVProgressHUD showSuccessWithStatus:@"清空成功"];
+                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"clean_successed")];
                                                        });                                                       
                                                    }];
                                                });

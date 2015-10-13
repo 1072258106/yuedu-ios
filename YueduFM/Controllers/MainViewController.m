@@ -25,8 +25,8 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"首页";
-    self.emptyString = @"暂无文章,请下来刷新试试.";
+    self.title = LOC(@"main");
+    self.emptyString = LOC(@"main_empty_prompt");
     
     [self setupNavigationBar];
     [self setupMenu];
@@ -39,12 +39,12 @@ static int const kCountPerTime = 20;
                 [self loadCurrentChannelData:^{
                     YDSDKArticleModelEx* nowModel = [weakSelf.tableData firstObject];
                     if (error) {
-                        [weakSelf showWithFailedMessage:@"更新失败, 请检测网络"];
+                        [weakSelf showWithFailedMessage:LOC(@"main_update_failed_prompt")];
                     } else {
                         if (lastModel.aid != nowModel.aid) {
-                            [weakSelf showWithSuccessedMessage:@"您有新的文章"];
+                            [weakSelf showWithSuccessedMessage:LOC(@"main_update_newer_prompt")];
                         } else {
-                            [weakSelf showWithSuccessedMessage:@"暂无新的文章"];
+                            [weakSelf showWithSuccessedMessage:LOC(@"main_update_none_prompt")];
                         }
                     }
                 }];

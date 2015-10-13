@@ -49,7 +49,7 @@
     
     SRV(DownloadService).taskDidFinished = ^(YDSDKArticleModelEx* model) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [MessageKit showWithSuccessedMessage:[NSString stringWithFormat:@"%@ 下载完成", model.title]];
+            [MessageKit showWithSuccessedMessage:[NSString stringWithFormat:@"%@ %@", model.title, LOC(@"download_done_prompt")]];
         });
     };
 }

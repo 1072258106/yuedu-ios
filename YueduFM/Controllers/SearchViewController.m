@@ -29,7 +29,7 @@ static int const kCountPerTime = 10;
     _searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _searchBar.delegate = self;
     _searchBar.tintColor = RGBHex(@"#A0A0A0");
-    _searchBar.placeholder = @"标题、作者、主播";
+    _searchBar.placeholder = LOC(@"search_prompt");
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(0, 0, 40, 25);

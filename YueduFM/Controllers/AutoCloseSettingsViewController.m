@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"定时关闭";
+    self.title = LOC(@"settings_auto_close");
     
     __weak typeof(self) weakSelf = self;
     void(^action)(UITableViewCell* cell) = ^(UITableViewCell* cell) {
@@ -41,7 +41,7 @@
     }];
     
     
-    NSDictionary* section1 = @{@"header":@"时间",
+    NSDictionary* section1 = @{@"header":LOC(@"time"),
                                @"rows":rows
                                };
     
@@ -54,14 +54,14 @@
     
     NSMutableString* timeString = [NSMutableString string];
     if (!h && !m) {
-        [timeString appendString:@"无"];
+        [timeString appendString:LOC(@"none")];
     } else {
         if (h) {
-            [timeString appendFormat:@"%d小时", h];
+            [timeString appendFormat:@"%d%@", h, LOC(@"hour")];
         }
         
         if (m) {
-            [timeString appendFormat:@"%d分钟", m];
+            [timeString appendFormat:@"%d%@", m, LOC(@"minute")];
         }
     }
     return timeString;

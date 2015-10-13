@@ -20,20 +20,20 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"最近播放";
-    self.emptyString = @"已播放的文章都会出现在此.";
+    self.title = LOC(@"history");
+    self.emptyString = LOC(@"history_empty_prompt");
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
-        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已播放记录?"];
-        [alert bk_addButtonWithTitle:@"清空" handler:^{
+        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:LOC(@"history_clear_prompt")];
+        [alert bk_addButtonWithTitle:LOC(@"clear") handler:^{
             [SRV(ArticleService) deleteAllPlayed:^{
                 [weakSelf load];
-                [weakSelf showWithSuccessedMessage:@"清空成功"];
+                [weakSelf showWithSuccessedMessage:LOC(@"clear_successed")];
             }];
         }];
         
-        [alert bk_addButtonWithTitle:@"取消" handler:nil];
+        [alert bk_addButtonWithTitle:LOC(@"cancel") handler:nil];
         [alert show];
     }];
         

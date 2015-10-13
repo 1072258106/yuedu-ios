@@ -16,3 +16,4 @@
 #import "UISwitch+Extension.h"
 #import "NSURL+Extension.h"
 #import "NSFileManager+Extension.h"
+#import "NSLocalization.h"

@@ -20,15 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"设置";
+    self.title = LOC(@"menu_settings");
     
     SettingsService* service = SRV(SettingsService);
     __weak typeof(self) weakSelf = self;
-    NSDictionary* section1 = @{@"header":@"流量",
-                               @"footer":@"关闭提醒后，在非WiFi模式下收听和下载在线文章时，将不再显示流量提醒.",
+    NSDictionary* section1 = @{@"header":LOC(@"settings_flow"),
+                               @"footer":LOC(@"settings_flow_protection_prompt"),
                                @"rows":@[
                                        @{
-                                           @"title":@"流量保护提醒",
+                                           @"title":LOC(@"settings_flow_protection"),
                                            @"accessoryView":[UISwitch switchWithOn:service.flowProtection action:^(BOOL isOn) {
                                                service.flowProtection = isOn;
                                            }],
@@ -38,7 +38,7 @@
     NSDictionary* section2 = @{@"header":@"应用",
                                @"rows":@[
                                        @{
-                                           @"title":@"定时关闭",
+                                           @"title":LOC(@"settings_auto_close"),
                                            @"config":^(UITableViewCell* cell){
                                                [SRV(SettingsService) bk_addObserverForKeyPath:@"autoCloseRestTime" task:^(id target) {
                                                    dispatch_async(dispatch_get_main_queue(), ^{
@@ -54,7 +54,7 @@
                                            }
                                            },
                                        @{
-                                           @"title":@"清空占用空间",
+                                           @"title":LOC(@"settings_clean_space"),
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                ClearSettingsViewController* vc = [[ClearSettingsViewController alloc] initWithNibName:@"ClearSettingsViewController" bundle:nil];
@@ -62,14 +62,14 @@
                                            }
                                            },
                                        @{
-                                           @"title":@"鼓励一下",
+                                           @"title":LOC(@"settings_star"),
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(UITableViewCell* cell){
                                                 [[UIApplication sharedApplication] openURL:[weakSelf rateURL]];
                                            }
                                            },
                                        @{
-                                           @"title":@"关于我们",
+                                           @"title":LOC(@"settings_about"),
                                            @"accessoryType":@(UITableViewCellAccessoryDisclosureIndicator),
                                            @"action":^(__weak UITableViewCell* cell){
                                                AboutViewController* vc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
@@ -77,7 +77,7 @@
                                            }
                                            },
                                        @{
-                                           @"title":@"版本",
+                                           @"title":LOC(@"settings_version"),
                                            @"detail":[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
                                            },
                                        ]

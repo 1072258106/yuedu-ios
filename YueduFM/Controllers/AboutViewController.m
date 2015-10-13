@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"关于我们";
+    self.title = LOC(@"settings_about");
     
     NSString* URLString = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
     

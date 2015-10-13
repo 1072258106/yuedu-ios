@@ -19,20 +19,20 @@ static int const kCountPerTime = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"播放队列";
-    self.emptyString = @"所有将要播放的文章都在此.";
+    self.title = LOC(@"menu_playlist");
+    self.emptyString = LOC(@"playlist_empty_prompt");
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_delete.png"] action:^{
-        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:@"您确定清空已所有项目?"];
-        [alert bk_addButtonWithTitle:@"清空" handler:^{
+        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:nil message:LOC(@"playlist_clear_prompt")];
+        [alert bk_addButtonWithTitle:LOC(@"clear") handler:^{
             [SRV(ArticleService) deleteAllPreplay:^{
                 [weakSelf load];
-                [weakSelf showWithSuccessedMessage:@"清空成功"];
+                [weakSelf showWithSuccessedMessage:@"clear_successed"];
             }];
         }];
         
-        [alert bk_addButtonWithTitle:@"取消" handler:nil];
+        [alert bk_addButtonWithTitle:LOC(@"cancel") handler:nil];
         [alert show];
     }];
     

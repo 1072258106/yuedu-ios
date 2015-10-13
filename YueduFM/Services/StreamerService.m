@@ -140,7 +140,7 @@
             [self play:nextModel];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD showInfoWithStatus:@"播放队列没有文章了，请添加."];
+                [SVProgressHUD showInfoWithStatus:LOC(@"playlist_none_prompt")];
             });
         }
     }];

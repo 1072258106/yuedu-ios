@@ -69,29 +69,29 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             switch (error.code) {
                 case DownloadErrorCodeAlreadyDownloading:
-                    [MessageKit showWithFailedMessage:@"该文章已在下载队列中"];
+                    [MessageKit showWithFailedMessage:LOC(@"download_doing_prompt")];
                     break;
                 case DownloadErrorCodeAlreadyDownloaded:
-                    [MessageKit showWithSuccessedMessage:@"该文章已下载"];
+                    [MessageKit showWithSuccessedMessage:LOC(@"download_already_prompt")];
                     break;
                 default:
-                    [MessageKit showWithSuccessedMessage:@"该文章已加入下载队列中"];
+                    [MessageKit showWithSuccessedMessage:LOC(@"download_add_prompt")];
                     break;
             }
         });
     };
     
     if ([SRV(SettingsService) flowProtection] && SRV(ReachabilityService).status == ReachableViaWWAN) {
-        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:@"网络连接提醒" message:@"当前网络处于非WiFi模式下，继续下载会被运营商收取流量费用"];
-        [alert bk_addButtonWithTitle:@"继续" handler:^{
+        UIAlertView* alert = [UIAlertView bk_alertViewWithTitle:LOC(@"network_connect_prompt") message:LOC(@"download_wwlan_prompt")];
+        [alert bk_addButtonWithTitle:LOC(@"continue") handler:^{
             [SRV(DownloadService) download:aModel protect:NO preprocess:preprocess];
         }];
         
-        [alert bk_addButtonWithTitle:@"在WiFi时下载" handler:^{
+        [alert bk_addButtonWithTitle:LOC(@"download_in_wifi") handler:^{
             [SRV(DownloadService) download:aModel protect:YES preprocess:preprocess];
         }];
         
-        [alert bk_setCancelButtonWithTitle:@"取消" handler:nil];
+        [alert bk_setCancelButtonWithTitle:LOC(@"cancel") handler:nil];
         
         [alert show];
     } else {
@@ -130,13 +130,13 @@
     YDSDKArticleModelEx* aModel = [self article];
     aModel.preplayDate = [NSDate date];
     [SRV(DataService) writeData:aModel completion:nil];
-    [MessageKit showWithSuccessedMessage:@"该文章已添加到播放队列中"];
+    [MessageKit showWithSuccessedMessage:LOC(@"playlist_add_prompt")];
 }
 
 - (void)updateFavorButton {
     dispatch_async(dispatch_get_main_queue(), ^{
         YDSDKArticleModelEx* aModel = [self article];
-        [self.favorButton setTitle:aModel.isFavored?@"取消收藏":@"收藏"
+        [self.favorButton setTitle:aModel.isFavored?LOC(@"unfavor"):LOC(@"favor")
                           forState:UIControlStateNormal];
         
         [self.favorButton setImage:aModel.isFavored?[UIImage imageNamed:@"icon_action_favored.png"]:[UIImage imageNamed:@"icon_action_favor.png"] forState:UIControlStateNormal];

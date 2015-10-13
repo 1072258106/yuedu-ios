@@ -30,7 +30,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     _tableData = @[
                    @{
                        @"image":@"icon_menu_playlist.png",
-                       @"title":@"播放队列",
+                       @"title":LOC(@"menu_playlist"),
                        @"action":^{
                            PlayListViewController* vc = [[PlayListViewController alloc] initWithNibName:@"PlayListViewController" bundle:nil];
                            [weakSelf pushViewController:vc];
@@ -38,7 +38,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        },
                    @{
                        @"image":@"icon_menu_download.png",
-                       @"title":@"我的下载",
+                       @"title":LOC(@"menu_download"),
                        @"action":^{
                            DowloadViewController* vc = [[DowloadViewController alloc] initWithNibName:@"DowloadViewController" bundle:nil];
                            [weakSelf pushViewController:vc];
@@ -46,7 +46,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        },
                    @{
                        @"image":@"icon_menu_favor.png",
-                       @"title":@"我的收藏",
+                       @"title":LOC(@"menu_favor"),
                        @"action":^{
                            FavorViewController* vc = [[FavorViewController alloc] initWithNibName:@"FavorViewController" bundle:nil];
                            [weakSelf pushViewController:vc];
@@ -54,7 +54,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        },
                    @{
                        @"image":@"icon_menu_history.png",
-                       @"title":@"最近播放",
+                       @"title":LOC(@"menu_history"),
                        @"action":^{
                            HistoryViewController* vc = [[HistoryViewController alloc] initWithNibName:@"HistoryViewController" bundle:nil];
                            [weakSelf pushViewController:vc];
@@ -62,7 +62,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
                        },
                    @{
                        @"image":@"icon_menu_settings.png",
-                       @"title":@"设置",
+                       @"title":LOC(@"menu_settings"),
                        @"action":^{
                            RootSettingsViewController* vc = [[RootSettingsViewController alloc] initWithNibName:@"RootSettingsViewController" bundle:nil];
                            [weakSelf pushViewController:vc];
