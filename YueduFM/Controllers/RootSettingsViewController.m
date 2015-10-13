@@ -76,6 +76,10 @@
                                                [weakSelf.navigationController pushViewController:vc animated:YES];
                                            }
                                            },
+                                       @{
+                                           @"title":@"版本",
+                                           @"detail":[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+                                           },
                                        ]
                                };
     
