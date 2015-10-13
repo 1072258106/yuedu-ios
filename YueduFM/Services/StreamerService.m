@@ -68,8 +68,8 @@
         [_streamer bk_addObserverForKeyPath:@"status" task:^(id target) {
             if (_streamer.status == DOUAudioStreamerFinished) {
                 self.isPlaying = NO;
-                self.playingModel = nil;
                 [self next];
+                self.playingModel = nil;
             } else if (_streamer.status == DOUAudioStreamerPaused) {
                 self.isPlaying = NO;
             }
@@ -135,9 +135,12 @@
 
 - (void)next {
     [SRV(ArticleService) nextPreplay:self.playingModel completion:^(YDSDKArticleModelEx *nextModel) {
-        if (nextModel) {
+        if (!self.isPlaying) {
             self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
             [SRV(DataService) writeData:self.playingModel completion:nil];
+        }
+        
+        if (nextModel) {
             [self play:nextModel];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
