@@ -47,7 +47,11 @@ static NSString* kCellIdentifier = @"kCellIdentifier";
     cell.accessoryView = info[@"accessoryView"];
     
     NSNumber* typeNumber = info[@"accessoryType"];
-    if (typeNumber) cell.accessoryType = [typeNumber intValue];
+    if (typeNumber) {
+        cell.accessoryType = [typeNumber intValue];
+    } else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     
     void(^config)(UITableViewCell* cell) = info[@"config"];
     if (config) config(cell);
