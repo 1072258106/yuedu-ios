@@ -62,9 +62,9 @@
 
 "main" = "悦读";
 "main_empty_prompt" = "暂无文章,请下拉刷新试试.";
-"main_update_failed_prompt" = "更新失败, 请检测网络哦.";
-"main_update_newer_prompt" = "您有新的文章哦.";
-"main_update_none_prompt" = "没有新的文章了.";
+"main_update_failed_prompt" = "更新失败, 请检测网络哦";
+"main_update_newer_prompt" = "您有新的文章哦";
+"main_update_none_prompt" = "没有新的文章了";
 
 "settings_flow" = "流量";
 "settings_flow_protection" = "流量保护提醒";
