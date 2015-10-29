@@ -15,9 +15,13 @@
     DOUAudioStreamer*       _streamer;
     UIImageView*            _imageView;
     NSMutableDictionary*    _nowPlayingInfo;
+    
 }
 
+
 @property (nonatomic, strong) NSMutableDictionary* nowPlayingInfo;
+@property (nonatomic, strong) NSDate* updateDate;
+
 
 @end
 
@@ -115,9 +119,12 @@
 
 - (void)setNowPlayingInfo:(NSMutableDictionary *)nowPlayingInfo {
     _nowPlayingInfo = nowPlayingInfo;
-    dispatch_async(dispatch_get_main_queue(), ^{
+
+    //防止频繁更新而导致crash
+    if (([NSDate timeIntervalSinceReferenceDate] - self.updateDate.timeIntervalSinceReferenceDate)>0.1) {
         [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
-    });
+        self.updateDate = [NSDate date];
+    }
 }
 
 - (NSMutableDictionary* )nowPlayingInfo {
