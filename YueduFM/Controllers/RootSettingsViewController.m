@@ -79,7 +79,7 @@
                                            },
                                        @{
                                            @"title":LOC(@"settings_version"),
-                                           @"detail":[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+                                           @"detail":[NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]],
                                            },
                                        ]
                                };

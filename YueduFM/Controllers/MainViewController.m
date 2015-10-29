@@ -33,23 +33,27 @@ static int const kCountPerTime = 20;
     
     __weak typeof(self) weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        YDSDKArticleModelEx* lastModel = [self.tableData firstObject];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [SRV(ArticleService) fetchLatest:^(NSError *error) {
-                [self loadCurrentChannelData:^{
-                    YDSDKArticleModelEx* nowModel = [weakSelf.tableData firstObject];
-                    if (error) {
-                        [weakSelf showWithFailedMessage:LOC(@"main_update_failed_prompt")];
-                    } else {
-                        if (lastModel.aid != nowModel.aid) {
-                            [weakSelf showWithSuccessedMessage:LOC(@"main_update_newer_prompt")];
-                        } else {
-                            [weakSelf showWithSuccessedMessage:LOC(@"main_update_none_prompt")];
-                        }
-                    }
-                }];
-            }];            
-        });
+        [SRV(ArticleService) latestLocalArticle:^(YDSDKArticleModelEx *model) {
+            YDSDKArticleModelEx* lastModel = model;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [SRV(ArticleService) fetchLatest:^(NSError *error) {
+                    [self loadCurrentChannelData:^{
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            YDSDKArticleModelEx* nowModel = [weakSelf.tableData firstObject];
+                            if (error) {
+                                [weakSelf showWithFailedMessage:LOC(@"main_update_failed_prompt")];
+                            } else {
+                                if (lastModel.aid != nowModel.aid) {
+                                    [weakSelf showWithSuccessedMessage:LOC(@"main_update_newer_prompt")];
+                                } else {
+                                    [weakSelf showWithSuccessedMessage:LOC(@"main_update_none_prompt")];
+                                }
+                            }
+                        });
+                    }];
+                }];            
+            });
+        }];
     }];
     
     [self.tableView.header beginRefreshing];

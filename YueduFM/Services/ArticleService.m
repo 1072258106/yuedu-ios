@@ -29,6 +29,7 @@
     return self;
 }
 
+
 - (void)start {
     [self autoFetch:nil];
     [self updateActiveArticleModel];
@@ -44,6 +45,14 @@
             }];
         } else {
             if (completion) completion();
+        }
+    }];
+}
+
+- (void)latestLocalArticle:(void(^)(YDSDKArticleModelEx* model))completion {
+    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d ORDER BY aid DESC LIMIT 0,1", YDSDKModelStateNormal] complete:^(BOOL successed, id result) {
+        if (completion) {
+            completion(successed?[result firstObject]:nil);
         }
     }];
 }

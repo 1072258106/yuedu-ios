@@ -15,6 +15,9 @@
 
 - (void)fetchLatest:(void(^)(NSError* error))completion;
 
+//最新的本地文章
+- (void)latestLocalArticle:(void(^)(YDSDKArticleModelEx* model))completion;
+
 //列表
 - (void)list:(int)count
      channel:(int)channel

@@ -12,9 +12,9 @@
 #import "DOUAudioStreamer.h"
 
 @interface StreamerService () {
-    DOUAudioStreamer*   _streamer;
-    UIImageView*        _imageView;
-    NSMutableDictionary* _nowPlayingInfo;
+    DOUAudioStreamer*       _streamer;
+    UIImageView*            _imageView;
+    NSMutableDictionary*    _nowPlayingInfo;
 }
 
 @property (nonatomic, strong) NSMutableDictionary* nowPlayingInfo;
@@ -70,8 +70,6 @@
                 self.playingModel = nil;
             } else if (_streamer.status == DOUAudioStreamerPaused) {
                 self.isPlaying = NO;
-            } else if (_streamer.status == DOUAudioStreamerPlaying) {
-                [self updateNowPlayingPlayback];
             }
         }];
         
@@ -117,8 +115,9 @@
 
 - (void)setNowPlayingInfo:(NSMutableDictionary *)nowPlayingInfo {
     _nowPlayingInfo = nowPlayingInfo;
-    NSLog(@"nowPlayingInfo=%@", nowPlayingInfo);
-    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
+    });
 }
 
 - (NSMutableDictionary* )nowPlayingInfo {
@@ -132,6 +131,7 @@
 
 - (void)resume {
     [self play:self.playingModel];
+    [self updateNowPlayingPlayback];
 }
 
 - (void)next {
