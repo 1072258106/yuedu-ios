@@ -62,7 +62,6 @@
         }];
         
         [_streamer bk_addObserverForKeyPath:@"status" task:^(id target) {
-            [self updateNowPlayingPlayback];
             if (_streamer.status == DOUAudioStreamerFinished) {
                 self.isPlaying = NO;
                 self.playingModel.preplayDate = [NSDate dateWithTimeIntervalSince1970:0];
@@ -71,6 +70,8 @@
                 self.playingModel = nil;
             } else if (_streamer.status == DOUAudioStreamerPaused) {
                 self.isPlaying = NO;
+            } else if (_streamer.status == DOUAudioStreamerPlaying) {
+                [self updateNowPlayingPlayback];
             }
         }];
         
@@ -116,6 +117,7 @@
 
 - (void)setNowPlayingInfo:(NSMutableDictionary *)nowPlayingInfo {
     _nowPlayingInfo = nowPlayingInfo;
+    NSLog(@"nowPlayingInfo=%@", nowPlayingInfo);
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 }
 
@@ -158,7 +160,7 @@
     NSMutableDictionary* info = self.nowPlayingInfo;
     info[MPMediaItemPropertyPlaybackDuration] = @(_streamer.duration);
     info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = @(_streamer.currentTime);
-    self.nowPlayingInfo = info;
+    self.nowPlayingInfo = info;        
 }
 
 - (void)setCurrentTime:(NSTimeInterval)currentTime {

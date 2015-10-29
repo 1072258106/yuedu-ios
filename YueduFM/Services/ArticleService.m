@@ -61,9 +61,15 @@
 - (void)checkout:(int)count
          channel:(int)channel
       completion:(void(^)(NSArray* array))completion {
-    [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d and channel=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, channel, count] complete:^(BOOL successed, id result) {
-        if (completion) completion(successed?result:nil);
-     }];
+    if (channel) {
+        [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d and channel=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, channel, count] complete:^(BOOL successed, id result) {
+            if (completion) completion(successed?result:nil);
+        }];
+    } else {
+        [self.dataManager read:[YDSDKArticleModelEx class] condition:[NSString stringWithFormat:@"state=%d ORDER BY aid DESC LIMIT 0, %d", YDSDKModelStateNormal, count] complete:^(BOOL successed, id result) {
+            if (completion) completion(successed?result:nil);
+        }];
+    }
 }
 
 - (void)modelForAudioURLString:(NSString* )URLString completion:(void(^)(YDSDKArticleModelEx* model))completion {

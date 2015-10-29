@@ -29,7 +29,7 @@ static int const kCountPerTime = 20;
     self.emptyString = LOC(@"main_empty_prompt");
     
     [self setupNavigationBar];
-    [self setupMenu];
+//    [self setupMenu];
     
     __weak typeof(self) weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -61,17 +61,7 @@ static int const kCountPerTime = 20;
 }
 
 - (void)setupNavigationBar {
-    UIButton* button = [UIButton viewWithNibName:@"TitleView"];
-    button.backgroundColor = [UIColor clearColor];
-    
     __weak typeof(self) weakSelf = self;
-    [button bk_addEventHandler:^(id sender) {
-        if (weakSelf.menu.isOpen) return [weakSelf.menu close];
-        
-        [weakSelf.menu showFromNavigationController:weakSelf.navigationController];
-    } forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.titleView = button;
-    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_nav_menu.png"] action:^{
         [weakSelf presentLeftMenuViewController:nil];
     }];
@@ -112,6 +102,7 @@ static int const kCountPerTime = 20;
 }
 
 - (int)currentChannel {
+    return 0;// 不支持多频道
     NSArray* array = [SRV(ChannelService) channels];
     if ([array count] <= _selectMenuIndex) {
         return 1;
