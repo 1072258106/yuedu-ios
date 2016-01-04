@@ -12,7 +12,7 @@
 
 extern NSString* const DownloadSeriviceDidChangedNotification;
 
-@interface NSURLSessionTask (DownloadService)
+@interface NSObject (DownloadService)
 
 @property (nonatomic, strong) YDSDKArticleModelEx* articleModel;
 

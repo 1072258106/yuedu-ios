@@ -70,7 +70,7 @@
 "settings_flow_protection" = "流量保护提醒";
 "settings_flow_protection_prompt" = "关闭提醒后，在2G/3G/4G模式下收听和下载在线文章时，将不再显示流量提醒.";
 "settings_auto_close" = "定时关闭";
-"settings_star" = "客官，踩一脚!";
+"settings_star" = "评分";
 "settings_guide" = "引导页";
 "settings_about" = "关于我们";
 "settings_version" = "版本";

@@ -26,7 +26,6 @@ typedef NS_ENUM(NSUInteger, ServiceLevel) {
 
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter;
 
-
 - (void)start;
 
 - (void)stop;

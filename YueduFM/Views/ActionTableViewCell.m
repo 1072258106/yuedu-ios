@@ -55,10 +55,10 @@
 }
 
 - (YDSDKArticleModelEx* )article {
-    if ([self.model isKindOfClass:[NSURLSessionTask class]]) {
-        return [(NSURLSessionTask* )self.model articleModel];
-    } else {
+    if ([self.model isKindOfClass:[YDSDKModel class]]) {
         return self.model;
+    } else {
+        return [(NSURLSessionTask* )self.model articleModel];
     }
 }
 

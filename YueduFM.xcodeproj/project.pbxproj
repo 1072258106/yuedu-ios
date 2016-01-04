@@ -107,6 +107,9 @@
 		E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */; };
 		E4358DFB1BBB286400E3799B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4358DFA1BBB286400E3799B /* Images.xcassets */; };
 		E4358DFD1BBB9F7000E3799B /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4358DFC1BBB9F7000E3799B /* logo@2x.png */; };
+		E44719881C3A544F00002C4D /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E44719851C3A544F00002C4D /* libMobClickLibrary.a */; };
+		E447198B1C3A549500002C4D /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = E447198A1C3A549500002C4D /* AnalyticsService.m */; };
+		E447198D1C3A5CCA00002C4D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E447198C1C3A5CCA00002C4D /* libz.1.2.5.tbd */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -443,6 +446,12 @@
 		E4358DF81BBB21D200E3799B /* icon_bar_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bar_down@2x.png"; sourceTree = "<group>"; };
 		E4358DFA1BBB286400E3799B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4358DFC1BBB9F7000E3799B /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		E44719851C3A544F00002C4D /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		E44719861C3A544F00002C4D /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		E44719871C3A544F00002C4D /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		E44719891C3A549500002C4D /* AnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsService.h; sourceTree = "<group>"; };
+		E447198A1C3A549500002C4D /* AnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsService.m; sourceTree = "<group>"; };
+		E447198C1C3A5CCA00002C4D /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -760,11 +769,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E447198D1C3A5CCA00002C4D /* libz.1.2.5.tbd in Frameworks */,
 				E407681E1BCABE7200EBA567 /* libsqlite3.tbd in Frameworks */,
 				E407681C1BCABE5900EBA567 /* libstdc++.tbd in Frameworks */,
 				E431FD7F1BAEED6500898B8F /* Accelerate.framework in Frameworks */,
 				E431FB291BADEF5400898B8F /* WebKit.framework in Frameworks */,
 				E4D522A91BAC8802002164AA /* libBlocksKit.a in Frameworks */,
+				E44719881C3A544F00002C4D /* libMobClickLibrary.a in Frameworks */,
 				E4DD91E41BA9E1B40045F222 /* YueduFMSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -949,6 +960,16 @@
 				E431FD431BAE001800898B8F /* NSData+DOUMappedFile.m */,
 			);
 			path = DOUAudioStreamer;
+			sourceTree = "<group>";
+		};
+		E44719841C3A544F00002C4D /* UMAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E44719851C3A544F00002C4D /* libMobClickLibrary.a */,
+				E44719861C3A544F00002C4D /* MobClick.h */,
+				E44719871C3A544F00002C4D /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics;
 			sourceTree = "<group>";
 		};
 		E46E2E8A1BAFC69700CCF57F /* REMenu */ = {
@@ -1281,6 +1302,7 @@
 		E4DD91621BA9D8A10045F222 = {
 			isa = PBXGroup;
 			children = (
+				E447198C1C3A5CCA00002C4D /* libz.1.2.5.tbd */,
 				E4DD916D1BA9D8A10045F222 /* YueduFM */,
 				E4DD91871BA9D8A20045F222 /* YueduFMTests */,
 				E407681A1BCAB84C00EBA567 /* Framework */,
@@ -1348,6 +1370,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E44719841C3A544F00002C4D /* UMAnalytics */,
 				E4825C4B1BCD316D0039FCE2 /* SMPageControl */,
 				E4825C471BCD315F0039FCE2 /* EARestrictedScrollView */,
 				E4825C3D1BCD2E970039FCE2 /* EAIntroView */,
@@ -1482,6 +1505,8 @@
 				E4E134281BB8E6200063D6B2 /* SettingsService.m */,
 				E48884E71BBA36A40053F346 /* StreamerService.h */,
 				E48884E81BBA36A40053F346 /* StreamerService.m */,
+				E44719891C3A549500002C4D /* AnalyticsService.h */,
+				E447198A1C3A549500002C4D /* AnalyticsService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1973,6 +1998,7 @@
 				E4E9E33A1BB457CB00B6BAFE /* ExpandTableViewController.m in Sources */,
 				E495EA1A1BB7CBC20085258E /* DownloadTableViewCell.m in Sources */,
 				E431FAC01BADD1D800898B8F /* SDImageCache.m in Sources */,
+				E447198B1C3A549500002C4D /* AnalyticsService.m in Sources */,
 				E431FD441BAE001800898B8F /* DOUAudioAnalyzer+Default.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2131,6 +2157,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors/BlocksKit",
 					"$(PROJECT_DIR)/YueduFM/Vendors/pop",
+					"$(PROJECT_DIR)/YueduFM/Vendors/UMAnalytics",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pawpaw.yuedu;
@@ -2166,6 +2193,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YueduFM/Vendors/BlocksKit",
 					"$(PROJECT_DIR)/YueduFM/Vendors/pop",
+					"$(PROJECT_DIR)/YueduFM/Vendors/UMAnalytics",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pawpaw.yuedu;

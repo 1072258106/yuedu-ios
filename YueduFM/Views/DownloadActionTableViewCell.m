@@ -11,15 +11,15 @@
 @implementation DownloadActionTableViewCell
 
 - (IBAction)onDeleteButtonPressed:(id)sender {
-    if ([self.model isKindOfClass:[NSURLSessionTask class]]) {
-        [SRV(DownloadService) deleteTask:self.model];
-        [self.expandTableViewController deleteCellWithModel:self.model];
-    } else {
+    if ([self.model isKindOfClass:[YDSDKModel class]]) {
         [SRV(ArticleService) deleteDownloaded:self.model completion:^(BOOL successed) {
             if (successed) {
                 [self.expandTableViewController deleteCellWithModel:self.model];
             }
         }];
+    } else {
+        [SRV(DownloadService) deleteTask:self.model];
+        [self.expandTableViewController deleteCellWithModel:self.model];
     }
 }
 

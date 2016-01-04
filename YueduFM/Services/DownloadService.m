@@ -11,7 +11,7 @@
 NSString* const DownloadSeriviceDidChangedNotification = @"DownloadSeriviceDidChangedNotification";
 NSString* const DownloadSeriviceDidSuccessedNotification = @"DownloadSeriviceDidSuccessedNotification";
 
-@implementation NSURLSessionTask (DownloadService)
+@implementation NSObject (DownloadService)
 
 CATEGORY_PROPERTY_GET_SET(YDSDKArticleModelEx*, articleModel, setArticleModel:)
 
@@ -92,7 +92,10 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
         [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSURLSessionTask* task = obj;
             [service modelForAudioURLString:task.originalRequest.URL.absoluteString completion:^(YDSDKArticleModelEx *model) {
+                NSLog(@"============11111:%@", obj);
                 task.articleModel = model;
+                NSLog(@"============2222");
+
             }];
             if (status == ReachableViaWWAN) {
                 [task suspend];
