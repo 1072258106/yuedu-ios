@@ -8,7 +8,14 @@
 
 #import "BaseService.h"
 
+typedef NS_ENUM(NSUInteger, AnalyticsEventId) {
+    AnalyticsEventIdNone = 0,
+    AnalyticsEventIdDownload,
+    AnalyticsEventIdFavor,
+};
+
 @interface AnalyticsService : BaseService
 
+- (void)sendWithEventId:(AnalyticsEventId)eventId;
 
 @end

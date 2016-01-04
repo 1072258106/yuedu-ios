@@ -9,6 +9,8 @@
 #import "AnalyticsService.h"
 #import "MobClick.h"
 
+NSString* const kAnalyticsEventIdLogin = @"login";
+
 @implementation AnalyticsService
 
 - (id)initWithServiceCenter:(ServiceCenter*)serviceCenter {
@@ -17,6 +19,10 @@
         [MobClick startWithAppkey:@"568a1c6de0f55a78440001e5" reportPolicy:BATCH channelId:nil];
     }
     return self;
+}
+
+- (void)sendWithEventId:(AnalyticsEventId)eventId {
+    [MobClick event:[NSString stringWithFormat:@"%lu", (unsigned long)eventId]];
 }
 
 @end

@@ -110,6 +110,9 @@
 		E44719881C3A544F00002C4D /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E44719851C3A544F00002C4D /* libMobClickLibrary.a */; };
 		E447198B1C3A549500002C4D /* AnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = E447198A1C3A549500002C4D /* AnalyticsService.m */; };
 		E447198D1C3A5CCA00002C4D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E447198C1C3A5CCA00002C4D /* libz.1.2.5.tbd */; };
+		E44719921C3A72F700002C4D /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E447198F1C3A72F700002C4D /* iRate.bundle */; };
+		E44719931C3A72F700002C4D /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44719911C3A72F700002C4D /* iRate.m */; };
+		E44719961C3A734200002C4D /* RateService.m in Sources */ = {isa = PBXBuildFile; fileRef = E44719951C3A734200002C4D /* RateService.m */; };
 		E46E2E951BAFC69700CCF57F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */; };
 		E46E2E961BAFC69700CCF57F /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E8E1BAFC69700CCF57F /* REMenu.m */; };
 		E46E2E971BAFC69700CCF57F /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E2E901BAFC69700CCF57F /* REMenuContainerView.m */; };
@@ -452,6 +455,11 @@
 		E44719891C3A549500002C4D /* AnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsService.h; sourceTree = "<group>"; };
 		E447198A1C3A549500002C4D /* AnalyticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsService.m; sourceTree = "<group>"; };
 		E447198C1C3A5CCA00002C4D /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		E447198F1C3A72F700002C4D /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		E44719901C3A72F700002C4D /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		E44719911C3A72F700002C4D /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		E44719941C3A734200002C4D /* RateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateService.h; sourceTree = "<group>"; };
+		E44719951C3A734200002C4D /* RateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateService.m; sourceTree = "<group>"; };
 		E46E2E8B1BAFC69700CCF57F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		E46E2E8C1BAFC69700CCF57F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		E46E2E8D1BAFC69700CCF57F /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -972,6 +980,16 @@
 			path = UMAnalytics;
 			sourceTree = "<group>";
 		};
+		E447198E1C3A72F700002C4D /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				E447198F1C3A72F700002C4D /* iRate.bundle */,
+				E44719901C3A72F700002C4D /* iRate.h */,
+				E44719911C3A72F700002C4D /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 		E46E2E8A1BAFC69700CCF57F /* REMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,6 +1388,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D522AA1BAC881C002164AA /* Vendor.h */,
+				E447198E1C3A72F700002C4D /* iRate */,
 				E44719841C3A544F00002C4D /* UMAnalytics */,
 				E4825C4B1BCD316D0039FCE2 /* SMPageControl */,
 				E4825C471BCD315F0039FCE2 /* EARestrictedScrollView */,
@@ -1507,6 +1526,8 @@
 				E48884E81BBA36A40053F346 /* StreamerService.m */,
 				E44719891C3A549500002C4D /* AnalyticsService.h */,
 				E447198A1C3A549500002C4D /* AnalyticsService.m */,
+				E44719941C3A734200002C4D /* RateService.h */,
+				E44719951C3A734200002C4D /* RateService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1811,6 +1832,7 @@
 				E431FCFC1BADF4FD00898B8F /* dzn_icn_activity_dolphin@2x.png in Resources */,
 				E431FAD71BADDB2D00898B8F /* LICENSE in Resources */,
 				E431FD0D1BADF4FD00898B8F /* dzn_icn_toolbar_reload.png in Resources */,
+				E44719921C3A72F700002C4D /* iRate.bundle in Resources */,
 				E48884C91BB9B1320053F346 /* icon_action_favored@2x.png in Resources */,
 				E4825C6C1BCD325E0039FCE2 /* guide3~3.5@2x.png in Resources */,
 				E431FD0A1BADF4FD00898B8F /* dzn_icn_toolbar_forward.png in Resources */,
@@ -1856,6 +1878,7 @@
 				E4CD20C61BE1D6A1001401E6 /* Reachability.m in Sources */,
 				E486A3F31BB2D72900414EDE /* MJRefreshAutoGifFooter.m in Sources */,
 				E431FACB1BADD1D800898B8F /* UIImageView+HighlightedWebCache.m in Sources */,
+				E44719931C3A72F700002C4D /* iRate.m in Sources */,
 				E46E2E991BAFC69700CCF57F /* REMenuItemView.m in Sources */,
 				E4D522E51BACA27A002164AA /* RESideMenu.m in Sources */,
 				E431FD531BAE001800898B8F /* DOUMPMediaLibraryAssetLoader.m in Sources */,
@@ -1894,6 +1917,7 @@
 				E431FAD01BADD2E600898B8F /* NSString+Extension.m in Sources */,
 				E46E2E981BAFC69700CCF57F /* REMenuItem.m in Sources */,
 				E486A3EE1BB2D72900414EDE /* MJRefreshAutoFooter.m in Sources */,
+				E44719961C3A734200002C4D /* RateService.m in Sources */,
 				E431FAC81BADD1D800898B8F /* UIImage+GIF.m in Sources */,
 				E431FAC61BADD1D800898B8F /* SDWebImagePrefetcher.m in Sources */,
 				E4E9E3401BB4587600B6BAFE /* ExpandObject.m in Sources */,

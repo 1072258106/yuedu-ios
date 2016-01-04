@@ -87,12 +87,14 @@ NSInteger serviceCompare(id obj1, id obj2, void* context) {
 }
 
 - (BaseService* )accessService:(Class)clazz {
-    for (BaseService* service in _serviceArray) {
-        if ([service isKindOfClass:clazz]) {
-            return service;
+    @synchronized(self) {
+        for (BaseService* service in _serviceArray) {
+            if ([service isKindOfClass:clazz]) {
+                return service;
+            }
         }
+        return nil;
     }
-    return nil;
 }
 
 - (BOOL)application:(UIApplication *)application
