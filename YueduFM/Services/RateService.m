@@ -15,10 +15,7 @@
     self = [super initWithServiceCenter:serviceCenter];
     if (self) {
         [iRate sharedInstance].applicationBundleID = [[NSBundle mainBundle] bundleIdentifier];
-        [iRate sharedInstance].daysUntilPrompt = 1;
-        [iRate sharedInstance].usesUntilPrompt = 1;
         [iRate sharedInstance].promptForNewVersionIfUserRated = 1;
-        
     }
     return self;
 }
