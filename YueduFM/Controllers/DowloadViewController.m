@@ -133,7 +133,7 @@ static NSString* const kDownloadCellIdentifier = @"kDownloadCellIdentifier";
 }
 
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self isDownloadTypeDone]) {
+    if ([self isDownloadTypeDone] && [[self.tableData firstObject] isKindOfClass:[YDSDKArticleModel class]]) {
         return [super cellForRowAtIndexPath:indexPath];
     } else {
         NSURLSessionTask* task = self.tableData[indexPath.row];
