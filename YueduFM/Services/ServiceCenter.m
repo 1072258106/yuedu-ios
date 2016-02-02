@@ -70,7 +70,7 @@ NSInteger serviceCompare(id obj1, id obj2, void* context) {
             [service stop];
         }
         
-        [_serviceArray removeAllObjects];        
+        [_serviceArray removeAllObjects];
     }
 }
 

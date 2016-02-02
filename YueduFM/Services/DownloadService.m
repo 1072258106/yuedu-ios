@@ -92,10 +92,7 @@ NSString* const DownloadErrorDomain = @"DownloadErrorDomain";
         [downloadTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSURLSessionTask* task = obj;
             [service modelForAudioURLString:task.originalRequest.URL.absoluteString completion:^(YDSDKArticleModelEx *model) {
-                NSLog(@"============11111:%@", obj);
                 task.articleModel = model;
-                NSLog(@"============2222");
-
             }];
             if (status == ReachableViaWWAN) {
                 [task suspend];

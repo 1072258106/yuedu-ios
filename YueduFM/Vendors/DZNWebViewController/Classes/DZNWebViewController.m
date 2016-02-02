@@ -251,7 +251,7 @@ static char DZNWebViewControllerKVOContext = 0;
 - (UIImage *)backwardButtonImage
 {
     if (!_backwardButtonImage) {
-        _backwardButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_backward" inBundle:[NSBundle bundleForClass:[DZNWebViewController class]] compatibleWithTraitCollection:nil];
+        _backwardButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_backward"];
     }
     return _backwardButtonImage;
 }
@@ -259,7 +259,7 @@ static char DZNWebViewControllerKVOContext = 0;
 - (UIImage *)forwardButtonImage
 {
     if (!_forwardButtonImage) {
-        _forwardButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_forward" inBundle:[NSBundle bundleForClass:[DZNWebViewController class]] compatibleWithTraitCollection:nil];
+        _forwardButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_forward"];
     }
     return _forwardButtonImage;
 }
@@ -267,7 +267,7 @@ static char DZNWebViewControllerKVOContext = 0;
 - (UIImage *)reloadButtonImage
 {
     if (!_reloadButtonImage) {
-        _reloadButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_reload" inBundle:[NSBundle bundleForClass:[DZNWebViewController class]] compatibleWithTraitCollection:nil];
+        _reloadButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_reload"];
     }
     return _reloadButtonImage;
 }
@@ -275,7 +275,7 @@ static char DZNWebViewControllerKVOContext = 0;
 - (UIImage *)stopButtonImage
 {
     if (!_stopButtonImage) {
-        _stopButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_stop" inBundle:[NSBundle bundleForClass:[DZNWebViewController class]] compatibleWithTraitCollection:nil];
+        _stopButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_stop"];
     }
     return _stopButtonImage;
 }
@@ -283,7 +283,7 @@ static char DZNWebViewControllerKVOContext = 0;
 - (UIImage *)actionButtonImage
 {
     if (!_actionButtonImage) {
-        _actionButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_action" inBundle:[NSBundle bundleForClass:[DZNWebViewController class]] compatibleWithTraitCollection:nil];
+        _actionButtonImage = [UIImage imageNamed:@"dzn_icn_toolbar_action"];
     }
     return _actionButtonImage;
 }
