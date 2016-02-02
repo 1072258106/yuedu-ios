@@ -56,20 +56,22 @@ NSInteger serviceCompare(id obj1, id obj2, void* context) {
     
     //优先级排序
     classes = [classes sortedArrayUsingFunction:serviceCompare context:nil];
-    
-    for (Class cls in classes) {
-        BaseService* service = [[cls alloc] initWithServiceCenter:self];
-        [_serviceArray addObject:service];
+    @synchronized(self) {
+        for (Class cls in classes) {
+            BaseService* service = [[cls alloc] initWithServiceCenter:self];
+            [_serviceArray addObject:service];
+        }
     }
-    
 }
 
 - (void)teardown {
-    for (BaseService* service in _serviceArray) {
-        [service stop];
+    @synchronized(self) {
+        for (BaseService* service in _serviceArray) {
+            [service stop];
+        }
+        
+        [_serviceArray removeAllObjects];        
     }
-    
-    [_serviceArray removeAllObjects];
 }
 
 - (void)startAllServices
