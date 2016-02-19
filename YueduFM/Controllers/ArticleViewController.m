@@ -45,7 +45,11 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 
 #pragma mark - TableViewControllerProtocol
 - (UINib* )nibForExpandCell {
-    return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];
+    if (SRV(ConfigService).config.allowDownload) {
+        return [UINib nibWithNibName:@"ActionTableViewCell" bundle:nil];
+    } else {
+        return [UINib nibWithNibName:@"ActionTableViewCell-WithoutDownload" bundle:nil];
+    }
 }
 
 - (CGFloat)heightForExpandCell {

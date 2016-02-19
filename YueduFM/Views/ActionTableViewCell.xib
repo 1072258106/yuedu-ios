@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,11 +12,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6EZ-hw-o3E" id="lZw-Ru-O4y">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="68.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Za-Va-tZa" customClass="UIVButton">
                         <rect key="frame" x="128" y="0.0" width="64" height="68.5"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="收藏" image="icon_action_favor.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,6 +26,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhC-gd-wZH" customClass="UIVButton">
                         <rect key="frame" x="63.5" y="0.0" width="64.5" height="68.5"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="下载" image="icon_action_download.png">
@@ -34,6 +36,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-rG-C2p" customClass="UIVButton">
                         <rect key="frame" x="0.0" y="0.0" width="63.5" height="68.5"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="详情" image="icon_action_info.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,6 +45,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NR-EC-NG0" customClass="UIVButton">
                         <rect key="frame" x="256.5" y="0.0" width="63.5" height="68.5"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="分享" image="icon_action_share.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,6 +54,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-6a-VBw" customClass="UIVButton">
                         <rect key="frame" x="192" y="0.0" width="64.5" height="68.5"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="添加到" image="icon_action_add.png">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,6 +62,7 @@
                         </state>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="Dgf-rG-C2p" firstAttribute="leading" secondItem="lZw-Ru-O4y" secondAttribute="leadingMargin" constant="-8" id="8rf-Jq-7Tu"/>
                     <constraint firstItem="1NR-EC-NG0" firstAttribute="leading" secondItem="snq-6a-VBw" secondAttribute="trailing" id="Fk1-TM-4Mt"/>
@@ -80,6 +86,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="1NR-EC-NG0" secondAttribute="trailing" constant="-8" id="zaO-p4-weR"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="addButton" destination="snq-6a-VBw" id="tyd-7B-UrD"/>

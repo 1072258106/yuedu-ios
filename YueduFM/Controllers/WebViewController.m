@@ -27,6 +27,7 @@
 }
 
 + (instancetype)controllerWithURL:(NSURL* )url didDisappear:(void(^)())disappear {
+    if (!url) return nil;
     WebViewController* wvc = [[WebViewController alloc] initWithURL:url];
     wvc.supportedWebNavigationTools = DZNWebNavigationToolAll;
     wvc.supportedWebActions = DZNWebActionAll;

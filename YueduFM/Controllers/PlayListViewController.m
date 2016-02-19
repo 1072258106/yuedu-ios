@@ -76,7 +76,11 @@ static int const kCountPerTime = 20;
 }
 
 - (UINib* )nibForExpandCell {
-    return [UINib nibWithNibName:@"PlayListActionTableViewCell" bundle:nil];
+    if (SRV(ConfigService).config.allowDownload) {
+        return [UINib nibWithNibName:@"PlayListActionTableViewCell" bundle:nil];
+    } else {
+        return [UINib nibWithNibName:@"PlayListActionTableViewCell-WithoutDownload" bundle:nil];
+    }
 }
 
 @end

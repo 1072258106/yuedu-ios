@@ -40,25 +40,20 @@
 }
 
 - (void)fetch:(void(^)(NSError* error))completion {
-    //为了避免过多访问服务器，同一天不更新config
-    if (self.config && [self.config.updateDate isSameDay:[NSDate date]]) {
-        if (completion) completion(nil);
-    } else {
-        YDSDKConfigRequest* req = [YDSDKConfigRequest request];
-        [self.netManager request:req completion:^(YDSDKRequest *request, YDSDKError *error) {
-            if (!error) {
-                YDSDKConfigModelEx* model = [YDSDKConfigModelEx objectFromSuperObject:req.model];
-                model.updateDate = [NSDate date];
-                [self.dataManager writeObject:model complete:^(BOOL successed, id result) {
-                    [self checkout:^(BOOL successed){
-                        if (completion) completion(error);
-                    }];
+    YDSDKConfigRequest* req = [YDSDKConfigRequest request];
+    [self.netManager request:req completion:^(YDSDKRequest *request, YDSDKError *error) {
+        if (!error) {
+            YDSDKConfigModelEx* model = [YDSDKConfigModelEx objectFromSuperObject:req.model];
+            model.updateDate = [NSDate date];
+            [self.dataManager writeObject:model complete:^(BOOL successed, id result) {
+                [self checkout:^(BOOL successed){
+                    if (completion) completion(error);
                 }];
-            } else {
-                if (completion) completion(error);
-            }
-        }];
-    }
+            }];
+        } else {
+            if (completion) completion(error);
+        }
+    }];
 }
 
 @end

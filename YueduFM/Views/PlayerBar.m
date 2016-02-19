@@ -90,7 +90,13 @@
     [self addSubview:line];
     
     __weak typeof(self) weakSelf = self;
-    _actionCell = [PlayBarActionTableViewCell viewWithNibName:@"PlayBarActionTableViewCell"];
+    
+    if (SRV(ConfigService).config.allowDownload) {
+        _actionCell = [PlayBarActionTableViewCell viewWithNibName:@"PlayBarActionTableViewCell"];
+
+    } else {
+        _actionCell = [PlayBarActionTableViewCell viewWithNibName:@"PlayBarActionTableViewCell-WithoutDownload"];
+    }
     _actionCell.width = self.width;
     _actionCell.height = self.height;
     _actionCell.top = self.height;
