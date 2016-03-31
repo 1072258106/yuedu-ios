@@ -1,5 +1,7 @@
 # 为什么开发悦读FM APP
 
+源码地址：https://github.com/yuedu-fm/yuedu-ios
+
 **目前APP已经上架，大家可以访问App Store搜索悦读FM即可**
 
 ![image](https://raw.githubusercontent.com/yuedu-fm/yuedu-ios/master/Snapshot/4.0.1.png)
