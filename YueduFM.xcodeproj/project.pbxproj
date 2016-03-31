@@ -219,7 +219,6 @@
 		E4B4E3F81BB9835700E3F492 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B4E3F61BB9835700E3F492 /* SearchViewController.m */; };
 		E4B4E3F91BB9835700E3F492 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B4E3F71BB9835700E3F492 /* SearchViewController.xib */; };
 		E4B4E3FD1BB98DD900E3F492 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B4E3FC1BB98DD900E3F492 /* AppDelegate.m */; };
-		E4CD20C51BE1D6A1001401E6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E4CD20C21BE1D6A1001401E6 /* .gitignore */; };
 		E4CD20C61BE1D6A1001401E6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CD20C41BE1D6A1001401E6 /* Reachability.m */; };
 		E4D522631BAC7BD6002164AA /* ConfigService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D522621BAC7BD6002164AA /* ConfigService.m */; };
 		E4D5226F1BAC83C9002164AA /* ChannelService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D5226E1BAC83C9002164AA /* ChannelService.m */; };
@@ -621,7 +620,6 @@
 		E4B4E3F71BB9835700E3F492 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		E4B4E3FB1BB98DD900E3F492 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4B4E3FC1BB98DD900E3F492 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4CD20C21BE1D6A1001401E6 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E4CD20C31BE1D6A1001401E6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E4CD20C41BE1D6A1001401E6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E4D522611BAC7BD6002164AA /* ConfigService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigService.h; sourceTree = "<group>"; };
@@ -1227,7 +1225,6 @@
 		E4CD20C11BE1D6A1001401E6 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				E4CD20C21BE1D6A1001401E6 /* .gitignore */,
 				E4CD20C31BE1D6A1001401E6 /* Reachability.h */,
 				E4CD20C41BE1D6A1001401E6 /* Reachability.m */,
 			);
@@ -1785,7 +1782,6 @@
 				E4358DF91BBB21D200E3799B /* icon_bar_down@2x.png in Resources */,
 				E431FCFA1BADF4FD00898B8F /* dzn_icn_activity_chrome@2x.png in Resources */,
 				E4358DFB1BBB286400E3799B /* Images.xcassets in Resources */,
-				E4CD20C51BE1D6A1001401E6 /* .gitignore in Resources */,
 				E46E2ED81BB0454500CCF57F /* SVProgressHUD.bundle in Resources */,
 				E431FD0B1BADF4FD00898B8F /* dzn_icn_toolbar_forward@2x.png in Resources */,
 				E48884D41BB9B1320053F346 /* icon_menu_history@2x.png in Resources */,
