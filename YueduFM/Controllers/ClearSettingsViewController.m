@@ -31,7 +31,7 @@
                                                    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                                            cell.detailTextLabel.text = [NSString stringWithFileSize:[[SDImageCache sharedImageCache] getSize]];
-                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"clean_successed")];
+                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"settings_clean_successed")];
                                                        });
                                                    }];
                                                });
@@ -51,7 +51,7 @@
                                                    [SRV(ArticleService) deleteAllDownloaded:^{
                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                                            cell.detailTextLabel.text = [NSString stringWithFileSize:[SRV(DownloadService) cacheSize]];
-                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"clean_successed")];
+                                                           [SVProgressHUD showSuccessWithStatus:LOC(@"settings_clean_successed")];
                                                        });                                                       
                                                    }];
                                                });
